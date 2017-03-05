@@ -1,7 +1,7 @@
 /**
- * This class represents an action in the game.
- * @author Florent
+ * This class represents an action in the game
  *
+ * @author 
  */
 public class Action 
 {
