@@ -6,23 +6,29 @@ public class Shifumi {
 		
 		//Transformation string -> Sign
 		Sign playersign = Sign.valueOf(sign);
-		Sign random=Sign.getRandom();
+		Sign random = Sign.getRandom();
+		
 		if(playersign == Sign.PAPER){
 			if(random == Sign.ROCK){
 				return true;
-			}else{
+			}
+			else{
 				return false;
 			}
-		}else if(playersign == Sign.ROCK){
+		}
+		else if(playersign == Sign.ROCK){
 			if(random == Sign.PAPER){
 				return false;
-			}else{
+			}
+			else{
 				return true;
 			}
-		}else{
+		}
+		else{
 			if(random == Sign.ROCK){
 				return false;
-			}else{
+			}
+			else{
 				return true;
 			}
 		}
