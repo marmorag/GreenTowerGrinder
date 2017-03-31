@@ -20,6 +20,10 @@ public class TicTacToe {
 	}
 	
 	public boolean PlayerTurn(){
+		if(this.isFull()){
+			System.out.println("Egalite, veuillez rejouer");
+			this.resetGrid();
+		}
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		int p1=0,p2=0;
@@ -52,6 +56,10 @@ public class TicTacToe {
 	}
 	
 	public boolean GameTurn(){
+		if(this.isFull()){
+			System.out.println("Egalite, veuillez rejouer");
+			this.resetGrid();
+		}
 		int p1 = 0,p2 = 0;
 		Random r = new Random();
 		while(true){
@@ -93,6 +101,23 @@ public class TicTacToe {
 				this.grid[2][0]+"|"+this.grid[2][1]+"|"+this.grid[2][2]+"|\n";
 	}
 	
+	public boolean isFull(){
+		for(int i=0;i<3;i++){
+			for(int j=0;j<3;j++){
+				if(this.grid[i][j] == 0){
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 	
+	public void resetGrid(){
+		for(int i=0;i<3;i++){
+			for(int j=0;j<3;j++){
+				this.grid[i][j] = 0;
+			}
+		}
+	}
 	
 }

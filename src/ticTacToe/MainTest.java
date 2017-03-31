@@ -15,7 +15,8 @@ public class MainTest {
 			System.out.println(ttt.toString());
 		}
 		System.out.println(ttt.toString());
-		if(ttt.getWinner() == 1){
+		if(ttt.getWinner() == 1)
+		{
 			System.out.println("Bravo");
 		}else{
 			System.out.println("Dommage");
