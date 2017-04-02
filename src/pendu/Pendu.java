@@ -64,7 +64,7 @@ public class Pendu {
 		
 		
 		try{
-			InputStream flux=new FileInputStream("src/listeMot.txt"); 
+			InputStream flux=new FileInputStream("src/pendu/listeMot.txt"); 
 			InputStreamReader lecture=new InputStreamReader(flux);
 			BufferedReader buff=new BufferedReader(lecture);
 			String ligne;
