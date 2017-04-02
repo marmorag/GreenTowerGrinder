@@ -1,4 +1,4 @@
-package defaul;
+
 
 /**
  * This class represents a choice in the game

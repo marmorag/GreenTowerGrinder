@@ -1,6 +1,4 @@
-package defaul;
 
-import java.util.Arrays;
 
 /**
  * This class represents a dialog

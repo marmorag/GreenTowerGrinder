@@ -1,4 +1,4 @@
-
+package pendu;
 
 public class Maintest {
 	

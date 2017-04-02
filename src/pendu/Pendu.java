@@ -1,3 +1,5 @@
+package pendu;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -7,64 +9,62 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * @author guillaume
+ * @author Guillaume
  *
  */
 public class Pendu {
 		
 	/**
-	 * permet de generer un nombre aleatoire pour le choix du mot
+	 * Allow us to generate random number
 	 */
 	Random r = new Random();
 	
 	/**
-	 * le nombre aleatoire pour le choix du mot
+	 * Random number to choose a word
 	 */
 	private int nbAleatoire;
 	
 	/**
-	 * le nombre de lettre de motATrouver => motATrouver.length()
+	 * Letter number of motATrouver (motATrouver.length)
 	 */
 	private int nbLettre;
 	
 	/**
-	 * le nombre de d'erreur de la partie en cours
+	 * Error number of current game
 	 */
 	private int nbErreur;
 	
 	/**
-	 * le nombre de coups de la partie en cours
+	 * Move number of current game
 	 */
 	private int nbCoups;
 	
 	/**
-	 * le mot choisi aleatoirement a trouver
+	 * Random word choosen
 	 */
 	private String motATrouver;
 	
 	/**
-	 * une copie du mot a trouver, toute les lettre sont remplecée par _ puis par leur 
-	 * lettre originel lorsqu'elle est trouvée
+	 * motATrouver copy but letters are replaced by _ 
+	 * until player has not found the correct letter
 	 */
 	private String motAAfficher;
 	
 	
 	/**
-	 * 	constructeur Pendu -> stock dans motATrouver le mot a la ligne nbAlaetoire 
-	 * 	du fichier listeMot.txt 
-	 *	initialise motAAfficher avec des "_" et nbLettre
-	 *
+	 *	motATrouver takes value of word at line nbAleatoire in listeMot.txt
+	 *	Initialize motAAfficher with "_" and nbLettre in function
 	 */
 	public Pendu()
 	{
-		nbAleatoire = r.nextInt(835);
+		nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
 		this.nbErreur = 0;
 		this.nbCoups = 0;
 		
 		
 		try{
-			InputStream flux=new FileInputStream("/home/guillaume/eclipse-ws/MiniJeux_Pendu/src/listeMot.txt"); 
+			InputStream flux=new FileInputStream("/home/guillaume/eclipse-ws/MiniJeux_Pendu/src/listeMot.txt"); //Incorrect path!! 
 			InputStreamReader lecture=new InputStreamReader(flux);
 			BufferedReader buff=new BufferedReader(lecture);
 			String ligne;
@@ -78,18 +78,18 @@ public class Pendu {
 			this.motAAfficher = motATrouver.replaceAll(".", "_");
 			
 			buff.close(); 
-			}		
-			catch (Exception ERREUR_FICHIER){
+		}		
+		catch (Exception ERREUR_FICHIER){
 			System.out.println(ERREUR_FICHIER.toString());
-			}
+		}
 	}
 	
 	
 	/**
-	 * @param lettreEntree la lettre entree par le joueur
-	 *	renvoie vrai si la lettre est contenu dans le mot faux sinon, aurais pu etre
-	 *	remplacer par la methode String.contains()
-	 *	met a jour le motAAfficher si la lettre est contenu
+	 * @param lettreEntree Letter entered by the player
+	 *	@return true if letter is in word, false if not
+	 *	Can be replace by String.contains()
+	 *	Update motAAfficher if letter is contained
 	 */
 	private boolean verifierLettre(char lettreEntree)
 	{
@@ -113,7 +113,7 @@ public class Pendu {
 	}
 
 	/**
-	 * met a jour le mot a afficher en fonction des lettres trouvées
+	 * Update display word (motAAfficher) in function of letters found
 	 */
 	private void majMotAAfficher(char lettreEntree)
 	{
@@ -138,8 +138,8 @@ public class Pendu {
 	}
 	
 	/**
-	 * affiche le pendu en ascii art en fonction du nombre d'erreur actuel
-	 * affiche le motAAfficher mis a jour en fonction des lettres trouvées
+	 * Display hanged in ASCII art according to current number of errors
+	 * Display motAAfficher updated according to letters found
 	 */
 	private void afficherPendu()
 	{
@@ -200,8 +200,8 @@ public class Pendu {
 	}
 
 	/**
-	 * renvoie vrai si les "_" ont tous été remplacer (donc toute les lettres trouver) 
-	 * dans le mot a afficher false sinon
+	 * @return true if all "_" have been replaced (all letters are found) in motAAfficher
+	 * false if not
 	 */
 	private boolean finDuPendu()
 	{
@@ -209,8 +209,7 @@ public class Pendu {
 	}
 	
 	/**
-	 * procedure principale lance l'execution du mini-jeu 
-	 * 
+	 * Main procedure which launch miniGame
 	 */
 	public void lancerPendu()
 	{
@@ -245,7 +244,7 @@ public class Pendu {
 	}
 
 	/**
-	 * methode pour effacer l'ecran de la console
+	 * Erase console display
 	 */
 	private void effacerEcran()
 	{

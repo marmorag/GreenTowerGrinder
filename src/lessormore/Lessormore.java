@@ -21,29 +21,23 @@ public class Lessormore {
 	/*
 	 * return if player win or not
 	 * @param {String} User decision
-	 * @return {boolean} true if the game is won and false if it is not
+	 * @return {boolean} true if the game is won and false if not
 	 */ 
 	public static boolean play(String userChoice){
 
 		if(userChoice.equals("MORE")){
-			if(randomcard<base){
+			if(randomcard<base)
 				return false;
-			}
-			else{
+			else
 				return true;
-			}
-
 		}
 		else if(userChoice.equals("LESS")){
-			if(randomcard<base){
+			if(randomcard<base)
 				return true;
-			}
-			else{
+			else
 				return false;
-			}
 		}
-		else{
+		else
 			return false;
-		}
 	}
 }

@@ -1,4 +1,4 @@
-package defaul;
+
 
 /**
  * This class represents an action in the game

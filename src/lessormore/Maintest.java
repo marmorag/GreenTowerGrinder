@@ -15,7 +15,7 @@ public class Maintest {
 		String sign = sc.nextLine();
 		
 
-		if(Lessormore.play(sign.toUpperCase()) == true){
+		if(Lessormore.play(sign.toUpperCase())){
 			System.out.println("BRAVO!");
 		}else{
 			System.out.println("Dommage :(");

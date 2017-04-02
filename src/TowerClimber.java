@@ -1,4 +1,4 @@
-package defaul;
+
 
 /**
  * Main class of the game. 
