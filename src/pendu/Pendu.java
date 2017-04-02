@@ -64,7 +64,7 @@ public class Pendu {
 		
 		
 		try{
-			InputStream flux=new FileInputStream("/home/guillaume/eclipse-ws/MiniJeux_Pendu/src/listeMot.txt"); //Incorrect path!! 
+			InputStream flux=new FileInputStream("src/listeMot.txt"); 
 			InputStreamReader lecture=new InputStreamReader(flux);
 			BufferedReader buff=new BufferedReader(lecture);
 			String ligne;
@@ -184,11 +184,11 @@ public class Pendu {
 				break;
 			case 9 :
 				System.out.println("         ,==========Y===\n"+"         || /       |\n"+"         ||/        |\n"+"         ||         O\n"+
-						"         ||        /|\\n"+"         ||        / \n"+"        /||\n"+"       //||\n"+"      ============\n");
+						"         ||        /|\\\n"+"         ||        / \n"+"        /||\n"+"       //||\n"+"      ============\n");
 				break;
 			case 10 :
 				System.out.println("         ,==========Y===\n"+"         || /       |\n"+"         ||/        |\n"+"         ||         O\n"+
-						"         ||        /|\\n"+"         ||        /|\n"+"        /||\n"+"       //||\n"+"      ============\n");
+						"         ||        /|\\\n"+"         ||        /|\n"+"        /||\n"+"       //||\n"+"      ============\n");
 				break;
 			default : 
 				System.out.println("ERREUR_AFFICHAGE_PENDU");
