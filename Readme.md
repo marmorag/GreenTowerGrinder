@@ -1,3 +1,3 @@
 ### Readme GreenTowerGrinder
 ------------------------------
-Github of our semester project for Valence IUT
+Project for second semester, Valence IUT
