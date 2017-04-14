@@ -13,44 +13,44 @@ import java.util.Scanner;
  *
  */
 public class Pendu {
-		
+
 	/**
 	 * Allow us to generate random number
 	 */
 	Random r = new Random();
-	
+
 	/**
 	 * Random number to choose a word
 	 */
 	private int nbAleatoire;
-	
+
 	/**
 	 * Letter number of motATrouver (motATrouver.length)
 	 */
 	private int nbLettre;
-	
+
 	/**
 	 * Error number of current game
 	 */
 	private int nbErreur;
-	
+
 	/**
 	 * Move number of current game
 	 */
 	private int nbCoups;
-	
+
 	/**
 	 * Random word choosen
 	 */
 	private String motATrouver;
-	
+
 	/**
-	 * motATrouver copy but letters are replaced by _ 
+	 * motATrouver copy but letters are replaced by _
 	 * until player has not found the correct letter
 	 */
 	private String motAAfficher;
-	
-	
+
+
 	/**
 	 *	motATrouver takes value of word at line nbAleatoire in listeMot.txt
 	 *	Initialize motAAfficher with "_" and nbLettre in function
@@ -61,30 +61,30 @@ public class Pendu {
 		int i = 0;
 		this.nbErreur = 0;
 		this.nbCoups = 0;
-		
-		
+
+
 		try{
-			InputStream flux=new FileInputStream("src/pendu/listeMot.txt"); 
+			InputStream flux=new FileInputStream("src/greentower/pendu/listeMot.txt");
 			InputStreamReader lecture=new InputStreamReader(flux);
 			BufferedReader buff=new BufferedReader(lecture);
 			String ligne;
-			
+
 			while ((ligne=buff.readLine())!=null && i < nbAleatoire){
 				i++;
 			}
-			
+
 			this.motATrouver = ligne;
 			this.nbLettre = motATrouver.length();
 			this.motAAfficher = motATrouver.replaceAll(".", "_");
-			
-			buff.close(); 
-		}		
+
+			buff.close();
+		}
 		catch (Exception ERREUR_FICHIER){
 			System.out.println(ERREUR_FICHIER.toString());
 		}
 	}
-	
-	
+
+
 	/**
 	 * @param lettreEntree Letter entered by the player
 	 *	@return true if letter is in word, false if not
@@ -95,7 +95,7 @@ public class Pendu {
 	{
 		int i;
 		boolean isIn = false;
-		
+
 		for(i=0;i < nbLettre;i++)
 		{
 			if(lettreEntree == this.motATrouver.charAt(i))
@@ -104,10 +104,10 @@ public class Pendu {
 				break;
 			}
 		}
-		
+
 		if(isIn)
 			this.majMotAAfficher(lettreEntree);
-		
+
 		this.nbCoups++;
 		return isIn;
 	}
@@ -119,14 +119,14 @@ public class Pendu {
 	{
 		char[] tempArray = new char[26];
 		int i;
-		
+
 		for(i = 0;i < nbLettre;i++)
 		{
 			tempArray[i] = motAAfficher.charAt(i);
 		}
-		
+
 		motAAfficher = "";
-		
+
 		for(i = 0;i < nbLettre;i++)
 		{
 			if(motATrouver.charAt(i) == lettreEntree)
@@ -136,18 +136,19 @@ public class Pendu {
 			motAAfficher = motAAfficher + tempArray[i];
 		}
 	}
-	
+
 	/**
 	 * Display hanged in ASCII art according to current number of errors
 	 * Display motAAfficher updated according to letters found
 	 */
 	private void afficherPendu()
 	{
-		this.effacerEcran();
-		
+		//this.effacerEcran();
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
 		switch(this.nbErreur){
-			
-			case 0 :  
+
+			case 0 :
 				System.out.println("\n\n\n\n\n\n\n\n");
 				break;
 			case 1 :
@@ -156,13 +157,13 @@ public class Pendu {
 			case 2 :
 				System.out.println("\n         ||\n         ||\n         ||\n         ||\n         ||\n" +
 						"        /||\n       //||\n      ============\n");
-			
+
 				break;
 			case 3 :
 				System.out.println("         ,==============\n"+"         ||\n"+"         ||\n"+"         ||\n"+"         ||\n"+"         ||\n"
 						+"        /||\n"+"       //||\n"+"      ============\n");
 				break;
-			case 4 : 
+			case 4 :
 				System.out.println("         ,==========Y===\n"+"         ||         |\n"+"         ||         |\n"+"         ||\n"+
 						"         ||\n"+"         ||\n"+"        /||\n"+"       //||\n"+"      ============\n");
 				break;
@@ -190,13 +191,13 @@ public class Pendu {
 				System.out.println("         ,==========Y===\n"+"         || /       |\n"+"         ||/        |\n"+"         ||         O\n"+
 						"         ||        /|\\\n"+"         ||        /|\n"+"        /||\n"+"       //||\n"+"      ============\n");
 				break;
-			default : 
+			default :
 				System.out.println("ERREUR_AFFICHAGE_PENDU");
 				break;
 		}
-		
+
 		System.out.println("Le mot a trouver :"+motAAfficher+"\n");
-		
+
 	}
 
 	/**
@@ -207,7 +208,7 @@ public class Pendu {
 	{
 		return(!motAAfficher.contains("_"));
 	}
-	
+
 	/**
 	 * Main procedure which launch miniGame
 	 */
@@ -215,13 +216,14 @@ public class Pendu {
 	{
 		Scanner scan = new Scanner(System.in);
 		char lettreEntree;
-		
+
 		while(!this.finDuPendu() && nbCoups <= nbLettre+5)
 		{
 			this.afficherPendu();
+			//System.out.println(motATrouver);
 			System.out.println("\nVotre lettre :");
 			lettreEntree = scan.next().charAt(0);
-			
+
 			if(!this.verifierLettre(lettreEntree))
 			{
 				System.out.println("\nLa lettre n'est pas contenu dans le mot!\n");
@@ -230,17 +232,17 @@ public class Pendu {
 				} catch (InterruptedException e) {}
 				this.nbErreur++;
 			}
-		}	
+		}
 		if(this.finDuPendu())
 		{
 			System.out.println("Felicitations vous avez réussi en : "+ this.nbCoups +"coups\n");
-		}			
+		}
 		else
 		{
 			System.out.println("Dommage vous avez perdu");
 		}
-		
-		scan.close();	
+
+		scan.close();
 	}
 
 	/**
@@ -249,10 +251,10 @@ public class Pendu {
 	private void effacerEcran()
 	{
 	    if(System.getProperty("os.name" ).startsWith("Windows" ))
-			try 
+			try
 	    	{
 				Runtime.getRuntime().exec("cls" );
-			} 
+			}
 	    	catch (IOException ERREUR_CLEAR_WINDOWS)
 			{
 				ERREUR_CLEAR_WINDOWS.printStackTrace();
@@ -261,8 +263,8 @@ public class Pendu {
 			try
 	    	{
 				Runtime.getRuntime().exec("clear" );
-			} 
-	    	catch (IOException ERREUR_CLEAR_OTHER) 
+			}
+	    	catch (IOException ERREUR_CLEAR_OTHER)
 	    	{
 				ERREUR_CLEAR_OTHER.printStackTrace();
 			}
