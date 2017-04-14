@@ -1,11 +1,9 @@
-package headsOrTails;
+package greentower.headsOrTails;
 
 import java.util.Random;
 
-import hotkey.Hotkey;
-
 public class HeadsOrTails {
-	
+
 	public static final int HEADS = 0; //Enum ?
 	public static final int TAILS = 1;
 
@@ -15,7 +13,7 @@ public class HeadsOrTails {
 		}
 		return false;
 	}
-	
+
 	//TEST
 	public static void main(String[] args) {
 		if(HeadsOrTails.play(HEADS)){
@@ -24,5 +22,5 @@ public class HeadsOrTails {
 			System.out.println("Dommage");
 		}
 	}
-	
+
 }

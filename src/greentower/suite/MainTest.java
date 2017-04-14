@@ -1,4 +1,4 @@
-package suite;
+package greentower.suite;
 
 public class MainTest {
 

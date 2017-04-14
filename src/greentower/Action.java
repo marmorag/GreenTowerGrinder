@@ -1,17 +1,17 @@
-
+package greentower;
 
 /**
  * This class represents an action in the game
  *
- * @author 
+ * @author
  */
-public class Action 
+public class Action
 {
 	/**
 	 * Default Action's constructor
 	 */
 	public Action()
 	{
-		
+
 	}
 }

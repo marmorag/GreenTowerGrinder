@@ -1,4 +1,4 @@
-package ticTacToe;
+package greentower.tictactoe;
 
 import java.util.Random;
 import java.util.Scanner;

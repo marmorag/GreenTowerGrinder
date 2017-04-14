@@ -1,4 +1,4 @@
-package ticTacToe;
+package greentower.tictactoe;
 
 public class MainTest {
 

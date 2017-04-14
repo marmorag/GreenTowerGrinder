@@ -1,4 +1,4 @@
-package suite;
+package greentower.suite;
 
 import java.util.Random;
 import java.util.Scanner;

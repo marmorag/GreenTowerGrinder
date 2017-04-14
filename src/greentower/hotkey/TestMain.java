@@ -1,4 +1,4 @@
-package hotkey;
+package greentower.hotkey;
 
 public class TestMain {
 

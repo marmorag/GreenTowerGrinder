@@ -1,4 +1,4 @@
-package pendu;
+package greentower.pendu;
 
 public class Maintest {
 	

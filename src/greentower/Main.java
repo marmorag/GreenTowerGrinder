@@ -1,3 +1,5 @@
+package greentower;
+
 /**
  * Main class of the game. 
  * Entry point of the application.

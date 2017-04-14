@@ -1,4 +1,4 @@
-package pendu;
+package greentower.pendu;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

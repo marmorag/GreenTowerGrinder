@@ -1,4 +1,4 @@
-
+package greentower;
 
 /**
  * This class represents a dialog
@@ -6,19 +6,19 @@
  *
  */
 public class Dialog {
-	
+
 	/**
 	 * Text to make the choice
 	 */
 	private String text;
 
 	/**
-	 * Possible choices 
+	 * Possible choices
 	 */
 	private Choice[] choices;
-	
+
 	/**
-	 * Dialog's constructor with given text and given choices 
+	 * Dialog's constructor with given text and given choices
 	 * @param text , text to make the choice
 	 * @param choices , possible choices
 	 */
@@ -63,7 +63,7 @@ public class Dialog {
 	public void setChoices(Choice[] choices) {
 		this.choices = choices;
 	}
-	
-	
-	
+
+
+
 }

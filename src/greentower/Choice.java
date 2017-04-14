@@ -1,4 +1,4 @@
-
+package greentower;
 
 /**
  * This class represents a choice in the game

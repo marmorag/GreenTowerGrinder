@@ -1,4 +1,4 @@
-package shifumi;
+package greentower.shifumi;
 
 /*
  * 

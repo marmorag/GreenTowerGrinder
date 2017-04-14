@@ -1,4 +1,4 @@
-package lessormore;
+package greentower.lessormore;
 
 public class Lessormore {
 
