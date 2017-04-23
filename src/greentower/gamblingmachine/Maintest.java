@@ -3,7 +3,6 @@ package greentower.gamblingmachine;
 public class Maintest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 			
 		/*
 		GamblingMachine.play();
