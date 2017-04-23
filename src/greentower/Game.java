@@ -8,9 +8,9 @@ package greentower;
  */
 public class Game
 {
-	private Stage[] stages;
-	private int numberOfRound;
-	private Level currentLevel;
+	private Stage[] tower;
+	private int numberOfRounds;
+	private Stage currentStage;
 	
 	/**
 	 * Default constructor

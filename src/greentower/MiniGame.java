@@ -1,3 +1,4 @@
+package greentower;
 /**
  * This class represents Mini Game' basement
  * 
@@ -29,7 +30,8 @@ public abstract class MiniGame{
 	/**
 	 * Allows to play game
 	 */
-	protected Boolean play(){
+	protected boolean play(){
+		return false;
 		
 	}
 
