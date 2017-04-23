@@ -6,13 +6,16 @@ package greentower;
  * @author Florent
  *
  */
-public class Main {
+public class Main 
+{
 
 	/**
 	 * Entry point
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
+		new Game().play();
 		
 		Action action1 = new Action();
 		Action action2 = new Action();
