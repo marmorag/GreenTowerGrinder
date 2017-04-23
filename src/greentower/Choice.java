@@ -1,75 +1,46 @@
 package greentower;
 
 /**
- * This class represents a choice in the game
- * 
+ * This class represents a choice
  * @author Florent
  *
  */
-public class Choice {
+public class Choice 
+{
 
 	/**
-	 * Choice's text
+	 * Dialog before the choice
 	 */
-	private String text;
+	private final Dialog dialog;
 
 	/**
-	 * Choice's action
+	 * Answers to the dialog
 	 */
-	private Action action;
-	
-	/**
-	 * Choice's constructor with given action and given text 
-	 * @param initialText
-	 * @param initialAction
-	 */
-	public Choice(String initialText, Action initialAction){
-		this.text = initialText;
-		this.action = initialAction;
-	}
-	
-	/**
-	 * @param A
-	 * @param B
-	 * @param C
-	 * @param D
-	 * @return choices
-	 */
-	public static Choice[] getTab(Choice A, Choice B, Choice C, Choice D){
-		Choice[] choices = new Choice[4];
-		choices[0] = A;
-		choices[1] = B;
-		choices[2] = C;
-		choices[3] = D;
-		return choices;
-	}
-	
-	/**
-	 * @return the text
-	 */
-	public String getText() {
-		return this.text;
-	}
+	private final String[] answers; // Ca sera un dictionnaire à la fin 
 
 	/**
-	 * @param text the text to set
+	 * Stage to go according to the answer
 	 */
-	public void setText(String text) {
-		this.text = text;
+	private final Stage[] answerToStage;
+	/**
+	 * Choice's constructor with given dialog, choices and next stages
+	 * @param initialDialog 
+	 * 			Dialog of the choice
+	 * @param initialAnswers 
+	 * @param initialAnswerToStage 
+	 */
+	public Choice(Dialog initialDialog, String[] initialAnswers, Stage[] initialAnswerToStage)
+	{
+		this.dialog = initialDialog;
+		this.answers = initialAnswers;
+		this.answerToStage = initialAnswerToStage;
 	}
 
-	/**
-	 * @return the action
-	 */
-	public Action getAction() {
-		return this.action;
-	}
-
-	/**
-	 * @param action the action to set
-	 */
-	public void setAction(Action action) {
-		this.action = action;
-	}
-	
+	@Override
+	public String toString() 
+	{
+		String result = "Choice [Dialog = " + this.dialog.toString() + ", Answers = ";
+		for(int index = 0; index < 4; index++)
+			result += this.answers[index] + "\n";
+		result += "]";
 }
