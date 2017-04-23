@@ -5,7 +5,7 @@ package greentower;
  * @author Florent
  *
  */
-public class Choice 
+public class Choice implements Stage
 {
 
 	/**
@@ -17,11 +17,17 @@ public class Choice
 	 * Answers to the dialog
 	 */
 	private final String[] answers; // Ca sera un dictionnaire à la fin 
+	
+	/**
+	 * Index of the answer of the player
+	 */
+	private int indexPlayerAnswer;
 
 	/**
 	 * Stage to go according to the answer
 	 */
 	private final Stage[] answerToStage;
+	
 	/**
 	 * Choice's constructor with given dialog, choices and next stages
 	 * @param initialDialog 
@@ -34,6 +40,8 @@ public class Choice
 		this.dialog = initialDialog;
 		this.answers = initialAnswers;
 		this.answerToStage = initialAnswerToStage;
+		this.indexPlayerAnswer = -1;
+		this.nextStage = null;
 	}
 
 	@Override
@@ -42,5 +50,37 @@ public class Choice
 		String result = "Choice [Dialog = " + this.dialog.toString() + ", Answers = ";
 		for(int index = 0; index < 4; index++)
 			result += this.answers[index] + "\n";
-		result += "]";
+		return result += "]";
+	}
+	
+	/**
+	 * Get the next stage depending on the answer
+	 */
+	public void getNextStage()
+	{
+		return this.answerToStage[this.indexPlayerAnswer];
+	}
+
+	@Override
+	public void playStage() 
+	{
+		// TODO Auto-generated method stub		
+	}
+
+	/**
+	 * @return the indexPlayerAnswer
+	 */
+	public int getIndexPlayerAnswer() 
+	{
+		return this.indexPlayerAnswer;
+	}
+
+	/**
+	 * @param indexPlayerAnswer the indexPlayerAnswer to set
+	 */
+	public void setIndexPlayerAnswer(int indexPlayerAnswer) 
+	{
+		this.indexPlayerAnswer = indexPlayerAnswer;
+	}
+	
 }
