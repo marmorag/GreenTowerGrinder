@@ -8,16 +8,17 @@ package greentower;
  */
 public class Game
 {
-	private Stage[] tower;
+	private Tower tower;
 	private int numberOfRounds;
-	private Stage currentStage;
+	private Player player;
 	
 	/**
 	 * Default constructor
 	 */
 	public Game()
 	{
-		
+		this.tower = new Tower();
+		this.numberOfRounds = 0;
 	}
 	
 	/**
