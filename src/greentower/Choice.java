@@ -41,7 +41,6 @@ public class Choice implements Stage
 		this.answers = initialAnswers;
 		this.answerToStage = initialAnswerToStage;
 		this.indexPlayerAnswer = -1;
-		this.nextStage = null;
 	}
 
 	@Override
@@ -55,8 +54,9 @@ public class Choice implements Stage
 	
 	/**
 	 * Get the next stage depending on the answer
+	 * @return 
 	 */
-	public void getNextStage()
+	public Stage getNextStage()
 	{
 		return this.answerToStage[this.indexPlayerAnswer];
 	}
