@@ -23,6 +23,9 @@ public class Dialog {
 		this.dialog =initialDialog;
 	}
 
+	/**
+	 *
+	 */
 	public String toString()
 	{
 		String result = "Dialog[";

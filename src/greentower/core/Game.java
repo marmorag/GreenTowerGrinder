@@ -10,12 +10,24 @@ import greentower.tictactoe.TicTacToe;
  */
 public class Game
 {
+	/**
+	 * Indicates the round's number
+	 */
 	private int numberOfRounds;
+
+	/**
+	 * Indicates who is playing
+	 */
 	private Player player;
+
+	/**
+	 * Indicates the stage loaded
+	 */
 	private Stage currentStage;
 
 	/**
 	 * Default constructor
+	 * @param player who lauched the game
 	 */
 	public Game(Player player)
 	{
@@ -29,10 +41,10 @@ public class Game
 	 */
 	public void play()
 	{
-		while(currentStage.getFinalStage() == false)
+		while(this.currentStage.getFinalStage() == false)
 		{
-			currentStage.playStage();
-			numberOfRounds++;
+			this.currentStage.playStage();
+			this.numberOfRounds++;
 		}
 		//Finish game
 	}
