@@ -1,4 +1,4 @@
-package greentower;
+package greentower.core;
 
 /**
  * This class represents an action in the game

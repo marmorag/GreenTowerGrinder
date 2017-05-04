@@ -1,4 +1,4 @@
-package greentower;
+package greentower.core;
 
 /**
  * Main class of the game.
