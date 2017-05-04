@@ -10,7 +10,6 @@ import greentower.tictactoe.TicTacToe;
  */
 public class Game
 {
-	private Tower tower;
 	private int numberOfRounds;
 	private Player player;
 	private Stage currentStage;
@@ -20,7 +19,6 @@ public class Game
 	 */
 	public Game(Player player)
 	{
-		this.tower = new Tower();
 		this.numberOfRounds = 0;
 		this.player = player;
 		this.currentStage = new TicTacToe(1); // First Stage
