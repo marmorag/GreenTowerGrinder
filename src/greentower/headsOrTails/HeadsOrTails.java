@@ -1,26 +1,34 @@
 package greentower.headsOrTails;
 
 import java.util.Random;
+import java.util.Scanner;
 
-public class HeadsOrTails {
+import greentower.core.MiniGame;
+import greentower.core.Stage;
+import greentower.lessormore.Lessormore;
 
-	public static final int HEADS = 0; //Enum ?
-	public static final int TAILS = 1;
+public class HeadsOrTails extends MiniGame {
 
-	public static boolean play(int player){
-		if((int) new Random().nextInt(2) == player){
-			return true;
-		}
-		return false;
+	public HeadsOrTails(int id)
+	{
+		super(id);
 	}
 
-	//TEST
-	public static void main(String[] args) {
-		if(HeadsOrTails.play(HEADS)){
+	public Stage playStage(){
+		int player=-1;
+		while(player!=0 || player!=1){
+			System.out.println("Veuillez entrer 0 pour pile et 1 pour face : ");
+			Scanner sc = new Scanner(System.in);
+			String userChoice = sc.nextLine();
+			player = Integer.parseInt(userChoice);
+			System.out.println("\n");
+		}
+		if((int) new Random().nextInt(2) == player)
+		{
 			System.out.println("Bravo");
-		}else{
-			System.out.println("Dommage");
+			return this.nextStages[0];
 		}
+		System.out.println("Dommage");
+		return this.nextStage[1];
 	}
-
 }
