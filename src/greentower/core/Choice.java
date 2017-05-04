@@ -67,7 +67,7 @@ public class Choice implements Stage
 	@Override
 	public void playStage()
 	{
-		// TODO Auto-generated method stub
+
 	}
 
 	/**

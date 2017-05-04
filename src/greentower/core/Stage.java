@@ -8,10 +8,14 @@ package greentower.core;
  */
 public abstract class Stage
 {
-	private boolean stageIsFinal;
+	private boolean stageIsFinal = false;
 
 	/**
 	 * Play the current stage (MiniGame or Choice, whatever)
 	 */
 	public abstract Stage playStage();
+
+	public boolean getFinalStage(){
+		return this.stageIsFinal;
+	}
 }

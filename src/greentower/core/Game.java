@@ -1,5 +1,7 @@
 package greentower.core;
 
+import greentower.tictactoe.TicTacToe;
+
 /**
  * This class represents a game of The Green Tower Grinder
  *
@@ -11,6 +13,7 @@ public class Game
 	private Tower tower;
 	private int numberOfRounds;
 	private Player player;
+	private Stage currentStage;
 
 	/**
 	 * Default constructor
@@ -20,6 +23,7 @@ public class Game
 		this.tower = new Tower();
 		this.numberOfRounds = 0;
 		this.player = new Player(playerName);
+		this.currentStage = new TicTacToe(); // First Stage
 	}
 
 	/**
@@ -27,10 +31,11 @@ public class Game
 	 */
 	public void play()
 	{
-		while(le joueur a pas perdu ET le joueur a pas gagné){
-			jouer mini jeux
+		while(currentStage.getFinalStage() == false)
+		{
+			currentStage.playStage();
 		}
-		afficher fin de partie
+		//Finish game
 	}
 
 	/**

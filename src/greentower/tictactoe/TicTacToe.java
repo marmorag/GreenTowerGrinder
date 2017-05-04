@@ -2,17 +2,19 @@ package greentower.tictactoe;
 
 import java.util.Random;
 import java.util.Scanner;
+
+import greentower.core.MiniGame;
 /*
  * MiniGame TicTacToe
  * @author Gavin Rémi
  */
-public class TicTacToe {
+public class TicTacToe extends MiniGame{
 	/*
 	 *  Constant for winner
 	 */
 	private final static int PLAYER = 1;
 	private final static int GAME = 0;
-	
+
 	/*
 	 * Grid of TicTacToe, contains cross and round
 	 */
@@ -21,18 +23,19 @@ public class TicTacToe {
 	 * Winner of the game
 	 */
 	private int winner;
-	
+
 	/*
 	 * Fill the grid with 0
 	 */
-	public TicTacToe(){
+	public TicTacToe(int number){
+		super(number);
 		for(int i=0;i<3;i++){
 			for(int j=0;j<3;j++){
 				this.grid[i][j] = 0;
 			}
 		}
 	}
-	
+
 	/*
 	 * Player turn : he types the 2 indexes one by one
 	 * @return true if he win and false if not
@@ -46,7 +49,7 @@ public class TicTacToe {
 		Scanner sc = new Scanner(System.in);
 		int p1=0,p2=0;
 		while(true){ //Get index by the user
-			p1 = Integer.parseInt(sc.nextLine()); 
+			p1 = Integer.parseInt(sc.nextLine());
 			p2 = Integer.parseInt(sc.nextLine());
 			if(this.grid[p1][p2] == 0){
 				this.grid[p1][p2] = 1;
@@ -73,7 +76,7 @@ public class TicTacToe {
 		}
 		return false;
 	}
-	
+
 	/*
 	 * Bot turn, random numbers are generate to place a sign
 	 * @return true if he win and false if not
@@ -112,15 +115,15 @@ public class TicTacToe {
 		}
 		return false;
 	}
-	
+
 	/*
-	 * Return game winner 
+	 * Return game winner
 	 * @return winner of the game;
 	 */
 	public int getWinner(){
 		return this.winner;
 	}
-	
+
 	@Override
 	/*
 	 * Return Game grid fill in with players signs
@@ -131,7 +134,7 @@ public class TicTacToe {
 				this.grid[1][0]+"|"+this.grid[1][1]+"|"+this.grid[1][2]+"|\n"+
 				this.grid[2][0]+"|"+this.grid[2][1]+"|"+this.grid[2][2]+"|\n";
 	}
-	
+
 	/*
 	 * Return if grid is full or not
 	 * @return true if grid is full
@@ -146,7 +149,7 @@ public class TicTacToe {
 		}
 		return true;
 	}
-	
+
 	/*
 	 * Reset game grid (if have equality in precedent game)
 	 */
@@ -157,5 +160,5 @@ public class TicTacToe {
 			}
 		}
 	}
-	
+
 }
