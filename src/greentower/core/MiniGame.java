@@ -1,11 +1,11 @@
 package greentower.core;
 /**
  * This class represents Mini Game' basement
- * 
+ *
  * @author Axelle
  *
  */
-public abstract class MiniGame{
+public abstract class MiniGame extends Stage{
 
 	/**
 	 * Game's identifier
@@ -13,37 +13,26 @@ public abstract class MiniGame{
 	private int id ;
 
 	/**
-	 * Game's name
-	 */
-	private String name ;
-	
-	/**
 	 * Mini Game's contructor
 	 * @param number
-	 * @param name
 	 */
-	public MiniGame(int number, String name){
+	public MiniGame(int number){
 		this.id = number;
-		this.name = name;
 	}
-	
+
 	/**
 	 * Allows to play game
 	 */
-	protected boolean play(){
-		return false;
-		
+	public Stage playStage(){
+
 	}
 
 	/**
 	 * Allows to display who won the game
-	 */	
+	 */
 	protected void displayWinner(){
-		if(this.play())
-			System.out.println("Le joueur a gagné");
-		else
-			System.out.println("L'ordinateur a gagné");
+
 	}
-	
-	
+
+
 }
