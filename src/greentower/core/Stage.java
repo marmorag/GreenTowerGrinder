@@ -1,4 +1,4 @@
-package greentower;
+package greentower.core;
 
 /**
  * This interface enables to launch a stage (MiniGame or Choice, whatever)

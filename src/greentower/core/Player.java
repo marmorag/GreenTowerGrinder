@@ -1,4 +1,4 @@
-package greentower;
+package greentower.core;
 
 /**
  * Player of the game The Green Tower Grinder

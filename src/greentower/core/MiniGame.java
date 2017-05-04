@@ -1,4 +1,4 @@
-package greentower;
+package greentower.core;
 /**
  * This class represents Mini Game' basement
  * 
