@@ -18,12 +18,12 @@ public class Game
 	/**
 	 * Default constructor
 	 */
-	public Game(String playerName)
+	public Game(Player player)
 	{
 		this.tower = new Tower();
 		this.numberOfRounds = 0;
-		this.player = new Player(playerName);
-		this.currentStage = new TicTacToe(); // First Stage
+		this.player = player;
+		this.currentStage = new TicTacToe(1); // First Stage
 	}
 
 	/**
@@ -34,6 +34,7 @@ public class Game
 		while(currentStage.getFinalStage() == false)
 		{
 			currentStage.playStage();
+			numberOfRounds++;
 		}
 		//Finish game
 	}
@@ -46,11 +47,4 @@ public class Game
 		System.exit(0);
 	}
 
-	/**
-	 * Enables to change the current stage
-	 */
-	public void changeStage()
-	{
-		//TODO
-	}
 }

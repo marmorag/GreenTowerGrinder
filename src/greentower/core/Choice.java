@@ -2,13 +2,14 @@ package greentower.core;
 
 import greentower.core.Dialog;
 import greentower.core.Stage;
+import greentower.tictactoe.TicTacToe;
 
 /**
  * This class represents a choice
  * @author Florent
  *
  */
-public class Choice implements Stage
+public class Choice extends Stage
 {
 
 	/**
@@ -19,7 +20,7 @@ public class Choice implements Stage
 	/**
 	 * Answers to the dialog
 	 */
-	private final String[] answers; // Ca sera un dictionnaire à la fin
+	private final String[] answers; // Ça sera un dictionnaire à la fin
 
 	/**
 	 * Index of the answer of the player
@@ -57,7 +58,7 @@ public class Choice implements Stage
 
 	/**
 	 * Get the next stage depending on the answer
-	 * @return
+	 * @return the next stage
 	 */
 	public Stage getNextStage()
 	{
@@ -65,8 +66,9 @@ public class Choice implements Stage
 	}
 
 	@Override
-	public void playStage()
+	public Stage playStage()
 	{
+		return new TicTacToe(1);
 
 	}
 
