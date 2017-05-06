@@ -1,5 +1,6 @@
 package greentower.suite;
 
+import greentower.core.*;
 import java.util.Random;
 import java.util.Scanner;
 /**
@@ -7,7 +8,7 @@ import java.util.Scanner;
  * @author Rémi
  *
  */
-public class Suite {
+public class Suite extends MiniGame{
 
 	/**
 	 * Numbers
@@ -22,7 +23,9 @@ public class Suite {
 	 * Initialize random first number and operations
 	 * Then deduce others numbers
 	 */
-	public Suite(){
+	public Suite(int id){
+		super(id);
+		
 		Random r = new Random();
 		op1 = r.nextInt(11);
 		op2 = r.nextInt(11);
@@ -37,12 +40,22 @@ public class Suite {
 	 * Display 4 first number and let player enter his result
 	 * @return {boolean} if the player win or not
 	 */
-	public boolean play(){
+	public Stage playStage(){
 		System.out.println(this.toString());
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		int result = Integer.parseInt(sc.nextLine());
-		return result == nb5;
+		
+		if(result == nb5)
+		{
+			System.out.println("Bravo");
+			return this.nextStage[0];
+		}
+		else
+		{
+			System.out.println("Dommage");
+			return this.nextStage[1];
+		}
 	}
 
 	@Override

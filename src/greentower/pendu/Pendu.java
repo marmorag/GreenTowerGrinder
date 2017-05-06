@@ -2,17 +2,19 @@ package greentower.pendu;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 
+import greentower.core.MiniGame;
+import greentower.core.Stage;
+
 /**
  * @author Guillaume
  *
  */
-public class Pendu {
+public class Pendu extends MiniGame{
 
 	/**
 	 * Allow us to generate random number
@@ -55,8 +57,9 @@ public class Pendu {
 	 *	motATrouver takes value of word at line nbAleatoire in listeMot.txt
 	 *	Initialize motAAfficher with "_" and nbLettre in function
 	 */
-	public Pendu()
+	public Pendu(int id)
 	{
+		super(id);
 		nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
 		this.nbErreur = 0;
@@ -212,7 +215,7 @@ public class Pendu {
 	/**
 	 * Main procedure which launch miniGame
 	 */
-	public void lancerPendu()
+	public Stage playStage()
 	{
 		Scanner scan = new Scanner(System.in);
 		char lettreEntree;
@@ -236,37 +239,15 @@ public class Pendu {
 		if(this.finDuPendu())
 		{
 			System.out.println("Felicitations vous avez réussi en : "+ this.nbCoups +"coups\n");
+			return this.nextStages[0];
 		}
 		else
 		{
 			System.out.println("Dommage vous avez perdu");
+			return this.nextStages[1];
 		}
 
 		scan.close();
 	}
 
-	/**
-	 * Erase console display
-	 */
-	private void effacerEcran()
-	{
-	    if(System.getProperty("os.name" ).startsWith("Windows" ))
-			try
-	    	{
-				Runtime.getRuntime().exec("cls" );
-			}
-	    	catch (IOException ERREUR_CLEAR_WINDOWS)
-			{
-				ERREUR_CLEAR_WINDOWS.printStackTrace();
-			}
-		else
-			try
-	    	{
-				Runtime.getRuntime().exec("clear" );
-			}
-	    	catch (IOException ERREUR_CLEAR_OTHER)
-	    	{
-				ERREUR_CLEAR_OTHER.printStackTrace();
-			}
-	}
 }
