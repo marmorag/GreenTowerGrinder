@@ -55,7 +55,7 @@ public class Pendu extends MiniGame{
 	 */
 	public Pendu(int id, Output display, Input input)
 	{
-		//super(id);
+		super(id);
 		
 		Random r = new Random();
 		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
@@ -67,7 +67,7 @@ public class Pendu extends MiniGame{
 		this.inputTool = input;
 
 		try{
-			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/listeMot.txt")));
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/pendu/listeMot.txt")));
 			String ligne;
 
 			while ((ligne=br.readLine())!=null && i < nbAleatoire){
@@ -154,7 +154,7 @@ public class Pendu extends MiniGame{
 		while(!this.finDuPendu() && nbCoups <= motATrouver.length()+5)
 		{
 			this.displayTool.afficherPendu(this.nbErreur,this.motAAfficher);
-			System.out.println(motATrouver);
+			//System.out.println(motATrouver);
 			
 			this.displayTool.demanderCaractere();
 			lettreEntree = this.inputTool.saisirCaractere();
