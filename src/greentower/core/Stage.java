@@ -19,6 +19,11 @@ public abstract class Stage
 	public abstract Stage playStage();
 
 	/**
+	 * Contains the next game wich are possible to play
+	 */
+	public Stage[] nextStage;
+
+	/**
 	 * Indicates if the stage is the last one or not
 	 * @return 	true if the stage is the last one
 	 * 			false if it is not the last one
