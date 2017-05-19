@@ -26,7 +26,7 @@ public class Pendu extends MiniGame{
 	private int nbCoups;
 
 	/**
-	 * Random word choosen
+	 * Random word chosen
 	 */
 	private String motATrouver;
 
@@ -40,7 +40,7 @@ public class Pendu extends MiniGame{
 	 * Interfaces use to ease display
 	 */
 	private Output displayTool;
-	
+
 	/**
 	 * Interfaces use to ease input
 	 */
@@ -49,22 +49,25 @@ public class Pendu extends MiniGame{
 	/**
 	 *	motATrouver takes value of word at line nbAleatoire in listeMot.txt
 	 *	Initialize motAAfficher with "_"
-	 * @param id 
-	 * @param display 
-	 * @param input 
+	 * @param id
+	 * @param display
+	 * @param input
 	 */
 	public Pendu(int id, Output display, Input input)
 	{
 		super(id);
-		
+
 		Random r = new Random();
 		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
-		
+
 		this.nbErreur = 0;
 		this.nbCoups = 0;
 		this.displayTool = display;
 		this.inputTool = input;
+		// Put the next two stage
+		//this.nextStage[0]= ;
+		//this.nextStage[1]= ;
 
 		try{
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/pendu/listeMot.txt")));
@@ -94,7 +97,7 @@ public class Pendu extends MiniGame{
 	private boolean verifierLettre(char lettreEntree)
 	{
 		CharSequence lettre = ""+lettreEntree;
-	
+
 		if(this.motATrouver.contains(lettre))
 		{
 			this.majMotAAfficher(lettreEntree);
@@ -109,7 +112,7 @@ public class Pendu extends MiniGame{
 
 	/**
 	 * Update display word (motAAfficher) in function of letters found
-	 * @param lettreEntree 
+	 * @param lettreEntree
 	 */
 	private void majMotAAfficher(char lettreEntree)
 	{
@@ -133,7 +136,7 @@ public class Pendu extends MiniGame{
 		}
 	}
 
-	
+
 	/**
 	 * @return true if all "_" have been replaced (all letters are found) in motAAfficher
 	 * false if not
@@ -150,12 +153,12 @@ public class Pendu extends MiniGame{
 	public Stage playStage()
 	{
 		char lettreEntree;
-		
+
 		while(!this.finDuPendu() && nbCoups <= motATrouver.length()+5)
 		{
 			this.displayTool.afficherPendu(this.nbErreur,this.motAAfficher);
 			//System.out.println(motATrouver);
-			
+
 			this.displayTool.demanderCaractere();
 			lettreEntree = this.inputTool.saisirCaractere();
 
