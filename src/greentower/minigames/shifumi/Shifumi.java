@@ -5,7 +5,7 @@ import java.util.Scanner;
 import greentower.core.MiniGame;
 import greentower.core.Stage;
 
-/*
+/**
  *
  * @authors Gavin Rémi & Barama Rayan
  */
@@ -16,7 +16,7 @@ public class Shifumi extends MiniGame{
 		super(id);
 	}
 
-	/*
+	/**
 	 * Return if player win or not
 	 * @param {String} Player's sign
 	 * @return true if player win and false if not

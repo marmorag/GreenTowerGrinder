@@ -15,6 +15,9 @@ import greentower.core.Stage;
 public class Choice extends Stage
 {
 
+	/**
+	 *
+	 */
 	private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 	/**
