@@ -23,17 +23,16 @@ public class Suite extends MiniGame{
 	 * Initialize random first number and operations
 	 * Then deduce others numbers
 	 */
-	public Suite(int id){
-		super(id);
-
+	public Suite()
+	{
 		Random r = new Random();
-		op1 = r.nextInt(11);
-		op2 = r.nextInt(11);
-		nb1 = r.nextInt(11);
-		nb2 = nb1*op1+op2;
-		nb3 = nb2*op1+op2;
-		nb4 = nb3*op1+op2;
-		nb5 = nb4*op1+op2;
+		this.op1 = r.nextInt(11);
+		this.op2 = r.nextInt(11);
+		this.nb1 = r.nextInt(11);
+		this.nb2 = this.nb1 * this.op1 + this.op2;
+		this.nb3 = this.nb2 * this.op1 + this.op2;
+		this.nb4 = this.nb3 * this.op1 + this.op2;
+		this.nb5 = this.nb4 * this.op1 + this.op2;
 	}
 
 	/**
@@ -60,7 +59,7 @@ public class Suite extends MiniGame{
 
 	@Override
 	public String toString() {
-		return "Suite [" + nb1 + " " + nb2 + " " + nb3 + " " + nb4 + " ?]";
+		return "Suite [" + this.nb1 + " " + this.nb2 + " " + this.nb3 + " " + this.nb4 + " ?]";
 	}
 
 

@@ -8,19 +8,13 @@ import greentower.minigames.tictactoe.TicTacToe;
  * @author Axelle
  *
  */
-public abstract class MiniGame extends Stage{
-
-	/**
-	 * Game's identifier
-	 */
-	private int id ;
-
+public abstract class MiniGame extends Stage
+{
 	/**
 	 * Mini Game's contructor
-	 * @param number
 	 */
-	public MiniGame(int number){
-		this.id = number;
+	protected MiniGame()
+	{
 	}
 
 	/**
@@ -29,13 +23,4 @@ public abstract class MiniGame extends Stage{
 	public Stage playStage(){
 		return new TicTacToe(1); //For example
 	}
-
-	/**
-	 * Allows to display who won the game
-	 */
-	protected void displayWinner(){
-
-	}
-
-
 }
