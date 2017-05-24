@@ -8,7 +8,7 @@ public enum Sign {
 	PAPER,
 	SCISSORS;
 	
-	/*
+	/**
 	 * Return random sign among enum
 	 * @return {Sign} random sign among enum
 	 */
