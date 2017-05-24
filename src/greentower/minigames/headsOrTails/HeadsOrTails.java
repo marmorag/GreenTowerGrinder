@@ -1,11 +1,10 @@
-package greentower.headsOrTails;
+package greentower.minigames.headsOrTails;
 
 import java.util.Random;
 import java.util.Scanner;
 
 import greentower.core.MiniGame;
 import greentower.core.Stage;
-import greentower.lessormore.Lessormore;
 
 public class HeadsOrTails extends MiniGame {
 
@@ -29,6 +28,6 @@ public class HeadsOrTails extends MiniGame {
 			return this.nextStages[0];
 		}
 		System.out.println("Dommage");
-		return this.nextStage[1];
+		return this.nextStages[1];
 	}
 }

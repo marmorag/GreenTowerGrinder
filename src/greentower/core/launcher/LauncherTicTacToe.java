@@ -1,6 +1,6 @@
-package greentower.core;
+package greentower.core.launcher;
 
-import greentower.core.Game;
+import greentower.minigames.lessormore.*;
 
 /**
  * Main class of the game.
@@ -8,7 +8,7 @@ import greentower.core.Game;
  * @author Florent
  *
  */
-public class Main
+public class LauncherTicTacToe
 {
 
 	/**
@@ -17,8 +17,7 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
-		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");
-		new Game(new Player("Coucou")).play();
+		new LessOrMore(1).playStage();
 	}
 
 }

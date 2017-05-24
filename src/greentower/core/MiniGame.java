@@ -1,6 +1,6 @@
 package greentower.core;
 
-import greentower.tictactoe.TicTacToe;
+import greentower.minigames.tictactoe.TicTacToe;
 
 /**
  * This class represents Mini Game' basement

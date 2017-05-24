@@ -1,14 +1,15 @@
-package greentower.lessormore;
+package greentower.minigames.lessormore;
 
 import java.util.Scanner;
 
 import greentower.core.MiniGame;
+import greentower.core.Stage;
 
 /**
- * This class represent a Lessormore game
+ * This class represent a Less Or More game
  * @author Rayan Barama
  */
-public class Lessormore extends MiniGame{
+public class LessOrMore extends MiniGame{
 	/**
 	 * the first card which is randomly picked
 	 */
@@ -18,7 +19,7 @@ public class Lessormore extends MiniGame{
 	 */
 	public static int randomcard;
 
-	public Lessormore(int id)
+	public LessOrMore(int id)
 	{
 		super(id);
 		this.base = (int)(Math.random() * (10-1)) + 1;
@@ -26,7 +27,7 @@ public class Lessormore extends MiniGame{
 
 	}
 
-	/*
+	/**
 	 * return if player win or not
 	 * @param {String} User decision
 	 * @return {boolean} true if the game is won and false if not
@@ -34,7 +35,7 @@ public class Lessormore extends MiniGame{
 	public Stage playStage(){
 		boolean result;
 
-		System.out.println(Lessormore.base);
+		System.out.println(LessOrMore.base);
 		Scanner sc = new Scanner(System.in);
 		String userChoice = sc.nextLine();
 		userChoice = userChoice.toUpperCase();

@@ -1,4 +1,4 @@
-package greentower.pendu;
+package greentower.minigames.pendu;
 /**
  * 
  * @author Guillaume
@@ -81,13 +81,13 @@ public class OuputConsole implements Output {
 	@Override
 	public void notifyWin(int nbCoups, String motATrouver) {
 		System.out.println("Felicitations vous avez rÃ©ussi en : "+ nbCoups +"coups\n");
-		System.out.println("Le mot était :"+motATrouver+"\n");
+		System.out.println("Le mot ï¿½tait :"+motATrouver+"\n");
 	}
 	
 	@Override
 	public void notifyLoose(String motATrouver) {
 		System.out.println("Dommage vous avez perdu");
-		System.out.println("Le mot était :"+motATrouver+"\n");
+		System.out.println("Le mot ï¿½tait :"+motATrouver+"\n");
 	}
 	
 }

@@ -1,4 +1,4 @@
-package greentower.pendu;
+package greentower.minigames.pendu;
 
 public class InputGraphic implements Input {
 

@@ -1,30 +1,30 @@
-package greentower.tictactoe;
+package greentower.minigames.tictactoe;
 
 import java.util.Random;
 import java.util.Scanner;
 
 import greentower.core.MiniGame;
-/*
+/**
  * MiniGame TicTacToe
  * @author Gavin Rémi
  */
 public class TicTacToe extends MiniGame{
-	/*
+	/**
 	 *  Constant for winner
 	 */
 	private final static int PLAYER = 1;
 	private final static int GAME = 0;
 
-	/*
+	/**
 	 * Grid of TicTacToe, contains cross and round
 	 */
 	private int[][] grid = new int [3][3];
-	/*
+	/**
 	 * Winner of the game
 	 */
 	private int winner;
 
-	/*
+	/**
 	 * Fill the grid with 0
 	 */
 	public TicTacToe(int number){
@@ -36,7 +36,7 @@ public class TicTacToe extends MiniGame{
 		}
 	}
 
-	/*
+	/**
 	 * Player turn : he types the 2 indexes one by one
 	 * @return true if he win and false if not
 	 */
@@ -77,7 +77,7 @@ public class TicTacToe extends MiniGame{
 		return false;
 	}
 
-	/*
+	/**
 	 * Bot turn, random numbers are generate to place a sign
 	 * @return true if he win and false if not
 	 */
@@ -116,7 +116,7 @@ public class TicTacToe extends MiniGame{
 		return false;
 	}
 
-	/*
+	/**
 	 * Return game winner
 	 * @return winner of the game;
 	 */
@@ -125,7 +125,7 @@ public class TicTacToe extends MiniGame{
 	}
 
 	@Override
-	/*
+	/**
 	 * Return Game grid fill in with players signs
 	 * @return Game grid
 	 */
@@ -135,7 +135,7 @@ public class TicTacToe extends MiniGame{
 				this.grid[2][0]+"|"+this.grid[2][1]+"|"+this.grid[2][2]+"|\n";
 	}
 
-	/*
+	/**
 	 * Return if grid is full or not
 	 * @return true if grid is full
 	 */
@@ -150,7 +150,7 @@ public class TicTacToe extends MiniGame{
 		return true;
 	}
 
-	/*
+	/**
 	 * Reset game grid (if have equality in precedent game)
 	 */
 	public void resetGrid(){

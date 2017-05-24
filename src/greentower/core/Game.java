@@ -1,6 +1,6 @@
 package greentower.core;
 
-import greentower.tictactoe.TicTacToe;
+import greentower.minigames.tictactoe.TicTacToe;
 
 /**
  * This class represents a game of The Green Tower Grinder

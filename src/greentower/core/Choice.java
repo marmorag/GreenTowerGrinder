@@ -2,7 +2,7 @@ package greentower.core;
 
 import greentower.core.Dialog;
 import greentower.core.Stage;
-import greentower.tictactoe.TicTacToe;
+import greentower.minigames.tictactoe.TicTacToe;
 
 /**
  * This class represents a choice

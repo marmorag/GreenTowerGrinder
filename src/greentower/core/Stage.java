@@ -21,7 +21,7 @@ public abstract class Stage
 	/**
 	 * Contains the next game wich are possible to play
 	 */
-	public Stage[] nextStage;
+	public Stage[] nextStages;
 
 	/**
 	 * Indicates if the stage is the last one or not

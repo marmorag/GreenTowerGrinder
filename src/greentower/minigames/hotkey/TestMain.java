@@ -1,4 +1,4 @@
-package greentower.hotkey;
+package greentower.minigames.hotkey;
 
 public class TestMain {
 

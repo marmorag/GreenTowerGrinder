@@ -1,4 +1,4 @@
-package greentower.gamblingmachine;
+package greentower.minigames.gamblingmachine;
 import greentower.core.MiniGame;
 import greentower.core.Stage;
 

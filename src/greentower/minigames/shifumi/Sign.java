@@ -1,4 +1,4 @@
-package greentower.shifumi;
+package greentower.minigames.shifumi;
 
 /*
  * All shifumi sign
