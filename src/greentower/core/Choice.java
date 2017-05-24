@@ -1,8 +1,11 @@
 package greentower.core;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import greentower.core.Dialog;
 import greentower.core.Stage;
-import greentower.minigames.tictactoe.TicTacToe;
 
 /**
  * This class represents a choice
@@ -11,6 +14,8 @@ import greentower.minigames.tictactoe.TicTacToe;
  */
 public class Choice extends Stage
 {
+
+	private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 	/**
 	 * Dialog before the choice
@@ -27,32 +32,28 @@ public class Choice extends Stage
 	 */
 	private int indexPlayerAnswer;
 
-	/**
-	 * Stage to go according to the answer
-	 */
-	private final Stage[] answerToStage;
 
 	/**
 	 * Choice's constructor with given dialog, choices and next stages
 	 * @param initialDialog
 	 * 			Dialog of the choice
 	 * @param initialAnswers
-	 * @param initialAnswerToStage
+	 * @param initialNextStages
 	 */
-	public Choice(Dialog initialDialog, String[] initialAnswers, Stage[] initialAnswerToStage)
+	public Choice(Dialog initialDialog, String[] initialAnswers, Stage[] initialNextStages)
 	{
 		this.dialog = initialDialog;
 		this.answers = initialAnswers;
-		this.answerToStage = initialAnswerToStage;
+		this.nextStages = initialNextStages;
 		this.indexPlayerAnswer = -1;
 	}
 
 	@Override
 	public String toString()
 	{
-		String result = "Choice [Dialog = " + this.dialog.toString() + ", Answers = ";
-		for(int index = 0; index < 4; index++)
-			result += this.answers[index] + "\n";
+		String result = "Choice [\n" + this.dialog.toString() + ", Answers = ";
+		for(int index = 0; index < this.answers.length; index++)
+			result += this.answers[index] + ',';
 		return result += "]";
 	}
 
@@ -60,16 +61,24 @@ public class Choice extends Stage
 	 * Get the next stage depending on the answer
 	 * @return the next stage
 	 */
-	public Stage getNextStage()
+	public Stage getNextStages()
 	{
-		return this.answerToStage[this.indexPlayerAnswer];
+		return this.nextStages[this.indexPlayerAnswer];
 	}
 
 	@Override
 	public Stage playStage()
 	{
-		return new TicTacToe(1);
-
+		try
+		{
+			this.setIndexPlayerAnswer(Integer.parseInt(this.br.readLine()));
+		}
+		catch (NumberFormatException | IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return this.nextStages[this.getIndexPlayerAnswer() - 1].playStage();
 	}
 
 	/**
