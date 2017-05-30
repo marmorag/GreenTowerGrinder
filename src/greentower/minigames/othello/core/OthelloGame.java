@@ -1,5 +1,6 @@
 package greentower.minigames.othello.core;
 
+import greentower.core.MiniGame;
 import greentower.minigames.othello.ihm.IHMOthello;
 import greentower.minigames.othello.player.Player;
 
@@ -9,7 +10,7 @@ import greentower.minigames.othello.player.Player;
  * @author florent.viogne
  *
  */
-public class OthelloGame
+public class OthelloGame extends MiniGame
 {
 	/**
 	 * Players (black player is at 0)
@@ -87,7 +88,7 @@ public class OthelloGame
 	 *                 	process pawn drop
 	 * }
 	 */
-	public void play()
+	public int playStage()
 	{
 		this.IHM.displayStartOfGame();
 
@@ -145,10 +146,17 @@ public class OthelloGame
 		if(this.board.numberOfPawns(Color.WHITE) == this.board.numberOfPawns(Color.BLACK))
 			this.IHM.displayTheWinner(Color.EMPTY);
 		if(this.board.numberOfPawns(Color.WHITE) > this.board.numberOfPawns(Color.BLACK))
+		{
 			this.IHM.displayTheWinner(Color.WHITE);
+			this.IHM.displayEndOfGame();
+			return 0;
+		}
+		
 		else
+		{
 			this.IHM.displayTheWinner(Color.BLACK);
-
-		this.IHM.displayEndOfGame();
+			this.IHM.displayEndOfGame();
+			return 1;
+		}
 	}
 }
