@@ -12,6 +12,6 @@ public interface Output {
 	 * Show question or explanation
 	 * @param dialog
 	 */
-	void showText(Dialog dialog);
+	public void showText(Dialog dialog);
 
 }

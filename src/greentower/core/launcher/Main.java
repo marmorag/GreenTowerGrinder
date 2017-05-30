@@ -1,9 +1,11 @@
 package greentower.core.launcher;
 
-import greentower.IO.OutputConsole;
-import greentower.core.Game;
-import greentower.core.Player;
-import greentower.core.Tower;
+import greentower.IO.Input;
+import greentower.IO.Output;
+import greentower.core.Dialog;
+import greentower.minigames.pendu.InputConsole;
+import greentower.minigames.pendu.OutputConsolePendu;
+import greentower.minigames.pendu.Pendu;
 
 /**
  * Main class of the game.
@@ -20,9 +22,13 @@ public class Main
 	public static void main(String[] args)
 	{
 		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");
-		Tower tower = new Tower(ListOfStages.stages, ListOfStages.nextStages);
+		//Tower tower = new Tower(ListOfStages.stages, ListOfStages.nextStages);
 
-		new Game(new Player("Coucou"), new OutputConsole()).play();
+		//new Game(new Player("Coucou"), new OutputConsole()).play();
+		Pendu pendu = new Pendu(new OutputConsolePendu(), new InputConsole(), Dialog.DIALOG_STAGE1);
+		System.out.println("ici");
+		System.out.println(pendu.playStage());
+		System.out.println("la");
 
 	}
 }
