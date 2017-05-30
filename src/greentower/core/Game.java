@@ -1,6 +1,6 @@
 package greentower.core;
 
-import greentower.display.Display;
+import greentower.display.Output;
 import greentower.minigames.tictactoe.TicTacToe;
 
 /**
@@ -30,18 +30,18 @@ public class Game
 	/**
 	 *
 	 */
-	private Display display;
+	private Output display;
 
 	/**
 	 * Default constructor
 	 * @param player who lauched the game
 	 * @param display
 	 */
-	public Game(Player player, Display display)
+	public Game(Player player, Output display)
 	{
 		this.numberOfRounds = 0;
 		this.player = player;
-		this.currentStage = new TicTacToe(); // First Stage
+		this.currentStage = new TicTacToe(Dialog.DIALOG_STAGE1); // First Stage
 		this.display = display;
 	}
 
@@ -55,7 +55,7 @@ public class Game
 			this.currentStage.playStage(this.display);
 			this.numberOfRounds++;
 		}
-		//this.currentStage = this.currentStage.nextStages[this.currentStage.playStage()]
+		//this.currentStage = this.currentStage.nextStages[this.currentStage.playStage(this.display)]
 		//Finish game
 	}
 

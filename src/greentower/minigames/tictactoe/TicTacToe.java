@@ -3,8 +3,9 @@ package greentower.minigames.tictactoe;
 import java.util.Random;
 import java.util.Scanner;
 
+import greentower.core.Dialog;
 import greentower.core.MiniGame;
-import greentower.display.Display;
+import greentower.display.Output;
 /**
  * MiniGame TicTacToe
  * @author Gavin Rémi
@@ -30,9 +31,11 @@ public class TicTacToe extends MiniGame{
 
 	/**
 	 * Fill the grid with 0
+	 * @param dialog
 	 */
-	public TicTacToe()
+	public TicTacToe(Dialog dialog)
 	{
+		super(dialog);
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
 				this.grid[i][j] = 0;
@@ -164,7 +167,7 @@ public class TicTacToe extends MiniGame{
 	}
 
 	@Override
-	public int playStage(Display display) {
+	public int playStage(Output display) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

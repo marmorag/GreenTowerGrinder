@@ -10,9 +10,11 @@ public abstract class MiniGame extends Stage
 {
 	/**
 	 * Mini Game's contructor
+	 * @param dialog
 	 */
-	protected MiniGame()
+	protected MiniGame(Dialog dialog)
 	{
+		this.dialog = dialog;
 	}
 
 	/**

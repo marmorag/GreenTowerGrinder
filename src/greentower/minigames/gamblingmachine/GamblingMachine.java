@@ -1,7 +1,8 @@
 package greentower.minigames.gamblingmachine;
 
+import greentower.core.Dialog;
 import greentower.core.MiniGame;
-import greentower.display.Display;
+import greentower.display.Output;
 
 /**
  * @author Florent & Rémi
@@ -9,10 +10,12 @@ import greentower.display.Display;
 public class GamblingMachine extends MiniGame{
 
 	/**
+	 * @param dialog
 	 *
 	 */
-	public GamblingMachine()
+	public GamblingMachine(Dialog dialog)
 	{
+		super(dialog);
 	}
 
 	/**
@@ -20,7 +23,10 @@ public class GamblingMachine extends MiniGame{
 	 * The player win if all 3 numbers and equals
 	 * @return true if player wins false if not
 	 */
-	public int playStage(Display display){
+	public int playStage(Output display){
+
+		display.showText(this.dialog);
+
 		boolean result;
 		int[] grid = new int[3];
 		grid[0] = (int)(Math.random() * (3-0)) + 0;

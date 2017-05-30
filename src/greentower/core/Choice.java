@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 import greentower.core.Dialog;
 import greentower.core.Stage;
-import greentower.display.Display;
+import greentower.display.Output;
 
 /**
  * This class represents a choice
@@ -68,7 +68,7 @@ public class Choice extends Stage
 	}
 
 	@Override
-	public int playStage(Display display)
+	public int playStage(Output display)
 	{
 		try
 		{

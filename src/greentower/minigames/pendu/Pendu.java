@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 import greentower.core.MiniGame;
-import greentower.display.Display;
+import greentower.display.Output;
 
 /**
  * @author Guillaume
@@ -39,7 +39,7 @@ public class Pendu extends MiniGame{
 	/**
 	 * Interfaces use to ease display
 	 */
-	private Output displayTool;
+	private Out displayTool;
 
 	/**
 	 * Interfaces use to ease input
@@ -52,7 +52,7 @@ public class Pendu extends MiniGame{
 	 * @param display
 	 * @param input
 	 */
-	public Pendu(Output display, Input input)
+	public Pendu(Out display, Input input)
 	{
 		Random r = new Random();
 		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
@@ -147,7 +147,7 @@ public class Pendu extends MiniGame{
 	 * Main procedure which launch miniGame
 	 * @return Stage return one of the two stage contained
 	 */
-	public int playStage(Display display)
+	public int playStage(Output display)
 	{
 		char lettreEntree;
 

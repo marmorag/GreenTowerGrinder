@@ -4,7 +4,7 @@ package greentower.minigames.pendu;
  * @author Guillaume
  *
  */
-public interface Output {
+public interface Out {
 	/**
 	 * Display the game's current state in ASCII art
 	 * @param nbErr the current number f error to display

@@ -4,7 +4,7 @@ package greentower.minigames.pendu;
  * @author Guillaume
  *
  */
-public class OuputConsole implements Output {
+public class OutConsole implements Out {
 
 	/**
 	 * Display hanged in ASCII art according to current number of errors

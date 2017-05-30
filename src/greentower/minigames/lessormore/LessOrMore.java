@@ -2,8 +2,9 @@ package greentower.minigames.lessormore;
 
 import java.util.Scanner;
 
+import greentower.core.Dialog;
 import greentower.core.MiniGame;
-import greentower.display.Display;
+import greentower.display.Output;
 
 /**
  * This class represent a Less Or More game
@@ -26,10 +27,12 @@ public class LessOrMore extends MiniGame
 	private Scanner sc;
 
 	/**
+	 * @param dialog
 	 *
 	 */
-	public LessOrMore()
+	public LessOrMore(Dialog dialog)
 	{
+		super(dialog);
 		this.base = (int)(Math.random() * (10-1)) + 1;
 		this.randomcard = (int)(Math.random() * (10-1)) + 1;
 	}
@@ -39,7 +42,7 @@ public class LessOrMore extends MiniGame
 	 *
 	 * @return {boolean} true if the game is won and false if not
 	 */
-	public int playStage(Display display){
+	public int playStage(Output display){
 		boolean result;
 
 		System.out.println(this.base);

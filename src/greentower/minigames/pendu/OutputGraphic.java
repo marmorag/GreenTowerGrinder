@@ -4,7 +4,7 @@ package greentower.minigames.pendu;
  * @author
  *
  */
-public class OutputGraphic implements Output {
+public class OutputGraphic implements Out {
 
 	/**
 	 *
