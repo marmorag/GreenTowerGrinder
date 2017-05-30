@@ -1,5 +1,7 @@
 package greentower.core;
 
+import greentower.display.Display;
+
 /**
  * This interface enables to launch a stage (MiniGame or Choice, whatever)
  *
@@ -15,10 +17,11 @@ public abstract class Stage
 
 	/**
 	 * Play the current stage (MiniGame or Choice, whatever)
+	 * @param display
 	 * @return
 	 * 			Stage result
 	 */
-	public abstract int playStage();
+	public abstract int playStage(Display display);
 
 	/**
 	 * Contains the next game which are possible to play

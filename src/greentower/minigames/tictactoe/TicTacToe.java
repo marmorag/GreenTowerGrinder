@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import greentower.core.MiniGame;
+import greentower.display.Display;
 /**
  * MiniGame TicTacToe
  * @author Gavin Rémi
@@ -160,6 +161,12 @@ public class TicTacToe extends MiniGame{
 				this.grid[i][j] = 0;
 			}
 		}
+	}
+
+	@Override
+	public int playStage(Display display) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

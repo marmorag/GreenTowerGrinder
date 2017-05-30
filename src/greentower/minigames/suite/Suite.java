@@ -1,6 +1,8 @@
 package greentower.minigames.suite;
 
 import greentower.core.*;
+import greentower.display.Display;
+
 import java.util.Random;
 import java.util.Scanner;
 /**
@@ -41,7 +43,7 @@ public class Suite extends MiniGame{
 	 * Display 4 first number and let player enter his result
 	 * @return {boolean} if the player win or not
 	 */
-	public int playStage(){
+	public int playStage(Display display){
 		System.out.println(this.toString());
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);

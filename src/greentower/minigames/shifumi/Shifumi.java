@@ -3,6 +3,7 @@ package greentower.minigames.shifumi;
 import java.util.Scanner;
 
 import greentower.core.MiniGame;
+import greentower.display.Display;
 
 /**
  *
@@ -27,7 +28,7 @@ public class Shifumi extends MiniGame{
 	 * Return if player win or not
 	 * @return true if player win and false if not
 	 */
-	public int playStage(){
+	public int playStage(Display display){
 
 		this.sc = new Scanner(System.in);
 		String sign = this.sc.nextLine();

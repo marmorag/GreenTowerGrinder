@@ -3,6 +3,7 @@ package greentower.minigames.lessormore;
 import java.util.Scanner;
 
 import greentower.core.MiniGame;
+import greentower.display.Display;
 
 /**
  * This class represent a Less Or More game
@@ -38,7 +39,7 @@ public class LessOrMore extends MiniGame
 	 *
 	 * @return {boolean} true if the game is won and false if not
 	 */
-	public int playStage(){
+	public int playStage(Display display){
 		boolean result;
 
 		System.out.println(this.base);

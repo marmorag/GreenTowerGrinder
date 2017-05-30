@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 import greentower.core.MiniGame;
+import greentower.display.Display;
 
 /**
  * @author Guillaume
@@ -146,7 +147,7 @@ public class Pendu extends MiniGame{
 	 * Main procedure which launch miniGame
 	 * @return Stage return one of the two stage contained
 	 */
-	public int playStage()
+	public int playStage(Display display)
 	{
 		char lettreEntree;
 
