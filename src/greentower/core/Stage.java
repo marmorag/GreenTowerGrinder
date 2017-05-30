@@ -15,20 +15,22 @@ public abstract class Stage
 
 	/**
 	 * Play the current stage (MiniGame or Choice, whatever)
+	 * @return
 	 */
-	public abstract Stage playStage();
+	public abstract int playStage();
 
 	/**
-	 * Contains the next game wich are possible to play
+	 * Contains the next game which are possible to play
 	 */
-	public Stage[] nextStages;
+	public int[] nextStagesIndex;
 
 	/**
 	 * Indicates if the stage is the last one or not
 	 * @return 	true if the stage is the last one
 	 * 			false if it is not the last one
 	 */
-	public boolean getFinalStage(){
+	public boolean getFinalStage()
+	{
 		return this.stageIsFinal;
 	}
 }

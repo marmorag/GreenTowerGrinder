@@ -1,7 +1,5 @@
 package greentower.core;
 
-import greentower.minigames.tictactoe.TicTacToe;
-
 /**
  * This class represents Mini Game' basement
  *
@@ -20,7 +18,8 @@ public abstract class MiniGame extends Stage
 	/**
 	 * Allows to play game
 	 */
-	public Stage playStage(){
-		return new TicTacToe(); //For example
+	public int playStage(){
+		return 0; //For example
+
 	}
 }
