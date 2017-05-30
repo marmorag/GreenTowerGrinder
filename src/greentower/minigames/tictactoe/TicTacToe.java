@@ -8,7 +8,7 @@ import greentower.core.MiniGame;
 import greentower.display.Output;
 /**
  * MiniGame TicTacToe
- * @author Gavin Rémi
+ * @author
  */
 public class TicTacToe extends MiniGame{
 	/**
