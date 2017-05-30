@@ -3,9 +3,9 @@ package greentower.minigames.tictactoe;
 import java.util.Random;
 import java.util.Scanner;
 
+import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.MiniGame;
-import greentower.display.Output;
 /**
  * MiniGame TicTacToe
  * @author

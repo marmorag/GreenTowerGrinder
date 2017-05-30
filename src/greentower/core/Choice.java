@@ -4,9 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.Stage;
-import greentower.display.Output;
 
 /**
  * This class represents a choice

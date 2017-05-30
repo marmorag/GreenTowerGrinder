@@ -1,6 +1,7 @@
 package greentower.core;
 
-import greentower.display.Output;
+import greentower.IO.Input;
+import greentower.IO.Output;
 
 /**
  * This interface enables to launch a stage (MiniGame or Choice, whatever)
@@ -20,6 +21,16 @@ public abstract class Stage
 	 */
 	protected Dialog dialog;
 
+	/**
+	 * Interface used to input anything needed
+	 */
+	public Input inputTool;
+	
+	/**
+	 * Interface used to display anything needed
+	 */
+	public Output outputTool;
+	
 	/**
 	 * Play the current stage (MiniGame or Choice, whatever)
 	 * @param display

@@ -1,5 +1,7 @@
 package greentower.minigames.pendu;
 
+import greentower.IO.Input;
+
 /**
  * @author
  *
@@ -13,8 +15,7 @@ public class InputGraphic implements Input {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public char saisirCaractere() {
+	public char inputChar() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

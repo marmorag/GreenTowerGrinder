@@ -3,6 +3,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import greentower.IO.Input;
+
 /**
  *
  * @author Guillaume
@@ -25,7 +27,7 @@ public class InputConsole implements Input {
 	/**
 	 * Read the character given by the user
 	 */
-	public char saisirCaractere()
+	public char inputChar()
 	{
 		try
 		{

@@ -1,8 +1,8 @@
 package greentower.minigames.gamblingmachine;
 
+import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.MiniGame;
-import greentower.display.Output;
 
 /**
  * @author Florent & Rémi

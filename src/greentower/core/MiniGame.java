@@ -1,5 +1,8 @@
 package greentower.core;
 
+import greentower.IO.Input;
+import greentower.IO.Output;
+
 /**
  * This class represents Mini Game' basement
  *
@@ -17,6 +20,13 @@ public abstract class MiniGame extends Stage
 		this.dialog = dialog;
 	}
 
+	protected MiniGame(Output outTool, Input inTool, Dialog dialog)
+	{
+		this.dialog = dialog;
+		this.inputTool = inTool;
+		this.outputTool = outTool;
+	}
+	
 	/**
 	 * Allows to play game
 	 * @return

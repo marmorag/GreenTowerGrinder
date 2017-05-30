@@ -1,7 +1,7 @@
 package greentower.minigames.suite;
 
+import greentower.IO.Output;
 import greentower.core.*;
-import greentower.display.Output;
 
 import java.util.Random;
 import java.util.Scanner;

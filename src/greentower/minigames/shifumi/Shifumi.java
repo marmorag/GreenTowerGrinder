@@ -2,9 +2,9 @@ package greentower.minigames.shifumi;
 
 import java.util.Scanner;
 
+import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.MiniGame;
-import greentower.display.Output;
 
 /**
  *

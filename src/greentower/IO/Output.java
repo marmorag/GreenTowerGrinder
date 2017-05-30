@@ -1,4 +1,4 @@
-package greentower.display;
+package greentower.IO;
 
 import greentower.core.Dialog;
 

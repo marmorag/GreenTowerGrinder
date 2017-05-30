@@ -6,8 +6,10 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Random;
 
+import greentower.IO.Input;
+import greentower.IO.Output;
+import greentower.core.Dialog;
 import greentower.core.MiniGame;
-import greentower.display.Output;
 
 /**
  * @author Guillaume
@@ -37,37 +39,26 @@ public class Pendu extends MiniGame{
 	private String motAAfficher;
 
 	/**
-	 * Interfaces use to ease display
-	 */
-	private Out displayTool;
-
-	/**
-	 * Interfaces use to ease input
-	 */
-	private Input inputTool;
-
-	/**
 	 *	motATrouver takes value of word at line nbAleatoire in listeMot.txt
 	 *	Initialize motAAfficher with "_"
 	 * @param display
 	 * @param input
 	 */
-	public Pendu(Out display, Input input)
+	public Pendu(Out display, Input input, Dialog dialog)
 	{
+		super(display,input,dialog);
 		Random r = new Random();
 		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
 
 		this.nbErreur = 0;
 		this.nbCoups = 0;
-		this.displayTool = display;
-		this.inputTool = input;
 		// Put the next two stage
 		//this.nextStage[0]= ;
 		//this.nextStage[1]= ;
 
 		try{
-			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/pendu/listeMot.txt")));
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/pendu/listeMot.txt")));
 			String ligne;
 
 			while ((ligne=br.readLine())!=null && i < nbAleatoire){
@@ -153,15 +144,15 @@ public class Pendu extends MiniGame{
 
 		while(!this.finDuPendu() && this.nbCoups <= this.motATrouver.length()+5)
 		{
-			this.displayTool.afficherPendu(this.nbErreur,this.motAAfficher);
+			this.outputTool.afficherPendu(this.nbErreur,this.motAAfficher);
 			//System.out.println(motATrouver);
 
-			this.displayTool.demanderCaractere();
-			lettreEntree = this.inputTool.saisirCaractere();
+			this.outputTool.demanderCaractere();
+			lettreEntree = this.inputTool.inputChar();
 
 			if(!this.verifierLettre(lettreEntree))
 			{
-				this.displayTool.erreurLettre();
+				this.outputTool.erreurLettre();
 				try
 				{
 					Thread.sleep(1500);
@@ -175,7 +166,7 @@ public class Pendu extends MiniGame{
 		}
 		if(this.finDuPendu())
 		{
-			this.displayTool.notifyWin(this.nbCoups, this.motATrouver);
+			this.outputTool.notifyWin(this.nbCoups, this.motATrouver);
 			return 0;
 		}
 		else

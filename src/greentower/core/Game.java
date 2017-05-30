@@ -1,6 +1,6 @@
 package greentower.core;
 
-import greentower.display.Output;
+import greentower.IO.Output;
 import greentower.minigames.tictactoe.TicTacToe;
 
 /**
