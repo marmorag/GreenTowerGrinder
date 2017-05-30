@@ -133,7 +133,7 @@ public enum Tower
 	 * @param initialNextStages
 	 * 			Accessible stages after this stage
 	 */
-	private Tower(Stage initialStage, Stage[] initialNextStages)
+	private Tower(Stage initialStage, Stage[] initialNextStages, )
 	{
 		this.nextStages = new Stage[initialNextStages.length];
 		for (int i = 0; i < this.nextStages.length; i++)
