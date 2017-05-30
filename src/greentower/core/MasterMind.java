@@ -6,5 +6,5 @@ package greentower.core;
  */
 public class MasterMind extends MiniGame
 {
-
+	//TODO
 }

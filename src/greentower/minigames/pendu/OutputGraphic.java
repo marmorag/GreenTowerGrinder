@@ -1,7 +1,14 @@
 package greentower.minigames.pendu;
 
+/**
+ * @author
+ *
+ */
 public class OutputGraphic implements Output {
 
+	/**
+	 *
+	 */
 	public OutputGraphic() {
 		// TODO Auto-generated constructor stub
 	}

@@ -5,9 +5,16 @@ import java.util.Random;
 
 import javax.swing.*;
 
+/**
+ * @author viognef
+ *
+ */
 @SuppressWarnings("serial")
 public class Hotkey extends JFrame {
 
+    /**
+     *
+     */
     public Hotkey() {
     	// List of key 1
     	int[] Modifiers = {KeyEvent.CTRL_MASK, KeyEvent.ALT_MASK, KeyEvent.SHIFT_MASK};

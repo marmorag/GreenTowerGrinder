@@ -52,8 +52,8 @@ public class Choice extends Stage
 	public String toString()
 	{
 		String result = "Choice [\n" + this.dialog.toString() + ", Answers = ";
-		for(int index = 0; index < this.answers.length; index++)
-			result += this.answers[index] + ',';
+		for(int index = 0; index < this.answers.getAsnwers().length; index++)
+			result += this.answers.getAsnwerAt(index) + ',';
 		return result += "]";
 	}
 

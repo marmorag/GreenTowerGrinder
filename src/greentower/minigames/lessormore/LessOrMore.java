@@ -3,52 +3,58 @@ package greentower.minigames.lessormore;
 import java.util.Scanner;
 
 import greentower.core.MiniGame;
-import greentower.core.Stage;
 
 /**
  * This class represent a Less Or More game
  * @author Rayan Barama
  */
-public class LessOrMore extends MiniGame{
+public class LessOrMore extends MiniGame
+{
 	/**
 	 * the first card which is randomly picked
 	 */
-	public static int base;
+	private int base;
 	/**
 	 * the new card which is randomly picked
 	 */
-	public static int randomcard;
+	private int randomcard;
 
-	public LessOrMore(int id)
+	/**
+	 *
+	 */
+	private Scanner sc;
+
+	/**
+	 *
+	 */
+	public LessOrMore()
 	{
-		super(id);
 		this.base = (int)(Math.random() * (10-1)) + 1;
 		this.randomcard = (int)(Math.random() * (10-1)) + 1;
-
 	}
 
 	/**
 	 * return if player win or not
-	 * @param {String} User decision
+	 *
 	 * @return {boolean} true if the game is won and false if not
 	 */
-	public Stage playStage(){
+	public int playStage(){
 		boolean result;
 
-		System.out.println(LessOrMore.base);
-		Scanner sc = new Scanner(System.in);
-		String userChoice = sc.nextLine();
+		System.out.println(this.base);
+		this.sc = new Scanner(System.in);
+		String userChoice = this.sc.nextLine();
 		userChoice = userChoice.toUpperCase();
 
 
 		if(userChoice.equals("MORE")){
-			if(randomcard<base)
+			if(this.randomcard<this.base)
 				result = false;
 			else
 				result = true;
 		}
 		else if(userChoice.equals("LESS")){
-			if(randomcard<base)
+			if(this.randomcard<this.base)
 				result = true;
 			else
 				result = false;
@@ -59,12 +65,12 @@ public class LessOrMore extends MiniGame{
 		if(result)
 		{
 			System.out.println("BRAVO!");
-			return this.nextStages[0];
+			return 0;
 		}
 		else
 		{
 			System.out.println("Dommage :(");
-			return this.nextStages[1];
+			return 1;
 		}
 
 	}

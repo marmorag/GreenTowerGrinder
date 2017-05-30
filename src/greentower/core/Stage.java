@@ -16,6 +16,7 @@ public abstract class Stage
 	/**
 	 * Play the current stage (MiniGame or Choice, whatever)
 	 * @return
+	 * 			Stage result
 	 */
 	public abstract int playStage();
 
