@@ -18,6 +18,7 @@ public class Game
 	/**
 	 * Indicates who is playing
 	 */
+	@SuppressWarnings("unused")
 	private Player player;
 
 	/**
@@ -46,6 +47,7 @@ public class Game
 			this.currentStage.playStage();
 			this.numberOfRounds++;
 		}
+		//this.currentStage = this.currentStage.nextStages[this.currentStage.playStage()]
 		//Finish game
 	}
 
@@ -57,4 +59,13 @@ public class Game
 		System.exit(0);
 	}
 
+	/**
+	 * Get the number of played rounds
+	 * @return
+	 * 			The number of played rounds
+	 */
+	public int getNumberOfRounds()
+	{
+		return this.numberOfRounds;
+	}
 }

@@ -14,7 +14,6 @@ import greentower.core.Stage;
  */
 public class Choice extends Stage
 {
-
 	/**
 	 *
 	 */
@@ -28,7 +27,7 @@ public class Choice extends Stage
 	/**
 	 * Answers to the dialog
 	 */
-	private final String[] answers; // Ça sera un dictionnaire à la fin
+	private final Answers answers; // Ça sera un dictionnaire à la fin
 
 	/**
 	 * Index of the answer of the player
@@ -41,13 +40,11 @@ public class Choice extends Stage
 	 * @param initialDialog
 	 * 			Dialog of the choice
 	 * @param initialAnswers
-	 * @param initialNextStages
 	 */
-	public Choice(Dialog initialDialog, String[] initialAnswers, Stage[] initialNextStages)
+	public Choice(Dialog initialDialog, Answers initialAnswers)
 	{
 		this.dialog = initialDialog;
 		this.answers = initialAnswers;
-		this.nextStages = initialNextStages;
 		this.indexPlayerAnswer = -1;
 	}
 
@@ -64,13 +61,13 @@ public class Choice extends Stage
 	 * Get the next stage depending on the answer
 	 * @return the next stage
 	 */
-	public Stage getNextStages()
+	public int getNextStages()
 	{
-		return this.nextStages[this.indexPlayerAnswer];
+		return this.nextStagesIndex[this.indexPlayerAnswer];
 	}
 
 	@Override
-	public Stage playStage()
+	public int playStage()
 	{
 		try
 		{
@@ -81,7 +78,7 @@ public class Choice extends Stage
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return this.nextStages[this.getIndexPlayerAnswer() - 1].playStage();
+		return this.nextStagesIndex[this.getIndexPlayerAnswer()];
 	}
 
 	/**
