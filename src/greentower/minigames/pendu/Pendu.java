@@ -52,16 +52,8 @@ public class Pendu extends MiniGame{
 	 * @param display
 	 * @param input
 	 */
-<<<<<<< HEAD
-	public Pendu(Output display, Input input)
-=======
 	public Pendu(Out display, Input input)
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	{
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 		Random r = new Random();
 		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
