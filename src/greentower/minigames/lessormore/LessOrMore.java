@@ -19,9 +19,8 @@ public class LessOrMore extends MiniGame{
 	 */
 	public static int randomcard;
 
-	public LessOrMore(int id)
+	public LessOrMore()
 	{
-		super(id);
 		this.base = (int)(Math.random() * (10-1)) + 1;
 		this.randomcard = (int)(Math.random() * (10-1)) + 1;
 

@@ -11,9 +11,8 @@ public class GamblingMachine extends MiniGame{
 	/**
 	 * @param id
 	 */
-	public GamblingMachine(int id)
+	public GamblingMachine()
 	{
-		super(id);
 	}
 
 	/**

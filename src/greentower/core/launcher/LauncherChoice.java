@@ -20,7 +20,7 @@ public class LauncherChoice
 	 */
 	public static void main(String[] args)
 	{
-		Choice ChoiceA = new Choice(new Dialog(new String[] {"Salut", "Choisis ta réponse"}), new String[] {"A", "B", "C"}, new Stage[] {new LessOrMore(1), null, null});
+		Choice ChoiceA = new Choice(new Dialog(new String[] {"Salut", "Choisis ta réponse"}), new String[] {"A", "B", "C"}, new Stage[] {new LessOrMore(), null, null});
 		System.out.println(ChoiceA);
 		ChoiceA.playStage();
 	}

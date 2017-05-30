@@ -53,9 +53,8 @@ public class Pendu extends MiniGame{
 	 * @param display
 	 * @param input
 	 */
-	public Pendu(int id, Output display, Input input)
+	public Pendu(Output display, Input input)
 	{
-		super(id);
 
 		Random r = new Random();
 		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?

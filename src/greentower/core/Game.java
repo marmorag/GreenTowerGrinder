@@ -33,7 +33,7 @@ public class Game
 	{
 		this.numberOfRounds = 0;
 		this.player = player;
-		this.currentStage = new TicTacToe(1); // First Stage
+		this.currentStage = new TicTacToe(); // First Stage
 	}
 
 	/**

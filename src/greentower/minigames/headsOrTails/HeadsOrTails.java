@@ -8,9 +8,9 @@ import greentower.core.Stage;
 
 public class HeadsOrTails extends MiniGame {
 
-	public HeadsOrTails(int id)
+	public HeadsOrTails()
 	{
-		super(id);
+
 	}
 
 	public Stage playStage(){

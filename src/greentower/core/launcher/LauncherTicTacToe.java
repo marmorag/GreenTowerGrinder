@@ -17,7 +17,7 @@ public class LauncherTicTacToe
 	 */
 	public static void main(String[] args)
 	{
-		new LessOrMore(1).playStage();
+		new LessOrMore().playStage();
 	}
 
 }

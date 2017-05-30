@@ -21,6 +21,6 @@ public abstract class MiniGame extends Stage
 	 * Allows to play game
 	 */
 	public Stage playStage(){
-		return new TicTacToe(1); //For example
+		return new TicTacToe(); //For example
 	}
 }

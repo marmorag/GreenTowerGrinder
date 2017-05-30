@@ -11,9 +11,9 @@ import greentower.core.Stage;
  */
 public class Shifumi extends MiniGame{
 
-	public Shifumi(int id)
+	public Shifumi()
 	{
-		super(id);
+
 	}
 
 	/**
