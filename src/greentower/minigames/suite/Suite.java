@@ -1,6 +1,8 @@
 package greentower.minigames.suite;
 
 import greentower.core.*;
+import greentower.display.Output;
+
 import java.util.Random;
 import java.util.Scanner;
 /**
@@ -13,18 +15,22 @@ public class Suite extends MiniGame{
 	/**
 	 * Numbers
 	 */
+	@SuppressWarnings("javadoc")
 	private int nb1,nb2,nb3,nb4,nb5;
 	/**
 	 * Operations
 	 */
+	@SuppressWarnings("javadoc")
 	private int op1,op2;
 
 	/**
 	 * Initialize random first number and operations
 	 * Then deduce others numbers
+	 * @param dialog
 	 */
-	public Suite()
+	public Suite(Dialog dialog)
 	{
+		super(dialog);
 		Random r = new Random();
 		this.op1 = r.nextInt(11);
 		this.op2 = r.nextInt(11);
@@ -39,21 +45,21 @@ public class Suite extends MiniGame{
 	 * Display 4 first number and let player enter his result
 	 * @return {boolean} if the player win or not
 	 */
-	public Stage playStage(){
+	public int playStage(Output display){
 		System.out.println(this.toString());
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		int result = Integer.parseInt(sc.nextLine());
 
-		if(result == nb5)
+		if(result == this.nb5)
 		{
 			System.out.println("Bravo");
-			return this.nextStages[0];
+			return 0;
 		}
 		else
 		{
 			System.out.println("Dommage");
-			return this.nextStages[1];
+			return 1;
 		}
 	}
 

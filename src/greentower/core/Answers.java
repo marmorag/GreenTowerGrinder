@@ -152,6 +152,17 @@ public enum Answers {
 
 	/**
 	 * Enable to return the answer at a given index
+	 * @return
+	 * 			String at the given index
+	 */
+	public String[] getAsnwers()
+	{
+		return this.answers;
+	}
+
+
+	/**
+	 * Enable to return the answer at a given index
 	 * @param index
 	 * 			Answer's index
 	 * @return

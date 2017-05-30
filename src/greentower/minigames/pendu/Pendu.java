@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 import greentower.core.MiniGame;
-import greentower.core.Stage;
+import greentower.display.Output;
 
 /**
  * @author Guillaume
@@ -39,7 +39,7 @@ public class Pendu extends MiniGame{
 	/**
 	 * Interfaces use to ease display
 	 */
-	private Output displayTool;
+	private Out displayTool;
 
 	/**
 	 * Interfaces use to ease input
@@ -49,13 +49,19 @@ public class Pendu extends MiniGame{
 	/**
 	 *	motATrouver takes value of word at line nbAleatoire in listeMot.txt
 	 *	Initialize motAAfficher with "_"
-	 * @param id
 	 * @param display
 	 * @param input
 	 */
+<<<<<<< HEAD
 	public Pendu(Output display, Input input)
+=======
+	public Pendu(Out display, Input input)
+>>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	{
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 		Random r = new Random();
 		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
@@ -77,7 +83,7 @@ public class Pendu extends MiniGame{
 			}
 
 			this.motATrouver = ligne;
-			this.motAAfficher = motATrouver.replaceAll(".", "_");
+			this.motAAfficher = this.motATrouver.replaceAll(".", "_");
 
 			br.close();
 		}
@@ -115,23 +121,23 @@ public class Pendu extends MiniGame{
 	 */
 	private void majMotAAfficher(char lettreEntree)
 	{
-		char[] tempArray = new char[motAAfficher.length()];
+		char[] tempArray = new char[this.motAAfficher.length()];
 		int i;
 
-		for(i = 0;i < motATrouver.length();i++)
+		for(i = 0;i < this.motATrouver.length();i++)
 		{
-			tempArray[i] = motAAfficher.charAt(i);
+			tempArray[i] = this.motAAfficher.charAt(i);
 		}
 
-		motAAfficher = "";
+		this.motAAfficher = "";
 
-		for(i = 0;i < motATrouver.length();i++)
+		for(i = 0;i < this.motATrouver.length();i++)
 		{
-			if(motATrouver.charAt(i) == lettreEntree)
+			if(this.motATrouver.charAt(i) == lettreEntree)
 			{
-				tempArray[i] = motATrouver.charAt(i);
+				tempArray[i] = this.motATrouver.charAt(i);
 			}
-			motAAfficher = motAAfficher + tempArray[i];
+			this.motAAfficher = this.motAAfficher + tempArray[i];
 		}
 	}
 
@@ -142,18 +148,18 @@ public class Pendu extends MiniGame{
 	 */
 	private boolean finDuPendu()
 	{
-		return(!motAAfficher.contains("_"));
+		return(!this.motAAfficher.contains("_"));
 	}
 
 	/**
 	 * Main procedure which launch miniGame
 	 * @return Stage return one of the two stage contained
 	 */
-	public Stage playStage()
+	public int playStage(Output display)
 	{
 		char lettreEntree;
 
-		while(!this.finDuPendu() && nbCoups <= motATrouver.length()+5)
+		while(!this.finDuPendu() && this.nbCoups <= this.motATrouver.length()+5)
 		{
 			this.displayTool.afficherPendu(this.nbErreur,this.motAAfficher);
 			//System.out.println(motATrouver);
@@ -164,21 +170,26 @@ public class Pendu extends MiniGame{
 			if(!this.verifierLettre(lettreEntree))
 			{
 				this.displayTool.erreurLettre();
-				try {
+				try
+				{
 					Thread.sleep(1500);
-				} catch (InterruptedException e) {}
+				}
+				catch (InterruptedException e)
+				{
+					//NO PROBLEM
+				}
 				this.nbErreur++;
 			}
 		}
 		if(this.finDuPendu())
 		{
 			this.displayTool.notifyWin(this.nbCoups, this.motATrouver);
-			return this.nextStages[0];
+			return 0;
 		}
 		else
 		{
 			this.displayTool.notifyLoose(this.motATrouver);
-			return this.nextStages[1];
+			return 1;
 		}
 	}
 

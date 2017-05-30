@@ -29,7 +29,7 @@ public class InputConsole implements Input {
 	{
 		try
 		{
-			char letter = (""+reader.readLine()).toUpperCase().charAt(0);
+			char letter = (""+this.reader.readLine()).toUpperCase().charAt(0);
 			return letter;
 		}
 		catch (IOException e)

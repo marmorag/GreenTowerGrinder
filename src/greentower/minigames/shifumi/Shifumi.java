@@ -2,8 +2,9 @@ package greentower.minigames.shifumi;
 
 import java.util.Scanner;
 
+import greentower.core.Dialog;
 import greentower.core.MiniGame;
-import greentower.core.Stage;
+import greentower.display.Output;
 
 /**
  *
@@ -11,20 +12,36 @@ import greentower.core.Stage;
  */
 public class Shifumi extends MiniGame{
 
+<<<<<<< HEAD
 	public Shifumi()
-	{
+=======
+	/**
+	 *
+	 */
+	private Scanner sc;
 
+	/**
+	 * @param dialog
+	 *
+	 */
+	public Shifumi(Dialog dialog)
+>>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
+	{
+<<<<<<< HEAD
+
+=======
+		super(dialog);
+>>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	}
 
 	/**
 	 * Return if player win or not
-	 * @param {String} Player's sign
 	 * @return true if player win and false if not
 	 */
-	public Stage playStage(){
+	public int playStage(Output display){
 
-		Scanner sc = new Scanner(System.in);
-		String sign = sc.nextLine();
+		this.sc = new Scanner(System.in);
+		String sign = this.sc.nextLine();
 
 		boolean result;
 		//transform string -> Sign
@@ -60,12 +77,12 @@ public class Shifumi extends MiniGame{
 		if(result)
 		{
 			System.out.println("BRAVO!");
-			return this.nextStages[0];
+			return 0;
 		}
 		else
 		{
 			System.out.println("Dommage :(");
-			return this.nextStages[1];
+			return 1;
 		}
 
 	}

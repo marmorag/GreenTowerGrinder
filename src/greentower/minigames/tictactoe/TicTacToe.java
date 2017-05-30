@@ -3,16 +3,21 @@ package greentower.minigames.tictactoe;
 import java.util.Random;
 import java.util.Scanner;
 
+import greentower.core.Dialog;
 import greentower.core.MiniGame;
+import greentower.display.Output;
 /**
  * MiniGame TicTacToe
- * @author Gavin Rémi
+ * @author
  */
 public class TicTacToe extends MiniGame{
 	/**
 	 *  Constant for winner
 	 */
 	private final static int PLAYER = 1;
+	/**
+	 *
+	 */
 	private final static int GAME = 0;
 
 	/**
@@ -26,13 +31,20 @@ public class TicTacToe extends MiniGame{
 
 	/**
 	 * Fill the grid with 0
+	 * @param dialog
 	 */
+<<<<<<< HEAD
 	public TicTacToe(){
 		for(int i=0;i<3;i++){
 			for(int j=0;j<3;j++){
+=======
+	public TicTacToe(Dialog dialog)
+	{
+		super(dialog);
+		for(int i=0;i<3;i++)
+			for(int j=0;j<3;j++)
+>>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 				this.grid[i][j] = 0;
-			}
-		}
 	}
 
 	/**
@@ -158,6 +170,12 @@ public class TicTacToe extends MiniGame{
 				this.grid[i][j] = 0;
 			}
 		}
+	}
+
+	@Override
+	public int playStage(Output display) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

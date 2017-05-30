@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 import greentower.core.Dialog;
 import greentower.core.Stage;
+import greentower.display.Output;
 
 /**
  * This class represents a choice
@@ -52,8 +53,8 @@ public class Choice extends Stage
 	public String toString()
 	{
 		String result = "Choice [\n" + this.dialog.toString() + ", Answers = ";
-		for(int index = 0; index < this.answers.length; index++)
-			result += this.answers[index] + ',';
+		for(int index = 0; index < this.answers.getAsnwers().length; index++)
+			result += this.answers.getAsnwerAt(index) + ',';
 		return result += "]";
 	}
 
@@ -67,7 +68,7 @@ public class Choice extends Stage
 	}
 
 	@Override
-	public int playStage()
+	public int playStage(Output display)
 	{
 		try
 		{

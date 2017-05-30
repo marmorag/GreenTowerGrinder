@@ -136,7 +136,7 @@ public enum Dialog {
 	 */
 	private Dialog(String[] initialDialog)
 	{
-		this.dialog =initialDialog;
+		this.dialog = initialDialog;
 	}
 
 	/**

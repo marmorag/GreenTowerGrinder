@@ -1,5 +1,6 @@
 package greentower.core;
 
+import greentower.display.Output;
 import greentower.minigames.tictactoe.TicTacToe;
 
 /**
@@ -27,14 +28,25 @@ public class Game
 	private Stage currentStage;
 
 	/**
+	 *
+	 */
+	private Output display;
+
+	/**
 	 * Default constructor
 	 * @param player who lauched the game
+	 * @param display
 	 */
-	public Game(Player player)
+	public Game(Player player, Output display)
 	{
 		this.numberOfRounds = 0;
 		this.player = player;
+<<<<<<< HEAD
 		this.currentStage = new TicTacToe(); // First Stage
+=======
+		this.currentStage = new TicTacToe(Dialog.DIALOG_STAGE1); // First Stage
+		this.display = display;
+>>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	}
 
 	/**
@@ -44,10 +56,10 @@ public class Game
 	{
 		while(this.currentStage.getFinalStage() == false)
 		{
-			this.currentStage.playStage();
+			this.currentStage.playStage(this.display);
 			this.numberOfRounds++;
 		}
-		//this.currentStage = this.currentStage.nextStages[this.currentStage.playStage()]
+		//this.currentStage = this.currentStage.nextStages[this.currentStage.playStage(this.display)]
 		//Finish game
 	}
 
