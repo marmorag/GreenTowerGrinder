@@ -98,7 +98,7 @@ public class OthelloGame extends MiniGame
 	 *                 	process pawn drop
 	 * }
 	 */
-	public int playStage()
+	public int playStage(Output out)
 	{
 		this.IHM.displayStartOfGame();
 

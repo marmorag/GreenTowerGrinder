@@ -40,14 +40,6 @@ public abstract class Stage
 	public abstract int playStage(Output display);
 	
 	/**
-	 * Play the current stage (MiniGame or Choice, whatever)
-	 * @param display
-	 * @return
-	 * 			Stage result
-	 */
-	public abstract int playStage();	
-
-	/**
 	 * Contains the next game which are possible to play
 	 */
 	public int[] nextStagesIndex;

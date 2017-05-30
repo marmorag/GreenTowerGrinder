@@ -21,5 +21,6 @@ public class Main
 	{
 		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");
 		new Game(new Player("Coucou"), new OutputConsole()).play();
+		
 	}
 }
