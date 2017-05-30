@@ -1,8 +1,13 @@
 package greentower.minigames.othello.core;
 
+import greentower.IO.Output;
+import greentower.core.Dialog;
 import greentower.core.MiniGame;
 import greentower.minigames.othello.ihm.IHMOthello;
+import greentower.minigames.othello.ihm.console.IHMOthelloConsole;
 import greentower.minigames.othello.player.Player;
+import greentower.minigames.othello.player.console.ConsolePlayer;
+import greentower.minigames.othello.player.random.RandomPlayer;
 
 /**
  * This class represents a game of othello
@@ -35,11 +40,16 @@ public class OthelloGame extends MiniGame
 	 * @param initialIHMOthello
 	 * 			The IHM
 	 */
-	public OthelloGame(Player[] initialPlayers, IHMOthello initialIHMOthello)
+	public OthelloGame(Dialog dialog)
 	{
-		this.players = initialPlayers;
+		super(dialog);
+		
+		Player[] players = {new ConsolePlayer(), new RandomPlayer()};
+		IHMOthello IHM = new IHMOthelloConsole();
+		
+		this.players = players;
 		this.board = new Board();
-		this.IHM = initialIHMOthello;
+		this.IHM = IHM;
 	}
 
 
