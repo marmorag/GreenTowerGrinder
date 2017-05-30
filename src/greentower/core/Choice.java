@@ -47,6 +47,22 @@ public class Choice extends Stage
 		this.dialog = initialDialog;
 		this.answers = initialAnswers;
 		this.indexPlayerAnswer = -1;
+		this.stageIsFinal = false;
+	}
+
+	/**
+	 * Choice's constructor with given dialog, choices and next stages
+	 * @param initialDialog
+	 * 			Dialog of the choice
+	 * @param initialAnswers
+	 * @param initialStageIsFinal
+	 */
+	public Choice(Dialog initialDialog, Answers initialAnswers, boolean initialStageIsFinal)
+	{
+		this.dialog = initialDialog;
+		this.answers = initialAnswers;
+		this.indexPlayerAnswer = -1;
+		this.stageIsFinal = initialStageIsFinal;
 	}
 
 	@Override

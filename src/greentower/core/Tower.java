@@ -24,7 +24,7 @@ public class Tower
 	 * @param initialNextStages
 	 * 			Accessible stages after this stage
 	 */
-	private Tower(Stage[] initialStages, int[][] initialNextStages)
+	public Tower(Stage[] initialStages, int[][] initialNextStages)
 	{
 		this.stages = initialStages;
 		this.nextStages = initialNextStages;

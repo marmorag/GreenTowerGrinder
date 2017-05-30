@@ -14,7 +14,7 @@ public abstract class Stage
 	/**
 	 * stageIsFinal is true when the the stage is the last one
 	 */
-	private boolean stageIsFinal = false;
+	protected boolean stageIsFinal = false;
 
 	/**
 	 *
@@ -25,12 +25,12 @@ public abstract class Stage
 	 * Interface used to input anything needed
 	 */
 	public Input inputTool;
-	
+
 	/**
 	 * Interface used to display anything needed
 	 */
 	public Output outputTool;
-	
+
 	/**
 	 * Play the current stage (MiniGame or Choice, whatever)
 	 * @param display
@@ -38,7 +38,7 @@ public abstract class Stage
 	 * 			Stage result
 	 */
 	public abstract int playStage(Output display);
-	
+
 	/**
 	 * Contains the next game which are possible to play
 	 */

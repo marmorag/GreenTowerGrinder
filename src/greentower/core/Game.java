@@ -55,7 +55,7 @@ public class Game
 			this.currentStage.playStage(this.display);
 			this.numberOfRounds++;
 		}
-		//this.currentStage = this.currentStage.nextStages[this.currentStage.playStage(this.display)]
+		//this.currentStage = this.getNextStages(this.currentStage, this.currentStage.playStage(this.display)
 		//Finish game
 	}
 
