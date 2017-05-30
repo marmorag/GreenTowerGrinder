@@ -33,17 +33,11 @@ public class TicTacToe extends MiniGame{
 	 * Fill the grid with 0
 	 * @param dialog
 	 */
-<<<<<<< HEAD
-	public TicTacToe(){
-		for(int i=0;i<3;i++){
-			for(int j=0;j<3;j++){
-=======
 	public TicTacToe(Dialog dialog)
 	{
 		super(dialog);
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 				this.grid[i][j] = 0;
 	}
 

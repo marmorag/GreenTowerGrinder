@@ -41,12 +41,8 @@ public class Game
 	{
 		this.numberOfRounds = 0;
 		this.player = player;
-<<<<<<< HEAD
-		this.currentStage = new TicTacToe(); // First Stage
-=======
 		this.currentStage = new TicTacToe(Dialog.DIALOG_STAGE1); // First Stage
 		this.display = display;
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	}
 
 	/**

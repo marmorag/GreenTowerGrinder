@@ -13,9 +13,6 @@ import greentower.display.Output;
  */
 public class HeadsOrTails extends MiniGame {
 
-<<<<<<< HEAD
-	public HeadsOrTails()
-=======
 	/**
 	 *
 	 */
@@ -26,13 +23,8 @@ public class HeadsOrTails extends MiniGame {
 	 *
 	 */
 	public HeadsOrTails(Dialog dialog)
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	{
-<<<<<<< HEAD
-
-=======
 		super(dialog);
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	}
 
 	public int playStage(Output display){

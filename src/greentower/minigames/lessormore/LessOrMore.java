@@ -21,9 +21,6 @@ public class LessOrMore extends MiniGame
 	 */
 	private int randomcard;
 
-<<<<<<< HEAD
-	public LessOrMore()
-=======
 	/**
 	 *
 	 */
@@ -34,12 +31,8 @@ public class LessOrMore extends MiniGame
 	 *
 	 */
 	public LessOrMore(Dialog dialog)
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	{
-<<<<<<< HEAD
-=======
 		super(dialog);
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 		this.base = (int)(Math.random() * (10-1)) + 1;
 		this.randomcard = (int)(Math.random() * (10-1)) + 1;
 	}

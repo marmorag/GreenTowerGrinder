@@ -12,9 +12,6 @@ import greentower.display.Output;
  */
 public class Shifumi extends MiniGame{
 
-<<<<<<< HEAD
-	public Shifumi()
-=======
 	/**
 	 *
 	 */
@@ -25,13 +22,8 @@ public class Shifumi extends MiniGame{
 	 *
 	 */
 	public Shifumi(Dialog dialog)
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	{
-<<<<<<< HEAD
-
-=======
 		super(dialog);
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	}
 
 	/**

@@ -13,16 +13,9 @@ public class GamblingMachine extends MiniGame{
 	 * @param dialog
 	 *
 	 */
-<<<<<<< HEAD
-	public GamblingMachine()
-=======
 	public GamblingMachine(Dialog dialog)
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	{
-<<<<<<< HEAD
-=======
 		super(dialog);
->>>>>>> branch 'master' of https://gitlab.iut-valence.fr/florent.viogne/projetTutoreS2Groupe1.4.git
 	}
 
 	/**
