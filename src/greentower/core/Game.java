@@ -55,7 +55,9 @@ public class Game
 		{
 			try 
 			{
-				this.currentStage = Tower.getNextStages(Tower.getStageIndex(this.currentStage), this.currentStage.playStage(this.display));
+				int result = this.currentStage.playStage(this.display);
+				this.currentStage = Tower.getNextStage(Tower.getStageIndex(this.currentStage), result);
+				//this.currentStage = Tower.getNextStage(Tower.getStageIndex(this.currentStage), this.currentStage.playStage(this.display));
 				this.numberOfRounds++;
 			} catch (IOException e) {
 				System.out.println("Problème avec l'entrée");

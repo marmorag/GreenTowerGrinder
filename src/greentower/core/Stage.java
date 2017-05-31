@@ -40,11 +40,6 @@ public abstract class Stage
 	public abstract int playStage(Output display) throws Exception;
 
 	/**
-	 * Contains the next game which are possible to play
-	 */
-	public int[] nextStagesIndex;
-
-	/**
 	 * Indicates if the stage is the last one or not
 	 * @return 	true if the stage is the last one
 	 * 			false if it is not the last one

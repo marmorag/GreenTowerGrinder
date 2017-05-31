@@ -74,18 +74,10 @@ public class Choice extends Stage
 		return result += "]";
 	}
 
-	/**
-	 * Get the next stage depending on the answer
-	 * @return the next stage
-	 */
-	public int getNextStages()
-	{
-		return this.nextStagesIndex[this.indexPlayerAnswer];
-	}
-
 	@Override
 	public int playStage(Output display)
 	{
+		display.showText(this.dialog);
 		try
 		{
 			this.setIndexPlayerAnswer(Integer.parseInt(this.br.readLine()));
@@ -95,7 +87,7 @@ public class Choice extends Stage
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return this.nextStagesIndex[this.getIndexPlayerAnswer()];
+		return this.indexPlayerAnswer;
 	}
 
 	/**

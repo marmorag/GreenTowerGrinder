@@ -26,7 +26,7 @@ public class Tower
 	 * @return
 	 * 			Index of the new stage
 	 */
-	public static Stage getNextStages(int currentStage, int stageResult)
+	public static Stage getNextStage(int currentStage, int stageResult)
 	{
 		return Tower.stages[nextStages[currentStage][stageResult]];
 	}

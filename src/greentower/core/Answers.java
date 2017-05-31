@@ -61,7 +61,7 @@ public enum Answers {
 	/**
 	 * Stage 11's ANSWERS
 	 */
-	ANSWERS_STAGE11(new String[] {"En roulant tous à vitesse constante","En roulant tous à droite"}),
+	ANSWERS_STAGE11(new String[] {"En roulant tous ï¿½ vitesse constante","En roulant tous ï¿½ droite"}),
 
 	/**
 	 * Stage 12's ANSWERS
@@ -81,12 +81,12 @@ public enum Answers {
 	/**
 	 * Stage 15's ANSWERS
 	 */
-	ANSWERS_STAGE15(new String[] {"Réveiller le gardien","Faire une sieste à ses côtés"}),
+	ANSWERS_STAGE15(new String[] {"Rï¿½veiller le gardien","Faire une sieste ï¿½ ses cï¿½tï¿½s"}),
 
 	/**
 	 * Stage 16's ANSWERS
 	 */
-	ANSWERS_STAGE16(new String[] {"Un bébé","Une ombre"}),
+	ANSWERS_STAGE16(new String[] {"Un bï¿½bï¿½","Une ombre"}),
 
 	/**
 	 * Stage 17's ANSWERS
@@ -131,12 +131,12 @@ public enum Answers {
 
 	/**
 	 * Creates a dialog
-	 * @param initialDialog
-	 * 			Text of the dialog
+	 * @param initialAnswers
+	 * 			Answers to dialog
 	 */
-	private Answers(String[] initialDialog)
+	private Answers(String[] initialAnswers)
 	{
-		this.answers =initialDialog;
+		this.answers = initialAnswers;
 	}
 
 	/**
