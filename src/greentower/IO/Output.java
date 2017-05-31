@@ -3,7 +3,8 @@ package greentower.IO;
 import greentower.core.Dialog;
 
 /**
- * @author gavinr
+ * Interface for all displaying
+ * @author 
  *
  */
 public interface Output {

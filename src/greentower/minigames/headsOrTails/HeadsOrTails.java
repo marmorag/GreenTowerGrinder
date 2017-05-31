@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
-import java.util.Scanner;
-
 import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.MiniGame;
@@ -17,13 +15,13 @@ import greentower.core.MiniGame;
 public class HeadsOrTails extends MiniGame {
 
 	/**
-	 *
+	 *	Reader for input
 	 */
 	private BufferedReader br;
 
 	/**
+	 * HeadsOrTail's constructor
 	 * @param dialog
-	 *
 	 */
 	public HeadsOrTails(Dialog dialog)
 	{
@@ -31,6 +29,7 @@ public class HeadsOrTails extends MiniGame {
 		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
+	@Override
 	public int playStage(Output display) throws IOException{
 		display.showText(dialog);
 		int player=-1;

@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
-import java.util.Scanner;
-
 import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.MiniGame;
@@ -15,11 +13,11 @@ import greentower.core.MiniGame;
  */
 public class TicTacToe extends MiniGame{
 	/**
-	 *  Constant for winner
+	 *  Constant for player
 	 */
 	private final static int PLAYER = 1;
 	/**
-	 *
+	 *	Constant for game player
 	 */
 	private final static int GAME = 0;
 
@@ -32,6 +30,9 @@ public class TicTacToe extends MiniGame{
 	 */
 	private int winner;
 	
+	/**
+	 * Reader for input
+	 */
 	private BufferedReader br;
 
 	/**
@@ -58,7 +59,6 @@ public class TicTacToe extends MiniGame{
 			System.out.println("Egalite, veuillez rejouer");
 			this.resetGrid();
 		}
-		@SuppressWarnings("resource")
 		int p1=0,p2=0;
 		while(true){ //Get index by the user
 			p1 = Integer.parseInt(this.br.readLine());

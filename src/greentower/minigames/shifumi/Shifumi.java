@@ -3,8 +3,6 @@ package greentower.minigames.shifumi;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
-
 import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.MiniGame;
@@ -16,13 +14,13 @@ import greentower.core.MiniGame;
 public class Shifumi extends MiniGame{
 
 	/**
-	 *
+	 * Reader for input
 	 */
 	private BufferedReader br;
 
 	/**
+	 * Shifumi's constructor
 	 * @param dialog
-	 *
 	 */
 	public Shifumi(Dialog dialog)
 	{

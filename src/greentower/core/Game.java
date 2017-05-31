@@ -30,7 +30,7 @@ public class Game
 	private Stage currentStage;
 
 	/**
-	 *
+	 * Way to display 
 	 */
 	private Output display;
 
@@ -61,7 +61,8 @@ public class Game
 				System.out.println("Problème avec l'entrée");
 				System.out.println("Veuillez recommencer");
 			} catch (Exception e){
-				
+				System.out.println("Un problème est survenu, veuillez recommencer");
+				System.out.println("Toutes nos excuses");
 			}
 			
 		}

@@ -12,7 +12,8 @@ import greentower.core.Stage;
 public class ListOfStages
 {
 	/**
-	 *
+	 * Table of all stages
+	 * @return all stage
 	 */
 	public static final Stage[] stages = new Stage[]
 	{
@@ -21,7 +22,8 @@ public class ListOfStages
 	};
 
 	/**
-	 *
+	 * Get the next stage
+	 * @return table of the next two stages
 	 */
 	public static final int[][] nextStages = new int[][]
 	{

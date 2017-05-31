@@ -3,8 +3,6 @@ package greentower.minigames.lessormore;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
-
 import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.MiniGame;
@@ -25,13 +23,13 @@ public class LessOrMore extends MiniGame
 	private int randomcard;
 
 	/**
-	 *
+	 * Reader for input
 	 */
 	private BufferedReader br;
 
 	/**
+	 * LessOrMore's constructor
 	 * @param dialog
-	 *
 	 */
 	public LessOrMore(Dialog dialog)
 	{

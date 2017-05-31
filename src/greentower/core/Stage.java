@@ -17,7 +17,7 @@ public abstract class Stage
 	protected boolean stageIsFinal = false;
 
 	/**
-	 *
+	 *  Dialog to say
 	 */
 	protected Dialog dialog;
 

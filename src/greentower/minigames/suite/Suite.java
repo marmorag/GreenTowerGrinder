@@ -2,12 +2,10 @@ package greentower.minigames.suite;
 
 import greentower.IO.Output;
 import greentower.core.*;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
-import java.util.Scanner;
 /**
  * Find the fifth number
  * @author Rémi
