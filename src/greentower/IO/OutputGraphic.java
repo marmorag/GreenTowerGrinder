@@ -1,18 +1,26 @@
 package greentower.IO;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import greentower.core.Dialog;
 
-public class OutputGraphic implements Output{
+@SuppressWarnings("serial")
+public class OutputGraphic extends JFrame implements Output{
 
+	protected JPanel jp;
+	
 	@Override
 	public void showDialog(Dialog dialog) {
 		//Ecrire les dialogues
+		//Utiliser jp
 		
 	}
 
 	@Override
 	public void showText(String str) {
 		// Afficher le texte passé en paramètre
+		// Utiliser jp
 		
 	}
 

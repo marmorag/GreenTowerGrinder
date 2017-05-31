@@ -46,9 +46,11 @@ public class LessOrMore extends MiniGame
 	 * @throws IOException 
 	 */
 	public int playStage(Output display) throws IOException{
+		display.showGame();
+		display.showDialog(dialog);
 		boolean result;
 
-		System.out.println(this.base);
+		display.showText(String.valueOf(this.base));
 		String userChoice;
 		userChoice = this.br.readLine();
 		userChoice = userChoice.toUpperCase();
@@ -71,12 +73,12 @@ public class LessOrMore extends MiniGame
 
 		if(result)
 		{
-			System.out.println("BRAVO!");
+			display.showText("BRAVO!");
 			return 0;
 		}
 		else
 		{
-			System.out.println("Dommage :(");
+			display.showText("Dommage :(");
 			return 1;
 		}
 

@@ -175,7 +175,8 @@ public class TicTacToe extends MiniGame{
 
 	@Override
 	public int playStage(Output display) {
-		// TODO Auto-generated method stub
+		display.showGame();
+		display.showDialog(this.dialog);
 		return 0;
 	}
 

@@ -34,6 +34,8 @@ public class Shifumi extends MiniGame{
 	 * @throws IOException 
 	 */
 	public int playStage(Output display) throws IOException{
+		display.showGame();
+		display.showDialog(dialog);
 
 		String sign = this.br.readLine();
 

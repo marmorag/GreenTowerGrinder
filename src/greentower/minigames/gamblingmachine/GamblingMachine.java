@@ -25,7 +25,7 @@ public class GamblingMachine extends MiniGame{
 	 * @return true if player wins false if not
 	 */
 	public int playStage(Output display){
-
+		display.showGame();
 		display.showDialog(this.dialog);
 
 		boolean result;

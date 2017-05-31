@@ -52,15 +52,17 @@ public class Suite extends MiniGame{
 	 * @throws NumberFormatException 
 	 */
 	public int playStage(Output display) throws NumberFormatException, IOException{
-		System.out.println(this.toString());
+		display.showGame();
+		display.showDialog(dialog);
+		display.showText(this.toString());
 		if(Integer.parseInt(this.br.readLine()) == this.nb5)
 		{
-			System.out.println("Bravo");
+			display.showText("Bravo");
 			return 0;
 		}
 		else
 		{
-			System.out.println("Dommage");
+			display.showText("Dommage");
 			return 1;
 		}
 	}

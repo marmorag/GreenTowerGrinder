@@ -16,6 +16,7 @@ public class Hotkey extends JFrame {
      * Hotkey's constructor
      */
     public Hotkey() {
+ 
     	// List of key 1
     	int[] Modifiers = {KeyEvent.CTRL_MASK, KeyEvent.ALT_MASK, KeyEvent.SHIFT_MASK};
     	// List of key 2

@@ -31,6 +31,7 @@ public class HeadsOrTails extends MiniGame {
 
 	@Override
 	public int playStage(Output display) throws IOException{
+		display.showGame();
 		display.showDialog(dialog);
 		int player=-1;
 		while(player!=0 || player!=1){
