@@ -5,9 +5,16 @@ import javax.swing.JPanel;
 
 import greentower.core.Dialog;
 
+/**
+ * @author Guillaume
+ *
+ */
 @SuppressWarnings("serial")
 public class OutputGraphic extends JFrame implements Output{
 
+	/**
+	 * 
+	 */
 	protected JPanel jp;
 	
 	@Override
@@ -56,6 +63,12 @@ public class OutputGraphic extends JFrame implements Output{
 
 	@Override
 	public void showGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showAnswers(String[] answers) {
 		// TODO Auto-generated method stub
 		
 	}

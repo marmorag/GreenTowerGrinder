@@ -1,11 +1,8 @@
 package greentower.core.launcher;
 
 import greentower.IO.OutputConsole;
-import greentower.core.Game;
 import greentower.core.ListOfStages;
-import greentower.core.Player;
 import greentower.core.Stage;
-import greentower.core.Tower;
 
 /**
  * Main class of the game.
@@ -28,7 +25,7 @@ public class TestLinkingStages
 			while(true)
 			{
 				int result = currentStage.playStage(new OutputConsole());
-				currentStage = ListOfStages.getNextStage(ListOfStages.getStageIndex(currentStage), result);
+				currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(currentStage), result);
 			}
 			
 		}

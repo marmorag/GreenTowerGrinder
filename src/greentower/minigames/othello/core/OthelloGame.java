@@ -35,14 +35,12 @@ public class OthelloGame extends MiniGame
 	/**
 	 * Create a new game ready to play. Both players are ready Board is in
 	 * initial configuration
-	 * @param initialPlayers
-	 * 			Players who will play the game
-	 * @param initialIHMOthello
-	 * 			The IHM
+	 * @param dialog 
+	 * @param stageIndex 
 	 */
-	public OthelloGame(Dialog dialog)
+	public OthelloGame(Dialog dialog, int stageIndex)
 	{
-		super(dialog);
+		super(dialog, stageIndex);
 		
 		Player[] players = {new ConsolePlayer(), new RandomPlayer()};
 		IHMOthello IHM = new IHMOthelloConsole();

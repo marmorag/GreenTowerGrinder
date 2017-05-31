@@ -44,10 +44,11 @@ public class Pendu extends MiniGame{
 	 * @param display
 	 * @param input
 	 * @param dialog The dialog to display at the beginning of the game
+	 * @param stageIndex 
 	 */
-	public Pendu(Output display, Input input, Dialog dialog)
+	public Pendu(Output display, Input input, Dialog dialog, int stageIndex)
 	{
-		super(display,input,dialog);
+		super(display,input,dialog, stageIndex);
 		
 		this.inputTool = input;
 		this.outputTool = display;

@@ -12,11 +12,12 @@ public class GamblingMachine extends MiniGame{
 	/**
 	 * GamblingMachine's constructor
 	 * @param dialog
+	 * @param stageIndex 
 	 *
 	 */
-	public GamblingMachine(Dialog dialog)
+	public GamblingMachine(Dialog dialog, int stageIndex)
 	{
-		super(dialog);
+		super(dialog, stageIndex);
 	}
 
 	/**

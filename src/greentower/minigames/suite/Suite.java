@@ -24,16 +24,20 @@ public class Suite extends MiniGame{
 	@SuppressWarnings("javadoc")
 	private int op1,op2;
 
+	/**
+	 * 
+	 */
 	private BufferedReader br;
 	
 	/**
 	 * Initialize random first number and operations
 	 * Then deduce others numbers
 	 * @param dialog
+	 * @param stageIndex 
 	 */
-	public Suite(Dialog dialog)
+	public Suite(Dialog dialog, int stageIndex)
 	{
-		super(dialog);
+		super(dialog, stageIndex);
 		this.br = new BufferedReader(new InputStreamReader(System.in));
 		Random r = new Random();
 		this.op1 = r.nextInt(11);

@@ -1,7 +1,6 @@
 package greentower.core;
 
 import greentower.minigames.lessormore.LessOrMore;
-import greentower.minigames.othello.core.OthelloGame;
 import greentower.minigames.shifumi.Shifumi;
 import greentower.minigames.tictactoe.TicTacToe;
 

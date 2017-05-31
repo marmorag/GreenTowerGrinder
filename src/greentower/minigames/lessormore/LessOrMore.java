@@ -31,7 +31,6 @@ public class LessOrMore extends MiniGame
 	 * LessOrMore's constructor
 	 * @param dialog
 	 * @param stageIndex 
-	 * @param i 
 	 */
 	public LessOrMore(Dialog dialog, int stageIndex)
 	{

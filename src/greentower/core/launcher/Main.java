@@ -2,9 +2,7 @@ package greentower.core.launcher;
 
 import greentower.IO.OutputConsole;
 import greentower.core.Game;
-import greentower.core.ListOfStages;
 import greentower.core.Player;
-import greentower.core.Tower;
 
 /**
  * Main class of the game.
