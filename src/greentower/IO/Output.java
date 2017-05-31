@@ -37,8 +37,5 @@ public interface Output {
 	/**	 * 	 */	public void erreurLettre();
 	/**	 * @param motATrouver	 */	public void notifyLoose(String motATrouver);
 	/**	 * 	 */	public void demanderCaractere();
-	/**	 * @param nbErreur	 * @param motAAfficher	 */	public void afficherPendu(int nbErreur, String motAAfficher);
-
-	
-
+	/**	 * @param nbErreur	 * @param motAAfficher	 */	public void afficherPendu(int nbErreur, String motAAfficher);	/**	 * Show the introduction message of the given stage index	 * @param stageIndex	 * 			Stage's index	 */	public void showStageIntroduction(int stageIndex);	/**	 * Show the end message of the given stage index	 * @param stageIndex	 * 			Stage's index	 */	public void showStageEnd(int stageIndex);
 }

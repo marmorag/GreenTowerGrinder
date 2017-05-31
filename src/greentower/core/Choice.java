@@ -77,20 +77,19 @@ public class Choice extends Stage
 	}
 
 	@Override
-	public int playStage(Output display)
-	{
-		display.showDialog(this.dialog);
-		display.showAnswers(this.answers.getAnswers());
-		
-		try
-		{
-			this.setIndexPlayerAnswer(Integer.parseInt(this.br.readLine()));
+	public int playStage(Output display)
+	{		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showDialog(this.dialog);
+		display.showAnswers(this.answers.getAnswers());		
+		try
+		{
+			this.setIndexPlayerAnswer(Integer.parseInt(this.br.readLine()));
 		}
 		catch (NumberFormatException | IOException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}		display.showStageEnd(ListOfStages.getStageIndex(this));		
 		return this.indexPlayerAnswer;
 	}
 

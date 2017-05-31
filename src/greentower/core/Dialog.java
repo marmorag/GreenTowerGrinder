@@ -11,87 +11,87 @@ public enum Dialog {
 	/**
 	 * Stage 1's dialog
 	 */
-	DIALOG_STAGE1(new String [] {"Bonjour jeune graine.", "Je suis Sativa, gardien de cette tour et protecteur de son trésor.", "Aujourd’hui, je vais te guider à travers ton dangereux périple.", "Pour commencer, entre ton nom."}),
+	DIALOG_STAGE1(new String [] {"Bonjour jeune graine.", "Je suis Sativa, gardien de cette tour et protecteur de son trï¿½sor.", "Aujourdï¿½hui, je vais te guider ï¿½ travers ton dangereux pï¿½riple.", "Pour commencer, entre ton nom."}),
 
 	/**
 	 * Stage 2's dialog
 	 */
-	DIALOG_STAGE2(new String[] {"Bravo ! Comme tu peux le voir, tu es monté d’un étage ! Le premier d’une longue série. Je vais maintenant t’expliquer les règles qui régissent cette tour. C’est une tour magique qui évolue en fonction des choix des aventuriers. Ses chemins te conduiront à la gloire ou à la désolation. Chaque niveau comprend une épreuve et tu devras triompher de toutes celles-ci pour avancer ! Compris ? "}),
+	DIALOG_STAGE2(new String[] {"Bravo !", "Comme tu peux le voir, tu es montÃ© d'un Ã©tage !", "Le premier d'une longue sÃ©rie.", "Je vais maintenant t'expliquer les rÃ¨gles qui rÃ©gissent cette tour.", "C'est une tour magique qui Ã©volue en fonction des choix des aventuriers.", "Ses chemins te conduiront Ã  la gloire ou Ã  la dÃ©solation.", "Chaque niveau comprend une Ã©preuve et tu devras triompher de toutes celles-ci pour avancer !", "Compris ? "}),
 
 	/**
 	 * Stage 3's dialog
 	 */
-	DIALOG_STAGE3(new String[] {"Commençons de suite si tu le veux bien. Je vais te poser une énigme et de ta réponse dépendra la suite de ta quête . Je suis en tête de file mais à bout de nerf. Qui suis-je ?"}),
+	DIALOG_STAGE3(new String[] {"CommenÃ§ons de suite si tu le veux bien.", "Je vais te poser une Ã©nigme et de ta rÃ©ponse dÃ©pendra la suite de ta quÃªte.", "Je suis en tÃªte de file mais Ã  bout de nerf.", "Qui suis-je ?"}),
 
 	/**
 	 * Stage 4's dialog
 	 */
-	DIALOG_STAGE4(new String[] {"Bravo ! Mais maintenant que j’ai testé ton intelligence, je vais mesurer ta chance. Car il faut bien avouer que dans la vie la chance occupe une grande place."}), // PARTIE LESS OR MORE
+	DIALOG_STAGE4(new String[] {"Bravo !", "Mais maintenant que j'ai testÃ© ton intelligence, je vais mesurer ta chance.", "Car il faut bien avouer que dans la vie la chance occupe une grande place."}), // PARTIE LESS OR MORE
 
 	/**
 	 * Stage 5's dialog
 	 */
-	DIALOG_STAGE5(new String[] {"Désolé mais c'était la mauvaise réponse. Mais je ne peux uniquement juger ton intelligence sur une énigme. C’est pourquoi nous allons passer à la pratique."}), // PARIE DE TIC TAC TOE
+	DIALOG_STAGE5(new String[] {"DÃ©solÃ© mais c'Ã©tait la mauvaise rÃ©ponse.", "Mais je ne peux uniquement juger ton intelligence sur une Ã©nigme.", "C'est pourquoi nous allons passer Ã  la pratique."}), // PARIE DE TIC TAC TOE
 
 	/**
 	 * Stage 6's dialog
 	 */
-	DIALOG_STAGE6(new String[] {"Serais-tu l’élu ? Alliant intelligence et chance afin de vaincre les forces du mal ? Je me dois de vérifier. Réponds à cette énigme ! Combien y a-t-il de carrés en tout ? "}),
+	DIALOG_STAGE6(new String[] {"Serais-tu l'Ã©lu ?", "Alliant intelligence et chance afin de vaincre les forces du mal ?", "Je me dois de vÃ©rifier.", "RÃ©ponds Ã  cette Ã©nigme !", "Combien y a-t-il de carrÃ©s en tout ?"}),
 
 	/**
 	 * Stage 7's dialog
 	 */
-	DIALOG_STAGE7(new String[] {"Tu manques de chance et je ne peux te blamer. Tu n’es certe pas l’élu mais cela ne t’empêchera pas de pouvoir monter au sommet. Le chemin sera juste plus difficile. En parlant de difficulté, connais-tu le rush hour ? Viens donc faire une partie !"}), // PARTIE RUSH HOUR
+	DIALOG_STAGE7(new String[] {"Tu manques de chance et je ne peux te blamer.", "Tu n'es certes pas l'Ã©lu mais cela ne t'empÃªchera pas de pouvoir monter au sommet.", "Le chemin sera juste plus difficile.", "En parlant de difficultÃ©, connais-tu le rush hour ? Viens donc faire une partie !"}), // PARTIE RUSH HOUR
 
 	/**
 	 * Stage 8's dialog
 	 */
-	DIALOG_STAGE8(new String[] {"Bien bien. Parfois on dit qu’il faut savoir tout recommencer pour mieux repartir. Retourne donc au début de la tour et cette fois-ci, n'échoue pas ! "}),
+	DIALOG_STAGE8(new String[] {"Bien bien.", "Parfois on dit qu'il faut savoir tout recommencer pour mieux repartir.", "Retourne donc au dï¿½but de la tour et cette fois-ci, n'Ã©choue pas ! "}),
 
 	/**
 	 * Stage 9's dialog
 	 */
-	DIALOG_STAGE9(new String[] {"Phénoménal ! Tu es le meilleur aventurier que je n'ai jamais rencontré ! Prends donc ce passage secret, il emmène directement en haut de la tour ou bien laisse le temps faire les choses et continue normalement ton ascension ! "}),
+	DIALOG_STAGE9(new String[] {"PhÃ©nomÃ©nal !", "Tu es le meilleur aventurier que je n'ai jamais rencontrÃ© !", "Prends donc ce passage secret, il emmÃ¨ne directement en haut de la tour ou bien laisse le temps faire les choses et continue normalement ton ascension !"}),
 
 	/**
 	 * Stage 10's dialog
 	 */
-	DIALOG_STAGE10(new String[] {"Oh … On dirait que je me suis emporté dans des conclusions hâtives ! Tu n’es pas l’élu, mais tu peux tout de même me surprendre et réussir. "}),
+	DIALOG_STAGE10(new String[] {"Oh ! On dirait que je me suis emportÃ© dans des conclusions hÃ¢tives !", "Tu n'es pas l'Ã©lu, mais tu peux tout de mÃªme me surprendre et rÃ©ussir. "}),
 
 	/**
 	 * Stage 11's dialog
 	 */
-	DIALOG_STAGE11(new String[] {"Bravo ! Tu nous as sortis d’un sacré embouteillage ! D’ailleurs sais tu comment éviter les embouteillages ?"}),
+	DIALOG_STAGE11(new String[] {"Bravo !", "Tu nous as sortis d'un sacrÃ© embouteillage !", "D'ailleurs, sais-tu comment Ã©viter les embouteillages ?"}),
 
 	/**
 	 * Stage 12's dialog
 	 */
-	DIALOG_STAGE12(new String[] {"Il faut se méfier des chemins trop simples ! Voici ta punition !"}),
+	DIALOG_STAGE12(new String[] {"Il faut se mÃ©fier des chemins trop simples !", "Voici ta punition !"}),
 
 	/**
 	 * Stage 13's dialog
 	 */
-	DIALOG_STAGE13(new String[] {"C’est très bien . Maintenant assied-toi et prend un thé."}), // PARTIE OTHELLO
+	DIALOG_STAGE13(new String[] {"C'est trÃ¨s bien.", "Maintenant assied-toi et prend un thÃ©."}), // PARTIE OTHELLO
 
 	/**
 	 * Stage 14's dialog
 	 */
-	DIALOG_STAGE14(new String[] {"Non il faut rouler à vitesse constante ! Faisons une partie de Shifumi pour décider de ton sort ! "}), // PARTIE SHIFUMI
+	DIALOG_STAGE14(new String[] {"Non il faut rouler Ã  vitesse constante !", "Faisons une partie de Shifumi pour dÃ©cider de ton sort ! "}), // PARTIE SHIFUMI
 
 	/**
 	 * Stage 15's dialog
 	 */
-	DIALOG_STAGE15(new String[] {"Quel jeu relaxant ! ZzzzzZzzzzZZzzzzzzZZZzzzZzzzZzzzzZZzzzZzzzzZZZZzzzzZzz …. Que faire ?"}),
+	DIALOG_STAGE15(new String[] {"Quel jeu relaxant !", "ZzzzzZzzzzZZzzzzzzZZZzzzZzzzZzzzzZZzzzZzzzzZZZZzzzzZzz.", "Que faire ?"}),
 
 	/**
 	 * Stage 16's dialog
 	 */
-	DIALOG_STAGE16(new String[] {"Il ne faut pas confondre vitesse et précipitation mon jeune ami ! Je suis un homme , je suis une femme . Je ne suis ni un homme ni une femme. Qui suis-je ?"}),
+	DIALOG_STAGE16(new String[] {"Il ne faut pas confondre vitesse et prÃ©cipitation mon jeune ami !", "Je suis un homme , je suis une femme .", "Je ne suis ni un homme ni une femme.", "Qui suis-je ?"}),
 
 	/**
 	 * Stage 17's dialog
 	 */
-	DIALOG_STAGE17(new String[] {"Oui pardon ! Heureusement que tu m’as réveillé car sinon nous aurions été dans de beaux draps ! Continuons ?"}),
+	DIALOG_STAGE17(new String[] {"Oui pardon !", "Heureusement que tu m'as rÃ©veillÃ© car sinon nous aurions Ã©tÃ© dans de beaux draps !", "Continuons ?"}),
 
 	/**
 	 * Stage 18's dialog
@@ -101,27 +101,27 @@ public enum Dialog {
 	/**
 	 * Stage 19's dialog
 	 */
-	DIALOG_STAGE19(new String[] {"Bien . Comme tu as gagné je vais te laisser une chance ! Mais attention car plus nous montons au sommet de la tour et plus la tour me somme d’être intransigeant !"}),
+	DIALOG_STAGE19(new String[] {"Bien, comme tu as gagnÃ© je vais te laisser une chance !", "Mais attention car plus nous montons au sommet de la tour et plus la tour me somme d'Ãªtre intransigeant !"}),
 
 	/**
 	 * Stage 20's dialog
 	 */
-	DIALOG_STAGE20(new String[] {"Voici la chute de l’empereur"}),
+	DIALOG_STAGE20(new String[] {"Voici la chute de l'empereur"}),
 
 	/**
 	 * Stage 21's dialog
 	 */
-	DIALOG_STAGE21(new String[] {"Ce n’est malheureusement pas la bonne réponse. Vous êtes le maillon faible."}),
+	DIALOG_STAGE21(new String[] {"Ce n'est malheureusement pas la bonne rÃ©ponse.", "Vous Ãªtes le maillon faible."}),
 
 	/**
 	 * Stage 22's dialog
 	 */
-	DIALOG_STAGE22(new String[] {"Garde courage, l'épreuve continue !"}),
+	DIALOG_STAGE22(new String[] {"Garde courage, l'Ã©preuve continue !"}),
 
 	/**
 	 * Stage 23's dialog
 	 */
-	DIALOG_STAGE23(new String[] {"Une porte bloque le chemin. C’est un étage de croisement. Qu’importe les chemins que tu as empruntés, si tu as fait preuve de suffisamment de volonté, tous mènent à cet étage. La porte restera verrouillée tant que nous n’aurons pas trouvé le code qui change régulièrement."}); // PARTIE DE MASTERMIND
+	DIALOG_STAGE23(new String[] {"Une porte bloque le chemin.", "C'est un Ã©tage de croisement.", "Qu'importe les chemins que tu as empruntÃ©s, si tu as fait preuve de suffisamment de volontÃ©, tous mÃ¨nent Ã  cet Ã©tage.", "La porte restera verrouillÃ©e tant que nous n'aurons pas trouvÃ© le code qui change rÃ©guliÃ¨rement."}); // PARTIE DE MASTERMIND
 
 
 	/**
