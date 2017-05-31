@@ -19,7 +19,9 @@ public class Main
 	public static void main(String[] args)
 	{
 		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");
-		new Game(new Player("Coucou"), new OutputConsole()).play();
+		new Game(new Player("Coucou"), new OutputConsole(), false).play();
+		
+		
 
 	}
 }
