@@ -17,7 +17,8 @@ public class MasterMind /*extends MiniGame*/{
 	/**
 	 * @param dialog Dialog to display at the beginning of the game
 	 */
-	protected MasterMind(Dialog dialog) {
+	public MasterMind(Dialog dialog) 
+	{
 		//super(dialog);
 		// TODO Auto-generated constructor stub
 	}
@@ -99,7 +100,7 @@ public class MasterMind /*extends MiniGame*/{
 
 			while(true)
 			{
-				System.out.println("Essai n° : "+tries+", Maximum :"+DEFAULT_TRIES); //$NON-NLS-1$
+				System.out.println("Essai nï¿½ : "+tries+", Maximum :"+DEFAULT_TRIES); //$NON-NLS-1$
 				System.out.println("Liste des couleur : "+Color.BLUE+" "+Color.GREEN+" "+Color.MAGENTA+" "+Color.ORANGE+" "+Color.PINK+" "+Color.RED+"\n");
 				System.out.println("Veuillez saisir votre proposition :"); //$NON-NLS-1$
 				String str;
@@ -132,7 +133,7 @@ public class MasterMind /*extends MiniGame*/{
 				{
 					tries++;
 					System.out.println();
-					System.out.println("! BRAVO ! \nVous avez gagné en "+tries+" coup(s)");
+					System.out.println("! BRAVO ! \nVous avez gagnï¿½ en "+tries+" coup(s)");
 					return 1;
 				}
 				else if(tries==DEFAULT_TRIES)
