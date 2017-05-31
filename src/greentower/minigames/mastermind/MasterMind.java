@@ -61,6 +61,9 @@ public class MasterMind /*extends MiniGame*/{
 	 */
 	public static boolean stringChecker(String str)
 	{		
+		if(str.length()!= 4)
+			return false;
+		
 		for(int i=0;i<4;i++)
 		{
 			char carac = str.charAt(i);
