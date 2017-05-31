@@ -71,7 +71,7 @@ public class OutputConsolePendu implements Output {
 		System.out.println("Le mot a trouver :"+motAAfficher+"\n");
 	}
 	
-	public void showText(Dialog dialog) {
+	public void showDialog(Dialog dialog) {
 		System.out.println(dialog);
 		
 	}

@@ -31,7 +31,7 @@ public class HeadsOrTails extends MiniGame {
 
 	@Override
 	public int playStage(Output display) throws IOException{
-		display.showText(dialog);
+		display.showDialog(dialog);
 		int player=-1;
 		while(player!=0 || player!=1){
 			System.out.println("Veuillez entrer 0 pour pile et 1 pour face : ");

@@ -17,7 +17,7 @@ public class OutputGraphicPendu implements Output {
 	}
 	
 	@Override
-	public void showText(Dialog dialog) {
+	public void showDialog(Dialog dialog) {
 		// TODO Auto-generated method stub
 		
 	}

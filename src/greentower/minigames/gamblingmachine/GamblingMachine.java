@@ -26,7 +26,7 @@ public class GamblingMachine extends MiniGame{
 	 */
 	public int playStage(Output display){
 
-		display.showText(this.dialog);
+		display.showDialog(this.dialog);
 
 		boolean result;
 		int[] grid = new int[3];
@@ -35,21 +35,21 @@ public class GamblingMachine extends MiniGame{
 		grid[2] = (int)(Math.random() * (3-0)) + 0;
 
 		if(grid[0] == grid[1] && grid[1] == grid[2]){
-			System.out.println(grid[0]+"|"+grid[1]+"|"+grid[2]);
+			display.showText(grid[0]+"|"+grid[1]+"|"+grid[2]);
 			result = true;
 		}else{
-			System.out.println(grid[0]+"|"+grid[1]+"|"+grid[2]);
+			display.showText(grid[0]+"|"+grid[1]+"|"+grid[2]);
 			result = false;
 		}
 
 		if(result)
 		{
-			System.out.println("JACKPOT");
+			display.showText("JACKPOT");
 			return 0;
 		}
 		else
 		{
-			System.out.println("FAIL");
+			display.showText("FAIL");
 			return 1;
 		}
 	}
