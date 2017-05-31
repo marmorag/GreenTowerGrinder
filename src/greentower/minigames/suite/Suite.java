@@ -2,9 +2,10 @@ package greentower.minigames.suite;
 
 import greentower.IO.Output;
 import greentower.core.*;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
-import java.util.Scanner;
 /**
  * Find the fifth number
  * @author Rémi
@@ -24,13 +25,20 @@ public class Suite extends MiniGame{
 	private int op1,op2;
 
 	/**
+	 * 
+	 */
+	private BufferedReader br;
+	
+	/**
 	 * Initialize random first number and operations
 	 * Then deduce others numbers
 	 * @param dialog
+	 * @param stageIndex 
 	 */
-	public Suite(Dialog dialog)
+	public Suite(Dialog dialog, int stageIndex)
 	{
-		super(dialog);
+		super(dialog, stageIndex);
+		this.br = new BufferedReader(new InputStreamReader(System.in));
 		Random r = new Random();
 		this.op1 = r.nextInt(11);
 		this.op2 = r.nextInt(11);
@@ -44,21 +52,21 @@ public class Suite extends MiniGame{
 	/**
 	 * Display 4 first number and let player enter his result
 	 * @return {boolean} if the player win or not
+	 * @throws IOException 
+	 * @throws NumberFormatException 
 	 */
-	public int playStage(Output display){
-		System.out.println(this.toString());
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
-		int result = Integer.parseInt(sc.nextLine());
-
-		if(result == this.nb5)
+	public int playStage(Output display) throws NumberFormatException, IOException{
+		display.showGame();
+		display.showDialog(dialog);
+		display.showText(this.toString());
+		if(Integer.parseInt(this.br.readLine()) == this.nb5)
 		{
-			System.out.println("Bravo");
+			display.showText("Bravo");
 			return 0;
 		}
 		else
 		{
-			System.out.println("Dommage");
+			display.showText("Dommage");
 			return 1;
 		}
 	}

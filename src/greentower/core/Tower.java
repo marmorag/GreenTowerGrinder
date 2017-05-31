@@ -7,28 +7,16 @@ package greentower.core;
  */
 public class Tower
 {
+	
 	/**
-	 *
+	 * All stages
 	 */
-	private Stage[] stages;
+	private static Stage[] stages;
 
 	/**
-	 *
+	 * Table with next two stages
 	 */
-	private int[][] nextStages;
-
-	/**
-	 * Stage constructor with given Stage and given nextStages
-	 * @param initialStages
-	 * 			Stages to play
-	 * @param initialNextStages
-	 * 			Accessible stages after this stage
-	 */
-	public Tower(Stage[] initialStages, int[][] initialNextStages)
-	{
-		this.stages = initialStages;
-		this.nextStages = initialNextStages;
-	}
+	private static int[][] nextStages;
 
 	/**
 	 * Get the next stage's index with given current stage and given stage result
@@ -39,9 +27,9 @@ public class Tower
 	 * @return
 	 * 			Index of the new stage
 	 */
-	public int getNextStages(int currentStage, int stageResult)
+	public static Stage getNextStage(int currentStage, int stageResult)
 	{
-		return this.nextStages[currentStage][stageResult];
+		return Tower.stages[nextStages[currentStage][stageResult]];
 	}
 
 	/**
@@ -49,8 +37,31 @@ public class Tower
 	 * @return
 	 * 			The table of stages
 	 */
-	public Stage[] getStages()
+	public static Stage[] getStages()
 	{
-		return this.stages;
+		return Tower.stages;
+	}
+	
+	/**
+	 * Get the stage at a given index
+	 * @param index 
+	 * 			Stage's index
+	 * @return
+	 * 			The table of stages
+	 */
+	public static Stage getStageAt(int index)
+	{
+		return Tower.stages[index];
+	}
+
+	/**
+	 * Get the index in this.stages of a given stage
+	 * @param currentStage
+	 * @return
+	 * 			Stage's index
+	 */
+	public static int getStageIndex(Stage currentStage) 
+	{
+		return currentStage.index;
 	}
 }

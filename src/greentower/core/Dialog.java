@@ -11,7 +11,7 @@ public enum Dialog {
 	/**
 	 * Stage 1's dialog
 	 */
-	DIALOG_STAGE1(new String [] {"Bonjour jeune graine. Je suis Sativa, gardien de cette tour et protecteur de son trésor . Aujourd’hui,  je vais te guider à travers ton dangereux périple. Pour commencer, entre ton nom."}),
+	DIALOG_STAGE1(new String [] {"Bonjour jeune graine.", "Je suis Sativa, gardien de cette tour et protecteur de son trésor.", "Aujourd’hui, je vais te guider à travers ton dangereux périple.", "Pour commencer, entre ton nom."}),
 
 	/**
 	 * Stage 2's dialog
@@ -144,7 +144,7 @@ public enum Dialog {
 	 */
 	public String toString()
 	{
-		String result = null;
+		String result = "";
 		for(int index = 0; index < this.dialog.length; index++)
 			result += this.dialog[index] + "\n";
 		return result;

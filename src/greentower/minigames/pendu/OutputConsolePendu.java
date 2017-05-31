@@ -1,5 +1,6 @@
 package greentower.minigames.pendu;
 
+import greentower.IO.Output;
 import greentower.core.Dialog;
 
 /**
@@ -7,7 +8,7 @@ import greentower.core.Dialog;
  * @author Guillaume
  *
  */
-public class OutConsole implements Out {
+public class OutputConsolePendu implements Output {
 
 	/**
 	 * Display hanged in ASCII art according to current number of errors
@@ -70,7 +71,7 @@ public class OutConsole implements Out {
 		System.out.println("Le mot a trouver :"+motAAfficher+"\n");
 	}
 	
-	public void showText(Dialog dialog) {
+	public void showDialog(Dialog dialog) {
 		System.out.println(dialog);
 		
 	}
@@ -85,12 +86,30 @@ public class OutConsole implements Out {
 	
 	public void notifyWin(int nbCoups, String motATrouver) {
 		System.out.println("Felicitations vous avez rÃ©ussi en : "+ nbCoups +"coups\n");
-		System.out.println("Le mot ï¿½tait :"+motATrouver+"\n");
+		System.out.println("Le mot était :"+motATrouver+"\n");
 	}
 	
 	public void notifyLoose(String motATrouver) {
 		System.out.println("Dommage vous avez perdu");
-		System.out.println("Le mot ï¿½tait :"+motATrouver+"\n");
+		System.out.println("Le mot était :"+motATrouver+"\n");
+	}
+
+	@Override
+	public void showText(String str) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showAnswers(String[] answers) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

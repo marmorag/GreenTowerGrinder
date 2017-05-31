@@ -49,8 +49,7 @@ public class Checker {
 	{
 		return this.misplaced;
 	}
-
-
+	
 	@Override
 	public String toString()
 	{

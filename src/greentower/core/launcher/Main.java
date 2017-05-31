@@ -3,7 +3,6 @@ package greentower.core.launcher;
 import greentower.IO.OutputConsole;
 import greentower.core.Game;
 import greentower.core.Player;
-import greentower.core.Tower;
 
 /**
  * Main class of the game.
@@ -20,9 +19,9 @@ public class Main
 	public static void main(String[] args)
 	{
 		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");
-		Tower tower = new Tower(ListOfStages.stages, ListOfStages.nextStages);
-
-		new Game(new Player("Coucou"), new OutputConsole()).play();
+		new Game(new Player("Coucou"), new OutputConsole(), false).play();
+		
+		
 
 	}
 }

@@ -17,7 +17,7 @@ public abstract class Stage
 	protected boolean stageIsFinal = false;
 
 	/**
-	 *
+	 *  Dialog to say
 	 */
 	protected Dialog dialog;
 
@@ -30,19 +30,21 @@ public abstract class Stage
 	 * Interface used to display anything needed
 	 */
 	public Output outputTool;
+	
+	/**
+	 * Index of Stage in ListOfStages
+	 */
+	public int index;
+	
 
 	/**
 	 * Play the current stage (MiniGame or Choice, whatever)
 	 * @param display
 	 * @return
 	 * 			Stage result
+	 * @throws Exception 
 	 */
-	public abstract int playStage(Output display);
-
-	/**
-	 * Contains the next game which are possible to play
-	 */
-	public int[] nextStagesIndex;
+	public abstract int playStage(Output display) throws Exception;
 
 	/**
 	 * Indicates if the stage is the last one or not

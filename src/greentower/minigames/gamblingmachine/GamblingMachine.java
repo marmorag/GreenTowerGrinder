@@ -10,12 +10,14 @@ import greentower.core.MiniGame;
 public class GamblingMachine extends MiniGame{
 
 	/**
+	 * GamblingMachine's constructor
 	 * @param dialog
+	 * @param stageIndex 
 	 *
 	 */
-	public GamblingMachine(Dialog dialog)
+	public GamblingMachine(Dialog dialog, int stageIndex)
 	{
-		super(dialog);
+		super(dialog, stageIndex);
 	}
 
 	/**
@@ -24,8 +26,8 @@ public class GamblingMachine extends MiniGame{
 	 * @return true if player wins false if not
 	 */
 	public int playStage(Output display){
-
-		display.showText(this.dialog);
+		display.showGame();
+		display.showDialog(this.dialog);
 
 		boolean result;
 		int[] grid = new int[3];
@@ -34,21 +36,21 @@ public class GamblingMachine extends MiniGame{
 		grid[2] = (int)(Math.random() * (3-0)) + 0;
 
 		if(grid[0] == grid[1] && grid[1] == grid[2]){
-			System.out.println(grid[0]+"|"+grid[1]+"|"+grid[2]);
+			display.showText(grid[0]+"|"+grid[1]+"|"+grid[2]);
 			result = true;
 		}else{
-			System.out.println(grid[0]+"|"+grid[1]+"|"+grid[2]);
+			display.showText(grid[0]+"|"+grid[1]+"|"+grid[2]);
 			result = false;
 		}
 
 		if(result)
 		{
-			System.out.println("JACKPOT");
+			display.showText("JACKPOT");
 			return 0;
 		}
 		else
 		{
-			System.out.println("FAIL");
+			display.showText("FAIL");
 			return 1;
 		}
 	}

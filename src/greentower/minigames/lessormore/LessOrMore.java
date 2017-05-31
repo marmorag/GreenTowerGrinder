@@ -1,7 +1,8 @@
 package greentower.minigames.lessormore;
 
-import java.util.Scanner;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.MiniGame;
@@ -22,32 +23,37 @@ public class LessOrMore extends MiniGame
 	private int randomcard;
 
 	/**
-	 *
+	 * Reader for input
 	 */
-	private Scanner sc;
+	private BufferedReader br;
 
 	/**
+	 * LessOrMore's constructor
 	 * @param dialog
-	 *
+	 * @param stageIndex 
 	 */
-	public LessOrMore(Dialog dialog)
+	public LessOrMore(Dialog dialog, int stageIndex)
 	{
-		super(dialog);
+		super(dialog, stageIndex);
 		this.base = (int)(Math.random() * (10-1)) + 1;
 		this.randomcard = (int)(Math.random() * (10-1)) + 1;
+		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	/**
 	 * return if player win or not
 	 *
 	 * @return {boolean} true if the game is won and false if not
+	 * @throws IOException 
 	 */
-	public int playStage(Output display){
+	public int playStage(Output display) throws IOException{
+		display.showGame();
+		display.showDialog(dialog);
 		boolean result;
 
-		System.out.println(this.base);
-		this.sc = new Scanner(System.in);
-		String userChoice = this.sc.nextLine();
+		display.showText(String.valueOf(this.base));
+		String userChoice;
+		userChoice = this.br.readLine();
 		userChoice = userChoice.toUpperCase();
 
 
@@ -64,16 +70,16 @@ public class LessOrMore extends MiniGame
 				result = false;
 		}
 		else
-			result = false;
+			throw new IOException();
 
 		if(result)
 		{
-			System.out.println("BRAVO!");
+			display.showText("BRAVO!");
 			return 0;
 		}
 		else
 		{
-			System.out.println("Dommage :(");
+			display.showText("Dommage :(");
 			return 1;
 		}
 

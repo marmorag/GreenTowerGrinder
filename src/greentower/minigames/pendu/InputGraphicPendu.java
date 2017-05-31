@@ -6,12 +6,12 @@ import greentower.IO.Input;
  * @author
  *
  */
-public class InputGraphic implements Input {
+public class InputGraphicPendu implements Input {
 
 	/**
 	 *
 	 */
-	public InputGraphic() {
+	public InputGraphicPendu() {
 		// TODO Auto-generated constructor stub
 	}
 

@@ -14,14 +14,24 @@ public abstract class MiniGame extends Stage
 	/**
 	 * Mini Game's contructor
 	 * @param dialog
+	 * @param stageIndex 
 	 */
-	protected MiniGame(Dialog dialog)
+	protected MiniGame(Dialog dialog, int stageIndex)
 	{
+		this.index = stageIndex;
 		this.dialog = dialog;
 	}
 
-	protected MiniGame(Output outTool, Input inTool, Dialog dialog)
+	/**
+	 * Mini Game's constructor for Pendu
+	 * @param outTool
+	 * @param inTool
+	 * @param dialog
+	 * @param stageIndex 
+	 */
+	protected MiniGame(Output outTool, Input inTool, Dialog dialog, int stageIndex)
 	{
+		this.index = stageIndex;
 		this.dialog = dialog;
 		this.inputTool = inTool;
 		this.outputTool = outTool;

@@ -1,54 +1,68 @@
 package greentower.minigames.pendu;
 
+import greentower.IO.Output;
 import greentower.core.Dialog;
 
 /**
  * @author
  *
  */
-public class OutputGraphic implements Out {
+public class OutputGraphicPendu implements Output {
 
 	/**
 	 *
 	 */
-	public OutputGraphic() {
+	public OutputGraphicPendu() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
-	public void showText(Dialog dialog) {
+	public void showDialog(Dialog dialog) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	@Override
 	public void afficherPendu(int nbErr, String motAAfficher) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public void demanderCaractere() {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public void erreurLettre() {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public void notifyLoose(String motATrouver) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public void notifyWin(int nbCoups, String motATrouver) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void showText(String str) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showAnswers(String[] answers) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

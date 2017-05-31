@@ -43,19 +43,21 @@ public class Pendu extends MiniGame{
 	 *	Initialize motAAfficher with "_"
 	 * @param display
 	 * @param input
+	 * @param dialog The dialog to display at the beginning of the game
+	 * @param stageIndex 
 	 */
-	public Pendu(Out display, Input input, Dialog dialog)
+	public Pendu(Output display, Input input, Dialog dialog, int stageIndex)
 	{
-		super(display,input,dialog);
+		super(display,input,dialog, stageIndex);
+		
+		this.inputTool = input;
+		this.outputTool = display;
 		Random r = new Random();
 		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
 
 		this.nbErreur = 0;
 		this.nbCoups = 0;
-		// Put the next two stage
-		//this.nextStage[0]= ;
-		//this.nextStage[1]= ;
 
 		try{
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/pendu/listeMot.txt")));
@@ -136,10 +138,12 @@ public class Pendu extends MiniGame{
 
 	/**
 	 * Main procedure which launch miniGame
-	 * @return Stage return one of the two stage contained
+	 * @param display The current displaying methods
+	 * @return int The index of the nextStage to play (Logical ling between Stage)
 	 */
 	public int playStage(Output display)
 	{
+		System.out.println("ici");
 		char lettreEntree;
 
 		while(!this.finDuPendu() && this.nbCoups <= this.motATrouver.length()+5)
@@ -171,7 +175,7 @@ public class Pendu extends MiniGame{
 		}
 		else
 		{
-			this.displayTool.notifyLoose(this.motATrouver);
+			this.outputTool.notifyLoose(this.motATrouver);
 			return 1;
 		}
 	}
