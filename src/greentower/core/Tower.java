@@ -8,12 +8,12 @@ package greentower.core;
 public class Tower
 {
 	/**
-	 *
+	 * All stages
 	 */
 	private Stage[] stages;
 
 	/**
-	 *
+	 * Table with next two stages
 	 */
 	private int[][] nextStages;
 

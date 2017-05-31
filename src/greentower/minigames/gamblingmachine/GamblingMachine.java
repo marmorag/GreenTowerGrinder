@@ -10,6 +10,7 @@ import greentower.core.MiniGame;
 public class GamblingMachine extends MiniGame{
 
 	/**
+	 * GamblingMachine's constructor
 	 * @param dialog
 	 *
 	 */

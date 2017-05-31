@@ -1,8 +1,9 @@
 package greentower.minigames.headsOrTails;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
-import java.util.Scanner;
-
 import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.MiniGame;
@@ -14,26 +15,28 @@ import greentower.core.MiniGame;
 public class HeadsOrTails extends MiniGame {
 
 	/**
-	 *
+	 *	Reader for input
 	 */
-	private Scanner sc;
+	private BufferedReader br;
 
 	/**
+	 * HeadsOrTail's constructor
 	 * @param dialog
-	 *
 	 */
 	public HeadsOrTails(Dialog dialog)
 	{
 		super(dialog);
+		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
-	public int playStage(Output display){
+	@Override
+	public int playStage(Output display) throws IOException{
 		display.showText(dialog);
 		int player=-1;
 		while(player!=0 || player!=1){
 			System.out.println("Veuillez entrer 0 pour pile et 1 pour face : ");
-			this.sc = new Scanner(System.in);
-			String userChoice = this.sc.nextLine();
+			String userChoice;
+			userChoice = this.br.readLine();
 			player = Integer.parseInt(userChoice);
 			System.out.println("\n");
 		}

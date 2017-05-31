@@ -1,8 +1,9 @@
 package greentower.minigames.tictactoe;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
-import java.util.Scanner;
-
 import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.MiniGame;
@@ -12,11 +13,11 @@ import greentower.core.MiniGame;
  */
 public class TicTacToe extends MiniGame{
 	/**
-	 *  Constant for winner
+	 *  Constant for player
 	 */
 	private final static int PLAYER = 1;
 	/**
-	 *
+	 *	Constant for game player
 	 */
 	private final static int GAME = 0;
 
@@ -28,6 +29,11 @@ public class TicTacToe extends MiniGame{
 	 * Winner of the game
 	 */
 	private int winner;
+	
+	/**
+	 * Reader for input
+	 */
+	private BufferedReader br;
 
 	/**
 	 * Fill the grid with 0
@@ -39,23 +45,24 @@ public class TicTacToe extends MiniGame{
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
 				this.grid[i][j] = 0;
+		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	/**
 	 * Player turn : he types the 2 indexes one by one
 	 * @return true if he win and false if not
+	 * @throws IOException 
+	 * @throws NumberFormatException 
 	 */
-	public boolean PlayerTurn(){
+	public boolean PlayerTurn() throws NumberFormatException, IOException{
 		if(this.isFull()){ // Test if no one have win
 			System.out.println("Egalite, veuillez rejouer");
 			this.resetGrid();
 		}
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
 		int p1=0,p2=0;
 		while(true){ //Get index by the user
-			p1 = Integer.parseInt(sc.nextLine());
-			p2 = Integer.parseInt(sc.nextLine());
+			p1 = Integer.parseInt(this.br.readLine());
+			p2 = Integer.parseInt(this.br.readLine());
 			if(this.grid[p1][p2] == 0){
 				this.grid[p1][p2] = 1;
 				break;

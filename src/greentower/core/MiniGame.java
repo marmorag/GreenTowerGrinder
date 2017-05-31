@@ -20,6 +20,12 @@ public abstract class MiniGame extends Stage
 		this.dialog = dialog;
 	}
 
+	/**
+	 * Mini Game's constructor for Pendu
+	 * @param outTool
+	 * @param inTool
+	 * @param dialog
+	 */
 	protected MiniGame(Output outTool, Input inTool, Dialog dialog)
 	{
 		this.dialog = dialog;

@@ -3,6 +3,7 @@ package greentower.IO;
 import greentower.core.Dialog;
 
 /**
+ * Implementation of Output to display in console mode
  * @author gavinr
  * 
  */

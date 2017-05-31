@@ -13,7 +13,7 @@ import javax.swing.*;
 public class Hotkey extends JFrame {
 
     /**
-     *
+     * Hotkey's constructor
      */
     public Hotkey() {
     	// List of key 1
