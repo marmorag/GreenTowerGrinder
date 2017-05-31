@@ -50,8 +50,10 @@ public class TicTacToe extends MiniGame{
 	/**
 	 * Player turn : he types the 2 indexes one by one
 	 * @return true if he win and false if not
+	 * @throws IOException 
+	 * @throws NumberFormatException 
 	 */
-	public boolean PlayerTurn(){
+	public boolean PlayerTurn() throws NumberFormatException, IOException{
 		if(this.isFull()){ // Test if no one have win
 			System.out.println("Egalite, veuillez rejouer");
 			this.resetGrid();
@@ -59,18 +61,8 @@ public class TicTacToe extends MiniGame{
 		@SuppressWarnings("resource")
 		int p1=0,p2=0;
 		while(true){ //Get index by the user
-			try {
-				p1 = Integer.parseInt(this.br.readLine());
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			try {
-				p2 = Integer.parseInt(this.br.readLine());
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			p1 = Integer.parseInt(this.br.readLine());
+			p2 = Integer.parseInt(this.br.readLine());
 			if(this.grid[p1][p2] == 0){
 				this.grid[p1][p2] = 1;
 				break;

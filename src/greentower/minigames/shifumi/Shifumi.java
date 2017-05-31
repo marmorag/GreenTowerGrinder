@@ -33,15 +33,11 @@ public class Shifumi extends MiniGame{
 	/**
 	 * Return if player win or not
 	 * @return true if player win and false if not
+	 * @throws IOException 
 	 */
-	public int playStage(Output display){
+	public int playStage(Output display) throws IOException{
 
-		String sign;
-		try {
-			sign = this.br.readLine();
-		} catch (IOException e) {
-			sign = "";
-		}
+		String sign = this.br.readLine();
 
 		boolean result;
 		//transform string -> Sign

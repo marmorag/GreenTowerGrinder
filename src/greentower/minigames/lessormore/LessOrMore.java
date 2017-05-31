@@ -45,18 +45,14 @@ public class LessOrMore extends MiniGame
 	 * return if player win or not
 	 *
 	 * @return {boolean} true if the game is won and false if not
+	 * @throws IOException 
 	 */
-	public int playStage(Output display){
+	public int playStage(Output display) throws IOException{
 		boolean result;
 
 		System.out.println(this.base);
 		String userChoice;
-		try {
-			userChoice = this.br.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			userChoice="";
-		}
+		userChoice = this.br.readLine();
 		userChoice = userChoice.toUpperCase();
 
 
@@ -73,7 +69,7 @@ public class LessOrMore extends MiniGame
 				result = false;
 		}
 		else
-			result = false;
+			throw new IOException();
 
 		if(result)
 		{

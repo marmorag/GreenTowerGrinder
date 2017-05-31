@@ -1,5 +1,7 @@
 package greentower.core;
 
+import java.io.IOException;
+
 import greentower.IO.Output;
 import greentower.minigames.tictactoe.TicTacToe;
 
@@ -52,8 +54,16 @@ public class Game
 	{
 		while(this.currentStage.getFinalStage() == false)
 		{
-			this.currentStage.playStage(this.display);
-			this.numberOfRounds++;
+			try {
+				this.currentStage.playStage(this.display);
+				this.numberOfRounds++;
+			} catch (IOException e) {
+				System.out.println("Problème avec l'entrée");
+				System.out.println("Veuillez recommencer");
+			} catch (Exception e){
+				
+			}
+			
 		}
 		//this.currentStage = this.getNextStages(this.currentStage, this.currentStage.playStage(this.display)
 		//Finish game

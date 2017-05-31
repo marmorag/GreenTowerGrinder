@@ -37,7 +37,7 @@ public abstract class Stage
 	 * @return
 	 * 			Stage result
 	 */
-	public abstract int playStage(Output display);
+	public abstract int playStage(Output display) throws Exception;
 
 	/**
 	 * Contains the next game which are possible to play

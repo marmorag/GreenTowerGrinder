@@ -31,17 +31,13 @@ public class HeadsOrTails extends MiniGame {
 		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
-	public int playStage(Output display){
+	public int playStage(Output display) throws IOException{
 		display.showText(dialog);
 		int player=-1;
 		while(player!=0 || player!=1){
 			System.out.println("Veuillez entrer 0 pour pile et 1 pour face : ");
 			String userChoice;
-			try {
-				userChoice = this.br.readLine();
-			} catch (IOException e) {
-				userChoice = "0";
-			}
+			userChoice = this.br.readLine();
 			player = Integer.parseInt(userChoice);
 			System.out.println("\n");
 		}

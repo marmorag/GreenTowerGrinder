@@ -50,16 +50,12 @@ public class Suite extends MiniGame{
 	/**
 	 * Display 4 first number and let player enter his result
 	 * @return {boolean} if the player win or not
+	 * @throws IOException 
+	 * @throws NumberFormatException 
 	 */
-	public int playStage(Output display){
+	public int playStage(Output display) throws NumberFormatException, IOException{
 		System.out.println(this.toString());
-		int result;
-		try {
-			result = Integer.parseInt(this.br.readLine());
-		} catch (Exception e) {
-			result = 0;
-		}
-		if(result == this.nb5)
+		if(Integer.parseInt(this.br.readLine()) == this.nb5)
 		{
 			System.out.println("Bravo");
 			return 0;
