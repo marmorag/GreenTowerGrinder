@@ -32,14 +32,8 @@ public class Pendu extends MiniGame{
 	 */
 	private String motATrouver;
 
-	/**
-	 * Tool used to display anything needed
-	 */
 	private Output outTool;
 	
-	/**
-	 * Tool used to input anything needed
-	 */
 	private Input inTool;
 	
 	/**
