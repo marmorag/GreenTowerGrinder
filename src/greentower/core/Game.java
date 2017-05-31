@@ -3,7 +3,6 @@ package greentower.core;
 import java.io.IOException;
 
 import greentower.IO.Output;
-import greentower.minigames.tictactoe.TicTacToe;
 
 /**
  * This class represents a game of The Green Tower Grinder
@@ -36,14 +35,14 @@ public class Game
 
 	/**
 	 * Default constructor
-	 * @param player who lauched the game
+	 * @param player who launched the game
 	 * @param display
 	 */
 	public Game(Player player, Output display)
 	{
 		this.numberOfRounds = 0;
 		this.player = player;
-		this.currentStage = new TicTacToe(Dialog.DIALOG_STAGE1); // First Stage
+		this.currentStage = ListOfStages.getStageAt(0);
 		this.display = display;
 	}
 
@@ -54,20 +53,20 @@ public class Game
 	{
 		while(this.currentStage.getFinalStage() == false)
 		{
-			try {
-				this.currentStage.playStage(this.display);
+			try 
+			{
+				this.currentStage = Tower.getNextStages(Tower.getStageIndex(this.currentStage), this.currentStage.playStage(this.display));
 				this.numberOfRounds++;
 			} catch (IOException e) {
 				System.out.println("Problème avec l'entrée");
 				System.out.println("Veuillez recommencer");
-			} catch (Exception e){
+			} catch (Exception e)
+			{
+				e.printStackTrace();
 				System.out.println("Un problème est survenu, veuillez recommencer");
 				System.out.println("Toutes nos excuses");
 			}
-			
 		}
-		//this.currentStage = this.getNextStages(this.currentStage, this.currentStage.playStage(this.display)
-		//Finish game
 	}
 
 	/**
