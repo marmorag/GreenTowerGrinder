@@ -103,7 +103,11 @@ public class Game
 //		}
 	}
 
-	
+	/**
+	 * Update the current display mode, parameter -1 return a OutputConsole
+	 * @param indexOfCurrentStages
+	 * @return return
+	 */
 	private static Output updateDisplayMode(int indexOfCurrentStages)
 	{
 		switch (indexOfCurrentStages)

@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.MiniGame;
 
 /**
  * Represents a specific MasterMind Game (player mode)
@@ -12,15 +13,15 @@ import greentower.core.Dialog;
  * @author delomeza
  *
  */
-public class MasterMind /*extends MiniGame*/{
-
+public class MasterMind extends MiniGame
+{
 	/**
 	 * @param dialog Dialog to display at the beginning of the game
+	 * @param stageIndex 
 	 */
-	public MasterMind(Dialog dialog) 
+	public MasterMind(Dialog dialog, int stageIndex) 
 	{
-		//super(dialog);
-		// TODO Auto-generated constructor stub
+		super(dialog, stageIndex);
 	}
 
 	/**

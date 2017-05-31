@@ -1,6 +1,7 @@
 package greentower.core;
 
 import greentower.minigames.lessormore.LessOrMore;
+import greentower.minigames.mastermind.MasterMind;
 import greentower.minigames.shifumi.Shifumi;
 import greentower.minigames.tictactoe.TicTacToe;
 
@@ -42,7 +43,7 @@ public class ListOfStages
 		/* STAGE_20 */ new Choice(Dialog.DIALOG_STAGE20, Answers.ANSWERS_STAGE20, 19),
 		
 		/* STAGE_21 */ new Choice(Dialog.DIALOG_STAGE21, Answers.ANSWERS_STAGE21, 20),
-		///* STAGE_22 */ new MasterMind(Dialog.DIALOG_STAGE22)
+		/* STAGE_22 */ new MasterMind(Dialog.DIALOG_STAGE22, 21),
 		/* STAGE_22bis */ new Choice(Dialog.DIALOG_STAGE22, Answers.ANSWERS_STAGE22, 21),
 	};
 
