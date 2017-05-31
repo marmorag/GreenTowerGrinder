@@ -20,6 +20,11 @@ public interface Output {
 	 * @param str
 	 */
 	public void showText(String str);
+	
+	/**
+	 * Display the game
+	 */
+	public void showGame();
 
 	// Used only in Pendu game, implementation in other games should be void
 	public void notifyWin(int nbCoups, String motATrouver);

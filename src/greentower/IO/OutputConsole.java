@@ -49,6 +49,12 @@ public class OutputConsole implements Output{
 		// VOID FOR NON USED METHOD AT THIS STAGE
 	}
 
+	@Override
+	public void showGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	
 
