@@ -32,10 +32,6 @@ public class Pendu extends MiniGame{
 	 */
 	private String motATrouver;
 
-	private Output outTool;
-	
-	private Input inTool;
-	
 	/**
 	 * motATrouver copy but letters are replaced by _
 	 * until player has not found the correct letter
