@@ -48,6 +48,9 @@ public class Pendu extends MiniGame{
 	public Pendu(Output display, Input input, Dialog dialog)
 	{
 		super(display,input,dialog);
+		
+		this.inputTool = input;
+		this.outputTool = display;
 		Random r = new Random();
 		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
@@ -134,12 +137,12 @@ public class Pendu extends MiniGame{
 
 	/**
 	 * Main procedure which launch miniGame
+	 * @param display The current displaying methods
 	 * @return int The index of the nextStage to play (Logical ling between Stage)
 	 */
-	public int playStage(OutputPendu display)
+	public int playStage(Output display)
 	{
-		this.outputTool = new OutputConsolePendu();
-		
+		System.out.println("ici");
 		char lettreEntree;
 
 		while(!this.finDuPendu() && this.nbCoups <= this.motATrouver.length()+5)

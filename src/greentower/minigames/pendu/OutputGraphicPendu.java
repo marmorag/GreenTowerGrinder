@@ -7,7 +7,7 @@ import greentower.core.Dialog;
  * @author
  *
  */
-public class OutputGraphicPendu implements OutputPendu {
+public class OutputGraphicPendu implements Output {
 
 	/**
 	 *

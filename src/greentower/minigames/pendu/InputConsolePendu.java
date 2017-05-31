@@ -10,7 +10,7 @@ import greentower.IO.Input;
  * @author Guillaume
  *
  */
-public class InputConsole implements Input {
+public class InputConsolePendu implements Input {
 	/**
 	 * Reader for the input character
 	 */
@@ -19,7 +19,7 @@ public class InputConsole implements Input {
 	/**
 	 * Construtor
 	 */
-	public InputConsole()
+	public InputConsolePendu()
 	{
 		this.reader = new BufferedReader(new InputStreamReader(System.in));
 	}
