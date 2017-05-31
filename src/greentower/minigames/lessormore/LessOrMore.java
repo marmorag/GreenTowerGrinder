@@ -1,5 +1,8 @@
 package greentower.minigames.lessormore;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 import greentower.IO.Output;
@@ -24,7 +27,7 @@ public class LessOrMore extends MiniGame
 	/**
 	 *
 	 */
-	private Scanner sc;
+	private BufferedReader br;
 
 	/**
 	 * @param dialog
@@ -35,6 +38,7 @@ public class LessOrMore extends MiniGame
 		super(dialog);
 		this.base = (int)(Math.random() * (10-1)) + 1;
 		this.randomcard = (int)(Math.random() * (10-1)) + 1;
+		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	/**
@@ -46,8 +50,13 @@ public class LessOrMore extends MiniGame
 		boolean result;
 
 		System.out.println(this.base);
-		this.sc = new Scanner(System.in);
-		String userChoice = this.sc.nextLine();
+		String userChoice;
+		try {
+			userChoice = this.br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			userChoice="";
+		}
 		userChoice = userChoice.toUpperCase();
 
 

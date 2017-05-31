@@ -3,6 +3,9 @@ package greentower.minigames.suite;
 import greentower.IO.Output;
 import greentower.core.*;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 /**
@@ -23,6 +26,8 @@ public class Suite extends MiniGame{
 	@SuppressWarnings("javadoc")
 	private int op1,op2;
 
+	private BufferedReader br;
+	
 	/**
 	 * Initialize random first number and operations
 	 * Then deduce others numbers
@@ -31,6 +36,7 @@ public class Suite extends MiniGame{
 	public Suite(Dialog dialog)
 	{
 		super(dialog);
+		this.br = new BufferedReader(new InputStreamReader(System.in));
 		Random r = new Random();
 		this.op1 = r.nextInt(11);
 		this.op2 = r.nextInt(11);
@@ -47,10 +53,12 @@ public class Suite extends MiniGame{
 	 */
 	public int playStage(Output display){
 		System.out.println(this.toString());
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
-		int result = Integer.parseInt(sc.nextLine());
-
+		int result;
+		try {
+			result = Integer.parseInt(this.br.readLine());
+		} catch (Exception e) {
+			result = 0;
+		}
 		if(result == this.nb5)
 		{
 			System.out.println("Bravo");

@@ -1,5 +1,8 @@
 package greentower.minigames.shifumi;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 import greentower.IO.Output;
@@ -15,7 +18,7 @@ public class Shifumi extends MiniGame{
 	/**
 	 *
 	 */
-	private Scanner sc;
+	private BufferedReader br;
 
 	/**
 	 * @param dialog
@@ -24,6 +27,7 @@ public class Shifumi extends MiniGame{
 	public Shifumi(Dialog dialog)
 	{
 		super(dialog);
+		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	/**
@@ -32,8 +36,12 @@ public class Shifumi extends MiniGame{
 	 */
 	public int playStage(Output display){
 
-		this.sc = new Scanner(System.in);
-		String sign = this.sc.nextLine();
+		String sign;
+		try {
+			sign = this.br.readLine();
+		} catch (IOException e) {
+			sign = "";
+		}
 
 		boolean result;
 		//transform string -> Sign

@@ -1,5 +1,8 @@
 package greentower.minigames.tictactoe;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -28,6 +31,8 @@ public class TicTacToe extends MiniGame{
 	 * Winner of the game
 	 */
 	private int winner;
+	
+	private BufferedReader br;
 
 	/**
 	 * Fill the grid with 0
@@ -39,6 +44,7 @@ public class TicTacToe extends MiniGame{
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
 				this.grid[i][j] = 0;
+		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	/**
@@ -51,11 +57,20 @@ public class TicTacToe extends MiniGame{
 			this.resetGrid();
 		}
 		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
 		int p1=0,p2=0;
 		while(true){ //Get index by the user
-			p1 = Integer.parseInt(sc.nextLine());
-			p2 = Integer.parseInt(sc.nextLine());
+			try {
+				p1 = Integer.parseInt(this.br.readLine());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				p2 = Integer.parseInt(this.br.readLine());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			if(this.grid[p1][p2] == 0){
 				this.grid[p1][p2] = 1;
 				break;
