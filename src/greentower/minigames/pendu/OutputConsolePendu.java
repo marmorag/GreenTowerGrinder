@@ -8,7 +8,7 @@ import greentower.core.Dialog;
  * @author Guillaume
  *
  */
-public class OutputConsolePendu implements OutputPendu {
+public class OutputConsolePendu implements Output {
 
 	/**
 	 * Display hanged in ASCII art according to current number of errors
@@ -86,12 +86,12 @@ public class OutputConsolePendu implements OutputPendu {
 	
 	public void notifyWin(int nbCoups, String motATrouver) {
 		System.out.println("Felicitations vous avez rÃ©ussi en : "+ nbCoups +"coups\n");
-		System.out.println("Le mot ï¿½tait :"+motATrouver+"\n");
+		System.out.println("Le mot était :"+motATrouver+"\n");
 	}
 	
 	public void notifyLoose(String motATrouver) {
 		System.out.println("Dommage vous avez perdu");
-		System.out.println("Le mot ï¿½tait :"+motATrouver+"\n");
+		System.out.println("Le mot était :"+motATrouver+"\n");
 	}
 	
 }
