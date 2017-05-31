@@ -30,6 +30,12 @@ public abstract class Stage
 	 * Interface used to display anything needed
 	 */
 	public Output outputTool;
+	
+	/**
+	 * Index of Stage in ListOfStages
+	 */
+	public int index;
+	
 
 	/**
 	 * Play the current stage (MiniGame or Choice, whatever)

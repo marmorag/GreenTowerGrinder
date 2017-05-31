@@ -155,7 +155,7 @@ public enum Answers {
 	 * @return
 	 * 			String at the given index
 	 */
-	public String[] getAsnwers()
+	public String[] getAnswers()
 	{
 		return this.answers;
 	}
@@ -168,7 +168,7 @@ public enum Answers {
 	 * @return
 	 * 			String at the given index
 	 */
-	public String getAsnwerAt(int index)
+	public String getAnswerAt(int index)
 	{
 		return this.answers[index];
 	}

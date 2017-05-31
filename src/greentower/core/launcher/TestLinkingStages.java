@@ -24,7 +24,13 @@ public class TestLinkingStages
 		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");
 		try
 		{
-			ListOfStages.getStageAt(0).playStage(new OutputConsole());
+			Stage currentStage = ListOfStages.getStageAt(1);
+			while(true)
+			{
+				int result = currentStage.playStage(new OutputConsole());
+				currentStage = ListOfStages.getNextStage(ListOfStages.getStageIndex(currentStage), result);
+			}
+			
 		}
 		catch (Exception e)
 		{

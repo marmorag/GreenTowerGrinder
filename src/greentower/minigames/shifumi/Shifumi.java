@@ -21,10 +21,11 @@ public class Shifumi extends MiniGame{
 	/**
 	 * Shifumi's constructor
 	 * @param dialog
+	 * @param stageIndex 
 	 */
-	public Shifumi(Dialog dialog)
+	public Shifumi(Dialog dialog, int stageIndex)
 	{
-		super(dialog);
+		super(dialog, stageIndex);
 		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
