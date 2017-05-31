@@ -77,7 +77,7 @@ public class Choice extends Stage
 	@Override
 	public int playStage(Output display)
 	{
-		display.showText(this.dialog);
+		display.showDialog(this.dialog);
 		try
 		{
 			this.setIndexPlayerAnswer(Integer.parseInt(this.br.readLine()));
