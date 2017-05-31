@@ -14,6 +14,7 @@ public abstract class MiniGame extends Stage
 	/**
 	 * Mini Game's contructor
 	 * @param dialog
+	 * @param stageIndex 
 	 */
 	protected MiniGame(Dialog dialog, int stageIndex)
 	{
@@ -26,6 +27,7 @@ public abstract class MiniGame extends Stage
 	 * @param outTool
 	 * @param inTool
 	 * @param dialog
+	 * @param stageIndex 
 	 */
 	protected MiniGame(Output outTool, Input inTool, Dialog dialog, int stageIndex)
 	{

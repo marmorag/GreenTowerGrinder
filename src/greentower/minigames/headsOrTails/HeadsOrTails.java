@@ -22,10 +22,11 @@ public class HeadsOrTails extends MiniGame {
 	/**
 	 * HeadsOrTail's constructor
 	 * @param dialog
+	 * @param stageIndex 
 	 */
-	public HeadsOrTails(Dialog dialog)
+	public HeadsOrTails(Dialog dialog, int stageIndex)
 	{
-		super(dialog);
+		super(dialog, stageIndex);
 		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 

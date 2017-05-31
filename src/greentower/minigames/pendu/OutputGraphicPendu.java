@@ -47,4 +47,22 @@ public class OutputGraphicPendu implements Output {
 
 	}
 
+	@Override
+	public void showText(String str) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showGame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showAnswers(String[] answers) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

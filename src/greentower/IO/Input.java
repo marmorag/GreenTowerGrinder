@@ -10,6 +10,7 @@ public interface Input {
 	/**
 	 * Get a character by the player
 	 * @return
+	 * 			Inputed character 
 	 */
 	public char inputChar();
 	

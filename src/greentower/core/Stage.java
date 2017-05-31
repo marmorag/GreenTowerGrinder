@@ -42,6 +42,7 @@ public abstract class Stage
 	 * @param display
 	 * @return
 	 * 			Stage result
+	 * @throws Exception 
 	 */
 	public abstract int playStage(Output display) throws Exception;
 

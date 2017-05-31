@@ -40,7 +40,7 @@ public class Choice extends Stage
 	 * Choice's constructor with given dialog, choices and next stages
 	 * @param initialDialog
 	 * 			Dialog of the choice
-	 * @param initialAnswers
+	 * @param initialAnswers	 * @param stageIndex 
 	 */
 	public Choice(Dialog initialDialog, Answers initialAnswers, int stageIndex)
 	{
@@ -56,7 +56,7 @@ public class Choice extends Stage
 	 * @param initialDialog
 	 * 			Dialog of the choice
 	 * @param initialAnswers
-	 * @param initialStageIsFinal
+	 * @param initialStageIsFinal	 * @param stageIndex 
 	 */
 	public Choice(Dialog initialDialog, Answers initialAnswers, boolean initialStageIsFinal,int stageIndex)
 	{
