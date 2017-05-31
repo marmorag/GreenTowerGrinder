@@ -20,6 +20,12 @@ public interface Output {
 	 * @param str
 	 */
 	public void showText(String str);
+	
+	/**
+	 * Display the given String array
+	 * @param answers
+	 */
+	public void showAnswers(String[] answers);
 
 	// Used only in Pendu game, implementation in other games should be void
 	public void notifyWin(int nbCoups, String motATrouver);
@@ -27,5 +33,7 @@ public interface Output {
 	public void notifyLoose(String motATrouver);
 	public void demanderCaractere();
 	public void afficherPendu(int nbErreur, String motAAfficher);
+
+	
 
 }

@@ -7,6 +7,7 @@ package greentower.core;
  */
 public class Tower
 {
+	
 	/**
 	 * All stages
 	 */
@@ -61,13 +62,6 @@ public class Tower
 	 */
 	public static int getStageIndex(Stage currentStage) 
 	{
-		int result = 0;
-		while(true)
-		{
-			if (ListOfStages.stages[result] == currentStage)
-				break;
-			result++;
-		}
-		return result;
+		return currentStage.index;
 	}
 }

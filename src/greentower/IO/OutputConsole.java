@@ -20,6 +20,15 @@ public class OutputConsole implements Output{
 		
 	}
 	
+	@Override
+	public void showAnswers(String[] answers) {
+		for(int i = 0; i < answers.length; i++)
+		{
+			System.out.println(answers[i]);
+		}
+		
+	}
+	
 	
 	/* ******************************* THE FOLLOWING METHODS SHOULDN'T BE IMPLEMENTED ******************************* */
 	
@@ -48,6 +57,8 @@ public class OutputConsole implements Output{
 	public void afficherPendu(int nbErreur, String motAAfficher) {
 		// VOID FOR NON USED METHOD AT THIS STAGE
 	}
+
+	
 
 
 	

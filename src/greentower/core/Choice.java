@@ -42,8 +42,9 @@ public class Choice extends Stage
 	 * 			Dialog of the choice
 	 * @param initialAnswers
 	 */
-	public Choice(Dialog initialDialog, Answers initialAnswers)
+	public Choice(Dialog initialDialog, Answers initialAnswers, int stageIndex)
 	{
+		this.index = stageIndex;
 		this.dialog = initialDialog;
 		this.answers = initialAnswers;
 		this.indexPlayerAnswer = -1;
@@ -57,8 +58,9 @@ public class Choice extends Stage
 	 * @param initialAnswers
 	 * @param initialStageIsFinal
 	 */
-	public Choice(Dialog initialDialog, Answers initialAnswers, boolean initialStageIsFinal)
+	public Choice(Dialog initialDialog, Answers initialAnswers, boolean initialStageIsFinal,int stageIndex)
 	{
+		this.index = stageIndex;
 		this.dialog = initialDialog;
 		this.answers = initialAnswers;
 		this.indexPlayerAnswer = -1;
@@ -69,15 +71,17 @@ public class Choice extends Stage
 	public String toString()
 	{
 		String result = "Choice [\n" + this.dialog.toString() + ", Answers = ";
-		for(int index = 0; index < this.answers.getAsnwers().length; index++)
-			result += this.answers.getAsnwerAt(index) + ',';
+		for(int index = 0; index < this.answers.getAnswers().length; index++)
+			result += this.answers.getAnswerAt(index) + ',';
 		return result += "]";
 	}
 
 	@Override
 	public int playStage(Output display)
 	{
-		display.showText(this.dialog);
+		display.showDialog(this.dialog);
+		display.showAnswers(this.answers.getAnswers());
+		
 		try
 		{
 			this.setIndexPlayerAnswer(Integer.parseInt(this.br.readLine()));

@@ -16,32 +16,35 @@ public class ListOfStages
 	 */
 	public static final Stage[] stages = new Stage[]
 	{
-		/* STAGE_1 */ new Choice(Dialog.DIALOG_STAGE1, Answers.ANSWERS_STAGE1),
-		/* STAGE_2 */ new Choice(Dialog.DIALOG_STAGE2, Answers.ANSWERS_STAGE2),
-		/* STAGE_3 */ new Choice(Dialog.DIALOG_STAGE2, Answers.ANSWERS_STAGE2),
-		/* STAGE_4 */ new LessOrMore(Dialog.DIALOG_STAGE4),
-		/* STAGE_5 */ new TicTacToe(Dialog.DIALOG_STAGE5),
+		/* STAGE_1 */ new Choice(Dialog.DIALOG_STAGE1, Answers.ANSWERS_STAGE1, 0),
+		/* STAGE_2 */ new Choice(Dialog.DIALOG_STAGE2, Answers.ANSWERS_STAGE2, 1),
+		/* STAGE_3 */ new Choice(Dialog.DIALOG_STAGE3, Answers.ANSWERS_STAGE3, 2),
+		/* STAGE_4 */ new LessOrMore(Dialog.DIALOG_STAGE4, 3),
+		/* STAGE_5 */ new TicTacToe(Dialog.DIALOG_STAGE5, 4),
 		
-		/* STAGE_6 */ new Choice(Dialog.DIALOG_STAGE6, Answers.ANSWERS_STAGE6),
+		/* STAGE_6 */ new Choice(Dialog.DIALOG_STAGE6, Answers.ANSWERS_STAGE6, 5),
 		/* STAGE_7 */ //new RushHour(Dialog.DIALOG_STAGE7),
-		/* STAGE_8 */ new Choice(Dialog.DIALOG_STAGE8, Answers.ANSWERS_STAGE8),
-		/* STAGE_9 */ new Choice(Dialog.DIALOG_STAGE9, Answers.ANSWERS_STAGE9),
-		/* STAGE_10 */ new Choice(Dialog.DIALOG_STAGE10, Answers.ANSWERS_STAGE10),
+		/* STAGE_7bis */ new Choice(Dialog.DIALOG_STAGE7, Answers.ANSWERS_STAGE7, 6),
+		/* STAGE_8 */ new Choice(Dialog.DIALOG_STAGE8, Answers.ANSWERS_STAGE8, 7),
+		/* STAGE_9 */ new Choice(Dialog.DIALOG_STAGE9, Answers.ANSWERS_STAGE9, 8),
+		/* STAGE_10 */ new Choice(Dialog.DIALOG_STAGE10, Answers.ANSWERS_STAGE10, 9),
 
-		/* STAGE_11 */ new Choice(Dialog.DIALOG_STAGE11, Answers.ANSWERS_STAGE11),
-		/* STAGE_12 */ new Choice(Dialog.DIALOG_STAGE12, Answers.ANSWERS_STAGE12),
-		/* STAGE_13 */ new OthelloGame(Dialog.DIALOG_STAGE13),
-		/* STAGE_14 */ new Shifumi(Dialog.DIALOG_STAGE14),
-		/* STAGE_15 */ new Choice(Dialog.DIALOG_STAGE15, Answers.ANSWERS_STAGE15),
+		/* STAGE_11 */ new Choice(Dialog.DIALOG_STAGE11, Answers.ANSWERS_STAGE11, 10),
+		/* STAGE_12 */ new Choice(Dialog.DIALOG_STAGE12, Answers.ANSWERS_STAGE12, 11),
+		/* STAGE_13 */ //new OthelloGame(Dialog.DIALOG_STAGE13),
+		/* STAGE_13bis */ new Choice(Dialog.DIALOG_STAGE13, Answers.ANSWERS_STAGE13, 12),
+		/* STAGE_14 */ new Shifumi(Dialog.DIALOG_STAGE14, 13),
+		/* STAGE_15 */ new Choice(Dialog.DIALOG_STAGE15, Answers.ANSWERS_STAGE15, 14),
 		
-		/* STAGE_16 */ new Choice(Dialog.DIALOG_STAGE16, Answers.ANSWERS_STAGE16),
-		/* STAGE_17 */ new Choice(Dialog.DIALOG_STAGE17, Answers.ANSWERS_STAGE17),
-		/* STAGE_18 */ new Choice(Dialog.DIALOG_STAGE18, Answers.ANSWERS_STAGE18),
-		/* STAGE_19 */ new Choice(Dialog.DIALOG_STAGE19, Answers.ANSWERS_STAGE19),
-		/* STAGE_20 */ new Choice(Dialog.DIALOG_STAGE20, Answers.ANSWERS_STAGE20),
+		/* STAGE_16 */ new Choice(Dialog.DIALOG_STAGE16, Answers.ANSWERS_STAGE16, 15),
+		/* STAGE_17 */ new Choice(Dialog.DIALOG_STAGE17, Answers.ANSWERS_STAGE17, 16),
+		/* STAGE_18 */ new Choice(Dialog.DIALOG_STAGE18, Answers.ANSWERS_STAGE18, 17),
+		/* STAGE_19 */ new Choice(Dialog.DIALOG_STAGE19, Answers.ANSWERS_STAGE19, 18),
+		/* STAGE_20 */ new Choice(Dialog.DIALOG_STAGE20, Answers.ANSWERS_STAGE20, 19),
 		
-		/* STAGE_21 */ new Choice(Dialog.DIALOG_STAGE21, Answers.ANSWERS_STAGE21),
+		/* STAGE_21 */ new Choice(Dialog.DIALOG_STAGE21, Answers.ANSWERS_STAGE21, 20),
 		///* STAGE_22 */ new MasterMind(Dialog.DIALOG_STAGE22)
+		/* STAGE_22bis */ new Choice(Dialog.DIALOG_STAGE22, Answers.ANSWERS_STAGE22, 21),
 	};
 
 	/**
@@ -49,12 +52,6 @@ public class ListOfStages
 	 */
 	public static final int[][] nextStages = new int[][]
 	{
-		/* STAGE_1 */ {0, 0},
-		/* STAGE_2 */ {0, 0},
-		/* STAGE_3 */ {0, 0},
-		/* STAGE_4 */ {0, 0},
-		/* STAGE_5 */ {0, 0},
-
 		/* STAGE_1 */ {2},
 		/* STAGE_2 */ {3, 2},
 		/* STAGE_3 */ {4, 5},

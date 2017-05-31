@@ -30,10 +30,12 @@ public class LessOrMore extends MiniGame
 	/**
 	 * LessOrMore's constructor
 	 * @param dialog
+	 * @param stageIndex 
+	 * @param i 
 	 */
-	public LessOrMore(Dialog dialog)
+	public LessOrMore(Dialog dialog, int stageIndex)
 	{
-		super(dialog);
+		super(dialog, stageIndex);
 		this.base = (int)(Math.random() * (10-1)) + 1;
 		this.randomcard = (int)(Math.random() * (10-1)) + 1;
 		this.br = new BufferedReader(new InputStreamReader(System.in));

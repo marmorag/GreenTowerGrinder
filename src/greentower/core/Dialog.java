@@ -144,7 +144,7 @@ public enum Dialog {
 	 */
 	public String toString()
 	{
-		String result = null;
+		String result = "";
 		for(int index = 0; index < this.dialog.length; index++)
 			result += this.dialog[index] + "\n";
 		return result;
