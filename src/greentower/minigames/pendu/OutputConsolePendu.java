@@ -1,5 +1,6 @@
 package greentower.minigames.pendu;
 
+import greentower.IO.Output;
 import greentower.core.Dialog;
 
 /**
@@ -7,7 +8,7 @@ import greentower.core.Dialog;
  * @author Guillaume
  *
  */
-public class OutConsole implements Out {
+public class OutputConsolePendu implements OutputPendu {
 
 	/**
 	 * Display hanged in ASCII art according to current number of errors

@@ -43,8 +43,9 @@ public class Pendu extends MiniGame{
 	 *	Initialize motAAfficher with "_"
 	 * @param display
 	 * @param input
+	 * @param dialog The dialog to display at the beginning of the game
 	 */
-	public Pendu(Out display, Input input, Dialog dialog)
+	public Pendu(Output display, Input input, Dialog dialog)
 	{
 		super(display,input,dialog);
 		Random r = new Random();
@@ -53,9 +54,6 @@ public class Pendu extends MiniGame{
 
 		this.nbErreur = 0;
 		this.nbCoups = 0;
-		// Put the next two stage
-		//this.nextStage[0]= ;
-		//this.nextStage[1]= ;
 
 		try{
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/pendu/listeMot.txt")));
@@ -136,10 +134,12 @@ public class Pendu extends MiniGame{
 
 	/**
 	 * Main procedure which launch miniGame
-	 * @return Stage return one of the two stage contained
+	 * @return int The index of the nextStage to play (Logical ling between Stage)
 	 */
-	public int playStage(Output display)
+	public int playStage(OutputPendu display)
 	{
+		this.outputTool = new OutputConsolePendu();
+		
 		char lettreEntree;
 
 		while(!this.finDuPendu() && this.nbCoups <= this.motATrouver.length()+5)
@@ -171,7 +171,7 @@ public class Pendu extends MiniGame{
 		}
 		else
 		{
-			this.displayTool.notifyLoose(this.motATrouver);
+			this.outputTool.notifyLoose(this.motATrouver);
 			return 1;
 		}
 	}

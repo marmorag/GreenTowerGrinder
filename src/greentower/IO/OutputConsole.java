@@ -4,7 +4,7 @@ import greentower.core.Dialog;
 
 /**
  * @author gavinr
- *
+ * 
  */
 public class OutputConsole implements Output{
 
