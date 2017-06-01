@@ -76,7 +76,7 @@ public class GraphicDisplay extends JFrame implements Display
 		String[] text = {"Replay", "Exit", "Next"};
 		int response = JOptionPane.showOptionDialog(this, "Congratulation", "WIN",JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, text, text[0]);
 		if(response == 0){
-			new RushHourGame(new ConsolePlayer("Clement"), level, new GraphicDisplay()).play();
+			new RushHourGame(new ConsolePlayer("Clement"), level, new GraphicDisplay()).playStage();
 			this.dispose();
 		}else if(response == 1){
 			RushHourGame.exit();
@@ -86,7 +86,7 @@ public class GraphicDisplay extends JFrame implements Display
 				RushHourGame.exit();
 			}else{
 
-				new RushHourGame(new ConsolePlayer("Clement"), level+1, new GraphicDisplay()).play();
+				new RushHourGame(new ConsolePlayer("Clement"), level+1, new GraphicDisplay()).playStage();
 				this.dispose();
 			}
 		}

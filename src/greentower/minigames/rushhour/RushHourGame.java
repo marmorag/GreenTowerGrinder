@@ -1,4 +1,10 @@
 package greentower.minigames.rushhour;
+
+import greentower.IO.Input;
+import greentower.IO.Output;
+import greentower.core.Dialog;
+import greentower.core.MiniGame;
+
 /**
  *
  * Represent a game of RushHour
@@ -7,7 +13,7 @@ package greentower.minigames.rushhour;
  *
  */
 @SuppressWarnings("unused")
-public class RushHourGame
+public class RushHourGame extends MiniGame
 {
 
 	/**
@@ -40,7 +46,7 @@ public class RushHourGame
 	/**
 	 * Way to display the game
 	 */
-	private Display display;
+	private Output display;
 
 	public static void exit(){
 		System.exit(0);
@@ -48,17 +54,19 @@ public class RushHourGame
 
 	/**
 	 * create a game with a default player and a game board level configuration
-	 *
-	 * @param namevof the player
-	 * @param level of the game
+	 * @param display 
+	 * @param input 
+	 * @param dialog 
+	 * @param indexOfStage 
 	 */
-	public RushHourGame(Player player, int level, Display display)
+	//public RushHourGame(Player player, int level, Display display)
+	public RushHourGame(Output display, Input input, Dialog dialog, int indexOfStage)
 	{
+		super(display, input, dialog, indexOfStage);
 		this.state = READY;
-		this.player = player;
-		this.board = new GameBoard(level);
+		this.board = new GameBoard(1);
 		this.display = display;
-		this.level = level;
+		this.level = 1;
 	}
 
 	/**
@@ -66,11 +74,12 @@ public class RushHourGame
 	 * While the player has not win, he can move cars
 	 * At each movement, display updated grid
 	 */
-	public void play()
+	public int playStage(Output display, Input input) throws Exception
 	{
 		this.state = LAUNCHED;
 		while(this.board.isFinish() == false)
 		{
+			// implementer un timer pour la defaite
 			this.display.showBoard(this.board);
 			int numCar = this.player.getCar(this.board);
 			Direction direction = this.player.getDirection();
@@ -86,6 +95,7 @@ public class RushHourGame
 			}
 		}
 		this.display.win(this.level);
+		return 0;
 	}
 
 }
