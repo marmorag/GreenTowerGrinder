@@ -19,9 +19,7 @@ public interface Output {
 	 * Display the given String
 	 * @param str
 	 */
-	public void showText(String str);	public void showError(String str);
-		public void win();	public void loose();
-	
+	public void showText(String str);	/**	 * Display the message error 	 * @param str	 */	public void showError(String str);
 	/**
 	 * Display the given String array
 	 * @param answers

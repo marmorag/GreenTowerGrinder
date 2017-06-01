@@ -22,15 +22,16 @@ public class InputConsole implements Input
 	 */
 	public InputConsole()
 	{
-		br = new BufferedReader(new InputStreamReader(System.in));
+		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 	
 	public int inputInt()
 	{
 		try
 		{	
-			return Integer.parseInt(""+br.readLine().charAt(0));
-		} catch (IOException e)
+			return Integer.parseInt(""+this.br.readLine().charAt(0));
+		} 
+		catch (IOException e)
 		{
 			return 2;
 		}
@@ -41,7 +42,7 @@ public class InputConsole implements Input
 	{
 		try
 		{
-			return br.readLine().charAt(0);
+			return this.br.readLine().charAt(0);
 		} catch (IOException e)
 		{
 			return '\0';
