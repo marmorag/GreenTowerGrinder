@@ -1,9 +1,7 @@
 
 package greentower.minigames.lessormore;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.core.Dialog;
@@ -59,7 +57,7 @@ public class LessOrMore extends MiniGame
 
 		display.showText(String.valueOf(this.base));
 		String userChoice;
-		display.showText("\n>");
+		display.showText("\n>>");
 		userChoice = input.inputString();
 
 		if(userChoice.equals("MORE") || userChoice.equals("PLUS") || userChoice.equals("+")){

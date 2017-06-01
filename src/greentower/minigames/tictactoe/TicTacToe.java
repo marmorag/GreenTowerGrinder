@@ -1,8 +1,5 @@
 package greentower.minigames.tictactoe;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Random;
 import greentower.IO.Input;
 import greentower.IO.Output;
@@ -34,11 +31,6 @@ public class TicTacToe extends MiniGame{
 	private int winner;
 	
 	/**
-	 * Reader for input
-	 */
-	private BufferedReader br;
-	
-	/**
 	 * 
 	 */
 	private Output display;
@@ -54,12 +46,10 @@ public class TicTacToe extends MiniGame{
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
 				this.grid[i][j] = 0;
-		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	/**
 	 * Player turn : he types the 2 indexes one by one
-	 * @param display, Input input 
 	 * @param display 
 	 * @param input 
 	 * @return true if he win and false if not
@@ -73,8 +63,10 @@ public class TicTacToe extends MiniGame{
 		int p1=0,p2=0;
 		while(true){ //Get index by the user
 			display.showText("Entree la ligne de la case voulue");
+			display.showText("\n>>");
 			p1 = input.inputInt();
 			display.showText("Entree la colonne de la case voulue");
+			display.showText("\n>>");
 			p2 = input.inputInt();
 			if(this.grid[p1][p2] == 0){
 				this.grid[p1][p2] = 1;
