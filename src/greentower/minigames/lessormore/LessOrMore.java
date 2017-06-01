@@ -51,8 +51,11 @@ public class LessOrMore extends MiniGame
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
-		display.showGame();
-		boolean result;
+		display.showText("RULES");
+		display.showText("Tu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché");
+		display.showText("MORE: plus grand");
+		display.showText("LESS: plus petit");
+		int result;
 
 		display.showText(String.valueOf(this.base));
 		String userChoice;
@@ -76,42 +79,13 @@ public class LessOrMore extends MiniGame
 		else
 			throw new IOException();
 
-		if(result)
-		{
-			display.showText("BRAVO!");
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_VICTORY;
-		}
-		else
-		{
-			display.showText("Dommage :(");
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_LOOSE;
-		}
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 
 	}
 }
 
 
-		display.showText("RULES");
-		display.showText("Tu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché");
-		display.showText("MORE: plus grand");
-		display.showText("LESS: plus petit");
-		int result;
-		display.showMiniGameResult(result);
-		display.showStageEnd(ListOfStages.getStageIndex(this));
 		
-		return result;
-		if(result)
-		{
-			display.win();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_VICTORY;
-		}
-		else
-		{
-			display.loose();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_LOOSE;
-		}
-
+		
