@@ -1,6 +1,6 @@
 package greentower.IO;
 
-import greentower.core.Dialog;import greentower.minigames.shifumi.Sign;
+import greentower.core.Answers;import greentower.core.Dialog;import greentower.minigames.shifumi.Sign;
 
 /**
  * Interface for all displaying
@@ -19,14 +19,12 @@ public interface Output {
 	 * Display the given String
 	 * @param str
 	 */
-	public void showText(String str);	public void showError(String str);
-		public void win();	public void loose();
-	
+	public void showText(String str);	/**	 * Display the message error 	 * @param str	 */	public void showError(String str);
 	/**
 	 * Display the given String array
 	 * @param answers
 	 */
-	public void showAnswers(String[] answers);
+	public void showAnswers(Answers answers);
 
 	// Used only in Pendu game, implementation in other games should be void
 	/**	 * @param nbCoups	 * @param motATrouver	 */	public void notifyWin(int nbCoups, String motATrouver);

@@ -1,6 +1,6 @@
 package greentower.IO;
 
-import greentower.core.Dialog;import greentower.minigames.shifumi.Sign;
+import greentower.core.Answers;import greentower.core.Dialog;import greentower.minigames.shifumi.Sign;
 import greentower.core.Dialog;import greentower.core.MiniGame;
 
 /**
