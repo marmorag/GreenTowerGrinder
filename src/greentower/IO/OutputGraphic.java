@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 
 import greentower.core.Answers;
 import greentower.core.Dialog;
+import greentower.minigames.rushhour.GameBoard;
 import greentower.minigames.shifumi.Sign;
 
 /**
@@ -152,6 +153,12 @@ public class OutputGraphic extends JFrame implements Output{
 
 	@Override
 	public void showAnswers(Answers answers) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showBoard(GameBoard board) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -2,6 +2,7 @@ package greentower.IO;
 
 import greentower.core.Answers;
 import greentower.core.Dialog;
+import greentower.minigames.rushhour.GameBoard;
 import greentower.minigames.shifumi.Sign;
 
 /**
@@ -18,12 +19,6 @@ public class OutputGraphicChoice implements Output {
 
 	@Override
 	public void showText(String str) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void showAnswers(Answers answers) {
 		// TODO Auto-generated method stub
 
 	}
@@ -134,6 +129,18 @@ public class OutputGraphicChoice implements Output {
 	@Override
 	public void showPrompt()
 	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showAnswers(Answers answers) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showBoard(GameBoard board) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -1,5 +1,8 @@
 package greentower.IO;
 
+import greentower.minigames.rushhour.Direction;
+import greentower.minigames.rushhour.GameBoard;
+
 /**
  * Interface for all entries
  * @author
@@ -24,6 +27,12 @@ public interface Input {
 	 * @return String
 	 */
 	public String inputString();
+	
+	public int getCar(GameBoard board);
+	
+	public Direction getDirection();
+	
+	public int getMove();
 	
 	
 }

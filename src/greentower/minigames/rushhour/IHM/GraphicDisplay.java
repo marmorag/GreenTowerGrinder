@@ -1,4 +1,4 @@
-package greentower.minigames.rushhour;
+package greentower.minigames.rushhour.IHM;
 import java.io.File;
 
 import javax.swing.JButton;
@@ -7,6 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;
+
+import greentower.minigames.rushhour.GameBoard;
+import greentower.minigames.rushhour.Position;
+import greentower.minigames.rushhour.RushHourGame;
 
 /**
  * Implementation of Display for Graphics

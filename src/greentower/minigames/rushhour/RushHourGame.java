@@ -15,22 +15,6 @@ import greentower.core.MiniGame;
 @SuppressWarnings("unused")
 public class RushHourGame extends MiniGame
 {
-
-	/**
-	 * state of the game
-	 */
-	private static final int READY = 1;
-
-	/**
-	 * state of the game
-	 */
-	private static final int LAUNCHED = 2;
-
-	/**
-	 * game state (READY/LAUNCHED)
-	 */
-	private int state;
-
 	/**
 	 * The game board
 	 */
@@ -47,7 +31,15 @@ public class RushHourGame extends MiniGame
 	 * Way to display the game
 	 */
 	private Output display;
+	
+	/**
+	 * Way to get info from player
+	 */
+	private Input input;
 
+	/**
+	 * Left the game
+	 */
 	public static void exit(){
 		System.exit(0);
 	}
@@ -63,10 +55,9 @@ public class RushHourGame extends MiniGame
 	public RushHourGame(Output display, Input input, Dialog dialog, int indexOfStage)
 	{
 		super(display, input, dialog, indexOfStage);
-		this.state = READY;
-		this.board = new GameBoard(1);
+		this.board = new GameBoard();
 		this.display = display;
-		this.level = 1;
+		this.input = input;
 	}
 
 	public RushHourGame(ConsolePlayer consolePlayer, int level2, GraphicDisplay graphicDisplay)
@@ -79,9 +70,8 @@ public class RushHourGame extends MiniGame
 	 * While the player has not win, he can move cars
 	 * At each movement, display updated grid
 	 */
-	public int playStage(Output display, Input input) throws Exception
+	public int playStage() throws Exception
 	{
-		this.state = LAUNCHED;
 		while(this.board.isFinish() == false)
 		{
 			// implementer un timer pour la defaite
@@ -92,14 +82,14 @@ public class RushHourGame extends MiniGame
 			try
 			{
 				if(this.board.moveCar(numCar, direction, offset) == false)
-					this.display.wrongDirection();
+					this.display.showError("Mauvaise Direction");
 			}
 			catch(Exception e)
 			{
-				System.out.println("mauvaise voiture");
+				this.display.showError("mauvaise voiture");
 			}
 		}
-		this.display.win(this.level);
+		this.display.showMiniGameResult(0);
 		return 0;
 	}
 

@@ -5,6 +5,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+import greentower.minigames.rushhour.exceptions.IncompatibleDirectionException;
+
 /**
  *  Car is an element of the board which can move by the user
  *
