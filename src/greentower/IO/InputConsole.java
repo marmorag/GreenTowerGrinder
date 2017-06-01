@@ -13,6 +13,16 @@ import java.io.InputStreamReader;
 public class InputConsole implements Input
 {
 	/**
+	 * Value when in int's input is invalid
+	 */
+	public static final int INVALID_INT_INPUT = -1;
+	
+	/**
+	 * Value when in int's input is invalid
+	 */
+	private static final char INVALID_CHAR_INPUT = '\0';
+	
+	/**
 	 * Tool used to input
 	 */
 	private BufferedReader br;
@@ -29,11 +39,23 @@ public class InputConsole implements Input
 	{
 		try
 		{	
-			return Integer.parseInt(""+this.br.readLine().charAt(0));
-		} 
+			char[] figures = {'0', '1', '2', '3'};
+			String str = this.br.readLine();
+			if (str.length() !=  1)
+				return InputConsole.INVALID_INT_INPUT;
+			
+			boolean isInt = false;
+			for(int i = 0; i < figures.length; i++)
+				if (figures[i] == str.charAt(0))
+					isInt = true;
+			
+			if(!isInt) return InputConsole.INVALID_INT_INPUT;
+			
+			return Integer.parseInt(str);
+			} 
 		catch (IOException e)
 		{
-			return 2;
+			return InputConsole.INVALID_INT_INPUT;
 		}
 	}
 	
@@ -42,8 +64,13 @@ public class InputConsole implements Input
 	{
 		try
 		{
+			String str = this.br.readLine();
+			if (str.length() !=  1)
+				return InputConsole.INVALID_CHAR_INPUT;
+			
 			return this.br.readLine().charAt(0);
-		} catch (IOException e)
+		} 
+		catch (IOException e)
 		{
 			return '\0';
 		}

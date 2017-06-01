@@ -5,8 +5,8 @@ package greentower.IO;
  * @author
  *
  */
-public interface Input {
-	
+public interface Input 
+{	
 	/**
 	 * Get a character by the player
 	 * @return Inputed character 
