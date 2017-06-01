@@ -2,6 +2,7 @@ package greentower.minigames.othello.core;
 
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 import greentower.minigames.othello.ihm.IHMOthello;
 import greentower.minigames.othello.ihm.console.IHMOthelloConsole;
@@ -96,8 +97,10 @@ public class OthelloGame extends MiniGame
 	 *                 	process pawn drop
 	 * }
 	 */
-	public int playStage(Output out)
+	public int playStage(Output display)
 	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		
 		this.IHM.displayStartOfGame();
 
 		int numberOfRound = 1;
@@ -155,8 +158,9 @@ public class OthelloGame extends MiniGame
 			this.IHM.displayTheWinner(Color.EMPTY);
 		if(this.board.numberOfPawns(Color.WHITE) > this.board.numberOfPawns(Color.BLACK))
 		{
-			this.IHM.displayTheWinner(Color.WHITE);
-			this.IHM.displayEndOfGame();
+			this.IHM.displayTheWinner(Color.WHITE); //TODO Change text
+			this.IHM.displayEndOfGame(); //TODO Change text
+			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return 0;
 		}
 		
@@ -164,6 +168,7 @@ public class OthelloGame extends MiniGame
 		{
 			this.IHM.displayTheWinner(Color.BLACK);
 			this.IHM.displayEndOfGame();
+			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return 1;
 		}
 	}

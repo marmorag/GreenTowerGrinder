@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 /**
  * MiniGame TicTacToe
@@ -175,10 +176,15 @@ public class TicTacToe extends MiniGame{
 	}
 
 	@Override
-	public int playStage(Output display) {
+	public int playStage(Output display) 
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showGame();
 		display.showDialog(this.dialog);
+		
+		display.showStageEnd(ListOfStages.getStageIndex(this));
 		return 0;
+		//TODO Implémenter playStage
 	}
 
 }

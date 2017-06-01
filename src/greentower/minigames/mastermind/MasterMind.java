@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -82,13 +83,14 @@ public class MasterMind extends MiniGame
 	/**
 	 * OVERRIDE
 	 * Permit to play the game with a player
-	 * @param out 
 	 * @return The index of the nextStage to play (Logical link between Stage)
 	 */
-	public int playStage(Output out){
+	public int playStage(Output display)
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		//TODO Exception
 			// Create checkers to check the player's propositions
-			Checker tmp = code.check(code);
+			Checker tmp = this.code.check(this.code);
 
 			// Create an initial proposition (not considered)
 			this.proposition = new Combination();
@@ -134,12 +136,14 @@ public class MasterMind extends MiniGame
 				{
 					tries++;
 					System.out.println();
-					System.out.println("! BRAVO ! \nVous avez gagn� en "+tries+" coup(s)");
+					System.out.println("! BRAVO ! \nVous avez gagné en "+tries+" coup(s)");
+					display.showStageEnd(ListOfStages.getStageIndex(this));
 					return 1;
 				}
 				else if(tries==DEFAULT_TRIES)
 				{
 					System.out.println("Dommage vous avez perdu :/");
+					display.showStageEnd(ListOfStages.getStageIndex(this));
 					return 0;
 				}
 				else

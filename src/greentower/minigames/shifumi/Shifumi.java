@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -34,9 +35,11 @@ public class Shifumi extends MiniGame{
 	 * @return true if player win and false if not
 	 * @throws IOException 
 	 */
-	public int playStage(Output display) throws IOException{
+	public int playStage(Output display) throws IOException
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showGame();
-		display.showDialog(dialog);
+		display.showDialog(this.dialog);
 
 		String sign = this.br.readLine();
 
@@ -74,11 +77,13 @@ public class Shifumi extends MiniGame{
 		if(result)
 		{
 			System.out.println("BRAVO!");
+			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return 0;
 		}
 		else
 		{
 			System.out.println("Dommage :(");
+			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return 1;
 		}
 

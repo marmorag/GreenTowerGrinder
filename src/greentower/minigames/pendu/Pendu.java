@@ -9,6 +9,7 @@ import java.util.Random;
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -143,7 +144,7 @@ public class Pendu extends MiniGame{
 	 */
 	public int playStage(Output display)
 	{
-		System.out.println("ici");
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		char lettreEntree;
 
 		while(!this.finDuPendu() && this.nbCoups <= this.motATrouver.length()+5)
@@ -171,11 +172,13 @@ public class Pendu extends MiniGame{
 		if(this.finDuPendu())
 		{
 			this.outputTool.notifyWin(this.nbCoups, this.motATrouver);
+			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return 0;
 		}
 		else
 		{
 			this.outputTool.notifyLoose(this.motATrouver);
+			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return 1;
 		}
 	}

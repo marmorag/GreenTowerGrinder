@@ -16,7 +16,7 @@ public enum Answers {
 	/**
 	 * Stage 2's ANSWERS
 	 */
-	ANSWERS_STAGE2(new String[] {"Oui","Non"}),
+	ANSWERS_STAGE2(new String[] {"0: Oui","1: Non"}),
 
 	/**
 	 * Stage 3's ANSWERS
@@ -36,7 +36,7 @@ public enum Answers {
 	/**
 	 * Stage 6's ANSWERS
 	 */
-	ANSWERS_STAGE6(new String[] {"1","16","30","46"}),
+	ANSWERS_STAGE6(new String[] {"0: 1","1: 16","2: 30","3: 46"}),
 
 	/**
 	 * Stage 7's ANSWERS
@@ -46,27 +46,27 @@ public enum Answers {
 	/**
 	 * Stage 8's ANSWERS
 	 */
-	ANSWERS_STAGE8(new String[] {"D'accord.."}),
+	ANSWERS_STAGE8(new String[] {"0: D'accord.."}),
 
 	/**
 	 * Stage 9's ANSWERS
 	 */
-	ANSWERS_STAGE9(new String[] {"J'accepte","Je refuse"}),
+	ANSWERS_STAGE9(new String[] {"0: J'accepte","1: Je refuse"}),
 
 	/**
 	 * Stage 10's ANSWERS
 	 */
-	ANSWERS_STAGE10(new String[] {"Continuer"}),
+	ANSWERS_STAGE10(new String[] {"0: Continuer"}),
 
 	/**
 	 * Stage 11's ANSWERS
 	 */
-	ANSWERS_STAGE11(new String[] {"En roulant tous � vitesse constante","En roulant tous � droite"}),
+	ANSWERS_STAGE11(new String[] {"0: En roulant tous à vitesse constante", "1: En roulant tous à droite"}),
 
 	/**
 	 * Stage 12's ANSWERS
 	 */
-	ANSWERS_STAGE12(new String[] {"Continuer"}),
+	ANSWERS_STAGE12(new String[] {"0: Continuer"}),
 
 	/**
 	 * Stage 13's ANSWERS
@@ -81,22 +81,22 @@ public enum Answers {
 	/**
 	 * Stage 15's ANSWERS
 	 */
-	ANSWERS_STAGE15(new String[] {"R�veiller le gardien","Faire une sieste � ses c�t�s"}),
+	ANSWERS_STAGE15(new String[] {"0: Réveiller le gardien","1: Faire une sieste à ses côtés"}),
 
 	/**
 	 * Stage 16's ANSWERS
 	 */
-	ANSWERS_STAGE16(new String[] {"Un b�b�","Une ombre"}),
+	ANSWERS_STAGE16(new String[] {"0: Un bébé","1: Une ombre"}),
 
 	/**
 	 * Stage 17's ANSWERS
 	 */
-	ANSWERS_STAGE17(new String[] {"Continuer"}),
+	ANSWERS_STAGE17(new String[] {"0: Continuer"}),
 
 	/**
 	 * Stage 18's ANSWERS
 	 */
-	ANSWERS_STAGE18(new String[] {"Merci !"}),
+	ANSWERS_STAGE18(new String[] {"0: Merci !"}),
 
 	/**
 	 * Stage 19's ANSWERS
@@ -106,17 +106,17 @@ public enum Answers {
 	/**
 	 * Stage 20's ANSWERS
 	 */
-	ANSWERS_STAGE20(new String[] {"Continuer"}),
+	ANSWERS_STAGE20(new String[] {"0: Continuer"}),
 
 	/**
 	 * Stage 21's ANSWERS
 	 */
-	ANSWERS_STAGE21(new String[] {"Continuer"}),
+	ANSWERS_STAGE21(new String[] {"0: Continuer"}),
 
 	/**
 	 * Stage 22's ANSWERS
 	 */
-	ANSWERS_STAGE22(new String[] {"Continuer"}),
+	ANSWERS_STAGE22(new String[] {"0: Continuer"}),
 
 	/**
 	 * Stage 23's ANSWERS
