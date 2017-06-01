@@ -15,7 +15,8 @@ public class Hotkey extends JFrame {
     /**
      * Hotkey's constructor
      */
-    public Hotkey() {
+    public Hotkey()
+    {
  
     	// List of key 1
     	int[] Modifiers = {KeyEvent.CTRL_MASK, KeyEvent.ALT_MASK, KeyEvent.SHIFT_MASK};
@@ -31,15 +32,19 @@ public class Hotkey extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent ke) { //Listen keyboard and mouse
-                if ((ke.getModifiers()==modifier) && (ke.getKeyCode()==keycode)) {
+                if ((ke.getModifiers()==modifier) && (ke.getKeyCode()==keycode)) 
+                {
                     System.out.println("OK");
-                }else if((ke.getModifiers()==modifier) || (ke.getKeyCode()==keycode)){
+                }
+                else if((ke.getModifiers()==modifier) || (ke.getKeyCode()==keycode))
+                {
                 	System.out.println("Presque");
-                }else{
+                }
+                else
+                {
                 	System.out.println("Très loin");
                 }
             }
         }
-        );
     }
 }

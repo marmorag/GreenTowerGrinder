@@ -69,15 +69,19 @@ public class RushHourGame
 	public void play()
 	{
 		this.state = LAUNCHED;
-		while(this.board.isFinish() == false){
+		while(this.board.isFinish() == false)
+		{
 			this.display.showBoard(this.board);
 			int numCar = this.player.getCar(this.board);
 			Direction direction = this.player.getDirection();
 			int offset = this.player.getMove();
-			try{
+			try
+			{
 				if(this.board.moveCar(numCar, direction, offset) == false)
 					this.display.wrongDirection();
-			}catch(Exception e){
+			}
+			catch(Exception e)
+			{
 				System.out.println("mauvaise voiture");
 			}
 		}

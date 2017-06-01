@@ -69,7 +69,8 @@ public class Game
 		{
 			while(this.currentStage.getFinalStage() == false)
 			{	
-				 try { 
+				 try
+				 { 
 					 int result = this.currentStage.playStage(this.display, this.input);
 					 this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
 				 } 

@@ -55,39 +55,50 @@ public class TicTacToe extends MiniGame{
 	 * @return true if he win and false if not
 	 * @throws NumberFormatException 
 	 */
-	public boolean playerTurn(Output display, Input input) throws NumberFormatException{
-		if(this.isFull()){ // Test if no one have win
+	public boolean playerTurn(Output display, Input input) throws NumberFormatException
+	{
+		if(this.isFull())
+		{ 	
+			// Test if no one have win
 			display.showText("Egalite, veuillez rejouer");
 			this.resetGrid();
 		}
 		int p1=0,p2=0;
-		while(true){ //Get index by the user
-			display.showText("Entree la ligne de la case voulue");
+		
+		while(true)
+		{ 
+			//Get index by the user
+			display.showText("Entrez la ligne de la case voulue");
 			display.showText("\n>>");
 			p1 = input.inputInt();
-			display.showText("Entree la colonne de la case voulue");
+			display.showText("Entrez la colonne de la case voulue");
 			display.showText("\n>>");
 			p2 = input.inputInt();
-			if(this.grid[p1][p2] == 0){
+			if(this.grid[p1][p2] == 0)
+			{
 				this.grid[p1][p2] = 1;
 				break;
 			}
 			display.showError("Cette case n'est pas vide");
 		}
 		// Test if player made a column or a row or a diagonal
-		if(this.grid[p1][0] == 1 && this.grid[p1][1] == 1 && this.grid[p1][2] == 1){
+		if(this.grid[p1][0] == 1 && this.grid[p1][1] == 1 && this.grid[p1][2] == 1)
+		{
 			this.winner = PLAYER;
 			return true;
 		}
-		if(this.grid[0][p2] == 1 && this.grid[1][p2] == 1 && this.grid[2][p2] == 1){
+		if(this.grid[0][p2] == 1 && this.grid[1][p2] == 1 && this.grid[2][p2] == 1)
+		{
 			this.winner = PLAYER;
 			return true;
 		}
-		if(this.grid[0][0] == 1 && this.grid[1][1] == 1 && this.grid[2][2] ==1){
+		if(this.grid[0][0] == 1 && this.grid[1][1] == 1 && this.grid[2][2] ==1)
+		{
 			this.winner = PLAYER;
 			return true;
 		}
-		if(this.grid[2][0] == 1 && this.grid[1][1] == 1 && this.grid[0][2] == 1){
+		if(this.grid[2][0] == 1 && this.grid[1][1] == 1 && this.grid[0][2] == 1)
+		{
 			this.winner = PLAYER;
 			return true;
 		}
@@ -98,35 +109,45 @@ public class TicTacToe extends MiniGame{
 	 * Bot turn, random numbers are generate to place a sign
 	 * @return true if he win and false if not
 	 */
-	public boolean gameTurn(){
-		if(this.isFull()){ // Test if no one have win
+	public boolean gameTurn()
+	{
+		if(this.isFull())
+		{ 
+			// Test if no one have win
 			display.showText("Egalite, veuillez rejouer");
 			this.resetGrid();
 		}
 		int p1 = 0,p2 = 0;
 		Random r = new Random();
-		while(true){ // Get random number between 0 and grid length
+		while(true)
+		{ 
+			// Get random number between 0 and grid length
 			p1 = (int) r.nextInt(3);
 			p2 = (int) r.nextInt(3);
-			if(this.grid[p1][p2] == 0){
+			if(this.grid[p1][p2] == 0)
+			{
 				this.grid[p1][p2] = 2;
 				break;
 			}
 		}
 		// Test if player made a column or a row or a diagonal
-		if(this.grid[p1][0] == 2 && this.grid[p1][1] == 2 && this.grid[p1][2] == 2){
+		if(this.grid[p1][0] == 2 && this.grid[p1][1] == 2 && this.grid[p1][2] == 2)
+		{
 			this.winner = GAME;
 			return true;
 		}
-		if(this.grid[0][p2] == 2 && this.grid[1][p2] == 2 && this.grid[2][p2] == 2){
+		if(this.grid[0][p2] == 2 && this.grid[1][p2] == 2 && this.grid[2][p2] == 2)
+		{
 			this.winner = GAME;
 			return true;
 		}
-		if(this.grid[0][0] == 2 && this.grid[1][1] == 2 && this.grid[2][2] ==2){
+		if(this.grid[0][0] == 2 && this.grid[1][1] == 2 && this.grid[2][2] ==2)
+		{
 			this.winner = GAME;
 			return true;
 		}
-		if(this.grid[2][0] == 2 && this.grid[1][1] == 2 && this.grid[0][2] == 2){
+		if(this.grid[2][0] == 2 && this.grid[1][1] == 2 && this.grid[0][2] == 2)
+		{
 			this.winner = GAME;
 			return true;
 		}
@@ -137,7 +158,8 @@ public class TicTacToe extends MiniGame{
 	 * Return game winner
 	 * @return winner of the game;
 	 */
-	public int getWinner(){
+	public int getWinner()
+	{
 		return this.winner;
 	}
 
@@ -146,7 +168,8 @@ public class TicTacToe extends MiniGame{
 	 * Return Game grid fill in with players signs
 	 * @return Game grid
 	 */
-	public String toString() {
+	public String toString()
+	{
 		return this.grid[0][0]+"|"+this.grid[0][1]+"|"+this.grid[0][2]+"|\n"+
 				this.grid[1][0]+"|"+this.grid[1][1]+"|"+this.grid[1][2]+"|\n"+
 				this.grid[2][0]+"|"+this.grid[2][1]+"|"+this.grid[2][2]+"|\n";
@@ -156,10 +179,14 @@ public class TicTacToe extends MiniGame{
 	 * Return if grid is full or not
 	 * @return true if grid is full
 	 */
-	public boolean isFull(){
-		for(int i=0;i<3;i++){
-			for(int j=0;j<3;j++){
-				if(this.grid[i][j] == 0){
+	public boolean isFull()
+	{
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				if(this.grid[i][j] == 0)
+				{
 					return false;
 				}
 			}
@@ -170,9 +197,12 @@ public class TicTacToe extends MiniGame{
 	/**
 	 * Reset game grid (if have equality in precedent game)
 	 */
-	public void resetGrid(){
-		for(int i=0;i<3;i++){
-			for(int j=0;j<3;j++){
+	public void resetGrid()
+	{
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
 				this.grid[i][j] = 0;
 			}
 		}
@@ -183,14 +213,16 @@ public class TicTacToe extends MiniGame{
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
-		while (!this.isFull()){
+		while (!this.isFull())
+		{
 			display.showText(this.toString());
 			if(this.playerTurn(display, input))
 				break;
 			if(this.gameTurn())
 				break;
 		}
-		if(this.getWinner() == 1){
+		if(this.getWinner() == 1)
+		{
 			display.win();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_VICTORY;

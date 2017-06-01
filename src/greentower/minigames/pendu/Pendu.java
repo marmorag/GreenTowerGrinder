@@ -60,11 +60,13 @@ public class Pendu extends MiniGame{
 		this.nbErreur = 0;
 		this.nbCoups = 0;
 
-		try{
+		try
+		{
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/pendu/listeMot.txt")));
 			String ligne;
 
-			while ((ligne=br.readLine())!=null && i < nbAleatoire){
+			while ((ligne=br.readLine())!=null && i < nbAleatoire)
+			{
 				i++;
 			}
 
@@ -73,7 +75,8 @@ public class Pendu extends MiniGame{
 
 			br.close();
 		}
-		catch (Exception FileReadException){
+		catch (Exception FileReadException)
+		{
 			System.out.println(FileReadException.toString());
 		}
 	}

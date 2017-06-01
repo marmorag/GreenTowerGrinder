@@ -60,7 +60,8 @@ public class LessOrMore extends MiniGame
 		display.showText("\n>>");
 		userChoice = input.inputString();
 
-		if(userChoice.equals("MORE") || userChoice.equals("PLUS") || userChoice.equals("+")){
+		if(userChoice.equals("MORE") || userChoice.equals("PLUS") || userChoice.equals("+"))
+		{
 			if(this.randomcard<this.base)
 				result = MiniGame.RESULT_LOOSE;
 			else
