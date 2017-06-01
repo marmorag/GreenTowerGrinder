@@ -60,11 +60,6 @@ public class RushHourGame extends MiniGame
 		this.input = input;
 	}
 
-	public RushHourGame(ConsolePlayer consolePlayer, int level2, GraphicDisplay graphicDisplay)
-	{
-		// TODO Auto-generated constructor stub
-	}
-
 	/**
 	 * Game's launching
 	 * While the player has not win, he can move cars
