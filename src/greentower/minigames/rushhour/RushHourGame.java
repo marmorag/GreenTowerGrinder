@@ -59,32 +59,44 @@ public class RushHourGame extends MiniGame
 		this.display = display;
 		this.input = input;
 	}
+	
+	public RushHourGame(Dialog dialog, int indexOfStage)
+	{
+		super(dialog, indexOfStage);
+		this.board = new GameBoard();
+	}
 
 	/**
 	 * Game's launching
 	 * While the player has not win, he can move cars
 	 * At each movement, display updated grid
+	 * @return 
+	 * @throws Exception 
 	 */
-	public int playStage() throws Exception
+	public int playStage(Output display, Input input) throws Exception
 	{
 		while(this.board.isFinish() == false)
 		{
 			// implementer un timer pour la defaite
-			this.display.showRushHourBoard(this.board);
-			int numCar = this.player.getCar(this.board);
-			Direction direction = this.player.getDirection();
-			int offset = this.player.getMove();
+			display.showBoard(this.board);
+			display.showText("Entrez le numéro de la voiture:"); display.showPrompt(); 
+			int numCar = input.getCar(this.board);
+			display.showText("Entrez une direction:"); display.showPrompt(); 
+			display.showText("LEFT; RIGHT; UP; DOWN"); display.showPrompt(); 
+			Direction direction = input.getDirection();
+			display.showText("Entrez le nombre de cases:"); display.showPrompt(); 
+			int offset = input.getMove();
 			try
 			{
 				if(this.board.moveCar(numCar, direction, offset) == false)
-					this.display.showError("Mauvaise Direction");
+					display.showError("Mauvaise Direction");
 			}
 			catch(Exception e)
 			{
-				this.display.showError("mauvaise voiture");
+				display.showError("mauvaise voiture");
 			}
 		}
-		this.display.showMiniGameResult(0);
+		display.showMiniGameResult(0);
 		return 0;
 	}
 

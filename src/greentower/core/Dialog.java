@@ -36,7 +36,17 @@ public enum Dialog {
 	/**
 	 * Stage 6's dialog
 	 */
-	DIALOG_STAGE6(new String[] {"Serais-tu l'élu ?", "Alliant intelligence et chance afin de vaincre les forces du mal ?", "Je me dois de vérifier.", "Réponds à cette énigme !", "Combien y a-t-il de carrés en tout ?"}),
+	DIALOG_STAGE6(new String[] {"Serais-tu l'élu ?", "Alliant intelligence et chance afin de vaincre les forces du mal ?", "Je me dois de vérifier.", "Réponds à cette énigme !", "Combien y a-t-il de carrés en tout ?",
+			"\n",
+			"+---+---+---+---+",
+			"|   |   |   |   |",
+			"+---+---+---+---+",
+			"|   |   |   |   |",
+			"+---+---+---+---+",
+			"|   |   |   |   |",
+			"+---+---+---+---+",
+			"|   |   |   |   |",
+			"+---+---+---+---+"}),
 
 	/**
 	 * Stage 7's dialog
