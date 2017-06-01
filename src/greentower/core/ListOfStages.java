@@ -1,13 +1,15 @@
 package greentower.core;
 
-import greentower.IO.InputConsole;
-import greentower.IO.OutputConsole;
-import greentower.minigames.lessormore.LessOrMore;
-import greentower.minigames.mastermind.MasterMind;
-import greentower.minigames.othello.core.OthelloGame;
-import greentower.minigames.rushhour.RushHourGame;
-import greentower.minigames.shifumi.Shifumi;
-import greentower.minigames.tictactoe.TicTacToe;
+import greentower.stage.Stage;
+import greentower.stage.choice.Answers;
+import greentower.stage.choice.Choice;
+import greentower.stage.choice.Dialog;
+import greentower.stage.minigames.lessormore.LessOrMore;
+import greentower.stage.minigames.mastermind.MasterMind;
+import greentower.stage.minigames.othello.core.OthelloGame;
+import greentower.stage.minigames.rushhour.RushHourGame;
+import greentower.stage.minigames.shifumi.Shifumi;
+import greentower.stage.minigames.tictactoe.TicTacToe;
 
 /**
  * @author viognef

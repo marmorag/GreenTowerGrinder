@@ -3,10 +3,9 @@ package greentower.IO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import greentower.core.Answers;
-import greentower.core.Dialog;
-import greentower.minigames.rushhour.GameBoard;
-import greentower.minigames.shifumi.Sign;
+import greentower.stage.choice.Answers;
+import greentower.stage.minigames.rushhour.GameBoard;
+import greentower.stage.minigames.shifumi.Sign;
 
 /**
  * @author Guillaume
