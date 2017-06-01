@@ -153,6 +153,20 @@ public class OutputGraphic extends JFrame implements Output{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void showMiniGameResult(int result)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showPrompt()
+	{
+		// TODO Auto-generated method stub
+		
+	}
 	
 	//GamblingMachine
 

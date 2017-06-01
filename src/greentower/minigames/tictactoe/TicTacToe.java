@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
+import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.ListOfStages;
@@ -58,12 +59,13 @@ public class TicTacToe extends MiniGame{
 
 	/**
 	 * Player turn : he types the 2 indexes one by one
+	 * @param display, Input input 
 	 * @param display 
+	 * @param input 
 	 * @return true if he win and false if not
-	 * @throws IOException 
 	 * @throws NumberFormatException 
 	 */
-	public boolean playerTurn() throws NumberFormatException, IOException{
+	public boolean playerTurn(Output display, Input input) throws NumberFormatException{
 		if(this.isFull()){ // Test if no one have win
 			display.showText("Egalite, veuillez rejouer");
 			this.resetGrid();
@@ -71,9 +73,9 @@ public class TicTacToe extends MiniGame{
 		int p1=0,p2=0;
 		while(true){ //Get index by the user
 			display.showText("Entree la ligne de la case voulue");
-			p1 = Integer.parseInt(this.br.readLine());
+			p1 = input.inputInt();
 			display.showText("Entree la colonne de la case voulue");
-			p2 = Integer.parseInt(this.br.readLine());
+			p2 = input.inputInt();
 			if(this.grid[p1][p2] == 0){
 				this.grid[p1][p2] = 1;
 				break;
@@ -185,13 +187,13 @@ public class TicTacToe extends MiniGame{
 	}
 
 	@Override
-	public int playStage(Output display) throws NumberFormatException, IOException 
+	public int playStage(Output display, Input input) throws NumberFormatException 
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
 		while (!this.isFull()){
 			display.showText(this.toString());
-			if(this.playerTurn(display))
+			if(this.playerTurn(display, input))
 				break;
 			if(this.gameTurn())
 				break;

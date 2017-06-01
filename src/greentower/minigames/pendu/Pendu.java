@@ -153,7 +153,7 @@ public class Pendu extends MiniGame{
 			//System.out.println(motATrouver);
 
 			this.outputTool.demanderCaractere();
-			lettreEntree = this.inputTool.inputChar();
+			lettreEntree = (""+this.inputTool.inputChar()).toUpperCase().charAt(0);
 
 			if(!this.verifierLettre(lettreEntree))
 			{

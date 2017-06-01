@@ -1,5 +1,6 @@
 package greentower.core.launcher;
 
+import greentower.IO.InputConsole;
 import greentower.IO.OutputConsole;
 import greentower.core.ListOfStages;
 
@@ -20,7 +21,7 @@ public class TestOneStage
 		System.out.println("****** BIENVENUE DANS LE TEST ******");
 		try
 		{
-			ListOfStages.getStageAt(12).playStage(new OutputConsole());
+			ListOfStages.getStageAt(12).playStage(new OutputConsole(), new InputConsole());
 		}
 		catch (Exception e)
 		{
