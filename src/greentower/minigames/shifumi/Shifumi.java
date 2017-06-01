@@ -1,8 +1,7 @@
 package greentower.minigames.shifumi;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.ListOfStages;
@@ -15,11 +14,6 @@ import greentower.core.MiniGame;
 public class Shifumi extends MiniGame{
 
 	/**
-	 * Reader for input
-	 */
-	private BufferedReader br;
-
-	/**
 	 * Shifumi's constructor
 	 * @param dialog
 	 * @param stageIndex 
@@ -27,7 +21,6 @@ public class Shifumi extends MiniGame{
 	public Shifumi(Dialog dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
-		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	/**
@@ -35,14 +28,21 @@ public class Shifumi extends MiniGame{
 	 * @return true if player win and false if not
 	 * @throws IOException 
 	 */
-	public int playStage(Output display) throws IOException
+	public int playStage(Output display, Input input) throws Exception
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
 
-		display.showPrompt();
-		String sign = this.br.readLine();
+		display.showText("\n>>");
+		String sign = input.inputString();
 
+		while(sign != "PAPER" || sign != "ROCK" || sign != "SCISSORS")
+		{
+			display.showText("Invalid entry");
+			display.showText("\n>>");
+			sign = input.inputString();
+		}
+		
 		int result;
 		//transform string -> Sign
 		Sign playersign = Sign.valueOf(sign);
