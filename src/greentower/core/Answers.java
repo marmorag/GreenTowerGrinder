@@ -21,7 +21,7 @@ public enum Answers {
 	/**
 	 * Stage 3's ANSWERS
 	 */
-	ANSWERS_STAGE3(new String[] {"La réponse F", "Une boule de nerf très en avance"}),
+	ANSWERS_STAGE3(new String[] {""}), //TODO Devinette
 
 	/**
 	 * Stage 4's ANSWERS
@@ -46,7 +46,7 @@ public enum Answers {
 	/**
 	 * Stage 8's ANSWERS
 	 */
-	ANSWERS_STAGE8(new String[] {"Continuer"}),
+	ANSWERS_STAGE8(new String[] {"D'accord.."}),
 
 	/**
 	 * Stage 9's ANSWERS
@@ -96,7 +96,7 @@ public enum Answers {
 	/**
 	 * Stage 18's ANSWERS
 	 */
-	ANSWERS_STAGE18(new String[] {"Continuer"}),
+	ANSWERS_STAGE18(new String[] {"Merci !"}),
 
 	/**
 	 * Stage 19's ANSWERS
