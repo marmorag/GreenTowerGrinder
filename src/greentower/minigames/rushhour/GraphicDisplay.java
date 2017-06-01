@@ -70,13 +70,11 @@ public class GraphicDisplay extends JFrame implements Display
 		JOptionPane.showMessageDialog(this, "Wrong Direction");
 	}
 
-	@SuppressWarnings("unused")
 	@Override
 	public void win(int level)
 	{
-		JOptionPane d = new JOptionPane();
 		String[] text = {"Replay", "Exit", "Next"};
-		int response = d.showOptionDialog(this, "Congratulation", "WIN",JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, text, text[0]);
+		int response = JOptionPane.showOptionDialog(this, "Congratulation", "WIN",JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, text, text[0]);
 		if(response == 0){
 			new RushHourGame(new ConsolePlayer("Clement"), level, new GraphicDisplay()).play();
 			this.dispose();

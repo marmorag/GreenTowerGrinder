@@ -8,4 +8,9 @@ package greentower.minigames.rushhour;
 public class IncompatibleDirectionException extends Exception
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 }

@@ -17,7 +17,6 @@ public class ConsolePlayer extends Player
 	/**
 	 * @param name of the player
 	 */
-	@SuppressWarnings("hiding")
 	public ConsolePlayer(String name)
 	{
 		super(name);

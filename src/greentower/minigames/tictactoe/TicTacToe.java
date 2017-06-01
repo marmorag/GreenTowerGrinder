@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 import greentower.IO.Output;
-import greentower.IO.OutputConsole;
 import greentower.core.Dialog;
 import greentower.core.ListOfStages;
 import greentower.core.MiniGame;

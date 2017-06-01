@@ -35,7 +35,6 @@ public class GameBoard
 	 *
 	 * @param level of the game
 	 */
-	@SuppressWarnings("hiding")
 	public GameBoard(int level)
 	{
 		this.level = level;
@@ -46,7 +45,6 @@ public class GameBoard
 	 * Set cars considering the level
 	 * @param level of the game
 	 */
-	@SuppressWarnings("hiding")
 	private void createCars(int level)
 	{
 		this.cars = new Car[8];
