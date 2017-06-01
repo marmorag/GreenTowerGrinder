@@ -74,7 +74,9 @@ public class Game
 					 this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
 				 } 
 				 catch (Exception e)
-				 {}
+				 {
+					 //EMPTY
+				 }
 			}
 			
 		}

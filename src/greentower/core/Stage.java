@@ -40,6 +40,7 @@ public abstract class Stage
 	/**
 	 * Play the current stage (MiniGame or Choice, whatever)
 	 * @param display
+	 * @param input 
 	 * @return
 	 * 			Stage result
 	 * @throws Exception 
