@@ -30,8 +30,10 @@ public class Hotkey extends JFrame {
     	//Frame
         this.setSize(400,400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.addKeyListener(new KeyAdapter() {
-            public void keyPressed(KeyEvent ke) { //Listen keyboard and mouse
+        this.addKeyListener(new KeyAdapter(){
+            
+        	public void keyPressed(KeyEvent ke)
+            { //Listen keyboard and mouse
                 if ((ke.getModifiers()==modifier) && (ke.getKeyCode()==keycode)) 
                 {
                     System.out.println("OK");
