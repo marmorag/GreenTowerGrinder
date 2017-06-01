@@ -8,11 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 
-import greentower.IO.OutputConsole;
-import greentower.core.Game;
-import greentower.core.Player;
-
-
 public class MainWindow extends JFrame implements ActionListener{
 
 
@@ -27,7 +22,7 @@ public class MainWindow extends JFrame implements ActionListener{
 	
 	public MainWindow(){
 
-		//propriété JFrame
+		//propriï¿½tï¿½ JFrame
 		this.setTitle("The Green Tower Grinder");
 		this.setSize(900, 600);
 		this.setUndecorated(true);

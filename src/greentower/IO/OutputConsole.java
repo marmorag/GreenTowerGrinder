@@ -1,9 +1,10 @@
 package greentower.IO;
 
-import greentower.core.Answers;
-import greentower.core.Dialog;
-import greentower.core.MiniGame;import greentower.minigames.rushhour.GameBoard;import greentower.minigames.rushhour.Position;
-import greentower.minigames.shifumi.Sign;
+import greentower.stage.choice.Answers;
+import greentower.stage.minigames.MiniGame;
+import greentower.stage.minigames.rushhour.GameBoard;
+import greentower.stage.minigames.rushhour.Position;
+import greentower.stage.minigames.shifumi.Sign;
 
 /**
  * Implementation of Output to display in console mode

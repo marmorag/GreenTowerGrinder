@@ -1,7 +1,7 @@
 package greentower.IO;
 
-import greentower.minigames.rushhour.Direction;
-import greentower.minigames.rushhour.GameBoard;
+import greentower.stage.minigames.rushhour.Direction;
+import greentower.stage.minigames.rushhour.GameBoard;
 
 /**
  * Interface for all entries

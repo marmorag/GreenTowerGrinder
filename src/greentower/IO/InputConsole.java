@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import greentower.minigames.rushhour.Direction;
-import greentower.minigames.rushhour.GameBoard;
+import greentower.stage.minigames.rushhour.Direction;
+import greentower.stage.minigames.rushhour.GameBoard;
 
 
 /**

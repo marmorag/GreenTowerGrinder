@@ -1,6 +1,6 @@
 package greentower.IO;
 
-import greentower.core.Answers;import greentower.core.Dialog;import greentower.minigames.othello.core.Board;import greentower.minigames.rushhour.GameBoard;import greentower.minigames.shifumi.Sign;
+import greentower.stage.choice.Answers;import greentower.stage.choice.Dialog;import greentower.stage.minigames.rushhour.GameBoard;import greentower.stage.minigames.shifumi.Sign;
 
 /**
  * Interface for all displaying

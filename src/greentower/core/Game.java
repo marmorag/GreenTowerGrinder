@@ -3,6 +3,7 @@ package greentower.core;
 import greentower.IO.Input;
 import greentower.IO.InputConsole;
 import greentower.IO.Output;
+import greentower.stage.Stage;
 
 /**
  * This class represents a game of The Green Tower Grinder
