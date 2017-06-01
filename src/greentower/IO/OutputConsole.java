@@ -1,6 +1,6 @@
 package greentower.IO;
 
-import greentower.core.Dialog;import greentower.minigames.shifumi.Sign;
+import greentower.core.Answers;import greentower.core.Dialog;import greentower.minigames.shifumi.Sign;
 import greentower.core.Dialog;import greentower.core.MiniGame;
 
 /**
@@ -18,9 +18,8 @@ public class OutputConsole implements Output{
 		System.out.println(str);
 	}		@Override	public void showError(String str){		System.err.println(str);	}
 	@Override
-	public void showAnswers(String[] answers) {
-		for(int i = 0; i < answers.length; i++)
-			System.out.println(answers[i]);
+	public void showAnswers(Answers answers) {
+		System.out.println(answers.toString());
 	}		@Override	public void win(){		System.out.println("Bravo!");	}		@Override	public void loose(){		System.out.println("Dommage");	}	@Override	public void showStageIntroduction(int stageIndex) 	{		System.out.println("***************************************************");		System.out.println("------------- ENTREE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------");		System.out.println("***************************************************");	}	@Override	public void showStageEnd(int stageIndex) 	{		System.out.println("***************************************************");		System.out.println("------------- SORTIE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------");		System.out.println("***************************************************" + OutputConsole.gotN(10));		}		/**	 * Got a string with given number of '\n'	 * @param nb	 * 			Number of wanted '\n' 	 * @return	 * 			String with nb '\n'	 */	public static String gotN(int nb)	{		String result = "";		for(int i = 0; i < nb; i++)			result +="\n";		return result;	}
 	//PENDU
 	@Override

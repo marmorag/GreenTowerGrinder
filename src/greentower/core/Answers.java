@@ -16,112 +16,112 @@ public enum Answers {
 	/**
 	 * Stage 2's ANSWERS
 	 */
-	ANSWERS_STAGE2(new String[] {"0: Oui","1: Non"}),
+	ANSWERS_STAGE2(new String[] {"Oui","Non"}),
 
 	/**
 	 * Stage 3's ANSWERS
 	 */
-	ANSWERS_STAGE3(new String[] {""}),
+	ANSWERS_STAGE3(new String[] {""}), //TODO Devinette
 
 	/**
 	 * Stage 4's ANSWERS
 	 */
-	ANSWERS_STAGE4(new String[] {""}), // VICTOIRE OU DEFAITE
+	ANSWERS_STAGE4(new String[] {""}), // LESSORMORE
 
 	/**
 	 * Stage 5's ANSWERS
 	 */
-	ANSWERS_STAGE5(new String[] {""}), // VICTOIRE OU DEFAITE
+	ANSWERS_STAGE5(new String[] {""}), // TICTACTOE
 
 	/**
 	 * Stage 6's ANSWERS
 	 */
-	ANSWERS_STAGE6(new String[] {"0: 1","1: 16","2: 30","3: 46"}),
+	ANSWERS_STAGE6(new String[] {"1","16","30","46"}),
 
 	/**
 	 * Stage 7's ANSWERS
 	 */
-	ANSWERS_STAGE7(new String[] {""}), // VICTOIRE OU DEFAITE
+	ANSWERS_STAGE7(new String[] {""}), // RUSH HOUR
 
 	/**
 	 * Stage 8's ANSWERS
 	 */
-	ANSWERS_STAGE8(new String[] {"0: D'accord.."}),
+	ANSWERS_STAGE8(new String[] {"D'accord.."}),
 
 	/**
 	 * Stage 9's ANSWERS
 	 */
-	ANSWERS_STAGE9(new String[] {"0: J'accepte","1: Je refuse"}),
+	ANSWERS_STAGE9(new String[] {"J'accepte","Je refuse"}),
 
 	/**
 	 * Stage 10's ANSWERS
 	 */
-	ANSWERS_STAGE10(new String[] {"0: Continuer"}),
+	ANSWERS_STAGE10(new String[] {"Continuer"}),
 
 	/**
 	 * Stage 11's ANSWERS
 	 */
-	ANSWERS_STAGE11(new String[] {"0: En roulant tous à vitesse constante", "1: En roulant tous à droite"}),
+	ANSWERS_STAGE11(new String[] {"En roulant tous à vitesse constante", "En roulant tous à droite"}),
 
 	/**
 	 * Stage 12's ANSWERS
 	 */
-	ANSWERS_STAGE12(new String[] {"0: Continuer"}),
+	ANSWERS_STAGE12(new String[] {"Continuer"}),
 
 	/**
 	 * Stage 13's ANSWERS
 	 */
-	ANSWERS_STAGE13(new String[] {""}), // VICTOIRE OU DEFAITE
+	ANSWERS_STAGE13(new String[] {""}), // OTHELLO
 
 	/**
 	 * Stage 14's ANSWERS
 	 */
-	ANSWERS_STAGE14(new String[] {""}), // VICTOIRE OU DEFAITE
+	ANSWERS_STAGE14(new String[] {""}), // SHIFUMI
 
 	/**
 	 * Stage 15's ANSWERS
 	 */
-	ANSWERS_STAGE15(new String[] {"0: Réveiller le gardien","1: Faire une sieste à ses côtés"}),
+	ANSWERS_STAGE15(new String[] {"Réveiller le gardien","Faire une sieste à ses côtés"}),
 
 	/**
 	 * Stage 16's ANSWERS
 	 */
-	ANSWERS_STAGE16(new String[] {"0: Un bébé","1: Une ombre"}),
+	ANSWERS_STAGE16(new String[] {"Un bébé","Une ombre"}),
 
 	/**
 	 * Stage 17's ANSWERS
 	 */
-	ANSWERS_STAGE17(new String[] {"0: Continuer"}),
+	ANSWERS_STAGE17(new String[] {"Continuer"}),
 
 	/**
 	 * Stage 18's ANSWERS
 	 */
-	ANSWERS_STAGE18(new String[] {"0: Merci !"}),
+	ANSWERS_STAGE18(new String[] {"Merci !"}),
 
 	/**
 	 * Stage 19's ANSWERS
 	 */
-	ANSWERS_STAGE19(new String[] {""}),
+	ANSWERS_STAGE19(new String[] {"Continuer"}),
 
 	/**
 	 * Stage 20's ANSWERS
 	 */
-	ANSWERS_STAGE20(new String[] {"0: Continuer"}),
+	ANSWERS_STAGE20(new String[] {"Continuer"}),
 
 	/**
 	 * Stage 21's ANSWERS
 	 */
-	ANSWERS_STAGE21(new String[] {"0: Continuer"}),
+	ANSWERS_STAGE21(new String[] {"Continuer"}),
 
 	/**
 	 * Stage 22's ANSWERS
 	 */
-	ANSWERS_STAGE22(new String[] {"0: Continuer"}),
+	ANSWERS_STAGE22(new String[] {"Continuer"}),
 
 	/**
 	 * Stage 23's ANSWERS
 	 */
-	ANSWERS_STAGE23(new String[] {""}); // VICTOIRE OU DEFAITE
+	ANSWERS_STAGE23(new String[] {"Continuer"}); // VICTOIRE OU DEFAITE
 
 
 	/**
@@ -144,9 +144,9 @@ public enum Answers {
 	 */
 	public String toString()
 	{
-		String result = null;
+		String result = "";
 		for(int index = 0; index < this.answers.length; index++)
-			result += this.answers[index] + "\n";
+			result += index + ": " + this.answers[index] + "\n";
 		return result;
 	}
 
