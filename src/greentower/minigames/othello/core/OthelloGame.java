@@ -163,7 +163,7 @@ public class OthelloGame extends MiniGame
 			this.IHM.displayTheWinner(Color.WHITE); //TODO Change text
 			this.IHM.displayEndOfGame(); //TODO Change text
 			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return 0;
+			return MiniGame.RESULT_VICTORY;
 		}
 		
 		else
@@ -171,7 +171,7 @@ public class OthelloGame extends MiniGame
 			this.IHM.displayTheWinner(Color.BLACK);
 			this.IHM.displayEndOfGame();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return 1;
+			return MiniGame.RESULT_LOOSE;
 		}
 	}
 }

@@ -88,6 +88,9 @@ public class MasterMind extends MiniGame
 	public int playStage(Output display)
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showDialog(this.dialog);
+		display.showGame();
+		
 		//TODO Exception
 			// Create checkers to check the player's propositions
 			Checker tmp = this.code.check(this.code);
@@ -103,8 +106,9 @@ public class MasterMind extends MiniGame
 
 			while(true)
 			{
-				System.out.println("Essai n� : "+tries+", Maximum :"+DEFAULT_TRIES); //$NON-NLS-1$
-				System.out.println("Liste des couleur : "+Color.BLUE+" "+Color.GREEN+" "+Color.MAGENTA+" "+Color.ORANGE+" "+Color.PINK+" "+Color.RED+"\n");
+				System.out.println("Essai n° : "+tries+", Maximum :"+DEFAULT_TRIES); //$NON-NLS-1$
+				System.out.println("Liste des couleurs : "+Color.BLUE+"(B) " + Color.GREEN + "(G) "+ Color.MAGENTA + "(M) "
+				+ Color.ORANGE + "(O) " + Color.PINK + "(P) " + Color.RED + "(R)\n");
 				System.out.println("Veuillez saisir votre proposition :"); //$NON-NLS-1$
 				String str;
 				try {
@@ -138,13 +142,13 @@ public class MasterMind extends MiniGame
 					System.out.println();
 					System.out.println("! BRAVO ! \nVous avez gagné en "+tries+" coup(s)");
 					display.showStageEnd(ListOfStages.getStageIndex(this));
-					return 1;
+					return MiniGame.RESULT_VICTORY;
 				}
 				else if(tries==DEFAULT_TRIES)
 				{
 					System.out.println("Dommage vous avez perdu :/");
 					display.showStageEnd(ListOfStages.getStageIndex(this));
-					return 0;
+					return MiniGame.RESULT_LOOSE;
 				}
 				else
 				{

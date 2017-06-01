@@ -53,7 +53,7 @@ public class Checker {
 	@Override
 	public String toString()
 	{
-		return ""+this.wellPlaced+ " pion(s) bien placé(s) ; "+this.misplaced+" pion(s) mal placé(s)";  //$NON-NLS-1$ //$NON-NLS-2$//$NON-NLS-3$
+		return ""+this.wellPlaced+ " pion(s) bien placÃ©(s) ; "+this.misplaced+" pion(s) mal placÃ©(s)";  //$NON-NLS-1$ //$NON-NLS-2$//$NON-NLS-3$
 	}
 
 

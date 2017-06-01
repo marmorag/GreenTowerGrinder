@@ -50,13 +50,13 @@ public class GamblingMachine extends MiniGame{
 		{
 			display.showText("JACKPOT");
 			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return 0;
+			return MiniGame.RESULT_VICTORY;
 		}
 		else
 		{
 			display.showText("FAIL");
 			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return 1;
+			return MiniGame.RESULT_LOOSE;
 		}
 	}
 }

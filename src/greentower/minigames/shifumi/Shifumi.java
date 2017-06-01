@@ -78,13 +78,13 @@ public class Shifumi extends MiniGame{
 		{
 			System.out.println("BRAVO!");
 			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return 0;
+			return MiniGame.RESULT_VICTORY;
 		}
 		else
 		{
 			System.out.println("Dommage :(");
 			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return 1;
+			return MiniGame.RESULT_LOOSE;
 		}
 
 	}

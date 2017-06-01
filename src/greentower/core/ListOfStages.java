@@ -44,7 +44,7 @@ public class ListOfStages
 		
 		/* STAGE_21 */ new Choice(Dialog.DIALOG_STAGE21, Answers.ANSWERS_STAGE21, 20),
 		/* STAGE_22 */ new MasterMind(Dialog.DIALOG_STAGE22, 21),
-		/* STAGE_22bis */ new Choice(Dialog.DIALOG_STAGE22, Answers.ANSWERS_STAGE22, 21),
+		/* STAGE_23bis */ new Choice(Dialog.DIALOG_STAGE23, Answers.ANSWERS_STAGE23, 21),
 	};
 
 	/**

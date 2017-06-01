@@ -183,7 +183,7 @@ public class TicTacToe extends MiniGame{
 		display.showDialog(this.dialog);
 		
 		display.showStageEnd(ListOfStages.getStageIndex(this));
-		return 0;
+		return MiniGame.RESULT_VICTORY;
 		//TODO Implémenter playStage
 	}
 

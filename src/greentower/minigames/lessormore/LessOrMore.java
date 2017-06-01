@@ -79,13 +79,13 @@ public class LessOrMore extends MiniGame
 		{
 			display.showText("BRAVO!");
 			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return 0;
+			return MiniGame.RESULT_VICTORY;
 		}
 		else
 		{
 			display.showText("Dommage :(");
 			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return 1;
+			return MiniGame.RESULT_LOOSE;
 		}
 
 	}

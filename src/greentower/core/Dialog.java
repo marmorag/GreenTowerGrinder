@@ -78,7 +78,9 @@ public enum Dialog {
 	/**
 	 * Stage 14's dialog
 	 */
-	DIALOG_STAGE14(new String[] {"Non il faut rouler à vitesse constante !", "Faisons une partie de Shifumi pour décider de ton sort ! "}), // PARTIE SHIFUMI
+	DIALOG_STAGE14(new String[] {"Non il faut rouler à vitesse constante !", "Faisons une partie de Shifumi pour décider de ton sort !",
+			"\n", "RULES", "Choisis un signe:", 
+			"ROCK: Pierre", "PAPER: Papier", "SCISSORS: Ciseaux"}), // PARTIE SHIFUMI
 
 	/**
 	 * Stage 15's dialog
@@ -118,12 +120,13 @@ public enum Dialog {
 	/**
 	 * Stage 22's dialog
 	 */
-	DIALOG_STAGE22(new String[] {"Garde courage, l'épreuve continue !"}),
-
+	DIALOG_STAGE22(new String[] {"Une porte bloque le chemin.", "C'est un étage de croisement.", "Qu'importe les chemins que tu as empruntés, si tu as fait preuve de suffisamment de volonté, tous mènent à cet étage.", "La porte restera verrouillée tant que nous n'aurons pas trouvé le code à 4 couleurs qui change régulièrement."}), // PARTIE DE MASTERMIND
+	
+	
 	/**
 	 * Stage 23's dialog
 	 */
-	DIALOG_STAGE23(new String[] {"Une porte bloque le chemin.", "C'est un étage de croisement.", "Qu'importe les chemins que tu as empruntés, si tu as fait preuve de suffisamment de volonté, tous mènent à cet étage.", "La porte restera verrouillée tant que nous n'aurons pas trouvé le code qui change régulièrement."}); // PARTIE DE MASTERMIND
+	DIALOG_STAGE23(new String[] {"VICTOIRE TU AS ATTEINT LE HAUT DE LA TOUR!!"}); 
 
 
 	/**
