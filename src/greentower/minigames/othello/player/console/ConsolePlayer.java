@@ -40,6 +40,7 @@ public class ConsolePlayer implements Player
 
 		try
 		{
+			System.out.println("\n> ");
 			str = this.br.readLine();
 		}
 		catch (IOException e)

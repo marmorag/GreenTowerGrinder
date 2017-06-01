@@ -29,6 +29,7 @@ public class GamblingMachine extends MiniGame{
 	public int playStage(Output display)
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		//GRAPHIC display.showGame();
 		display.showDialog(this.dialog);
 		boolean result;
 		int[] grid = new int[3];

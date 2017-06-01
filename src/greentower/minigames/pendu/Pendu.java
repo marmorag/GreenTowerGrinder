@@ -169,18 +169,16 @@ public class Pendu extends MiniGame{
 				this.nbErreur++;
 			}
 		}
+		
+		int result;
 		if(this.finDuPendu())
-		{
-			this.outputTool.notifyWin(this.nbCoups, this.motATrouver);
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_VICTORY;
-		}
+			result = MiniGame.RESULT_VICTORY;
 		else
-		{
-			this.outputTool.notifyLoose(this.motATrouver);
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_LOOSE;
-		}
+			result = MiniGame.RESULT_LOOSE;
+		
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 
 }

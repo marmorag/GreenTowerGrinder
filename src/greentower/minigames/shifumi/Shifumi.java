@@ -40,8 +40,10 @@ public class Shifumi extends MiniGame{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
 
+		display.showPrompt();
 		String sign = this.br.readLine();
-		boolean result;
+
+		int result;
 		//transform string -> Sign
 		Sign playersign = Sign.valueOf(sign);
 		Sign random = Sign.getRandom();
@@ -49,44 +51,27 @@ public class Shifumi extends MiniGame{
 		display.ShiFuMi(playersign, random);
 
 		//Test all possibilities of shifumi
-		if(playersign == Sign.PAPER){
-			if(random == Sign.ROCK){
-				result = true;
-			}
-			else{
-				result = false;
-			}
-		}
-		else if(playersign == Sign.ROCK){
-			if(random == Sign.PAPER){
-				result = false;
-			}
-			else{
-				result = true;
-			}
-		}
-		else{
-			if(random == Sign.ROCK){
-				result = false;
-			}
-			else{
-				result = true;
-			}
-		}
-
-		if(result)
-		{
-			display.win();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_VICTORY;
-		}
+		if(playersign == Sign.PAPER)
+			if(random == Sign.ROCK)
+				result = MiniGame.RESULT_VICTORY;
+			else
+				result = MiniGame.RESULT_LOOSE;
+		
+		else if(playersign == Sign.ROCK)
+			if(random == Sign.PAPER)
+				result = MiniGame.RESULT_LOOSE;
+			else
+				result = MiniGame.RESULT_VICTORY;
+		
 		else
-		{
-			display.loose();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_LOOSE;
-		}
-
+			if(random == Sign.ROCK)
+				result = MiniGame.RESULT_LOOSE;
+			else
+				result = MiniGame.RESULT_VICTORY;
+		
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 
 }

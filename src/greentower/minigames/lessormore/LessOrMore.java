@@ -83,6 +83,4 @@ public class LessOrMore extends MiniGame
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_LOOSE;
 		}
-
-	}
-}
+
