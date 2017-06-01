@@ -1,8 +1,11 @@
 package greentower.core;
 
+import greentower.IO.InputConsole;
+import greentower.IO.OutputConsole;
 import greentower.minigames.lessormore.LessOrMore;
 import greentower.minigames.mastermind.MasterMind;
 import greentower.minigames.othello.core.OthelloGame;
+import greentower.minigames.rushhour.RushHourGame;
 import greentower.minigames.shifumi.Shifumi;
 import greentower.minigames.tictactoe.TicTacToe;
 
@@ -24,8 +27,7 @@ public class ListOfStages
 		/* STAGE_5 */ new TicTacToe(Dialog.DIALOG_STAGE5, 4),
 		
 		/* STAGE_6 */ new Choice(Dialog.DIALOG_STAGE6, Answers.ANSWERS_STAGE6, 5),
-		/* STAGE_7 */ //new RushHour(Dialog.DIALOG_STAGE7),
-		/* STAGE_7bis */ new Choice(Dialog.DIALOG_STAGE7, Answers.ANSWERS_STAGE7, 6),
+		/* STAGE_7 */ new RushHourGame(Dialog.DIALOG_STAGE7, 6),
 		/* STAGE_8 */ new Choice(Dialog.DIALOG_STAGE8, Answers.ANSWERS_STAGE8, 7),
 		/* STAGE_9 */ new Choice(Dialog.DIALOG_STAGE9, Answers.ANSWERS_STAGE9, 8),
 		/* STAGE_10 */ new Choice(Dialog.DIALOG_STAGE10, Answers.ANSWERS_STAGE10, 9),
