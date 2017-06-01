@@ -56,17 +56,15 @@ public class Suite extends MiniGame{
 		display.showDialog(this.dialog);
 		display.Suite(this.nb1, this.nb2, this.nb3, this.nb4);
 		display.showText("\n>>");
+		
+		int result;
 		if(input.inputInt() == this.nb5)
-		{
-			display.win();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_VICTORY;
-		}
+			result = MiniGame.RESULT_VICTORY;
 		else
-		{
-			display.loose();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_LOOSE;
-		}
+			result = MiniGame.RESULT_LOOSE;
+		
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 }

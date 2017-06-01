@@ -30,9 +30,9 @@ public class GamblingMachine extends MiniGame{
 	public int playStage(Output display)
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
-		//GRAPHIC display.showGame();
 		display.showDialog(this.dialog);
-		boolean result;
+		
+		int result;
 		int[] grid = new int[3];
 		grid[0] = (int)(Math.random() * (3-0)) + 0;
 		grid[1] = (int)(Math.random() * (3-0)) + 0;
@@ -40,21 +40,12 @@ public class GamblingMachine extends MiniGame{
 
 		display.gambling(grid);
 		if(grid[0] == grid[1] && grid[1] == grid[2])
-			result = true;
+			result = MiniGame.RESULT_VICTORY;
 		else
-			result = false;
+			result = MiniGame.RESULT_LOOSE;
 
-		if(result)
-		{
-			display.win();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_VICTORY;
-		}
-		else
-		{
-			display.loose();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_LOOSE;
-		}
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 }
