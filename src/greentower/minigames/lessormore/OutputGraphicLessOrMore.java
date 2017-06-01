@@ -14,8 +14,8 @@ public class OutputGraphicLessOrMore extends OutputGraphic{
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public void showGame(){
-		
+	public void showGame()
+	{
 	}
 
 }

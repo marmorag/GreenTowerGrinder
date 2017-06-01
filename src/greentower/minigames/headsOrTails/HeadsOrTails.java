@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -31,9 +32,12 @@ public class HeadsOrTails extends MiniGame {
 	}
 
 	@Override
-	public int playStage(Output display) throws IOException{
+	public int playStage(Output display) throws IOException
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showGame();
-		display.showDialog(dialog);
+		display.showDialog(this.dialog);
+		
 		int player=-1;
 		while(player!=0 || player!=1){
 			System.out.println("Veuillez entrer 0 pour pile et 1 pour face : ");
@@ -45,9 +49,11 @@ public class HeadsOrTails extends MiniGame {
 		if((int) new Random().nextInt(2) == player)
 		{
 			System.out.println("Bravo");
-			return 0;
+			display.showStageEnd(ListOfStages.getStageIndex(this));
+			return MiniGame.RESULT_VICTORY;
 		}
 		System.out.println("Dommage");
-		return 1;
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return MiniGame.RESULT_LOOSE;
 	}
 }

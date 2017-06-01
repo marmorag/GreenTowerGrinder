@@ -2,6 +2,7 @@ package greentower.minigames.gamblingmachine;
 
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -25,7 +26,9 @@ public class GamblingMachine extends MiniGame{
 	 * The player win if all 3 numbers and equals
 	 * @return true if player wins false if not
 	 */
-	public int playStage(Output display){
+	public int playStage(Output display)
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showGame();
 		display.showDialog(this.dialog);
 
@@ -46,12 +49,14 @@ public class GamblingMachine extends MiniGame{
 		if(result)
 		{
 			display.showText("JACKPOT");
-			return 0;
+			display.showStageEnd(ListOfStages.getStageIndex(this));
+			return MiniGame.RESULT_VICTORY;
 		}
 		else
 		{
 			display.showText("FAIL");
-			return 1;
+			display.showStageEnd(ListOfStages.getStageIndex(this));
+			return MiniGame.RESULT_LOOSE;
 		}
 	}
 }

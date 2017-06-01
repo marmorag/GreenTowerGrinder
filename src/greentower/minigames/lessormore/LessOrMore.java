@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -46,9 +47,11 @@ public class LessOrMore extends MiniGame
 	 * @return {boolean} true if the game is won and false if not
 	 * @throws IOException 
 	 */
-	public int playStage(Output display) throws IOException{
+	public int playStage(Output display) throws IOException
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showDialog(this.dialog);
 		display.showGame();
-		display.showDialog(dialog);
 		boolean result;
 
 		display.showText(String.valueOf(this.base));
@@ -75,12 +78,14 @@ public class LessOrMore extends MiniGame
 		if(result)
 		{
 			display.showText("BRAVO!");
-			return 0;
+			display.showStageEnd(ListOfStages.getStageIndex(this));
+			return MiniGame.RESULT_VICTORY;
 		}
 		else
 		{
 			display.showText("Dommage :(");
-			return 1;
+			display.showStageEnd(ListOfStages.getStageIndex(this));
+			return MiniGame.RESULT_LOOSE;
 		}
 
 	}

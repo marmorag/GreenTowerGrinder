@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -82,13 +83,17 @@ public class MasterMind extends MiniGame
 	/**
 	 * OVERRIDE
 	 * Permit to play the game with a player
-	 * @param out 
 	 * @return The index of the nextStage to play (Logical link between Stage)
 	 */
-	public int playStage(Output out){
+	public int playStage(Output display)
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showDialog(this.dialog);
+		display.showGame();
+		
 		//TODO Exception
 			// Create checkers to check the player's propositions
-			Checker tmp = code.check(code);
+			Checker tmp = this.code.check(this.code);
 
 			// Create an initial proposition (not considered)
 			this.proposition = new Combination();
@@ -101,8 +106,9 @@ public class MasterMind extends MiniGame
 
 			while(true)
 			{
-				System.out.println("Essai n� : "+tries+", Maximum :"+DEFAULT_TRIES); //$NON-NLS-1$
-				System.out.println("Liste des couleur : "+Color.BLUE+" "+Color.GREEN+" "+Color.MAGENTA+" "+Color.ORANGE+" "+Color.PINK+" "+Color.RED+"\n");
+				System.out.println("Essai n° : "+tries+", Maximum :"+DEFAULT_TRIES); //$NON-NLS-1$
+				System.out.println("Liste des couleurs : "+Color.BLUE+"(B) " + Color.GREEN + "(G) "+ Color.MAGENTA + "(M) "
+				+ Color.ORANGE + "(O) " + Color.PINK + "(P) " + Color.RED + "(R)\n");
 				System.out.println("Veuillez saisir votre proposition :"); //$NON-NLS-1$
 				String str;
 				try {
@@ -134,13 +140,15 @@ public class MasterMind extends MiniGame
 				{
 					tries++;
 					System.out.println();
-					System.out.println("! BRAVO ! \nVous avez gagn� en "+tries+" coup(s)");
-					return 1;
+					System.out.println("! BRAVO ! \nVous avez gagné en "+tries+" coup(s)");
+					display.showStageEnd(ListOfStages.getStageIndex(this));
+					return MiniGame.RESULT_VICTORY;
 				}
 				else if(tries==DEFAULT_TRIES)
 				{
 					System.out.println("Dommage vous avez perdu :/");
-					return 0;
+					display.showStageEnd(ListOfStages.getStageIndex(this));
+					return MiniGame.RESULT_LOOSE;
 				}
 				else
 				{
