@@ -40,16 +40,16 @@ public class HeadsOrTails extends MiniGame {
 		}
 		
 		int random = (int) new Random().nextInt(2);
+		
+		int result;
 		if(random == player)
-		{
-			display.HeadsOrTails(random);
-			display.win();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_VICTORY;
-		}
+			result = MiniGame.RESULT_VICTORY;
+		else 
+			result = MiniGame.RESULT_LOOSE;
+
 		display.HeadsOrTails(random);
-		display.loose();
+		display.showMiniGameResult(result);
 		display.showStageEnd(ListOfStages.getStageIndex(this));
-		return MiniGame.RESULT_LOOSE;
+		return result;
 	}
 }
