@@ -52,7 +52,6 @@ public class RushHourGame
 	 * @param namevof the player
 	 * @param level of the game
 	 */
-	@SuppressWarnings({ "javadoc", "hiding" })
 	public RushHourGame(Player player, int level, Display display)
 	{
 		this.state = READY;

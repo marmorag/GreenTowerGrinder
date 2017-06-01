@@ -20,11 +20,7 @@ public interface Output {
 	 * @param str
 	 */
 	public void showText(String str);
-	
-	/**
-	 * Display the game
-	 */
-	public void showGame();
+		public void win();	public void loose();
 	
 	/**
 	 * Display the given String array
@@ -37,5 +33,5 @@ public interface Output {
 	/**	 * 	 */	public void erreurLettre();
 	/**	 * @param motATrouver	 */	public void notifyLoose(String motATrouver);
 	/**	 * 	 */	public void demanderCaractere();
-	/**	 * @param nbErreur	 * @param motAAfficher	 */	public void afficherPendu(int nbErreur, String motAAfficher);	/**	 * Show the introduction message of the given stage index	 * @param stageIndex	 * 			Stage's index	 */	public void showStageIntroduction(int stageIndex);	/**	 * Show the end message of the given stage index	 * @param stageIndex	 * 			Stage's index	 */	public void showStageEnd(int stageIndex);
+	/**	 * @param nbErreur	 * @param motAAfficher	 */	public void afficherPendu(int nbErreur, String motAAfficher);	/**	 * Show the introduction message of the given stage index	 * @param stageIndex	 * 			Stage's index	 */	public void showStageIntroduction(int stageIndex);	/**	 * Show the end message of the given stage index	 * @param stageIndex	 * 			Stage's index	 */	public void showStageEnd(int stageIndex);	public void gambling();	public void HeadsOrTails();		public void LessOrMore();		public void MasterMind();		public void Othello();		public void ShiFuMi();		public void Suite();		public void TicTacToe();
 }

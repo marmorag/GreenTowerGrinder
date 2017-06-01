@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 import greentower.IO.Output;
-import greentower.IO.OutputConsole;
 import greentower.core.Dialog;
 import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
@@ -182,8 +181,8 @@ public class TicTacToe extends MiniGame{
 	public int playStage(Output display) throws NumberFormatException, IOException 
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
-		display.showGame();
 		display.showDialog(this.dialog);
+		display.TicTacToe();
 
 		while (!this.isFull()){
 			display.showText(this.toString());
@@ -193,11 +192,11 @@ public class TicTacToe extends MiniGame{
 				break;
 		}
 		if(this.getWinner() == 1){
-			display.showText("Bravo vous avez gagné");
+			display.win();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_VICTORY;
 		}
-		display.showText("Dommage");
+		display.loose();
 		display.showStageEnd(ListOfStages.getStageIndex(this));
 		return MiniGame.RESULT_LOOSE;
 	}

@@ -51,7 +51,7 @@ public class LessOrMore extends MiniGame
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
-		display.showGame();
+		display.LessOrMore();
 		boolean result;
 
 		display.showText(String.valueOf(this.base));
@@ -77,13 +77,13 @@ public class LessOrMore extends MiniGame
 
 		if(result)
 		{
-			display.showText("BRAVO!");
+			display.win();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_VICTORY;
 		}
 		else
 		{
-			display.showText("Dommage :(");
+			display.loose();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_LOOSE;
 		}

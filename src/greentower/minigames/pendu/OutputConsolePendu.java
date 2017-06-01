@@ -86,12 +86,12 @@ public class OutputConsolePendu implements Output {
 	
 	public void notifyWin(int nbCoups, String motATrouver) {
 		System.out.println("Felicitations vous avez rÃ©ussi en : "+ nbCoups +"coups\n");
-		System.out.println("Le mot était :"+motATrouver+"\n");
+		System.out.println("Le mot ï¿½tait :"+motATrouver+"\n");
 	}
 	
 	public void notifyLoose(String motATrouver) {
 		System.out.println("Dommage vous avez perdu");
-		System.out.println("Le mot était :"+motATrouver+"\n");
+		System.out.println("Le mot ï¿½tait :"+motATrouver+"\n");
 	}
 
 	@Override
@@ -101,13 +101,79 @@ public class OutputConsolePendu implements Output {
 	}
 
 	@Override
-	public void showGame() {
+	public void showAnswers(String[] answers) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void showAnswers(String[] answers) {
+	public void win() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void loose() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showStageIntroduction(int stageIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showStageEnd(int stageIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void gambling() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void HeadsOrTails() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void LessOrMore() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void MasterMind() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Othello() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ShiFuMi() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Suite() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void TicTacToe() {
 		// TODO Auto-generated method stub
 		
 	}

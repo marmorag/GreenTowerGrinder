@@ -37,7 +37,7 @@ public class OutputGraphic extends JFrame implements Output{
 	
 	/* ******************************* THE FOLLOWING METHODS SHOULDN'T BE IMPLEMENTED ******************************* */
 	
-	
+	// PENDU
 	@Override
 	public void notifyWin(int nbCoups, String motATrouver) {
 		// VOID FOR NON USED METHOD AT THIS STAGE
@@ -68,16 +68,85 @@ public class OutputGraphic extends JFrame implements Output{
 		
 	}
 
-	@Override
-	public void showGame() {
-		// VOID FOR NON USED METHOD AT THIS STAGE
-		
-	}
 
 	@Override
 	public void showAnswers(String[] answers) {
 		// VOID FOR NON USED METHOD AT THIS STAGE
 		
 	}
+
+	@Override
+	public void showStageIntroduction(int stageIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showStageEnd(int stageIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void win() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void loose() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void gambling() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void HeadsOrTails() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void LessOrMore() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void MasterMind() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Othello() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ShiFuMi() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Suite() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void TicTacToe() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	//GamblingMachine
 
 }

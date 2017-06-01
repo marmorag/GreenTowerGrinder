@@ -16,14 +16,17 @@ class ButtonListener implements ActionListener
 	/**
 	 * Column of the table
 	 */
+	@SuppressWarnings("unused")
 	private int column;
 	/**
 	 * Row of the table
 	 */
+	@SuppressWarnings("unused")
 	private int row;
 	/**
 	 * table
 	 */
+	@SuppressWarnings("unused")
 	private JTable table;
 
 	/**

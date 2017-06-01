@@ -38,8 +38,8 @@ public class Shifumi extends MiniGame{
 	public int playStage(Output display) throws IOException
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
-		display.showGame();
 		display.showDialog(this.dialog);
+		display.ShiFuMi();
 
 		String sign = this.br.readLine();
 
@@ -76,13 +76,13 @@ public class Shifumi extends MiniGame{
 
 		if(result)
 		{
-			System.out.println("BRAVO!");
+			display.win();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_VICTORY;
 		}
 		else
 		{
-			System.out.println("Dommage :(");
+			display.loose();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_LOOSE;
 		}

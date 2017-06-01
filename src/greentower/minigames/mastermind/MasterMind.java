@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import greentower.IO.Output;
+import greentower.IO.OutputConsole;
 import greentower.core.Dialog;
 import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
@@ -89,7 +90,7 @@ public class MasterMind extends MiniGame
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
-		display.showGame();
+		display.MasterMind();
 		
 		//TODO Exception
 			// Create checkers to check the player's propositions
@@ -106,10 +107,10 @@ public class MasterMind extends MiniGame
 
 			while(true)
 			{
-				System.out.println("Essai n° : "+tries+", Maximum :"+DEFAULT_TRIES); //$NON-NLS-1$
-				System.out.println("Liste des couleurs : "+Color.BLUE+"(B) " + Color.GREEN + "(G) "+ Color.MAGENTA + "(M) "
+				display.showText("Essai n° : "+tries+", Maximum :"+DEFAULT_TRIES); //$NON-NLS-1$
+				display.showText("Liste des couleurs : "+Color.BLUE+"(B) " + Color.GREEN + "(G) "+ Color.MAGENTA + "(M) "
 				+ Color.ORANGE + "(O) " + Color.PINK + "(P) " + Color.RED + "(R)\n");
-				System.out.println("Veuillez saisir votre proposition :"); //$NON-NLS-1$
+				display.showText("Veuillez saisir votre proposition :"); //$NON-NLS-1$
 				String str;
 				try {
 					str = br.readLine().toUpperCase();
@@ -121,7 +122,7 @@ public class MasterMind extends MiniGame
 			
 				while(str.length() !=4 || !stringChecker(str))
 				{
-					System.out.println("Veuillez saisir votre proposition correct (GGGG):"); //$NON-NLS-1$
+					display.showText("Veuillez saisir votre proposition correct (GGGG):"); //$NON-NLS-1$
 					try {
 						str = br.readLine().toUpperCase();
 					} catch (IOException e) {
@@ -139,14 +140,14 @@ public class MasterMind extends MiniGame
 				if(this.code.check(this.proposition).equals(tmp))
 				{
 					tries++;
-					System.out.println();
-					System.out.println("! BRAVO ! \nVous avez gagné en "+tries+" coup(s)");
+					OutputConsole.gotN(1);
+					display.win();
 					display.showStageEnd(ListOfStages.getStageIndex(this));
 					return MiniGame.RESULT_VICTORY;
 				}
 				else if(tries==DEFAULT_TRIES)
 				{
-					System.out.println("Dommage vous avez perdu :/");
+					display.loose();
 					display.showStageEnd(ListOfStages.getStageIndex(this));
 					return MiniGame.RESULT_LOOSE;
 				}
