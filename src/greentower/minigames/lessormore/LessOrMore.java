@@ -50,8 +50,8 @@ public class LessOrMore extends MiniGame
 	public int playStage(Output display) throws IOException
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
-		display.showGame();
 		display.showDialog(this.dialog);
+		display.showGame();
 		boolean result;
 
 		display.showText(String.valueOf(this.base));

@@ -26,7 +26,9 @@ public enum Dialog {
 	/**
 	 * Stage 4's dialog
 	 */
-	DIALOG_STAGE4(new String[] {"Bravo !", "Mais maintenant que j'ai testé ton intelligence, je vais mesurer ta chance.", "Car il faut bien avouer que dans la vie la chance occupe une grande place."}), // PARTIE LESS OR MORE
+	DIALOG_STAGE4(new String[] {"Bravo !", "Mais maintenant que j'ai testé ton intelligence, je vais mesurer ta chance.", "Car il faut bien avouer que dans la vie la chance occupe une grande place.", 
+			"\n", "RULES", "Tu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché", 
+			"MORE: plus grand", "LESS: plus petit"}), // PARTIE LESS OR MORE
 
 	/**
 	 * Stage 5's dialog
