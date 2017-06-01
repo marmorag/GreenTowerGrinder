@@ -52,25 +52,28 @@ public class TicTacToe extends MiniGame{
 
 	/**
 	 * Player turn : he types the 2 indexes one by one
+	 * @param display 
 	 * @return true if he win and false if not
 	 * @throws IOException 
 	 * @throws NumberFormatException 
 	 */
-	public boolean playerTurn() throws NumberFormatException, IOException{
-		if(this.isFull()){ // Test if no one have win
-			System.out.println("Egalite, veuillez rejouer");
+	public boolean playerTurn(Output display) throws NumberFormatException, IOException{
+		if(this.isFull()) // Test if no one have win
+		{ 
+			display.showText("Egalite, veuillez rejouer");
 			this.resetGrid();
 		}
 		int p1=0,p2=0;
-		while(true){ //Get index by the user
-			System.out.println("Entree la ligne de la case voulue");
+		while(true)
+		{ //Get index by the user
+			display.showText("Entree la ligne de la case voulue");
 			p1 = Integer.parseInt(this.br.readLine());
-			System.out.println("Entree la colonne de la case voulue");
+			display.showText("Entree la colonne de la case voulue");
 			p2 = Integer.parseInt(this.br.readLine());
 			if(this.grid[p1][p2] == 0){
 				this.grid[p1][p2] = 1;
 				break;
-			}
+		}
 			System.out.println("Cette case n'est pas vide");
 		}
 		// Test if player made a column or a row or a diagonal
@@ -99,7 +102,7 @@ public class TicTacToe extends MiniGame{
 	 */
 	public boolean gameTurn(){
 		if(this.isFull()){ // Test if no one have win
-			System.out.println("Egalite, veuillez rejouer");
+			display.showText("Egalite, veuillez rejouer");
 			this.resetGrid();
 		}
 		int p1 = 0,p2 = 0;
