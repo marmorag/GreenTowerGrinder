@@ -104,6 +104,8 @@ public class MasterMind extends MiniGame
 			// Counts the tries
 			int tries = 0;
 
+			int result;
+			
 			while(true)
 			{
 				System.out.println("Essai n° : "+tries+", Maximum :"+DEFAULT_TRIES); //$NON-NLS-1$
@@ -136,25 +138,25 @@ public class MasterMind extends MiniGame
 					this.proposition.combination[i]=value;
 				}
 
-				if(this.code.check(this.proposition).equals(tmp))
+				if(this.code.check(this.proposition).equals(tmp)) // VICTOIRE
 				{
+					result = MiniGame.RESULT_VICTORY;
 					tries++;
-					System.out.println();
-					System.out.println("! BRAVO ! \nVous avez gagné en "+tries+" coup(s)");
-					display.showStageEnd(ListOfStages.getStageIndex(this));
-					return MiniGame.RESULT_VICTORY;
+					break;
 				}
-				else if(tries==DEFAULT_TRIES)
+				else if(tries==DEFAULT_TRIES) // DEFAITE
 				{
-					System.out.println("Dommage vous avez perdu :/");
-					display.showStageEnd(ListOfStages.getStageIndex(this));
-					return MiniGame.RESULT_LOOSE;
+					result = MiniGame.RESULT_LOOSE;
+					break;
 				}
-				else
+				else // NOUVEAU TOUR
 				{
 					tries++;
 					System.out.println(this.code.check(this.proposition));
 				}
 			}
+			display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 }

@@ -101,6 +101,8 @@ public class OthelloGame extends MiniGame
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
+		display.showText("RULES");
+		display.showText("Tu vas jouer une partie d'Othello. Tu joues les pions noirs (B).");
 		display.showGame();
 		
 		this.IHM.displayStartOfGame();
@@ -156,22 +158,15 @@ public class OthelloGame extends MiniGame
 		this.IHM.displayResult(this.board.numberOfPawns(Color.BLACK), Color.BLACK);
 		this.IHM.displayResult(this.board.numberOfPawns(Color.WHITE), Color.WHITE);
 
-		if(this.board.numberOfPawns(Color.WHITE) == this.board.numberOfPawns(Color.BLACK))
-			this.IHM.displayTheWinner(Color.EMPTY);
-		if(this.board.numberOfPawns(Color.WHITE) > this.board.numberOfPawns(Color.BLACK))
-		{
-			this.IHM.displayTheWinner(Color.WHITE); //TODO Change text
-			this.IHM.displayEndOfGame(); //TODO Change text
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_VICTORY;
-		}
+		int result;
 		
+		if(this.board.numberOfPawns(Color.WHITE) >= this.board.numberOfPawns(Color.BLACK))
+			result = MiniGame.RESULT_VICTORY;
 		else
-		{
-			this.IHM.displayTheWinner(Color.BLACK);
-			this.IHM.displayEndOfGame();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_LOOSE;
-		}
+			result = MiniGame.RESULT_LOOSE;
+		
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 }
