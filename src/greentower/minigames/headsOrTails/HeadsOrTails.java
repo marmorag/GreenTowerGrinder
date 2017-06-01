@@ -36,7 +36,6 @@ public class HeadsOrTails extends MiniGame {
 	public int playStage(Output display) throws IOException
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
-		display.HeadsOrTails();
 		display.showDialog(this.dialog);
 		
 		int player=-1;
@@ -47,12 +46,15 @@ public class HeadsOrTails extends MiniGame {
 			player = Integer.parseInt(userChoice);
 			OutputConsole.gotN(1);
 		}
-		if((int) new Random().nextInt(2) == player)
+		int random = (int) new Random().nextInt(2);
+		if(random == player)
 		{
+			display.HeadsOrTails(random);
 			display.win();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_VICTORY;
 		}
+		display.HeadsOrTails(random);
 		display.loose();
 		display.showStageEnd(ListOfStages.getStageIndex(this));
 		return MiniGame.RESULT_LOOSE;

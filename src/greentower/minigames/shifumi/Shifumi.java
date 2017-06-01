@@ -39,14 +39,14 @@ public class Shifumi extends MiniGame{
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
-		display.ShiFuMi();
 
 		String sign = this.br.readLine();
-
 		boolean result;
 		//transform string -> Sign
 		Sign playersign = Sign.valueOf(sign);
 		Sign random = Sign.getRandom();
+		
+		display.ShiFuMi(playersign, random);
 
 		//Test all possibilities of shifumi
 		if(playersign == Sign.PAPER){

@@ -1,6 +1,7 @@
 package greentower.IO;
 
 import greentower.core.Dialog;
+import greentower.minigames.shifumi.Sign;
 
 public class OutputGraphicChoice implements Output {
 
@@ -77,24 +78,6 @@ public class OutputGraphicChoice implements Output {
 	}
 
 	@Override
-	public void gambling() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void HeadsOrTails() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void LessOrMore() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void MasterMind() {
 		// TODO Auto-generated method stub
 		
@@ -107,19 +90,43 @@ public class OutputGraphicChoice implements Output {
 	}
 
 	@Override
-	public void ShiFuMi() {
+	public void showError(String str) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Suite() {
+	public void gambling(int[] grid) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void TicTacToe() {
+	public void HeadsOrTails(int face) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void LessOrMore(int number) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ShiFuMi(Sign player, Sign random) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Suite(int nb1, int nb2, int nb3, int nb4) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void TicTacToe(int[][] grid) {
 		// TODO Auto-generated method stub
 		
 	}
