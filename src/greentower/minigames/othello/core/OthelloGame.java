@@ -103,8 +103,6 @@ public class OthelloGame extends MiniGame
 		display.showDialog(this.dialog);
 		display.showText("RULES");
 		display.showText("Tu vas jouer une partie d'Othello. Tu joues les pions noirs (B).");
-		display.showGame();
-		display.Othello();
 		
 		this.IHM.displayStartOfGame();
 

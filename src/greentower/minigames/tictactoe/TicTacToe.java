@@ -58,6 +58,7 @@ public class TicTacToe extends MiniGame{
 
 	/**
 	 * Player turn : he types the 2 indexes one by one
+	 * @param display 
 	 * @return true if he win and false if not
 	 * @throws IOException 
 	 * @throws NumberFormatException 
