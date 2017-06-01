@@ -96,6 +96,8 @@ public class OthelloGame extends MiniGame
 	 * 					while (position is not valid)
 	 *                 	process pawn drop
 	 * }
+	 * @param display Display methods
+	 * @return index of the nextStage
 	 */
 	public int playStage(Output display)
 	{

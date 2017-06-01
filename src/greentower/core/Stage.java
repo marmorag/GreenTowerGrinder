@@ -44,7 +44,7 @@ public abstract class Stage
 	 * 			Stage result
 	 * @throws Exception 
 	 */
-	public abstract int playStage(Output display) throws Exception;
+	public abstract int playStage(Output display, Input input) throws Exception;
 
 	/**
 	 * Indicates if the stage is the last one or not

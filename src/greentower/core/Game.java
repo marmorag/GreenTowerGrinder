@@ -1,5 +1,7 @@
 package greentower.core;
 
+import greentower.IO.Input;
+import greentower.IO.InputConsole;
 import greentower.IO.Output;
 
 /**
@@ -32,6 +34,11 @@ public class Game
 	private Output display;
 
 	/**
+	 * Tool used to get anything from the player
+	 */
+	private Input input;
+	
+	/**
 	 * True if the game is executed in graphical mode, false else
 	 */
 	@SuppressWarnings("unused")
@@ -45,6 +52,7 @@ public class Game
 	 */
 	public Game(Player player, Output display, boolean isGraphical)
 	{
+		this.input = new InputConsole();
 		this.isGraphical = isGraphical;
 		this.numberOfRounds = 0;
 		this.player = player;
@@ -60,8 +68,19 @@ public class Game
 		try
 		{
 			while(this.currentStage.getFinalStage() == false)
+<<<<<<< HEAD
 			{	
 				int result = this.currentStage.playStage(this.display);
+=======
+			{
+				
+				if(this.isGraphical)
+					this.display = updateDisplayMode(indexOfCurrentStages);
+				else
+					this.display = updateDisplayMode(-1);
+				
+				int result = this.currentStage.playStage(this.display, this.input);
+>>>>>>> Guillaume
 				this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
 			}
 			
