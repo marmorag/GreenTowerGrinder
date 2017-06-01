@@ -1,7 +1,6 @@
 package greentower.IO;
 
-import greentower.core.Answers;import greentower.core.Dialog;import greentower.minigames.shifumi.Sign;
-import greentower.core.Dialog;import greentower.core.MiniGame;
+import greentower.core.Answers;import greentower.core.Dialog;import greentower.core.MiniGame;import greentower.minigames.shifumi.Sign;
 
 /**
  * Implementation of Output to display in console mode

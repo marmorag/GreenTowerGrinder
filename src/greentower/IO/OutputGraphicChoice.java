@@ -1,8 +1,13 @@
 package greentower.IO;
 
+import greentower.core.Answers;
 import greentower.core.Dialog;
 import greentower.minigames.shifumi.Sign;
 
+/**
+ * @author Florent
+ *
+ */
 public class OutputGraphicChoice implements Output {
 
 	@Override
@@ -18,7 +23,7 @@ public class OutputGraphicChoice implements Output {
 	}
 
 	@Override
-	public void showAnswers(String[] answers) {
+	public void showAnswers(Answers answers) {
 		// TODO Auto-generated method stub
 
 	}
@@ -61,18 +66,6 @@ public class OutputGraphicChoice implements Output {
 
 	@Override
 	public void showStageEnd(int stageIndex) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void win() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void loose() {
 		// TODO Auto-generated method stub
 		
 	}
