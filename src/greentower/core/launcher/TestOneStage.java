@@ -21,7 +21,7 @@ public class TestOneStage
 		System.out.println("****** BIENVENUE DANS LE TEST ******");
 		try
 		{
-			ListOfStages.getStageAt(12).playStage(new OutputConsole(), new InputConsole());
+			ListOfStages.getStageAt(5).playStage(new OutputConsole(), new InputConsole());
 		}
 		catch (Exception e)
 		{

@@ -1,9 +1,8 @@
 
 package greentower.minigames.lessormore;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.core.Dialog;
