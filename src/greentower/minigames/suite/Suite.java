@@ -58,18 +58,18 @@ public class Suite extends MiniGame{
 	public int playStage(Output display) throws NumberFormatException, IOException
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
-		display.showGame();
 		display.showDialog(this.dialog);
+		display.Suite();
 		display.showText(this.toString());
 		if(Integer.parseInt(this.br.readLine()) == this.nb5)
 		{
-			display.showText("Bravo");
+			display.win();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_VICTORY;
 		}
 		else
 		{
-			display.showText("Dommage");
+			display.loose();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_LOOSE;
 		}

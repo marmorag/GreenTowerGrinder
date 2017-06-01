@@ -101,7 +101,7 @@ public class OthelloGame extends MiniGame
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
-		display.showGame();
+		display.Othello();
 		
 		this.IHM.displayStartOfGame();
 

@@ -17,12 +17,6 @@ public class OutputGraphicChoice implements Output {
 	}
 
 	@Override
-	public void showGame() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void showAnswers(String[] answers) {
 		// TODO Auto-generated method stub
 
@@ -56,6 +50,78 @@ public class OutputGraphicChoice implements Output {
 	public void afficherPendu(int nbErreur, String motAAfficher) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void showStageIntroduction(int stageIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showStageEnd(int stageIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void win() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void loose() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void gambling() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void HeadsOrTails() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void LessOrMore() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void MasterMind() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Othello() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ShiFuMi() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Suite() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void TicTacToe() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

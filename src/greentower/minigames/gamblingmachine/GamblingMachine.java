@@ -29,9 +29,8 @@ public class GamblingMachine extends MiniGame{
 	public int playStage(Output display)
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
-		display.showGame();
 		display.showDialog(this.dialog);
-
+		display.gambling();
 		boolean result;
 		int[] grid = new int[3];
 		grid[0] = (int)(Math.random() * (3-0)) + 0;
@@ -48,13 +47,13 @@ public class GamblingMachine extends MiniGame{
 
 		if(result)
 		{
-			display.showText("JACKPOT");
+			display.win();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_VICTORY;
 		}
 		else
 		{
-			display.showText("FAIL");
+			display.loose();
 			display.showStageEnd(ListOfStages.getStageIndex(this));
 			return MiniGame.RESULT_LOOSE;
 		}
