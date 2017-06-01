@@ -1,4 +1,4 @@
-package greentower.minigames.rushhour;
+package greentower.minigames.rushhour.exceptions;
 
 public class WrongCarException extends Exception
 {

@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import greentower.minigames.rushhour.Direction;
+import greentower.minigames.rushhour.GameBoard;
+
 
 /**
  * 
@@ -58,6 +61,54 @@ public class InputConsole implements Input
 		{
 			return "";
 		}
+	}
+	
+	public int getCar(GameBoard board)
+	{
+		int numCar = -1;
+		while(numCar < 0 || numCar > board.numberOfCar()){
+			try
+			{
+				numCar = Integer.parseInt(this.br.readLine());
+			}
+			catch (NumberFormatException | IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return numCar;
+	}
+	
+	/**
+	 * Return direction-entry from player
+	 */
+	@Override
+	public Direction getDirection()
+	{
+		Direction direction = null;
+		while(direction == null)
+			try{
+				direction = Direction.valueOf(this.br.readLine());
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		return direction;
+	}
+
+	@Override
+	public int getMove() {
+		System.out.println("Entrez le déplacement :");
+		try
+		{
+			return Integer.parseInt(this.br.readLine());
+		}
+		catch (NumberFormatException | IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
 	}
 
 }

@@ -1,4 +1,4 @@
-package greentower.minigames.rushhour;
+package greentower.minigames.rushhour.IHM;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

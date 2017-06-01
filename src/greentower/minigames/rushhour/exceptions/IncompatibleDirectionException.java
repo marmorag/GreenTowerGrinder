@@ -1,4 +1,4 @@
-package greentower.minigames.rushhour;
+package greentower.minigames.rushhour.exceptions;
 
 /**
  * Exception if a player want to move a car in an incompatible direction

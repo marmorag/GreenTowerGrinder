@@ -1,4 +1,4 @@
-package greentower.minigames.rushhour;
+package greentower.minigames.rushhour.IHM;
 import java.awt.Component;
 
 import javax.swing.DefaultCellEditor;

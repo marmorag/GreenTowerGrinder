@@ -3,7 +3,9 @@ package greentower.IO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import greentower.core.Answers;
 import greentower.core.Dialog;
+import greentower.minigames.rushhour.GameBoard;
 import greentower.minigames.shifumi.Sign;
 
 /**
@@ -69,13 +71,6 @@ public class OutputGraphic extends JFrame implements Output{
 		
 	}
 
-
-	@Override
-	public void showAnswers(String[] answers) {
-		// VOID FOR NON USED METHOD AT THIS STAGE
-		
-	}
-
 	@Override
 	public void showStageIntroduction(int stageIndex) {
 		// TODO Auto-generated method stub
@@ -84,18 +79,6 @@ public class OutputGraphic extends JFrame implements Output{
 
 	@Override
 	public void showStageEnd(int stageIndex) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void win() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void loose() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -164,6 +147,18 @@ public class OutputGraphic extends JFrame implements Output{
 	@Override
 	public void showPrompt()
 	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showAnswers(Answers answers) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showBoard(GameBoard board) {
 		// TODO Auto-generated method stub
 		
 	}
