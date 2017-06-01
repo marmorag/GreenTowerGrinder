@@ -12,6 +12,16 @@ import greentower.IO.Output;
 public abstract class MiniGame extends Stage
 {
 	/**
+	 * Represents the int returns by a mini-game when user win
+	 */
+	public static final int RESULT_VICTORY = 0;
+	
+	/**
+	 * Represents the int returns by a mini-game when user loses
+	 */
+	public static final int RESULT_LOOSE = 1;
+	
+	/**
 	 * Mini Game's contructor
 	 * @param dialog
 	 * @param stageIndex 
@@ -41,8 +51,9 @@ public abstract class MiniGame extends Stage
 	 * Allows to play game
 	 * @return
 	 * 			Index of next stage
+	 * @throws Exception 
 	 */
-	public int playStage(){
+	public int playStage(Output display, Input input) throws Exception{
 		return 0; //For example
 
 	}

@@ -1,10 +1,10 @@
 package greentower.minigames.shifumi;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -14,11 +14,6 @@ import greentower.core.MiniGame;
 public class Shifumi extends MiniGame{
 
 	/**
-	 * Reader for input
-	 */
-	private BufferedReader br;
-
-	/**
 	 * Shifumi's constructor
 	 * @param dialog
 	 * @param stageIndex 
@@ -26,7 +21,6 @@ public class Shifumi extends MiniGame{
 	public Shifumi(Dialog dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
-		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	/**
@@ -34,54 +28,50 @@ public class Shifumi extends MiniGame{
 	 * @return true if player win and false if not
 	 * @throws IOException 
 	 */
-	public int playStage(Output display) throws IOException{
-		display.showGame();
-		display.showDialog(dialog);
+	public int playStage(Output display, Input input) throws Exception
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showDialog(this.dialog);
 
-		String sign = this.br.readLine();
+		display.showText("\n>>");
+		String sign = input.inputString();
 
-		boolean result;
+		while(sign != "PAPER" || sign != "ROCK" || sign != "SCISSORS")
+		{
+			display.showText("Invalid entry");
+			display.showText("\n>>");
+			sign = input.inputString();
+		}
+		
+		int result;
 		//transform string -> Sign
 		Sign playersign = Sign.valueOf(sign);
 		Sign random = Sign.getRandom();
+		
+		display.ShiFuMi(playersign, random);
 
 		//Test all possibilities of shifumi
-		if(playersign == Sign.PAPER){
-			if(random == Sign.ROCK){
-				result = true;
-			}
-			else{
-				result = false;
-			}
-		}
-		else if(playersign == Sign.ROCK){
-			if(random == Sign.PAPER){
-				result = false;
-			}
-			else{
-				result = true;
-			}
-		}
-		else{
-			if(random == Sign.ROCK){
-				result = false;
-			}
-			else{
-				result = true;
-			}
-		}
-
-		if(result)
-		{
-			System.out.println("BRAVO!");
-			return 0;
-		}
+		if(playersign == Sign.PAPER)
+			if(random == Sign.ROCK)
+				result = MiniGame.RESULT_VICTORY;
+			else
+				result = MiniGame.RESULT_LOOSE;
+		
+		else if(playersign == Sign.ROCK)
+			if(random == Sign.PAPER)
+				result = MiniGame.RESULT_LOOSE;
+			else
+				result = MiniGame.RESULT_VICTORY;
+		
 		else
-		{
-			System.out.println("Dommage :(");
-			return 1;
-		}
-
+			if(random == Sign.ROCK)
+				result = MiniGame.RESULT_LOOSE;
+			else
+				result = MiniGame.RESULT_VICTORY;
+		
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 
 }

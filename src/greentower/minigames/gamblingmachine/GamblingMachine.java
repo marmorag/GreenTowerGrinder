@@ -2,6 +2,7 @@ package greentower.minigames.gamblingmachine;
 
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -23,35 +24,28 @@ public class GamblingMachine extends MiniGame{
 	/**
 	 * Generate 3 random number between 0 and 2
 	 * The player win if all 3 numbers and equals
+	 * @param display 
 	 * @return true if player wins false if not
 	 */
-	public int playStage(Output display){
-		display.showGame();
+	public int playStage(Output display)
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
-
-		boolean result;
+		
+		int result;
 		int[] grid = new int[3];
 		grid[0] = (int)(Math.random() * (3-0)) + 0;
 		grid[1] = (int)(Math.random() * (3-0)) + 0;
 		grid[2] = (int)(Math.random() * (3-0)) + 0;
 
-		if(grid[0] == grid[1] && grid[1] == grid[2]){
-			display.showText(grid[0]+"|"+grid[1]+"|"+grid[2]);
-			result = true;
-		}else{
-			display.showText(grid[0]+"|"+grid[1]+"|"+grid[2]);
-			result = false;
-		}
-
-		if(result)
-		{
-			display.showText("JACKPOT");
-			return 0;
-		}
+		display.gambling(grid);
+		if(grid[0] == grid[1] && grid[1] == grid[2])
+			result = MiniGame.RESULT_VICTORY;
 		else
-		{
-			display.showText("FAIL");
-			return 1;
-		}
+			result = MiniGame.RESULT_LOOSE;
+
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 }

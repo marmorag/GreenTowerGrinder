@@ -1,10 +1,8 @@
 package greentower.core;
 
+import greentower.IO.Input;
+import greentower.IO.InputConsole;
 import greentower.IO.Output;
-import greentower.IO.OutputConsole;
-import greentower.IO.OutputGraphicChoice;
-import greentower.minigames.lessormore.OutputGraphicLessOrMore;
-import greentower.minigames.tictactoe.OutputGraphicTicTacToe;
 
 /**
  * This class represents a game of The Green Tower Grinder
@@ -36,8 +34,14 @@ public class Game
 	private Output display;
 
 	/**
+	 * Tool used to get anything from the player
+	 */
+	private Input input;
+	
+	/**
 	 * True if the game is executed in graphical mode, false else
 	 */
+	@SuppressWarnings("unused")
 	private boolean isGraphical;
 
 	/**
@@ -48,6 +52,7 @@ public class Game
 	 */
 	public Game(Player player, Output display, boolean isGraphical)
 	{
+		this.input = new InputConsole();
 		this.isGraphical = isGraphical;
 		this.numberOfRounds = 0;
 		this.player = player;
@@ -62,17 +67,17 @@ public class Game
 	{
 		try
 		{
-			int indexOfCurrentStages = 1;
 			while(this.currentStage.getFinalStage() == false)
-			{
-				
-				if(this.isGraphical)
-					this.display = updateDisplayMode(indexOfCurrentStages);
-				else
-					this.display = updateDisplayMode(-1);
-				
-				int result = this.currentStage.playStage(this.display);
-				this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
+			{	
+				 try
+				 { 
+					 int result = this.currentStage.playStage(this.display, this.input);
+					 this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
+				 } 
+				 catch (Exception e)
+				 {
+					 //EMPTY
+				 }
 			}
 			
 		}
@@ -102,32 +107,6 @@ public class Game
 //			}
 //		}
 	}
-
-	
-	private static Output updateDisplayMode(int indexOfCurrentStages)
-	{
-		switch (indexOfCurrentStages)
-		{
-		case -1:
-			return new OutputConsole();
-		case 3 :
-			return new OutputGraphicLessOrMore();
-		case 4:
-			return new OutputGraphicTicTacToe();
-		case 7:
-			return new OutputGraphicLessOrMore();
-			// TODO add implementation of RushHour
-		case 13:
-			return new OutputGraphicLessOrMore();
-			// TODO add implementation of Othello
-		case 22:
-			return new OutputGraphicLessOrMore();
-			// TODO add implementation of MasterMind
-		default:
-			return new OutputGraphicChoice();
-		}
-	}
-
 	
 	/**
 	 * Enables player to leave the current game

@@ -9,6 +9,7 @@ import java.util.Random;
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -59,11 +60,13 @@ public class Pendu extends MiniGame{
 		this.nbErreur = 0;
 		this.nbCoups = 0;
 
-		try{
+		try
+		{
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/pendu/listeMot.txt")));
 			String ligne;
 
-			while ((ligne=br.readLine())!=null && i < nbAleatoire){
+			while ((ligne=br.readLine())!=null && i < nbAleatoire)
+			{
 				i++;
 			}
 
@@ -72,7 +75,8 @@ public class Pendu extends MiniGame{
 
 			br.close();
 		}
-		catch (Exception FileReadException){
+		catch (Exception FileReadException)
+		{
 			System.out.println(FileReadException.toString());
 		}
 	}
@@ -143,16 +147,16 @@ public class Pendu extends MiniGame{
 	 */
 	public int playStage(Output display)
 	{
-		System.out.println("ici");
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		char lettreEntree;
 
 		while(!this.finDuPendu() && this.nbCoups <= this.motATrouver.length()+5)
 		{
-			this.outputTool.afficherPendu(this.nbErreur,this.motAAfficher);
+			this.outputTool.showPendu(this.nbErreur,this.motAAfficher);
 			//System.out.println(motATrouver);
 
 			this.outputTool.demanderCaractere();
-			lettreEntree = this.inputTool.inputChar();
+			lettreEntree = (""+this.inputTool.inputChar()).toUpperCase().charAt(0);
 
 			if(!this.verifierLettre(lettreEntree))
 			{
@@ -168,16 +172,16 @@ public class Pendu extends MiniGame{
 				this.nbErreur++;
 			}
 		}
+		
+		int result;
 		if(this.finDuPendu())
-		{
-			this.outputTool.notifyWin(this.nbCoups, this.motATrouver);
-			return 0;
-		}
+			result = MiniGame.RESULT_VICTORY;
 		else
-		{
-			this.outputTool.notifyLoose(this.motATrouver);
-			return 1;
-		}
+			result = MiniGame.RESULT_LOOSE;
+		
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 
 }

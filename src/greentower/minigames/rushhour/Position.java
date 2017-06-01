@@ -11,6 +11,10 @@ public class Position implements Serializable
 {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
 	 * Abscissa
 	 */
 	private int x;
@@ -24,7 +28,6 @@ public class Position implements Serializable
 	 * @param x abscissa
 	 * @param y ordinate
 	 */
-	@SuppressWarnings("hiding")
 	public Position(int x, int y)
 	{
 		this.x = x;

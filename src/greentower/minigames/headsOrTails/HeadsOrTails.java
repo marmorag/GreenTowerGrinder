@@ -1,11 +1,11 @@
 package greentower.minigames.headsOrTails;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Random;
+import greentower.IO.Input;
 import greentower.IO.Output;
+import greentower.IO.OutputConsole;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 
 /**
@@ -15,11 +15,6 @@ import greentower.core.MiniGame;
 public class HeadsOrTails extends MiniGame {
 
 	/**
-	 *	Reader for input
-	 */
-	private BufferedReader br;
-
-	/**
 	 * HeadsOrTail's constructor
 	 * @param dialog
 	 * @param stageIndex 
@@ -27,27 +22,34 @@ public class HeadsOrTails extends MiniGame {
 	public HeadsOrTails(Dialog dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
-		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	@Override
-	public int playStage(Output display) throws IOException{
-		display.showGame();
-		display.showDialog(dialog);
+	public int playStage(Output display, Input input)
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showDialog(this.dialog);
+		
 		int player=-1;
-		while(player!=0 || player!=1){
-			System.out.println("Veuillez entrer 0 pour pile et 1 pour face : ");
-			String userChoice;
-			userChoice = this.br.readLine();
-			player = Integer.parseInt(userChoice);
-			System.out.println("\n");
-		}
-		if((int) new Random().nextInt(2) == player)
+		while(player!=0 || player!=1)
 		{
-			System.out.println("Bravo");
-			return 0;
+			display.showText("Veuillez entrer 0 pour pile et 1 pour face : ");
+			display.showText("\n>>");
+			player = input.inputInt();
+			OutputConsole.gotN(1);
 		}
-		System.out.println("Dommage");
-		return 1;
+		
+		int random = (int) new Random().nextInt(2);
+		
+		int result;
+		if(random == player)
+			result = MiniGame.RESULT_VICTORY;
+		else 
+			result = MiniGame.RESULT_LOOSE;
+
+		display.HeadsOrTails(random);
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 }

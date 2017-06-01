@@ -1,4 +1,10 @@
 package greentower.minigames.rushhour;
+
+import greentower.IO.Input;
+import greentower.IO.Output;
+import greentower.core.Dialog;
+import greentower.core.MiniGame;
+
 /**
  *
  * Represent a game of RushHour
@@ -7,24 +13,8 @@ package greentower.minigames.rushhour;
  *
  */
 @SuppressWarnings("unused")
-public class RushHourGame
+public class RushHourGame extends MiniGame
 {
-
-	/**
-	 * state of the game
-	 */
-	private static final int READY = 1;
-
-	/**
-	 * state of the game
-	 */
-	private static final int LAUNCHED = 2;
-
-	/**
-	 * game state (READY/LAUNCHED)
-	 */
-	private int state;
-
 	/**
 	 * The game board
 	 */
@@ -40,26 +30,34 @@ public class RushHourGame
 	/**
 	 * Way to display the game
 	 */
-	private Display display;
+	private Output display;
+	
+	/**
+	 * Way to get info from player
+	 */
+	private Input input;
 
+	/**
+	 * Left the game
+	 */
 	public static void exit(){
 		System.exit(0);
 	}
 
 	/**
 	 * create a game with a default player and a game board level configuration
-	 *
-	 * @param namevof the player
-	 * @param level of the game
+	 * @param display 
+	 * @param input 
+	 * @param dialog 
+	 * @param indexOfStage 
 	 */
-	@SuppressWarnings({ "javadoc", "hiding" })
-	public RushHourGame(Player player, int level, Display display)
+	//public RushHourGame(Player player, int level, Display display)
+	public RushHourGame(Output display, Input input, Dialog dialog, int indexOfStage)
 	{
-		this.state = READY;
-		this.player = player;
-		this.board = new GameBoard(level);
+		super(display, input, dialog, indexOfStage);
+		this.board = new GameBoard();
 		this.display = display;
-		this.level = level;
+		this.input = input;
 	}
 
 	/**
@@ -67,22 +65,27 @@ public class RushHourGame
 	 * While the player has not win, he can move cars
 	 * At each movement, display updated grid
 	 */
-	public void play()
+	public int playStage() throws Exception
 	{
-		this.state = LAUNCHED;
-		while(this.board.isFinish() == false){
-			this.display.showBoard(this.board);
+		while(this.board.isFinish() == false)
+		{
+			// implementer un timer pour la defaite
+			this.display.showRushHourBoard(this.board);
 			int numCar = this.player.getCar(this.board);
 			Direction direction = this.player.getDirection();
 			int offset = this.player.getMove();
-			try{
+			try
+			{
 				if(this.board.moveCar(numCar, direction, offset) == false)
-					this.display.wrongDirection();
-			}catch(Exception e){
-				System.out.println("mauvaise voiture");
+					this.display.showError("Mauvaise Direction");
+			}
+			catch(Exception e)
+			{
+				this.display.showError("mauvaise voiture");
 			}
 		}
-		this.display.win(this.level);
+		this.display.showMiniGameResult(0);
+		return 0;
 	}
 
 }

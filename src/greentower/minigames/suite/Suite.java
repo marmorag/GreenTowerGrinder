@@ -1,11 +1,12 @@
 package greentower.minigames.suite;
 
-import greentower.IO.Output;
-import greentower.core.*;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Random;
+import greentower.IO.Input;
+import greentower.IO.Output;
+import greentower.core.Dialog;
+import greentower.core.ListOfStages;
+import greentower.core.MiniGame;
 /**
  * Find the fifth number
  * @author Rémi
@@ -23,11 +24,6 @@ public class Suite extends MiniGame{
 	 */
 	@SuppressWarnings("javadoc")
 	private int op1,op2;
-
-	/**
-	 * 
-	 */
-	private BufferedReader br;
 	
 	/**
 	 * Initialize random first number and operations
@@ -38,7 +34,6 @@ public class Suite extends MiniGame{
 	public Suite(Dialog dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
-		this.br = new BufferedReader(new InputStreamReader(System.in));
 		Random r = new Random();
 		this.op1 = r.nextInt(11);
 		this.op2 = r.nextInt(11);
@@ -55,26 +50,21 @@ public class Suite extends MiniGame{
 	 * @throws IOException 
 	 * @throws NumberFormatException 
 	 */
-	public int playStage(Output display) throws NumberFormatException, IOException{
-		display.showGame();
-		display.showDialog(dialog);
-		display.showText(this.toString());
-		if(Integer.parseInt(this.br.readLine()) == this.nb5)
-		{
-			display.showText("Bravo");
-			return 0;
-		}
+	public int playStage(Output display, Input input) throws NumberFormatException, IOException
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showDialog(this.dialog);
+		display.Suite(this.nb1, this.nb2, this.nb3, this.nb4);
+		display.showText("\n>>");
+		
+		int result;
+		if(input.inputInt() == this.nb5)
+			result = MiniGame.RESULT_VICTORY;
 		else
-		{
-			display.showText("Dommage");
-			return 1;
-		}
+			result = MiniGame.RESULT_LOOSE;
+		
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
-
-	@Override
-	public String toString() {
-		return "Suite [" + this.nb1 + " " + this.nb2 + " " + this.nb3 + " " + this.nb4 + " ?]";
-	}
-
-
 }

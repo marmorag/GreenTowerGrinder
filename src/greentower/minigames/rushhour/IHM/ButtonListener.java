@@ -1,4 +1,4 @@
-package greentower.minigames.rushhour;
+package greentower.minigames.rushhour.IHM;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,14 +16,17 @@ class ButtonListener implements ActionListener
 	/**
 	 * Column of the table
 	 */
+	@SuppressWarnings("unused")
 	private int column;
 	/**
 	 * Row of the table
 	 */
+	@SuppressWarnings("unused")
 	private int row;
 	/**
 	 * table
 	 */
+	@SuppressWarnings("unused")
 	private JTable table;
 
 	/**

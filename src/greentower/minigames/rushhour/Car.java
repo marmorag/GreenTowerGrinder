@@ -5,6 +5,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+import greentower.minigames.rushhour.exceptions.IncompatibleDirectionException;
+
 /**
  *  Car is an element of the board which can move by the user
  *
@@ -44,7 +46,6 @@ public class Car implements Serializable
 	 * @param direction of the car
 	 * @param color of the car
 	 */
-	@SuppressWarnings("hiding")
 	public Car(Position position, int length, Color color, Direction direction)
 	{
 		this.position = position;
@@ -67,7 +68,6 @@ public class Car implements Serializable
 	 * Set new car position
 	 * @param position to assign
 	 */
-	@SuppressWarnings("hiding")
 	public void setPosition(Position position)
 	{
 		this.position = position;
@@ -122,7 +122,6 @@ public class Car implements Serializable
 	 * @param position in the gameboard
 	 * @return true if a car is at position, false if not
 	 */
-	@SuppressWarnings("hiding")
 	public boolean isAt(Position position){
 		Position[] positions = this.getAllPositions();
 		for(int index=0;index<positions.length;index++){
@@ -138,7 +137,6 @@ public class Car implements Serializable
 	 * @return forward position
 	 * @throws IncompatibleDirectionException
 	 */
-	@SuppressWarnings("javadoc")
 	public Position getForwardPositionWhileMoving(Direction movement) throws IncompatibleDirectionException{
 		Position pos = this.getPosition();
 		if(this.direction == Direction.UP || this.direction == Direction.DOWN){

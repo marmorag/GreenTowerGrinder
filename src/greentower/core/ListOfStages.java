@@ -1,6 +1,8 @@
 package greentower.core;
 
 import greentower.minigames.lessormore.LessOrMore;
+import greentower.minigames.mastermind.MasterMind;
+import greentower.minigames.othello.core.OthelloGame;
 import greentower.minigames.shifumi.Shifumi;
 import greentower.minigames.tictactoe.TicTacToe;
 
@@ -30,8 +32,7 @@ public class ListOfStages
 
 		/* STAGE_11 */ new Choice(Dialog.DIALOG_STAGE11, Answers.ANSWERS_STAGE11, 10),
 		/* STAGE_12 */ new Choice(Dialog.DIALOG_STAGE12, Answers.ANSWERS_STAGE12, 11),
-		/* STAGE_13 */ //new OthelloGame(Dialog.DIALOG_STAGE13),
-		/* STAGE_13bis */ new Choice(Dialog.DIALOG_STAGE13, Answers.ANSWERS_STAGE13, 12),
+		/* STAGE_13 */ new OthelloGame(Dialog.DIALOG_STAGE13, 12),
 		/* STAGE_14 */ new Shifumi(Dialog.DIALOG_STAGE14, 13),
 		/* STAGE_15 */ new Choice(Dialog.DIALOG_STAGE15, Answers.ANSWERS_STAGE15, 14),
 		
@@ -42,8 +43,8 @@ public class ListOfStages
 		/* STAGE_20 */ new Choice(Dialog.DIALOG_STAGE20, Answers.ANSWERS_STAGE20, 19),
 		
 		/* STAGE_21 */ new Choice(Dialog.DIALOG_STAGE21, Answers.ANSWERS_STAGE21, 20),
-		///* STAGE_22 */ new MasterMind(Dialog.DIALOG_STAGE22)
-		/* STAGE_22bis */ new Choice(Dialog.DIALOG_STAGE22, Answers.ANSWERS_STAGE22, 21),
+		/* STAGE_22 */ new MasterMind(Dialog.DIALOG_STAGE22, 21),
+		/* STAGE_23bis */ new Choice(Dialog.DIALOG_STAGE23, Answers.ANSWERS_STAGE23, 21),
 	};
 
 	/**
@@ -57,7 +58,7 @@ public class ListOfStages
 		/* STAGE_4 */ {6, 7},
 		/* STAGE_5 */ {4, 8},
 
-		/* STAGE_6 */ {10, 9},
+		/* STAGE_6 */ {10, 10, 9, 10},
 		/* STAGE_7 */ {11, 8},
 		/* STAGE_8 */ {3},
 		/* STAGE_9 */ {12, 13},

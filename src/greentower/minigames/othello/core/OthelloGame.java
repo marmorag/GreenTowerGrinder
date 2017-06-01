@@ -2,6 +2,7 @@ package greentower.minigames.othello.core;
 
 import greentower.IO.Output;
 import greentower.core.Dialog;
+import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
 import greentower.minigames.othello.ihm.IHMOthello;
 import greentower.minigames.othello.ihm.console.IHMOthelloConsole;
@@ -95,9 +96,16 @@ public class OthelloGame extends MiniGame
 	 * 					while (position is not valid)
 	 *                 	process pawn drop
 	 * }
+	 * @param display Display methods
+	 * @return index of the nextStage
 	 */
-	public int playStage(Output out)
+	public int playStage(Output display)
 	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showDialog(this.dialog);
+		display.showText("RULES");
+		display.showText("Tu vas jouer une partie d'Othello. Tu joues les pions noirs (B).");
+		
 		this.IHM.displayStartOfGame();
 
 		int numberOfRound = 1;
@@ -151,20 +159,15 @@ public class OthelloGame extends MiniGame
 		this.IHM.displayResult(this.board.numberOfPawns(Color.BLACK), Color.BLACK);
 		this.IHM.displayResult(this.board.numberOfPawns(Color.WHITE), Color.WHITE);
 
-		if(this.board.numberOfPawns(Color.WHITE) == this.board.numberOfPawns(Color.BLACK))
-			this.IHM.displayTheWinner(Color.EMPTY);
-		if(this.board.numberOfPawns(Color.WHITE) > this.board.numberOfPawns(Color.BLACK))
-		{
-			this.IHM.displayTheWinner(Color.WHITE);
-			this.IHM.displayEndOfGame();
-			return 0;
-		}
+		int result;
 		
+		if(this.board.numberOfPawns(Color.WHITE) >= this.board.numberOfPawns(Color.BLACK))
+			result = MiniGame.RESULT_VICTORY;
 		else
-		{
-			this.IHM.displayTheWinner(Color.BLACK);
-			this.IHM.displayEndOfGame();
-			return 1;
-		}
+			result = MiniGame.RESULT_LOOSE;
+		
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
 	}
 }

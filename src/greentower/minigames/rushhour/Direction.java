@@ -36,7 +36,6 @@ public enum Direction
 	 * @param nextX
 	 * @param nextY
 	 */
-	@SuppressWarnings({ "hiding", "javadoc" })
 	Direction(int nextX, int nextY){
 		this.nextX = nextX;
 		this.nextY = nextY;

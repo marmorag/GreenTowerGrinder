@@ -1,4 +1,4 @@
-package greentower.minigames.rushhour;
+package greentower.minigames.rushhour.exceptions;
 
 /**
  * Exception if a player want to move a car in an incompatible direction
@@ -7,5 +7,10 @@ package greentower.minigames.rushhour;
  */
 public class IncompatibleDirectionException extends Exception
 {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 }

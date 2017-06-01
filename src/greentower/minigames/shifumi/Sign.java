@@ -21,7 +21,8 @@ public enum Sign {
 	 * Return random sign among enum
 	 * @return {Sign} random sign among enum
 	 */
-	public static Sign getRandom() {
+	public static Sign getRandom()
+	{
 		return values()[(int) (Math.random() * values().length-1)];
 	}
 

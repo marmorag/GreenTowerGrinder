@@ -1,5 +1,8 @@
 package greentower.minigames.rushhour;
 
+import greentower.minigames.rushhour.exceptions.IncompatibleDirectionException;
+import greentower.minigames.rushhour.exceptions.WrongCarException;
+
 /**
  *
  * Create double dimension game board (6x6) and place all cars
@@ -35,19 +38,16 @@ public class GameBoard
 	 *
 	 * @param level of the game
 	 */
-	@SuppressWarnings("hiding")
-	public GameBoard(int level)
+	public GameBoard()
 	{
-		this.level = level;
-		this.createCars(this.level);
+		this.createCars();
 	}
 
 	/**
 	 * Set cars considering the level
 	 * @param level of the game
 	 */
-	@SuppressWarnings("hiding")
-	private void createCars(int level)
+	private void createCars()
 	{
 		this.cars = new Car[8];
 	    this.cars[0] = new Car(new Position(3, 2), 2, Color.RED, Direction.RIGHT);
