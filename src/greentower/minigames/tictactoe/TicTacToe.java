@@ -190,8 +190,8 @@ public class TicTacToe extends MiniGame{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
 		while (!this.isFull()){
-			display.TicTacToe(this.grid);
-			if(this.playerTurn())
+			display.showText(this.toString());
+			if(this.playerTurn(display))
 				break;
 			if(this.gameTurn())
 				break;

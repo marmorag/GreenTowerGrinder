@@ -51,30 +51,16 @@ public class LessOrMore extends MiniGame
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
+		display.LessOrMore(this.base);
+		int result;
+		
 		this.base = (int)(Math.random() * (10-1)) + 1;
 		this.randomcard = (int)(Math.random() * (10-1)) + 1;
 		this.br = new BufferedReader(new InputStreamReader(System.in));
-	}
-
-	/**
-	 * return if player win or not
-	 *
-	 * @return {boolean} true if the game is won and false if not
-	 * @throws IOException 
-	 */
-	public int playStage(Output display) throws IOException
-	{
-		display.showStageIntroduction(ListOfStages.getStageIndex(this));
-		display.showDialog(this.dialog);
-		display.showText("RULES");
-		display.showText("Tu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché");
-		display.showText("MORE: plus grand");
-		display.showText("LESS: plus petit");
-		int result;
 
 		display.showText(String.valueOf(this.base));
 		String userChoice;
-		display.showPrompt(); userChoice = this.br.readLine();
+		display.showPrompt(); userChoice = this.br.readLine().toUpperCase();
 		userChoice = userChoice.toUpperCase();
 
 
@@ -101,38 +87,5 @@ public class LessOrMore extends MiniGame
 	}
 }
 
-
-		
-		boolean result;
-		display.LessOrMore(this.base);
-		String userChoice = this.br.readLine().toUpperCase();
-
-		if(userChoice.equals("MORE")){
-			if(this.randomcard<this.base)
-				result = false;
-			else
-				result = true;
-		}
-		else if(userChoice.equals("LESS")){
-			if(this.randomcard<this.base)
-				result = true;
-			else
-				result = false;
-		}
-		else
-			throw new IOException();
-
-		if(result)
-		{
-			display.win();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_VICTORY;
-		}
-		else
-		{
-			display.loose();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_LOOSE;
-		}
 
 		
