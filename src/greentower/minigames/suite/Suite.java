@@ -59,8 +59,7 @@ public class Suite extends MiniGame{
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
-		display.Suite();
-		display.showText(this.toString());
+		display.Suite(this.nb1, this.nb2, this.nb3, this.nb4);
 		if(Integer.parseInt(this.br.readLine()) == this.nb5)
 		{
 			display.win();
@@ -74,11 +73,4 @@ public class Suite extends MiniGame{
 			return MiniGame.RESULT_LOOSE;
 		}
 	}
-
-	@Override
-	public String toString() {
-		return "Suite [" + this.nb1 + " " + this.nb2 + " " + this.nb3 + " " + this.nb4 + " ?]";
-	}
-
-
 }

@@ -8,6 +8,7 @@ import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.ListOfStages;
 import greentower.core.MiniGame;
+
 /**
  * MiniGame TicTacToe
  * @author
@@ -35,6 +36,11 @@ public class TicTacToe extends MiniGame{
 	 * Reader for input
 	 */
 	private BufferedReader br;
+	
+	/**
+	 * 
+	 */
+	private Output display;
 
 	/**
 	 * Fill the grid with 0
@@ -58,20 +64,20 @@ public class TicTacToe extends MiniGame{
 	 */
 	public boolean playerTurn() throws NumberFormatException, IOException{
 		if(this.isFull()){ // Test if no one have win
-			System.out.println("Egalite, veuillez rejouer");
+			display.showText("Egalite, veuillez rejouer");
 			this.resetGrid();
 		}
 		int p1=0,p2=0;
 		while(true){ //Get index by the user
-			System.out.println("Entree la ligne de la case voulue");
+			display.showText("Entree la ligne de la case voulue");
 			p1 = Integer.parseInt(this.br.readLine());
-			System.out.println("Entree la colonne de la case voulue");
+			display.showText("Entree la colonne de la case voulue");
 			p2 = Integer.parseInt(this.br.readLine());
 			if(this.grid[p1][p2] == 0){
 				this.grid[p1][p2] = 1;
 				break;
 			}
-			System.out.println("Cette case n'est pas vide");
+			display.showError("Cette case n'est pas vide");
 		}
 		// Test if player made a column or a row or a diagonal
 		if(this.grid[p1][0] == 1 && this.grid[p1][1] == 1 && this.grid[p1][2] == 1){
@@ -99,7 +105,7 @@ public class TicTacToe extends MiniGame{
 	 */
 	public boolean gameTurn(){
 		if(this.isFull()){ // Test if no one have win
-			System.out.println("Egalite, veuillez rejouer");
+			display.showText("Egalite, veuillez rejouer");
 			this.resetGrid();
 		}
 		int p1 = 0,p2 = 0;
@@ -182,10 +188,8 @@ public class TicTacToe extends MiniGame{
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
-		display.TicTacToe();
-
 		while (!this.isFull()){
-			display.showText(this.toString());
+			display.TicTacToe(this.grid);
 			if(this.playerTurn())
 				break;
 			if(this.gameTurn())

@@ -51,14 +51,10 @@ public class LessOrMore extends MiniGame
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
-		display.LessOrMore();
+		
 		boolean result;
-
-		display.showText(String.valueOf(this.base));
-		String userChoice;
-		userChoice = this.br.readLine();
-		userChoice = userChoice.toUpperCase();
-
+		display.LessOrMore(this.base);
+		String userChoice = this.br.readLine().toUpperCase();
 
 		if(userChoice.equals("MORE")){
 			if(this.randomcard<this.base)
