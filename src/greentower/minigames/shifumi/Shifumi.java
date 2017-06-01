@@ -38,7 +38,6 @@ public class Shifumi extends MiniGame{
 	public int playStage(Output display) throws IOException
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
-		display.showGame();
 		display.showDialog(this.dialog);
 
 		display.showPrompt();
