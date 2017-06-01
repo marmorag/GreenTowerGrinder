@@ -31,19 +31,13 @@ public class HeadsOrTails extends MiniGame {
 		display.showDialog(this.dialog);
 		
 		int player=-1;
-		while(player!=0 || player!=1){
-<<<<<<< HEAD
+		while(player!=0 || player!=1)
+		{
 			display.showText("Veuillez entrer 0 pour pile et 1 pour face : ");
-			String userChoice;
-			userChoice = this.br.readLine();
-			player = Integer.parseInt(userChoice);
-			OutputConsole.gotN(1);
-=======
-			System.out.println("Veuillez entrer 0 pour pile et 1 pour face : ");
 			player = input.inputInt();
-			System.out.println("\n");
->>>>>>> Guillaume
+			OutputConsole.gotN(1);
 		}
+		
 		int random = (int) new Random().nextInt(2);
 		if(random == player)
 		{

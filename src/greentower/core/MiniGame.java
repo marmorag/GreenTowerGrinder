@@ -51,8 +51,9 @@ public abstract class MiniGame extends Stage
 	 * Allows to play game
 	 * @return
 	 * 			Index of next stage
+	 * @throws Exception 
 	 */
-	public int playStage(Output display, Input input){
+	public int playStage(Output display, Input input) throws Exception{
 		return 0; //For example
 
 	}

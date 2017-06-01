@@ -68,20 +68,13 @@ public class Game
 		try
 		{
 			while(this.currentStage.getFinalStage() == false)
-<<<<<<< HEAD
 			{	
-				int result = this.currentStage.playStage(this.display);
-=======
-			{
-				
-				if(this.isGraphical)
-					this.display = updateDisplayMode(indexOfCurrentStages);
-				else
-					this.display = updateDisplayMode(-1);
-				
-				int result = this.currentStage.playStage(this.display, this.input);
->>>>>>> Guillaume
-				this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
+				 try { 
+					 int result = this.currentStage.playStage(this.display, this.input);
+					 this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
+				 } 
+				 catch (Exception e)
+				 {}
 			}
 			
 		}
