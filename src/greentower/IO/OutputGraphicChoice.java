@@ -48,7 +48,7 @@ public class OutputGraphicChoice implements Output {
 	}
 
 	@Override
-	public void afficherPendu(int nbErreur, String motAAfficher) {
+	public void showPendu(int nbErreur, String motAAfficher) {
 		// TODO Auto-generated method stub
 
 	}
@@ -140,7 +140,7 @@ public class OutputGraphicChoice implements Output {
 	}
 
 	@Override
-	public void showBoard(GameBoard board) {
+	public void showRushHourBoard(GameBoard board) {
 		// TODO Auto-generated method stub
 		
 	}
