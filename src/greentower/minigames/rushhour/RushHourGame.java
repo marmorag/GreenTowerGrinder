@@ -75,7 +75,7 @@ public class RushHourGame extends MiniGame
 		while(this.board.isFinish() == false)
 		{
 			// implementer un timer pour la defaite
-			this.display.showBoard(this.board);
+			this.display.showRushHourBoard(this.board);
 			int numCar = this.player.getCar(this.board);
 			Direction direction = this.player.getDirection();
 			int offset = this.player.getMove();

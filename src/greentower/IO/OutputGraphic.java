@@ -66,7 +66,7 @@ public class OutputGraphic extends JFrame implements Output{
 	}
 
 	@Override
-	public void afficherPendu(int nbErreur, String motAAfficher) {
+	public void showPendu(int nbErreur, String motAAfficher) {
 		// VOID FOR NON USED METHOD AT THIS STAGE
 		
 	}
@@ -158,7 +158,7 @@ public class OutputGraphic extends JFrame implements Output{
 	}
 
 	@Override
-	public void showBoard(GameBoard board) {
+	public void showRushHourBoard(GameBoard board) {
 		// TODO Auto-generated method stub
 		
 	}

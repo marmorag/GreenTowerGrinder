@@ -152,7 +152,7 @@ public class Pendu extends MiniGame{
 
 		while(!this.finDuPendu() && this.nbCoups <= this.motATrouver.length()+5)
 		{
-			this.outputTool.afficherPendu(this.nbErreur,this.motAAfficher);
+			this.outputTool.showPendu(this.nbErreur,this.motAAfficher);
 			//System.out.println(motATrouver);
 
 			this.outputTool.demanderCaractere();
