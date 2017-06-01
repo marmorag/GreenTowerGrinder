@@ -58,7 +58,7 @@ public class ListOfStages
 		/* STAGE_4 */ {6, 7},
 		/* STAGE_5 */ {4, 8},
 
-		/* STAGE_6 */ {10, 9},
+		/* STAGE_6 */ {10, 10, 9, 10},
 		/* STAGE_7 */ {11, 8},
 		/* STAGE_8 */ {3},
 		/* STAGE_9 */ {12, 13},
