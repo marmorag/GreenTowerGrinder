@@ -24,6 +24,7 @@ public class GamblingMachine extends MiniGame{
 	/**
 	 * Generate 3 random number between 0 and 2
 	 * The player win if all 3 numbers and equals
+	 * @param display 
 	 * @return true if player wins false if not
 	 */
 	public int playStage(Output display)

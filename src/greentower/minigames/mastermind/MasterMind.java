@@ -1,8 +1,5 @@
 package greentower.minigames.mastermind;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
+import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.core.Dialog;
 import greentower.core.ListOfStages;
@@ -85,7 +82,7 @@ public class MasterMind extends MiniGame
 	 * Permit to play the game with a player
 	 * @return The index of the nextStage to play (Logical link between Stage)
 	 */
-	public int playStage(Output display)
+	public int playStage(Output display, Input input)
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
@@ -98,9 +95,6 @@ public class MasterMind extends MiniGame
 			// Create an initial proposition (not considered)
 			this.proposition = new Combination();
 
-			// Scanner initialization
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
 			// Counts the tries
 			int tries = 0;
 
@@ -111,23 +105,13 @@ public class MasterMind extends MiniGame
 				+ Color.ORANGE + "(O) " + Color.PINK + "(P) " + Color.RED + "(R)\n");
 				System.out.println("Veuillez saisir votre proposition :"); //$NON-NLS-1$
 				String str;
-				try {
-					str = br.readLine().toUpperCase();
-				} catch (IOException e) {
-					// MAY NOT HAPPEND 
-					str = "";
-				}
+				
+				str = input.inputString().toUpperCase();
 
-			
 				while(str.length() !=4 || !stringChecker(str))
 				{
 					System.out.println("Veuillez saisir votre proposition correct (GGGG):"); //$NON-NLS-1$
-					try {
-						str = br.readLine().toUpperCase();
-					} catch (IOException e) {
-						// MAY NOT HAPPEND
-						str = "";
-					}
+					str = input.inputString().toUpperCase();
 				}
 				
 				for(int i=0;i<4;i++)	

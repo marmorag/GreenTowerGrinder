@@ -1,5 +1,7 @@
 package greentower.core;
 
+import greentower.IO.Input;
+import greentower.IO.InputConsole;
 import greentower.IO.Output;
 import greentower.IO.OutputConsole;
 import greentower.IO.OutputGraphicChoice;
@@ -36,6 +38,11 @@ public class Game
 	private Output display;
 
 	/**
+	 * Tool used to get anything from the player
+	 */
+	private Input input;
+	
+	/**
 	 * True if the game is executed in graphical mode, false else
 	 */
 	private boolean isGraphical;
@@ -48,6 +55,7 @@ public class Game
 	 */
 	public Game(Player player, Output display, boolean isGraphical)
 	{
+		this.input = new InputConsole();
 		this.isGraphical = isGraphical;
 		this.numberOfRounds = 0;
 		this.player = player;
@@ -71,7 +79,7 @@ public class Game
 				else
 					this.display = updateDisplayMode(-1);
 				
-				int result = this.currentStage.playStage(this.display);
+				int result = this.currentStage.playStage(this.display, this.input);
 				this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
 			}
 			
