@@ -52,7 +52,7 @@ public abstract class MiniGame extends Stage
 	 * @return
 	 * 			Index of next stage
 	 */
-	public int playStage(){
+	public int playStage(Output display, Input input){
 		return 0; //For example
 
 	}
