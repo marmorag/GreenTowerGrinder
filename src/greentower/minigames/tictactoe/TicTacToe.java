@@ -114,7 +114,7 @@ public class TicTacToe extends MiniGame{
 		if(this.isFull())
 		{ 
 			// Test if no one have win
-			display.showText("Egalite, veuillez rejouer");
+			this.display.showText("Egalite, veuillez rejouer");
 			this.resetGrid();
 		}
 		int p1 = 0,p2 = 0;
@@ -221,15 +221,16 @@ public class TicTacToe extends MiniGame{
 			if(this.gameTurn())
 				break;
 		}
+		
+		int result;
 		if(this.getWinner() == 1)
-		{
-			display.win();
-			display.showStageEnd(ListOfStages.getStageIndex(this));
-			return MiniGame.RESULT_VICTORY;
-		}
-		display.loose();
+			result = MiniGame.RESULT_VICTORY;
+		else 
+			result = MiniGame.RESULT_LOOSE;
+		
+		display.showMiniGameResult(result);
 		display.showStageEnd(ListOfStages.getStageIndex(this));
-		return MiniGame.RESULT_LOOSE;
+		return result;
 	}
 
 }
