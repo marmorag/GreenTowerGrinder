@@ -56,14 +56,16 @@ public class TicTacToe extends MiniGame{
 	 * @throws IOException 
 	 * @throws NumberFormatException 
 	 */
-	public boolean PlayerTurn() throws NumberFormatException, IOException{
+	public boolean playerTurn() throws NumberFormatException, IOException{
 		if(this.isFull()){ // Test if no one have win
 			System.out.println("Egalite, veuillez rejouer");
 			this.resetGrid();
 		}
 		int p1=0,p2=0;
 		while(true){ //Get index by the user
+			System.out.println("Entree la ligne de la case voulue");
 			p1 = Integer.parseInt(this.br.readLine());
+			System.out.println("Entree la colonne de la case voulue");
 			p2 = Integer.parseInt(this.br.readLine());
 			if(this.grid[p1][p2] == 0){
 				this.grid[p1][p2] = 1;
@@ -95,7 +97,7 @@ public class TicTacToe extends MiniGame{
 	 * Bot turn, random numbers are generate to place a sign
 	 * @return true if he win and false if not
 	 */
-	public boolean GameTurn(){
+	public boolean gameTurn(){
 		if(this.isFull()){ // Test if no one have win
 			System.out.println("Egalite, veuillez rejouer");
 			this.resetGrid();
@@ -181,6 +183,33 @@ public class TicTacToe extends MiniGame{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showGame();
 		display.showDialog(this.dialog);
+	
+		int currentPlayer = 1;
+		
+		while (true)
+		{
+			if (this.isFull()) break;
+			
+			currentPlayer = (currentPlayer + 1) % 2; 
+			
+			display.showText(this.toString());
+			
+			switch(currentPlayer)
+			{
+				case 0: try
+				{
+					this.playerTurn();
+					break;
+				}
+				catch (NumberFormatException | IOException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				case 1: this.gameTurn(); break;
+			}
+		}
 		
 		display.showStageEnd(ListOfStages.getStageIndex(this));
 		return MiniGame.RESULT_VICTORY;

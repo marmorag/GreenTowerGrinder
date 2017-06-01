@@ -20,7 +20,7 @@ public class TestOneStage
 		System.out.println("****** BIENVENUE DANS LE TEST ******");
 		try
 		{
-			ListOfStages.getStageAt(21).playStage(new OutputConsole());
+			ListOfStages.getStageAt(4).playStage(new OutputConsole());
 		}
 		catch (Exception e)
 		{
