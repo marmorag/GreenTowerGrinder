@@ -31,7 +31,7 @@ public class GameBoard
 	/**
 	 * cars in the game Red car (important) is at 0 index
 	 */
-	private Car[] cars;
+	public Car[] cars;
 
 	/**
 	 * Create the board considering the level

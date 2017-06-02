@@ -18,13 +18,19 @@ public class Console extends JFrame implements ActionListener{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public JTextArea outputTextArea = new JTextArea();
-	public JTextField inputTextArea = new JTextField();
-	public JPanel JPan = new JPanel();
-	public String current_input = "";
+	public JTextArea outputTextArea;
+	public JTextField inputTextArea;
+	public JPanel JPan;
+	public String current_input;
+	public boolean isPressed;
 
 	public Console(){
 		super();
+		this.isPressed = false;
+		this.current_input = "";
+		this.JPan = new JPanel();
+		this.outputTextArea = new JTextArea();
+		this.inputTextArea = new JTextField();
 		this.setTitle("The Green Tower Grinder");
 		this.setSize(900, 600);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -50,11 +56,15 @@ public class Console extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		this.current_input = this.inputTextArea.getText();
 		this.inputTextArea.setText("");
-		this.outputTextArea.append(this.current_input);
+		this.isPressed = true;
 	}
 	
 	public String getInput(){
 		return this.current_input; 
+	}
+	
+	public void resetAction(){
+		this.isPressed = false;
 	}
 
 

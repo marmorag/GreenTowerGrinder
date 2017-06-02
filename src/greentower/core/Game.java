@@ -2,7 +2,9 @@ package greentower.core;
 
 import greentower.IO.Input;
 import greentower.IO.InputConsole;
+import greentower.IO.InputGraphic;
 import greentower.IO.Output;
+import greentower.IO.OutputGraphic;
 import greentower.stage.Stage;
 
 /**
@@ -53,7 +55,10 @@ public class Game
 	 */
 	public Game(Player player, Output display, boolean isGraphical)
 	{
-		this.input = new InputConsole();
+		if(isGraphical)
+			this.input = new InputGraphic((OutputGraphic)display);
+		else
+			this.input = new InputConsole();
 		this.isGraphical = isGraphical;
 		this.numberOfRounds = 0;
 		this.player = player;
