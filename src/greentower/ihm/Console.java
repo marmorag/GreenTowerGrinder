@@ -2,7 +2,6 @@ package greentower.ihm;
 
 import java.awt.Font;
 import java.awt.FontFormatException;
-import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -42,12 +41,29 @@ public class Console extends JFrame implements ActionListener{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
+		try
+		{
+			this.setIconImage(ImageIO.read(new File("images/graine.png")));
+		} catch (IOException e2)
+		{
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		
+		try
+		{
+			this.setFont(Font.createFont(Font.TRUETYPE_FONT, new File("images/SweetLeaf.ttf")));
+		} catch (FontFormatException | IOException e1)
+		{
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		this.isPressed = false;
 		this.current_input = "";
 		
 		try {
-			this.image = ImageIO.read(new File("src/../images/bc.jpg"));
+			this.image = ImageIO.read(new File("images/bc.jpg"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

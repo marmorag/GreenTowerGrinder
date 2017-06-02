@@ -2,6 +2,8 @@ package greentower.ihm;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -28,6 +30,7 @@ public class MainWindow extends JFrame implements ActionListener{
 		this.setResizable(false);
 		this.setUndecorated(true);
 		this.setLocationRelativeTo(null);
+		this.setIconImage(new ImageIcon("images/graine.png").getImage());
 		this.setVisible(true);
 		
 		//Jpanel

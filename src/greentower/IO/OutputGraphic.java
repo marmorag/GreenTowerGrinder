@@ -177,11 +177,11 @@ public class OutputGraphic implements Output{
 
 	@Override
 	public void LessOrMore(int number) {
-		String str = "RULES\n" +
-		"Tu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché\n" +
-		"MORE: plus grand\n"+
-		"LESS: plus petit\n" +
-		"Le nombre est : "+number;
+		String str = "\nRULES" +
+		"\nTu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché" +
+		"\nMORE: plus grand "+
+		"LESS: plus petit" +
+		"\nLe nombre est : "+number;
 		
 		this.mainWindow.console.setOutput(str);
 	}
