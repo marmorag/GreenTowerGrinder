@@ -60,14 +60,6 @@ public class TestBoard {
 		
 		assertTrue("ERREUR : (7,7) appartient à la grille",Board.positionIsInTheBoard(pos7)==res);
 	
-		// !-- CAS INVALIDES --!
-		
-		//test n°8
-		Position pos8 = null;
-		res = false;
-		
-		assertTrue("ERREUR : Nombre/type d'entrées invalide",Board.positionIsInTheBoard(pos8)==res);
-	
 	}
 
 }
