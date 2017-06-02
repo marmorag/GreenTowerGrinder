@@ -36,7 +36,7 @@ public enum Dialog {
 	/**
 	 * Stage 6's dialog
 	 */
-	DIALOG_STAGE6(new String[] {"Serais-tu l'�lu ?", "Alliant intelligence et chance afin de vaincre les forces du mal ?", "Je me dois de v�rifier.", "R�ponds � cette �nigme !", "Combien y a-t-il de carr�s en tout ?",
+	DIALOG_STAGE6(new String[] {"Serais-tu l'�lu ?", "Alliant intelligence et chance afin de vaincre les forces du mal ?", "Je me dois de v�rifier.", "R�ponds � cette �nigme !", "Combien y a-t-il de carr�s en tout, dans une grille 4x4 ?",
 			"\n",
 			"+---+---+---+---+",
 			"|   |   |   |   |",
