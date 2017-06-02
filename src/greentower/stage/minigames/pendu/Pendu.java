@@ -80,15 +80,17 @@ public class Pendu extends MiniGame{
 			System.out.println(FileReadException.toString());
 		}
 	}
+	
 
 
 	/**
 	 * @param lettreEntree Letter entered by the player
+	 * @return 
 	 *	@return true if letter is in word, false if not
 	 *	Can be replace by String.contains()
 	 *	Update motAAfficher if letter is contained
 	 */
-	private boolean verifierLettre(char lettreEntree)
+	public boolean verifierLettre(char lettreEntree)
 	{
 		CharSequence lettre = ""+lettreEntree;
 
@@ -215,5 +217,20 @@ public class Pendu extends MiniGame{
 			System.out.println(FileReadException.toString());
 		}
 	}
+/**
+ * Permits to get the word that player need to find
+ * @return attribute motATrouver
+ */
+	public String getMotATrouver() {
+		return motATrouver;
+	}
+/**
+ * Permits to set the word that player need to find
+ * @param motATrouver attribute motATrouver
+ */
+	public void setMotATrouver(String motATrouver) {
+		this.motATrouver = motATrouver;
+	}
+
 
 }
