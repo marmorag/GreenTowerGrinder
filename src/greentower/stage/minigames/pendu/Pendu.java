@@ -1,0 +1,236 @@
+package greentower.stage.minigames.pendu;
+
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.Random;
+
+import greentower.IO.Input;
+import greentower.IO.Output;
+import greentower.core.ListOfStages;
+import greentower.stage.choice.Dialog;
+import greentower.stage.minigames.MiniGame;
+
+/**
+ * @author Guillaume
+ *
+ */
+public class Pendu extends MiniGame{
+
+	/**
+	 * Error number of current game
+	 */
+	private int nbErreur;
+
+	/**
+	 * Move number of current game
+	 */
+	private int nbCoups;
+
+	/**
+	 * Random word chosen
+	 */
+	private String motATrouver;
+
+	/**
+	 * motATrouver copy but letters are replaced by _
+	 * until player has not found the correct letter
+	 */
+	private String motAAfficher;
+
+	/**
+	 *	motATrouver takes value of word at line nbAleatoire in listeMot.txt
+	 *	Initialize motAAfficher with "_"
+	 * @param display
+	 * @param input
+	 * @param dialog The dialog to display at the beginning of the game
+	 * @param stageIndex 
+	 */
+	public Pendu(Output display, Input input, Dialog dialog, int stageIndex)
+	{
+		super(display,input,dialog, stageIndex);
+		
+		this.inputTool = input;
+		this.outputTool = display;
+		Random r = new Random();
+		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
+		int i = 0;
+
+		this.nbErreur = 0;
+		this.nbCoups = 0;
+
+		try
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/stage/minigames/pendu/listeMot.txt")));
+			String ligne;
+
+			while ((ligne=br.readLine())!=null && i < nbAleatoire)
+			{
+				i++;
+			}
+
+			this.motATrouver = ligne;
+			this.motAAfficher = this.motATrouver.replaceAll(".", "_");
+
+			br.close();
+		}
+		catch (Exception FileReadException)
+		{
+			System.out.println(FileReadException.toString());
+		}
+	}
+	
+
+
+	/**
+	 * @param lettreEntree Letter entered by the player
+	 * @return 
+	 *	@return true if letter is in word, false if not
+	 *	Can be replace by String.contains()
+	 *	Update motAAfficher if letter is contained
+	 */
+	public boolean verifierLettre(char lettreEntree)
+	{
+		CharSequence lettre = (""+lettreEntree).toUpperCase();
+
+		if(this.motATrouver.contains(lettre))
+		{
+			this.majMotAAfficher(lettreEntree);
+			this.nbCoups++;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	/**
+	 * Update display word (motAAfficher) in function of letters found
+	 * @param lettreEntree
+	 */
+	private void majMotAAfficher(char lettreEntree)
+	{
+		char[] tempArray = new char[this.motAAfficher.length()];
+		int i;
+
+		for(i = 0;i < this.motATrouver.length();i++)
+		{
+			tempArray[i] = this.motAAfficher.charAt(i);
+		}
+
+		this.motAAfficher = "";
+
+		for(i = 0;i < this.motATrouver.length();i++)
+		{
+			if(this.motATrouver.charAt(i) == lettreEntree)
+			{
+				tempArray[i] = this.motATrouver.charAt(i);
+			}
+			this.motAAfficher = this.motAAfficher + tempArray[i];
+		}
+	}
+
+
+	/**
+	 * @return true if all "_" have been replaced (all letters are found) in motAAfficher
+	 * false if not
+	 */
+	private boolean finDuPendu()
+	{
+		return(!this.motAAfficher.contains("_"));
+	}
+
+	/**
+	 * Main procedure which launch miniGame
+	 * @param display The current displaying methods
+	 * @return int The index of the nextStage to play (Logical ling between Stage)
+	 */
+	public int playStage(Output display)
+	{
+		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		char lettreEntree;
+
+		while(!this.finDuPendu() && this.nbCoups <= this.motATrouver.length()+5)
+		{
+			this.outputTool.showPendu(this.nbErreur,this.motAAfficher);
+			//System.out.println(motATrouver);
+
+			this.outputTool.demanderCaractere();
+			lettreEntree = (""+this.inputTool.inputChar()).toUpperCase().charAt(0);
+
+			if(!this.verifierLettre(lettreEntree))
+			{
+				this.outputTool.erreurLettre();
+				try
+				{
+					Thread.sleep(1500);
+				}
+				catch (InterruptedException e)
+				{
+					//NO PROBLEM
+				}
+				this.nbErreur++;
+			}
+		}
+		
+		int result;
+		if(this.finDuPendu())
+			result = MiniGame.RESULT_VICTORY;
+		else
+			result = MiniGame.RESULT_LOOSE;
+		
+		display.showMiniGameResult(result);
+		display.showStageEnd(ListOfStages.getStageIndex(this));
+		return result;
+	}
+
+
+	@Override
+	public void init() 
+	{
+		Random r = new Random();
+		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
+		int i = 0;
+
+		this.nbErreur = 0;
+		this.nbCoups = 0;
+
+		try
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/pendu/listeMot.txt")));
+			String ligne;
+
+			while ((ligne=br.readLine())!=null && i < nbAleatoire)
+			{
+				i++;
+			}
+
+			this.motATrouver = ligne;
+			this.motAAfficher = this.motATrouver.replaceAll(".", "_");
+
+			br.close();
+		}
+		catch (Exception FileReadException)
+		{
+			System.out.println(FileReadException.toString());
+		}
+	}
+/**
+ * Permits to get the word that player need to find
+ * @return attribute motATrouver
+ */
+	public String getMotATrouver() {
+		return motATrouver;
+	}
+/**
+ * Permits to set the word that player need to find
+ * @param motATrouver attribute motATrouver
+ */
+	public void setMotATrouver(String motATrouver) {
+		this.motATrouver = motATrouver;
+	}
+
+
+}

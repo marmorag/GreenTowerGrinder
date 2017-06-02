@@ -2,15 +2,9 @@ package greentower.ihm;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
-
-import greentower.IO.OutputConsole;
-import greentower.core.Game;
-import greentower.core.Player;
 
 
 public class MainWindow extends JFrame implements ActionListener{
@@ -24,12 +18,14 @@ public class MainWindow extends JFrame implements ActionListener{
 
 	private JButton bt1 = new Bouton("Nouvelle Partie");
 	private JButton bt2 = new Bouton("Quitter");
+	public Console console;  
 	
 	public MainWindow(){
 
-		//propriété JFrame
+		//propriï¿½tï¿½ JFrame
 		this.setTitle("The Green Tower Grinder");
 		this.setSize(900, 600);
+		this.setResizable(false);
 		this.setUndecorated(true);
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
@@ -51,11 +47,12 @@ public class MainWindow extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource() == bt1)
 			this.dispose();
-			Console console = new Console();
+			this.console = new Console();
+			this.console.setVisible(true);
 		//TODO
 		
 		  if(arg0.getSource() == bt2){
-			  this.dispose();
+			  System.exit(0);
 		    
 		}
 		
