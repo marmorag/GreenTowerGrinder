@@ -1,5 +1,4 @@
 package test;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -9,10 +8,20 @@ import greentower.IO.OutputConsole;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.pendu.Pendu;
 
+/**
+ * Test the pendu class
+ * 
+ * @author Axelle Delomez
+ *
+ */
 public class TestPendu {
 
+/**
+ * Test the method verifierLettre(char lettreEntree)
+ */
 	@Test
-	public void testVerifierLettre() {
+	public void testVerifierLettre()
+	{
 		//fail("Not yet implemented");
 		Pendu pendu = new Pendu(new OutputConsole(), new InputConsole(), Dialog.DIALOG_STAGE1, 1);
 		pendu.setMotATrouver("AAB"); // = Mot

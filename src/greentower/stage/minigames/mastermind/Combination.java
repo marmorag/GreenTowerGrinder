@@ -1,5 +1,6 @@
 package greentower.stage.minigames.mastermind;
 import java.util.Arrays;
+
 /**
  * Combination(collection of pawns) which represents a solution or a try.
  *

@@ -7,9 +7,17 @@ import org.junit.Test;
 import greentower.stage.minigames.othello.core.Board;
 import greentower.stage.minigames.othello.core.Position;
 
-
+/**
+ * Tests the Board class (greentower.stage.minigames.othello.core)
+ * 
+ * @author Axelle Delomez
+ *
+ */
 public class TestBoard {
 
+	/**
+	 * Tests the method positionIsInTheBoard
+	 */
 	@Test
 	public void testPositionIsInTheBoard() {
 		//fail("Not yet implemented");
