@@ -70,10 +70,8 @@ public class TicTacToe extends MiniGame{
 		{ 
 			//Get index by the user
 			display.showText("Entrez la ligne de la case voulue");
-			display.showText("\n>>");
 			p1 = input.inputInt();
 			display.showText("Entrez la colonne de la case voulue");
-			display.showText("\n>>");
 			p2 = input.inputInt();
 			if(this.grid[p1][p2] == 0)
 			{

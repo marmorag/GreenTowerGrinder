@@ -1,5 +1,6 @@
 package greentower.stage.minigames.othello.player;
 
+import greentower.IO.Output;
 import greentower.stage.minigames.othello.core.Position;
 
 /**
@@ -11,8 +12,9 @@ public interface Player
 {
 	/**
 	 * Enable a player to ask a position where to place a pawn
+	 * @param display 
 	 *
 	 * @return The asked position
 	 */
-	public Position askForPosition();
+	public Position askForPosition(Output display);
 }

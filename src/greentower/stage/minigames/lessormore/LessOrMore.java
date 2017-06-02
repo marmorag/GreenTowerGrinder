@@ -6,7 +6,6 @@ import java.io.IOException;
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.core.ListOfStages;
-import greentower.stage.Stage;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
@@ -68,7 +67,6 @@ public class LessOrMore extends MiniGame
 
 		display.showText(String.valueOf(this.base));
 		String userChoice;
-		display.showText("\n>>");
 		userChoice = input.inputString();
 
 		if(userChoice.equals("MORE") || userChoice.equals("PLUS") || userChoice.equals("+"))

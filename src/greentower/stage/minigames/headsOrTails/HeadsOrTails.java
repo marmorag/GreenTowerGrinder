@@ -35,7 +35,6 @@ public class HeadsOrTails extends MiniGame {
 		while(player!=0 || player!=1)
 		{
 			display.showText("Veuillez entrer 0 pour pile et 1 pour face : ");
-			display.showText("\n>>");
 			player = input.inputInt();
 			OutputConsole.gotN(1);
 		}

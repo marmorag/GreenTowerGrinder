@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import greentower.IO.Output;
 import greentower.stage.minigames.othello.core.Position;
 import greentower.stage.minigames.othello.core.exceptions.InvalidStringToPositionException;
 import greentower.stage.minigames.othello.player.Player;
@@ -31,16 +32,17 @@ public class ConsolePlayer implements Player
 
 	/**
 	 * Enable physic player to ask a position
+	 * @param display 
 	 * @return
 	 * 			The asked position
 	 */
-	public Position askForPosition()
+	public Position askForPosition(Output display)
 	{
 		String str = "";
 
 		try
 		{
-			System.out.println("\n> ");
+			display.showPrompt();
 			str = this.br.readLine();
 		}
 		catch (IOException e)
@@ -55,7 +57,7 @@ public class ConsolePlayer implements Player
 		catch (InvalidStringToPositionException e)
 		{
 			System.out.println("Invalid input. Expected format : line-column (ex: 5-3)");
-			return this.askForPosition();
+			return this.askForPosition(display);
 		}
 	}
 }

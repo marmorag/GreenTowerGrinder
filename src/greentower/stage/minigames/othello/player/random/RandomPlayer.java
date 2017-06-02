@@ -2,6 +2,7 @@ package greentower.stage.minigames.othello.player.random;
 
 import java.util.Random;
 
+import greentower.IO.Output;
 import greentower.stage.minigames.othello.core.Position;
 import greentower.stage.minigames.othello.player.Player;
 
@@ -20,12 +21,12 @@ public class RandomPlayer implements Player
 	{
 	}
 
-	public Position askForPosition()
-	{
+	@Override
+	public Position askForPosition(Output display) {
 		Random random = new Random();
 		int line, column;
-		line = random.nextInt(20 - 0);
-		column = random.nextInt(20 - 0);
+		line = random.nextInt(8);
+		column = random.nextInt(8);
 		return new Position(line, column);
 	}
 }
