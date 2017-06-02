@@ -31,7 +31,7 @@ public class InputGraphic implements Input{
 	@Override
 	public char inputChar() {
 		String str = this.inputString();
-		if (str.length() !=  1)
+		if (str.length() != 1)
 			return Input.INVALID_CHAR_INPUT;
 		
 		return str.charAt(0);
@@ -40,9 +40,8 @@ public class InputGraphic implements Input{
 	@Override
 	public int inputInt() {
 		char[] figures = {'0', '1', '2', '3','4','5','6','7','8','9'};
-		this.output.showPrompt();
 		String str = this.inputString();
-		if (str.length() !=  1)
+		if (str.length() != 1)
 			return Input.INVALID_INT_INPUT;
 		
 		boolean isInt = false;
