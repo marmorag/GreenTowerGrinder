@@ -2,12 +2,14 @@ package greentower.ihm;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -22,22 +24,33 @@ public class Console extends JFrame implements ActionListener{
 	
 	public JTextArea outputTextArea;
 	public JTextField inputTextArea;
-	public JScrollPane scrollPane;
-	public JPanel JPan;
+	private JScrollPane scrollPane;
+	private JPanel JPan;
+	public JLabel prompt;
 	public String current_input;
 	public boolean isPressed;
 
 	public Console(){
 		super();
+		
+		this.setTitle("The Green Tower Grinder");
+		this.setSize(900, 600);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		this.setResizable(false);
+		
 		this.isPressed = false;
 		this.current_input = "";
+		
+		this.prompt = new JLabel();
+		this.prompt.setText("\\> ");
 		
 		this.outputTextArea = new JTextArea();
 		this.outputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.outputTextArea.setEditable(false);
 		
 		this.inputTextArea = new JTextField();
-		this.inputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
+		//this.inputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.inputTextArea.addActionListener(this);
 	
 		this.scrollPane = new JScrollPane(outputTextArea);
@@ -47,16 +60,16 @@ public class Console extends JFrame implements ActionListener{
 		//this.scrollPane.setAutoscrolls(true);
 		
 		this.JPan = new JPanel();
-		this.JPan.setLayout(new BorderLayout());
-		this.JPan.add(this.scrollPane, BorderLayout.CENTER);
-		this.JPan.add(this.inputTextArea, BorderLayout.SOUTH);
+		this.JPan.setLayout(null);
+		this.JPan.add(this.scrollPane);
+		this.JPan.add(this.prompt);
+		this.JPan.add(this.inputTextArea);
 		
-		this.setTitle("The Green Tower Grinder");
-		this.setSize(900, 600);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setLocationRelativeTo(null);
+		this.scrollPane.setBounds(0,0,900,555);
+		this.inputTextArea.setBounds(20,555,850,20);
+		this.prompt.setBounds(0,555,50,20);
+		
 		this.setContentPane(JPan);
-		
 		this.setVisible(false);
 	}
 	
