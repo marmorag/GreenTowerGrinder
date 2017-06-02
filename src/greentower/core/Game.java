@@ -80,6 +80,7 @@ public class Game
 					 //EMPTY
 				 }
 			}
+			;
 			
 		}
 		catch (Exception e)
@@ -87,26 +88,6 @@ public class Game
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-//		while(this.currentStage.getFinalStage() == false)
-//		{
-//			try 
-//			{
-//				int result = this.currentStage.playStage(this.display);
-//				this.currentStage = Tower.getNextStage(Tower.getStageIndex(this.currentStage), result);
-//				//this.currentStage = Tower.getNextStage(Tower.getStageIndex(this.currentStage), this.currentStage.playStage(this.display));
-//				this.numberOfRounds++;
-//			} catch (IOException e) {
-//				System.out.println("Problème avec l'entrée");
-//				System.out.println("Veuillez recommencer");
-//			} catch (Exception e)
-//			{
-//				e.printStackTrace();
-//				System.out.println("Un problème est survenu, veuillez recommencer");
-//				System.out.println("Toutes nos excuses");
-//			}
-//		}
 	}
 	
 	/**

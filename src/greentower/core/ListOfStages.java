@@ -49,7 +49,8 @@ public class ListOfStages
 		
 		/* STAGE_21 */ new Choice(Dialog.DIALOG_STAGE21, Answers.ANSWERS_STAGE21, 20),
 		/* STAGE_22 */ new MasterMind(Dialog.DIALOG_STAGE22, 21),
-		/* STAGE_23bis */ new Choice(Dialog.DIALOG_STAGE23, Answers.ANSWERS_STAGE23, 21),
+		/* STAGE_23 */ new Choice(Dialog.DIALOG_STAGE23, Answers.ANSWERS_STAGE23, 22),
+		/* STAGE_24 */ new Choice(Dialog.DIALOG_STAGE24, Answers.ANSWERS_STAGE24, 23, true),
 	};
 
 	/**
@@ -83,6 +84,7 @@ public class ListOfStages
 		
 		/* STAGE_21 */ {3},
 		/* STAGE_22 */ {23, 22},
+		/* STAGE_23 */ {24, 23},
 	};
 
 	/**
