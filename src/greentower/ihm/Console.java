@@ -7,9 +7,11 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 
 public class Console extends JFrame implements ActionListener{
 
@@ -39,7 +41,10 @@ public class Console extends JFrame implements ActionListener{
 		this.inputTextArea.addActionListener(this);
 	
 		this.scrollPane = new JScrollPane(outputTextArea);
-		this.scrollPane.setAutoscrolls(true);
+		this.scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		// Scroolbar should be unified with main theme 
+		//this.scrollPane.setVerticalScrollBar(new JScrollBar());
+		//this.scrollPane.setAutoscrolls(true);
 		
 		this.JPan = new JPanel();
 		this.JPan.setLayout(new BorderLayout());
@@ -99,6 +104,11 @@ public class Console extends JFrame implements ActionListener{
 	
 	public void resetAction(){
 		this.isPressed = false;
+	}
+	
+	public void updateFocus()
+	{
+		//this.scrollPane.set//setVerticalScrollBar().setValue(outputTextArea.getRows());
 	}
 
 }
