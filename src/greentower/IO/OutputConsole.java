@@ -47,16 +47,4 @@ public class OutputConsole implements Output{
 	 * @param board
 	 */
 	public void showRushHourBoard(GameBoard board){		String grid="";		for(int y=0;y<GameBoard.BOARD_WIDTH;y++){			grid += "*************************\n*";			for(int x=0;x<GameBoard.BOARD_HEIGHT;x++){				int carNumber = board.getCarNumberAt(new Position(x,y));				if(carNumber != -1){					grid += " "+carNumber+" *";				}else{					grid += "   *";				}			}			grid += "\n";		}		grid += "*************************\n";		this.showText(grid);	}
-
-	@Override
-	public void afficherPendu(int nbErreur, String motAAfficher) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void showBoard(GameBoard board) {
-		// TODO Auto-generated method stub
-		
-	}
 }

@@ -41,9 +41,22 @@ public class Console extends JFrame implements ActionListener{
 		this.setVisible(false);
 	}
 	
+	/**
+	 * Setters for the text area used for the display
+	 * @param str
+	 */
 	public void setOutput(String str)
 	{
-		this.outputTextArea.setText(str);
+		this.outputTextArea.append(str);
+	}
+	
+	/**
+	 * Setters for the text area used for the input
+	 * @param str
+	 */
+	public void setInput(String str)
+	{
+		this.inputTextArea.setText(str);		
 	}
 	
 	@Override
@@ -53,9 +66,24 @@ public class Console extends JFrame implements ActionListener{
 		this.outputTextArea.append(this.current_input);
 	}
 	
+	/**
+	 * Getter for the input area
+	 * @return the current String contained in the input area
+	 */
 	public String getInput(){
-		return this.current_input; 
+		return this.inputTextArea.getText(); 
 	}
+	
+	/**
+	 * Getter for the output area
+	 * @return the current String contained in the output area
+	 */
+	public String getOutput()
+	{
+		return this.outputTextArea.getText();
+	}
+
+	
 
 
 }

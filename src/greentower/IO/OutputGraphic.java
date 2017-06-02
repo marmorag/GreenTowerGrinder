@@ -218,7 +218,7 @@ public class OutputGraphic implements Output{
 	@Override
 	public void showPrompt()
 	{
-		this.mainWindow.console.setOutput("\n> ");
+		this.mainWindow.console.setInput("\n> ");
 	}
 
 	@Override
