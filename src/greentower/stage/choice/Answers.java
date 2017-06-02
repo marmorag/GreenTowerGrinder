@@ -121,8 +121,12 @@ public enum Answers {
 	/**
 	 * Stage 23's ANSWERS
 	 */
-	ANSWERS_STAGE23(new String[] {"Continuer"}); // VICTOIRE OU DEFAITE
+	ANSWERS_STAGE23(new String[] {"Continuer"}), // VICTOIRE OU DEFAITE
 
+	/**
+	 * Final stage' answers. Stage's answers never used
+	 */
+	ANSWERS_STAGE24(new String [] {}); 
 
 	/**
 	 * Possible answers to make the choice
