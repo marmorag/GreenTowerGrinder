@@ -1,17 +1,30 @@
-package test;
-
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
-
+package jUnit;
 import greentower.stage.minigames.mastermind.MasterMind;
+import junit.framework.TestCase;
 
-public class TestMasterMind {
-
-	@Test
+/**
+ * Tests the MasterMind class
+ * 
+ * @author Axelle Delomez
+ *
+ */
+public class TestMasterMind extends TestCase
+{
+/**
+ * Creates a test of Master Mind game with the given name
+ * 
+ * @param name
+ */
+	public TestMasterMind(String name)
+	{
+		super(name);
+	}
+	
+/**
+ * Tests the method stringChecker(String str)
+ */
 	public void testStringChecker()
 	{
-		
 		boolean res;
 		String code;
 		
@@ -27,8 +40,7 @@ public class TestMasterMind {
 		res = true; //on sait que R,B,B,B est une combinaison valide
 		
 		assertEquals("ERREUR : R,B,B,B devrait être une combination valide ",res,MasterMind.stringChecker(code));
-		 
-		
+			
 		//test n°3 - le code n'est pas une combinaison valide
 		code ="AAAA";
 		res = false;

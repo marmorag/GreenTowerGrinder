@@ -1,4 +1,5 @@
 package greentower.stage.minigames.mastermind;
+
 /**
  *Represents the color of pawns
  *
