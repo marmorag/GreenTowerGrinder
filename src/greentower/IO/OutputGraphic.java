@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import greentower.ihm.MainWindow;
 import greentower.stage.choice.Answers;
 import greentower.stage.choice.Dialog;
+import greentower.stage.minigames.MiniGame;
 import greentower.stage.minigames.rushhour.GameBoard;
 import greentower.stage.minigames.shifumi.Sign;
 
@@ -25,16 +26,12 @@ public class OutputGraphic implements Output{
 	
 	@Override
 	public void showDialog(Dialog dialog) {
-		//Ecrire les dialogues
-		//Utiliser jp
 		this.mainWindow.console.setOutput(dialog.toString());
 	}
 
 	@Override
 	public void showText(String str) {
-		// Afficher le texte passÃ© en paramÃ¨tre
-		// Utiliser jp
-		
+		this.mainWindow.console.setOutput(str);
 	}
 
 	
@@ -46,13 +43,13 @@ public class OutputGraphic implements Output{
 	// PENDU
 	@Override
 	public void notifyWin(int nbCoups, String motATrouver) {
-		// VOID FOR NON USED METHOD AT THIS STAGE
-		
+		String str = "Felicitations vous avez réussi en : "+ nbCoups +"coups\n"+"Le mot était :"+motATrouver+"\n";		
+		this.mainWindow.console.setOutput(str);
 	}
 
 	@Override
 	public void erreurLettre() {
-		// VOID FOR NON USED METHOD AT THIS STAGE
+		this.mainWindow.console.setOutput("\nLa lettre n'est pas contenu dans le mot!\n");
 		
 	}
 
@@ -76,13 +73,19 @@ public class OutputGraphic implements Output{
 
 	@Override
 	public void showStageIntroduction(int stageIndex) {
-		// TODO Auto-generated method stub
+		String str = "***************************************************\n"
+					+"------------- ENTREE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------\n"
+					+"***************************************************" ;
+		this.mainWindow.console.setOutput(str);
 		
 	}
 
 	@Override
 	public void showStageEnd(int stageIndex) {
-		// TODO Auto-generated method stub
+		String str = "***************************************************\n"
+				+"------------- SORTIE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------\n"
+				+"***************************************************" ;
+	this.mainWindow.console.setOutput(str);
 		
 	}
 
@@ -100,7 +103,8 @@ public class OutputGraphic implements Output{
 
 	@Override
 	public void showError(String str) {
-		// TODO Auto-generated method stub
+		System.err.println(str);
+		this.mainWindow.console.setOutput("\n\n"+str);
 		
 	}
 
@@ -143,20 +147,29 @@ public class OutputGraphic implements Output{
 	@Override
 	public void showMiniGameResult(int result)
 	{
-		// TODO Auto-generated method stub
+		String str = OutputConsole.gotN(2);
+		if (result == MiniGame.RESULT_VICTORY)
+		{
+			str = str +"\nFéliciations tu as gagné le mini-jeu.";
+		}
+		else
+		{
+			str = str + "\nDommage, tu as perdu";
+		}
+		str = str + "\nRendez-vous au prochain étage";
 		
+		this.mainWindow.console.setOutput(str);		
 	}
 
 	@Override
 	public void showPrompt()
 	{
-		// TODO Auto-generated method stub
-		
+		this.mainWindow.console.setOutput("\n> ");
 	}
 
 	@Override
 	public void showAnswers(Answers answers) {
-		// TODO Auto-generated method stub
+		this.mainWindow.console.setOutput(answers.toString());
 		
 	}
 
