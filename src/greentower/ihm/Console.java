@@ -2,7 +2,6 @@ package greentower.ihm;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -14,6 +13,10 @@ public class Console extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	public JTextArea outputTextArea = new JTextArea();
+	
+	public JTextArea inputTextArea = new JTextArea();
 
 	public Console(){
 		super();
@@ -23,16 +26,18 @@ public class Console extends JFrame {
 		this.setVisible(true);
 		JPanel test = new JPanel();
 		this.setContentPane(test);
-		JTextArea print = new JTextArea();
-		JTextArea print2 = new JTextArea();
-		print.setBorder(BorderFactory.createLineBorder(Color.black));
-		print2.setBorder(BorderFactory.createLineBorder(Color.black));
+		outputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
+		inputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
 		test.setLayout(new BorderLayout());
-		test.add(print, BorderLayout.CENTER);
-		test.add(print2, BorderLayout.SOUTH);
-		
-		this.setVisible(true);
-
+		test.add(outputTextArea, BorderLayout.CENTER);
+		test.add(inputTextArea, BorderLayout.SOUTH);
+		outputTextArea.setEditable(false);
+		this.setVisible(false);
+	}
+	
+	public void setOutput(String str)
+	{
+		this.outputTextArea.setText(str);
 	}
 
 

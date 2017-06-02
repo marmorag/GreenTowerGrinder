@@ -2,7 +2,6 @@ package greentower.ihm;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,6 +18,7 @@ public class MainWindow extends JFrame implements ActionListener{
 
 	private JButton bt1 = new Bouton("Nouvelle Partie");
 	private JButton bt2 = new Bouton("Quitter");
+	public Console console;  
 	
 	public MainWindow(){
 
@@ -46,11 +46,12 @@ public class MainWindow extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource() == bt1)
 			this.dispose();
-			Console console = new Console();
+			this.console = new Console();
+			this.console.setVisible(true);
 		//TODO
 		
 		  if(arg0.getSource() == bt2){
-			  this.dispose();
+			  System.exit(0);
 		    
 		}
 		
