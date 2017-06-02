@@ -1,12 +1,11 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-
-import greentower.minigames.othello.core.Board;
-import greentower.minigames.othello.core.Position;
+import greentower.stage.minigames.othello.core.Board;
+import greentower.stage.minigames.othello.core.Position;
 
 
 public class TestBoard {
@@ -60,14 +59,6 @@ public class TestBoard {
 		res = true;
 		
 		assertTrue("ERREUR : (7,7) appartient à la grille",Board.positionIsInTheBoard(pos7)==res);
-	
-		// !-- CAS INVALIDES --!
-		
-		//test n°8
-		Position pos8 = null;
-		res = false;
-		
-		assertTrue("ERREUR : Nombre/type d'entrées invalide",Board.positionIsInTheBoard(pos8)==res);
 	
 	}
 
