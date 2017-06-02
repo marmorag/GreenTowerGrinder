@@ -1,7 +1,7 @@
 package greentower.IO;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+import greentower.ihm.MainWindow;
 import greentower.stage.choice.Answers;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.rushhour.GameBoard;
@@ -11,19 +11,23 @@ import greentower.stage.minigames.shifumi.Sign;
  * @author Guillaume
  *
  */
-@SuppressWarnings("serial")
-public class OutputGraphic extends JFrame implements Output{
+public class OutputGraphic implements Output{
 
 	/**
 	 * 
 	 */
-	protected JPanel jp;
+	protected MainWindow mainWindow;
+	
+	public OutputGraphic()
+	{
+		this.mainWindow = new MainWindow();
+	}
 	
 	@Override
 	public void showDialog(Dialog dialog) {
 		//Ecrire les dialogues
 		//Utiliser jp
-		
+		this.mainWindow.console.setOutput(dialog.toString());
 	}
 
 	@Override
