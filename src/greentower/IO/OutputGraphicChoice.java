@@ -1,6 +1,7 @@
 package greentower.IO;
 
 import greentower.stage.choice.Answers;
+import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.rushhour.GameBoard;
 import greentower.stage.minigames.shifumi.Sign;
 

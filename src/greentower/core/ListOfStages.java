@@ -22,6 +22,7 @@ public class ListOfStages
 	 */
 	public static final Stage[] stages = new Stage[]
 	{
+			// AJOUTER gamblingmachine headsortail pendu suite
 		/* STAGE_1 */ new Choice(Dialog.DIALOG_STAGE1, Answers.ANSWERS_STAGE1, 0),
 		/* STAGE_2 */ new Choice(Dialog.DIALOG_STAGE2, Answers.ANSWERS_STAGE2, 1),
 		/* STAGE_3 */ new Choice(Dialog.DIALOG_STAGE3, Answers.ANSWERS_STAGE3, 2),

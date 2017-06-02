@@ -57,7 +57,7 @@ public class Game
 		this.isGraphical = isGraphical;
 		this.numberOfRounds = 0;
 		this.player = player;
-		this.currentStage = ListOfStages.getStageAt(1);
+		this.currentStage = ListOfStages.getStageAt(0);
 		this.display = display;
 	}
 

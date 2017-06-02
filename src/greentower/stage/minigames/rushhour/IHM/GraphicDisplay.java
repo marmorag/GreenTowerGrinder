@@ -19,7 +19,7 @@ import greentower.stage.minigames.rushhour.RushHourGame;
  * @author gavinr
  *
  */
-public class GraphicDisplay extends JFrame implements Display
+public class GraphicDisplay extends JFrame implements Output
 {
 
 	/**

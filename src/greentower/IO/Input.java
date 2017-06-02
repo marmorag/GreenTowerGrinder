@@ -28,10 +28,23 @@ public interface Input
 	 */
 	public String inputString();
 	
+	/**
+	 * Used for the RushHour, Get  a car from the board
+	 * @param board the current board
+	 * @return the car number
+	 */
 	public int getCar(GameBoard board);
 	
+	/**
+	 * Used for the RushHour, Get a Direction
+	 * @return The direction
+	 */
 	public Direction getDirection();
 	
+	/**
+	 * Used for the RushHour, get an integer to move the car
+	 * @return Int number of cases the car is moved
+	 */
 	public int getMove();
 	
 	
