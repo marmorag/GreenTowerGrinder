@@ -25,6 +25,7 @@ public class MainWindow extends JFrame implements ActionListener{
 		//propri�t� JFrame
 		this.setTitle("The Green Tower Grinder");
 		this.setSize(900, 600);
+		this.setResizable(false);
 		this.setUndecorated(true);
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
