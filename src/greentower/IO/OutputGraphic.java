@@ -132,7 +132,16 @@ public class OutputGraphic implements Output{
 		String str = "***************************************************\n"
 				+"------------- SORTIE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------\n"
 				+"***************************************************" ;
-	this.mainWindow.console.setOutput(str);
+		this.mainWindow.console.setOutput(str);
+//		try
+//		{
+//			Thread.sleep(1000);
+//		} catch (InterruptedException e)
+//		{
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		this.mainWindow.console.setText("");
 		
 	}
 

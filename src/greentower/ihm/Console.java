@@ -4,10 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -20,6 +20,7 @@ public class Console extends JFrame implements ActionListener{
 	
 	public JTextArea outputTextArea;
 	public JTextField inputTextArea;
+	public JScrollPane scrollPane;
 	public JPanel JPan;
 	public String current_input;
 	public boolean isPressed;
@@ -28,22 +29,29 @@ public class Console extends JFrame implements ActionListener{
 		super();
 		this.isPressed = false;
 		this.current_input = "";
-		this.JPan = new JPanel();
+		
 		this.outputTextArea = new JTextArea();
+		this.outputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
+		this.outputTextArea.setEditable(false);
+		
 		this.inputTextArea = new JTextField();
+		this.inputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
+		this.inputTextArea.addActionListener(this);
+	
+		this.scrollPane = new JScrollPane(outputTextArea);
+		this.scrollPane.setAutoscrolls(true);
+		
+		this.JPan = new JPanel();
+		this.JPan.setLayout(new BorderLayout());
+		this.JPan.add(this.scrollPane, BorderLayout.CENTER);
+		this.JPan.add(this.inputTextArea, BorderLayout.SOUTH);
+		
 		this.setTitle("The Green Tower Grinder");
 		this.setSize(900, 600);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		this.setVisible(true);
 		this.setContentPane(JPan);
-		this.outputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
-		this.inputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
-		this.inputTextArea.addActionListener(this);
-		this.JPan.setLayout(new BorderLayout());
-		this.JPan.add(outputTextArea, BorderLayout.CENTER);
-		this.JPan.add(inputTextArea, BorderLayout.SOUTH);
-		this.outputTextArea.setEditable(false);
+		
 		this.setVisible(false);
 	}
 	
@@ -92,8 +100,5 @@ public class Console extends JFrame implements ActionListener{
 	public void resetAction(){
 		this.isPressed = false;
 	}
-
-	
-
 
 }
