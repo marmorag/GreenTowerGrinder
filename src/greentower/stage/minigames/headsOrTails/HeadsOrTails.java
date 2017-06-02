@@ -53,4 +53,10 @@ public class HeadsOrTails extends MiniGame {
 		display.showStageEnd(ListOfStages.getStageIndex(this));
 		return result;
 	}
+
+	@Override
+	public void init() 
+	{
+		//EMPTY	
+	}
 }

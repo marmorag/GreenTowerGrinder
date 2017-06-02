@@ -59,4 +59,9 @@ public abstract class MiniGame extends Stage
 		return 0; //For example
 
 	}
+	
+	/**
+	 * Initialize the mini-game
+	 */
+	public abstract void init();
 }

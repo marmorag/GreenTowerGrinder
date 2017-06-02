@@ -184,4 +184,36 @@ public class Pendu extends MiniGame{
 		return result;
 	}
 
+
+	@Override
+	public void init() 
+	{
+		Random r = new Random();
+		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
+		int i = 0;
+
+		this.nbErreur = 0;
+		this.nbCoups = 0;
+
+		try
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/pendu/listeMot.txt")));
+			String ligne;
+
+			while ((ligne=br.readLine())!=null && i < nbAleatoire)
+			{
+				i++;
+			}
+
+			this.motATrouver = ligne;
+			this.motAAfficher = this.motATrouver.replaceAll(".", "_");
+
+			br.close();
+		}
+		catch (Exception FileReadException)
+		{
+			System.out.println(FileReadException.toString());
+		}
+	}
+
 }
