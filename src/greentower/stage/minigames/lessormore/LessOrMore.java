@@ -6,6 +6,7 @@ import java.io.IOException;
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.core.ListOfStages;
+import greentower.stage.Stage;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
@@ -36,6 +37,14 @@ public class LessOrMore extends MiniGame
 		this.randomcard = (int)(Math.random() * (10-1)) + 1;
 	}
 
+	/**
+	 * Initialize a new game of LessOrMore
+	 */
+	public void init()
+	{
+		this.base = (int)(Math.random() * (10-1)) + 1;
+		this.randomcard = (int)(Math.random() * (10-1)) + 1;
+	}
 
 	/**
 	 * return if player win or not
@@ -45,6 +54,7 @@ public class LessOrMore extends MiniGame
 	 */
 	public int playStage(Output display, Input input) throws Exception
 	{
+		this.init();
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
 		display.showText("RULES");

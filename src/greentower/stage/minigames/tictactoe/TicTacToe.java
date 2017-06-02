@@ -234,4 +234,12 @@ public class TicTacToe extends MiniGame{
 		return result;
 	}
 
+	@Override
+	public void init() 
+	{
+		for(int i=0;i<3;i++)
+			for(int j=0;j<3;j++)
+				this.grid[i][j] = 0;
+	}
+
 }

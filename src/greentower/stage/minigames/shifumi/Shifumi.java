@@ -34,13 +34,13 @@ public class Shifumi extends MiniGame{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
 
-		display.showText("\n>>");
+		display.showPrompt(); 
 		String sign = input.inputString();
 
 		while(sign != "PAPER" || sign != "ROCK" || sign != "SCISSORS")
 		{
 			display.showText("Invalid entry");
-			display.showText("\n>>");
+			display.showPrompt(); 
 			sign = input.inputString();
 		}
 		
@@ -73,6 +73,12 @@ public class Shifumi extends MiniGame{
 		display.showMiniGameResult(result);
 		display.showStageEnd(ListOfStages.getStageIndex(this));
 		return result;
+	}
+
+	@Override
+	public void init() 
+	{
+		//EMPTY
 	}
 
 }

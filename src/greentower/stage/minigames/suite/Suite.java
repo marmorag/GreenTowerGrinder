@@ -68,4 +68,17 @@ public class Suite extends MiniGame{
 		display.showStageEnd(ListOfStages.getStageIndex(this));
 		return result;
 	}
+
+	@Override
+	public void init() 
+	{
+		Random r = new Random();
+		this.op1 = r.nextInt(11);
+		this.op2 = r.nextInt(11);
+		this.nb1 = r.nextInt(11);
+		this.nb2 = this.nb1 * this.op1 + this.op2;
+		this.nb3 = this.nb2 * this.op1 + this.op2;
+		this.nb4 = this.nb3 * this.op1 + this.op2;
+		this.nb5 = this.nb4 * this.op1 + this.op2;
+	}
 }

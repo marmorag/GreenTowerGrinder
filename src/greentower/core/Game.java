@@ -79,9 +79,7 @@ public class Game
 				 {
 					 //EMPTY
 				 }
-			}
-			;
-			
+			}			
 		}
 		catch (Exception e)
 		{

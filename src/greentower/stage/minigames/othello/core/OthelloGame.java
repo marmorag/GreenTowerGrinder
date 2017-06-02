@@ -170,4 +170,11 @@ public class OthelloGame extends MiniGame
 		display.showStageEnd(ListOfStages.getStageIndex(this));
 		return result;
 	}
+
+
+	@Override
+	public void init() 
+	{		
+		this.board = new Board();
+	}
 }

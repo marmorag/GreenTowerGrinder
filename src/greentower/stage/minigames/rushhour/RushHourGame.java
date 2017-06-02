@@ -41,13 +41,6 @@ public class RushHourGame extends MiniGame
 	private Input input;
 
 	/**
-	 * Left the game
-	 */
-	public static void exit(){
-		System.exit(0);
-	}
-
-	/**
 	 * create a game with a default player and a game board level configuration
 	 * @param display 
 	 * @param input 
@@ -85,7 +78,7 @@ public class RushHourGame extends MiniGame
 		while(this.board.isFinish() == false)
 		{
 			// implementer un timer pour la defaite
-			display.showBoard(this.board);
+			display.showRushHourBoard(this.board);
 			display.showText("Entrez le numéro de la voiture:"); display.showPrompt(); 
 			int numCar = input.getCar(this.board);
 			display.showText("Entrez une direction:"); display.showPrompt(); 
@@ -105,6 +98,12 @@ public class RushHourGame extends MiniGame
 		}
 		display.showMiniGameResult(0);
 		return 0;
+	}
+
+	@Override
+	public void init() 
+	{
+		this.board = new GameBoard();
 	}
 
 }

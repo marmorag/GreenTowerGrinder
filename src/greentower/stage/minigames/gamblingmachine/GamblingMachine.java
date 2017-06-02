@@ -48,4 +48,10 @@ public class GamblingMachine extends MiniGame{
 		display.showStageEnd(ListOfStages.getStageIndex(this));
 		return result;
 	}
+
+	@Override
+	public void init() 
+	{
+		//EMPTY
+	}
 }
