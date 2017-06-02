@@ -56,7 +56,6 @@ public class Suite extends MiniGame{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		display.showDialog(this.dialog);
 		display.Suite(this.nb1, this.nb2, this.nb3, this.nb4);
-		display.showText("\n>>");
 		
 		int result;
 		if(input.inputInt() == this.nb5)

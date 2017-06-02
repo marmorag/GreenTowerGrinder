@@ -40,7 +40,6 @@ public class Shifumi extends MiniGame{
 		while(sign != "PAPER" || sign != "ROCK" || sign != "SCISSORS")
 		{
 			display.showText("Invalid entry");
-			display.showPrompt(); 
 			sign = input.inputString();
 		}
 		

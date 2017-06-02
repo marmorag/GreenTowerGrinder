@@ -79,12 +79,12 @@ public class RushHourGame extends MiniGame
 		{
 			// implementer un timer pour la defaite
 			display.showRushHourBoard(this.board);
-			display.showText("Entrez le numéro de la voiture:"); display.showPrompt(); 
+			display.showText("Entrez le numéro de la voiture:");
 			int numCar = input.getCar(this.board);
-			display.showText("Entrez une direction:"); display.showPrompt(); 
-			display.showText("LEFT; RIGHT; UP; DOWN"); display.showPrompt(); 
+			display.showText("Entrez une direction:");
+			display.showText("LEFT; RIGHT; UP; DOWN"); 
 			Direction direction = input.getDirection();
-			display.showText("Entrez le nombre de cases:"); display.showPrompt(); 
+			display.showText("Entrez le nombre de cases:");
 			int offset = input.getMove();
 			try
 			{

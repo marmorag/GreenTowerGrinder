@@ -138,7 +138,7 @@ public class OthelloGame extends MiniGame
 			while (true)
 			{
 				this.IHM.displayInvitationForPosition(currentPlayerColor);
-				askedPosition = this.players[currentPlayerNumber].askForPosition();
+				askedPosition = this.players[currentPlayerNumber].askForPosition(display);
 				if (this.board.actionIsValid(askedPosition, currentPlayerColor)) break;
 				this.IHM.displayBoard(this.board);
 				this.IHM.displayActionNotValid(askedPosition, currentPlayerColor);
