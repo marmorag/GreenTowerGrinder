@@ -1,39 +1,47 @@
 package greentower.ihm;
-
 import java.awt.BorderLayout;
-import java.awt.Color;
+import java.io.IOException;
+import java.io.OutputStream;
 
-import javax.swing.BorderFactory;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class Console extends JFrame {
+public class Console extends OutputStream {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	private JFrame frame;
+	public static JTextArea console;
+	private JTextArea entree;
 
-	public Console(){
-		super();
-		this.setTitle("The Green Tower Grinder");
-		this.setSize(900, 600);
-		this.setLocationRelativeTo(null);
-		this.setVisible(true);
-		JPanel test = new JPanel();
-		this.setContentPane(test);
-		JTextArea print = new JTextArea();
-		JTextArea print2 = new JTextArea();
-		print.setBorder(BorderFactory.createLineBorder(Color.black));
-		print2.setBorder(BorderFactory.createLineBorder(Color.black));
-		test.setLayout(new BorderLayout());
-		test.add(print, BorderLayout.CENTER);
-		test.add(print2, BorderLayout.SOUTH);
-		
-		this.setVisible(true);
+	public Console(JTextArea control ){
 
+		frame = new JFrame();
+
+		frame.setTitle("The Green Tower Grinder");
+		frame.setSize(900, 600);
+		//frame.setUndecorated(true);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+
+		console = control;
+
+		console=new JTextArea();
+		console.setEditable(false);
+		entree = new JTextArea();
+		entree.setEditable(true);
+
+
+
+
+		frame.getContentPane().setLayout(new BorderLayout());
+		frame.getContentPane().add(new JScrollPane(console),BorderLayout.CENTER);
+		frame.getContentPane().add(new JScrollPane(entree),BorderLayout.SOUTH);
+
+		frame.setVisible(true);	}	
+
+		public void write( int b ) throws IOException {
+			// append the data as characters to the JTextArea control
+			console.append( String.valueOf( ( char )b ) );
+		}  
 	}
 
-
-}
