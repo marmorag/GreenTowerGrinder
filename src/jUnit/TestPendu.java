@@ -1,12 +1,11 @@
-package test;
-import static org.junit.Assert.*;
-
+package jUnit;
 import org.junit.Test;
 
 import greentower.IO.InputConsole;
 import greentower.IO.OutputConsole;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.pendu.Pendu;
+import junit.framework.TestCase;
 
 /**
  * Test the pendu class
@@ -14,7 +13,17 @@ import greentower.stage.minigames.pendu.Pendu;
  * @author Axelle Delomez
  *
  */
-public class TestPendu {
+public class TestPendu extends TestCase{
+	
+/**
+ * Creates a test of Pendu with the given name
+ * 
+ * @param name
+ */
+	public TestPendu(String name)
+	{
+		super(name);
+	}
 
 /**
  * Test the method verifierLettre(char lettreEntree)

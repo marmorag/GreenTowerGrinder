@@ -1,11 +1,10 @@
-package test;
-
-import static org.junit.Assert.assertTrue;
+package jUnit;
 
 import org.junit.Test;
 
 import greentower.stage.minigames.othello.core.Board;
 import greentower.stage.minigames.othello.core.Position;
+import junit.framework.TestCase;
 
 /**
  * Tests the Board class (greentower.stage.minigames.othello.core)
@@ -13,14 +12,26 @@ import greentower.stage.minigames.othello.core.Position;
  * @author Axelle Delomez
  *
  */
-public class TestBoard {
+public class TestBoard extends TestCase
+{
 
+/**
+ * Creates a test of Board with the given name
+ * 
+ * @param name
+ */
+	public TestBoard(String name)
+	{
+		super(name);
+		
+	}
 	/**
 	 * Tests the method positionIsInTheBoard
 	 */
 	@Test
 	public void testPositionIsInTheBoard() {
 		//fail("Not yet implemented");
+	
 		Board board = new Board();
 		boolean res;
 		

@@ -1,8 +1,6 @@
-package test;
-
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+package jUnit;
 import greentower.stage.minigames.mastermind.MasterMind;
+import junit.framework.TestCase;
 
 /**
  * Tests the MasterMind class
@@ -10,8 +8,18 @@ import greentower.stage.minigames.mastermind.MasterMind;
  * @author Axelle Delomez
  *
  */
-public class TestMasterMind {
-
+public class TestMasterMind extends TestCase
+{
+/**
+ * Creates a test of Master Mind game with the given name
+ * 
+ * @param name
+ */
+	public TestMasterMind(String name)
+	{
+		super(name);
+	}
+	
 /**
  * Tests the method stringChecker(String str)
  */
