@@ -120,18 +120,18 @@ public class OutputGraphic implements Output{
 
 	@Override
 	public void showStageIntroduction(int stageIndex) {
-		String str = "***************************************************\n"
+		String str = "\n***************************************************\n"
 					+"------------- ENTREE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------\n"
-					+"***************************************************" ;
+					+"***************************************************\n" ;
 		this.mainWindow.console.setOutput(str);
 		
 	}
 
 	@Override
 	public void showStageEnd(int stageIndex) {
-		String str = "***************************************************\n"
+		String str = "\n***************************************************\n"
 				+"------------- SORTIE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------\n"
-				+"***************************************************" ;
+				+"***************************************************\n" ;
 		this.mainWindow.console.setOutput(str);
 //		try
 //		{

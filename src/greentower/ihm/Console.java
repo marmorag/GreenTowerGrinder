@@ -1,12 +1,13 @@
 package greentower.ihm;
 
-import java.awt.Graphics;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -46,7 +47,7 @@ public class Console extends JFrame implements ActionListener{
 		this.current_input = "";
 		
 		try {
-			this.image = ImageIO.read(new File("src/greentower/ihm/bc.jpg"));
+			this.image = ImageIO.read(new File("src/../images/bc.jpg"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
