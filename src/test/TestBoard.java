@@ -1,12 +1,11 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-
-import greentower.minigames.othello.core.Board;
-import greentower.minigames.othello.core.Position;
+import greentower.stage.minigames.othello.core.Board;
+import greentower.stage.minigames.othello.core.Position;
 
 
 public class TestBoard {
