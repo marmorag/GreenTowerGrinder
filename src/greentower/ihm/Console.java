@@ -77,7 +77,7 @@ public class Console extends JFrame implements ActionListener{
 	 * @return the current String contained in the input area
 	 */
 	public String getInput(){
-		return this.inputTextArea.getText(); 
+		return this.current_input;
 	}
 	
 	/**

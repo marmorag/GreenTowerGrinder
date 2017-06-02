@@ -15,7 +15,12 @@ public class InputGraphic implements Input{
 	public String inputString() {
 		while(!this.output.mainWindow.console.isPressed)
 		{
-			
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		this.output.mainWindow.console.resetAction();
 		return this.output.mainWindow.console.getInput();
