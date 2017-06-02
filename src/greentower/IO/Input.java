@@ -11,6 +11,16 @@ import greentower.stage.minigames.rushhour.GameBoard;
 public interface Input 
 {	
 	/**
+	 * Value when in int's input is invalid
+	 */
+	public static final int INVALID_INT_INPUT = -1;
+	
+	/**
+	 * Value when in int's input is invalid
+	 */
+	public static final char INVALID_CHAR_INPUT = '\0';
+	
+	/**
 	 * Get a character by the player
 	 * @return Inputed character 
 	 */

@@ -14,17 +14,7 @@ import greentower.stage.minigames.rushhour.GameBoard;
  *
  */
 public class InputConsole implements Input
-{
-	/**
-	 * Value when in int's input is invalid
-	 */
-	public static final int INVALID_INT_INPUT = -1;
-	
-	/**
-	 * Value when in int's input is invalid
-	 */
-	private static final char INVALID_CHAR_INPUT = '\0';
-	
+{	
 	/**
 	 * Tool used to input
 	 */
@@ -45,20 +35,20 @@ public class InputConsole implements Input
 			char[] figures = {'0', '1', '2', '3'};
 			String str = this.br.readLine();
 			if (str.length() !=  1)
-				return InputConsole.INVALID_INT_INPUT;
+				return Input.INVALID_INT_INPUT;
 			
 			boolean isInt = false;
 			for(int i = 0; i < figures.length; i++)
 				if (figures[i] == str.charAt(0))
 					isInt = true;
 			
-			if(!isInt) return InputConsole.INVALID_INT_INPUT;
+			if(!isInt) return Input.INVALID_INT_INPUT;
 			
 			return Integer.parseInt(str);
 			} 
 		catch (IOException e)
 		{
-			return InputConsole.INVALID_INT_INPUT;
+			return Input.INVALID_INT_INPUT;
 		}
 	}
 	
@@ -69,7 +59,7 @@ public class InputConsole implements Input
 		{
 			String str = this.br.readLine();
 			if (str.length() !=  1)
-				return InputConsole.INVALID_CHAR_INPUT;
+				return Input.INVALID_CHAR_INPUT;
 			
 			return this.br.readLine().charAt(0);
 		} 
