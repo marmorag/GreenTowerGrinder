@@ -62,7 +62,7 @@ public class Pendu extends MiniGame{
 
 		try
 		{
-			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/pendu/listeMot.txt")));
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/stage/minigames/pendu/listeMot.txt")));
 			String ligne;
 
 			while ((ligne=br.readLine())!=null && i < nbAleatoire)
@@ -92,7 +92,7 @@ public class Pendu extends MiniGame{
 	 */
 	public boolean verifierLettre(char lettreEntree)
 	{
-		CharSequence lettre = ""+lettreEntree;
+		CharSequence lettre = (""+lettreEntree).toUpperCase();
 
 		if(this.motATrouver.contains(lettre))
 		{

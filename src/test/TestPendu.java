@@ -24,7 +24,7 @@ public class TestPendu {
 		res = true; //on sait que 'A' appartient à Mot
 		
 		assertEquals("ERREUR : A devrait appartenir à AAB ",res,pendu.verifierLettre(lettre));
-		
+	
 		//test n°2
 		lettre = 'B';
 		res = true; //B appartient à Mot
