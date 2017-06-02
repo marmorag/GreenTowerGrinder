@@ -1,12 +1,13 @@
 package greentower.ihm;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Rectangle;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
-import javax.swing.BorderFactory;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,12 +30,14 @@ public class Console extends JFrame implements ActionListener{
 	public JLabel prompt;
 	public String current_input;
 	public boolean isPressed;
+	private Image image;
 
 	public Console(){
 		super();
 		
 		this.setTitle("The Green Tower Grinder");
 		this.setSize(900, 600);
+		this.setUndecorated(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
@@ -42,11 +45,18 @@ public class Console extends JFrame implements ActionListener{
 		this.isPressed = false;
 		this.current_input = "";
 		
+		try {
+			this.image = ImageIO.read(new File("src/greentower/ihm/bc.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		this.prompt = new JLabel();
 		this.prompt.setText("\\> ");
 		
 		this.outputTextArea = new JTextArea();
-		this.outputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
+		//this.outputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.outputTextArea.setEditable(false);
 		
 		this.inputTextArea = new JTextField();
@@ -59,13 +69,13 @@ public class Console extends JFrame implements ActionListener{
 		//this.scrollPane.setVerticalScrollBar(new JScrollBar());
 		//this.scrollPane.setAutoscrolls(true);
 		
-		this.JPan = new JPanel();
+		this.JPan = new GTG(this.image);
 		this.JPan.setLayout(null);
 		this.JPan.add(this.scrollPane);
 		this.JPan.add(this.prompt);
 		this.JPan.add(this.inputTextArea);
 		
-		this.scrollPane.setBounds(0,0,900,555);
+		this.scrollPane.setBounds(25,25,850,515);
 		this.inputTextArea.setBounds(20,555,850,20);
 		this.prompt.setBounds(0,555,50,20);
 		
