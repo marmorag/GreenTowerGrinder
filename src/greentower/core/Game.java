@@ -2,7 +2,10 @@ package greentower.core;
 
 import greentower.IO.Input;
 import greentower.IO.InputConsole;
+import greentower.IO.InputGraphic;
 import greentower.IO.Output;
+import greentower.IO.OutputGraphic;
+import greentower.stage.Stage;
 
 /**
  * This class represents a game of The Green Tower Grinder
@@ -52,11 +55,14 @@ public class Game
 	 */
 	public Game(Player player, Output display, boolean isGraphical)
 	{
-		this.input = new InputConsole();
+		if(isGraphical)
+			this.input = new InputGraphic((OutputGraphic)display);
+		else
+			this.input = new InputConsole();
 		this.isGraphical = isGraphical;
 		this.numberOfRounds = 0;
 		this.player = player;
-		this.currentStage = ListOfStages.getStageAt(1);
+		this.currentStage = ListOfStages.getStageAt(0);
 		this.display = display;
 	}
 
@@ -78,34 +84,13 @@ public class Game
 				 {
 					 //EMPTY
 				 }
-			}
-			
+			}			
 		}
 		catch (Exception e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-//		while(this.currentStage.getFinalStage() == false)
-//		{
-//			try 
-//			{
-//				int result = this.currentStage.playStage(this.display);
-//				this.currentStage = Tower.getNextStage(Tower.getStageIndex(this.currentStage), result);
-//				//this.currentStage = Tower.getNextStage(Tower.getStageIndex(this.currentStage), this.currentStage.playStage(this.display));
-//				this.numberOfRounds++;
-//			} catch (IOException e) {
-//				System.out.println("Problème avec l'entrée");
-//				System.out.println("Veuillez recommencer");
-//			} catch (Exception e)
-//			{
-//				e.printStackTrace();
-//				System.out.println("Un problème est survenu, veuillez recommencer");
-//				System.out.println("Toutes nos excuses");
-//			}
-//		}
 	}
 	
 	/**

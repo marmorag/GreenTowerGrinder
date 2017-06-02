@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import greentower.minigames.rushhour.Direction;
-import greentower.minigames.rushhour.GameBoard;
+import greentower.stage.minigames.rushhour.Direction;
+import greentower.stage.minigames.rushhour.GameBoard;
 
 
 /**
@@ -14,17 +14,7 @@ import greentower.minigames.rushhour.GameBoard;
  *
  */
 public class InputConsole implements Input
-{
-	/**
-	 * Value when in int's input is invalid
-	 */
-	public static final int INVALID_INT_INPUT = -1;
-	
-	/**
-	 * Value when in int's input is invalid
-	 */
-	private static final char INVALID_CHAR_INPUT = '\0';
-	
+{	
 	/**
 	 * Tool used to input
 	 */
@@ -42,23 +32,24 @@ public class InputConsole implements Input
 	{
 		try
 		{	
-			char[] figures = {'0', '1', '2', '3'};
+			char[] figures = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+			OutputConsole.showPromptS();
 			String str = this.br.readLine();
 			if (str.length() !=  1)
-				return InputConsole.INVALID_INT_INPUT;
+				return Input.INVALID_INT_INPUT;
 			
 			boolean isInt = false;
 			for(int i = 0; i < figures.length; i++)
 				if (figures[i] == str.charAt(0))
 					isInt = true;
 			
-			if(!isInt) return InputConsole.INVALID_INT_INPUT;
+			if(!isInt) return Input.INVALID_INT_INPUT;
 			
 			return Integer.parseInt(str);
 			} 
 		catch (IOException e)
 		{
-			return InputConsole.INVALID_INT_INPUT;
+			return Input.INVALID_INT_INPUT;
 		}
 	}
 	
@@ -67,9 +58,10 @@ public class InputConsole implements Input
 	{
 		try
 		{
-			String str = this.br.readLine();
+			OutputConsole.showPromptS();
+			String str = this.inputString();
 			if (str.length() !=  1)
-				return InputConsole.INVALID_CHAR_INPUT;
+				return Input.INVALID_CHAR_INPUT;
 			
 			return this.br.readLine().charAt(0);
 		} 
@@ -83,6 +75,7 @@ public class InputConsole implements Input
 	{
 		try
 		{
+			OutputConsole.showPromptS();
 			return this.br.readLine();
 		} catch (IOException e)
 		{
@@ -96,9 +89,9 @@ public class InputConsole implements Input
 		while(numCar < 0 || numCar > board.numberOfCar()){
 			try
 			{
-				numCar = Integer.parseInt(this.br.readLine());
+				numCar = this.inputInt();
 			}
-			catch (NumberFormatException | IOException e)
+			catch (NumberFormatException e)
 			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -116,7 +109,7 @@ public class InputConsole implements Input
 		Direction direction = null;
 		while(direction == null)
 			try{
-				direction = Direction.valueOf(this.br.readLine());
+				direction = Direction.valueOf(this.inputString());
 			}catch(Exception e){
 				e.printStackTrace();
 			}
@@ -128,9 +121,9 @@ public class InputConsole implements Input
 		System.out.println("Entrez le déplacement :");
 		try
 		{
-			return Integer.parseInt(this.br.readLine());
+			return this.inputInt();
 		}
-		catch (NumberFormatException | IOException e)
+		catch (NumberFormatException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();

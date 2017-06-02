@@ -1,10 +1,15 @@
 package greentower.core;
 
-import greentower.minigames.lessormore.LessOrMore;
-import greentower.minigames.mastermind.MasterMind;
-import greentower.minigames.othello.core.OthelloGame;
-import greentower.minigames.shifumi.Shifumi;
-import greentower.minigames.tictactoe.TicTacToe;
+import greentower.stage.Stage;
+import greentower.stage.choice.Answers;
+import greentower.stage.choice.Choice;
+import greentower.stage.choice.Dialog;
+import greentower.stage.minigames.lessormore.LessOrMore;
+import greentower.stage.minigames.mastermind.MasterMind;
+import greentower.stage.minigames.othello.core.OthelloGame;
+import greentower.stage.minigames.rushhour.RushHourGame;
+import greentower.stage.minigames.shifumi.Shifumi;
+import greentower.stage.minigames.tictactoe.TicTacToe;
 
 /**
  * @author viognef
@@ -17,6 +22,7 @@ public class ListOfStages
 	 */
 	public static final Stage[] stages = new Stage[]
 	{
+			// AJOUTER gamblingmachine headsortail pendu suite
 		/* STAGE_1 */ new Choice(Dialog.DIALOG_STAGE1, Answers.ANSWERS_STAGE1, 0),
 		/* STAGE_2 */ new Choice(Dialog.DIALOG_STAGE2, Answers.ANSWERS_STAGE2, 1),
 		/* STAGE_3 */ new Choice(Dialog.DIALOG_STAGE3, Answers.ANSWERS_STAGE3, 2),
@@ -24,8 +30,7 @@ public class ListOfStages
 		/* STAGE_5 */ new TicTacToe(Dialog.DIALOG_STAGE5, 4),
 		
 		/* STAGE_6 */ new Choice(Dialog.DIALOG_STAGE6, Answers.ANSWERS_STAGE6, 5),
-		/* STAGE_7 */ //new RushHour(Dialog.DIALOG_STAGE7),
-		/* STAGE_7bis */ new Choice(Dialog.DIALOG_STAGE7, Answers.ANSWERS_STAGE7, 6),
+		/* STAGE_7 */ new RushHourGame(Dialog.DIALOG_STAGE7, 6),
 		/* STAGE_8 */ new Choice(Dialog.DIALOG_STAGE8, Answers.ANSWERS_STAGE8, 7),
 		/* STAGE_9 */ new Choice(Dialog.DIALOG_STAGE9, Answers.ANSWERS_STAGE9, 8),
 		/* STAGE_10 */ new Choice(Dialog.DIALOG_STAGE10, Answers.ANSWERS_STAGE10, 9),
@@ -44,7 +49,8 @@ public class ListOfStages
 		
 		/* STAGE_21 */ new Choice(Dialog.DIALOG_STAGE21, Answers.ANSWERS_STAGE21, 20),
 		/* STAGE_22 */ new MasterMind(Dialog.DIALOG_STAGE22, 21),
-		/* STAGE_23bis */ new Choice(Dialog.DIALOG_STAGE23, Answers.ANSWERS_STAGE23, 21),
+		/* STAGE_23 */ new Choice(Dialog.DIALOG_STAGE23, Answers.ANSWERS_STAGE23, 22),
+		/* STAGE_24 */ new Choice(Dialog.DIALOG_STAGE24, Answers.ANSWERS_STAGE24, 23, true),
 	};
 
 	/**
@@ -78,6 +84,7 @@ public class ListOfStages
 		
 		/* STAGE_21 */ {3},
 		/* STAGE_22 */ {23, 22},
+		/* STAGE_23 */ {24, 23},
 	};
 
 	/**

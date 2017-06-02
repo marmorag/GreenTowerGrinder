@@ -1,6 +1,6 @@
 package greentower.core.launcher;
 
-import greentower.IO.OutputConsole;
+import greentower.IO.OutputGraphic;
 import greentower.core.Game;
 import greentower.core.Player;
 
@@ -20,6 +20,6 @@ public class Main
 	{
 		// Game v1.0
 		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");
-		new Game(new Player("Coucou"), new OutputConsole(), false).play();
+		new Game(new Player("Coucou"), new OutputGraphic(), true).play();
 	}
 }
