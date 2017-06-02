@@ -5,6 +5,7 @@ import greentower.core.ListOfStages;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
+
 /**
  * @author Florent & Rémi
  */

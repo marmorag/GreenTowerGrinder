@@ -159,7 +159,7 @@ public class Board
 	 * @return
 	 * 			true if position is valid, false if not
 	 */
-	private static boolean positionIsInTheBoard(Position askedPosition)
+	public static boolean positionIsInTheBoard(Position askedPosition)
 	{
 		if(askedPosition.getColumn() >= Board.MAX_COORDINATE) return false;
 		if(askedPosition.getColumn() < Board.MIN_COORDINATE) return false;
