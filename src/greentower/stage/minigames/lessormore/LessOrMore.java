@@ -58,8 +58,8 @@ public class LessOrMore extends MiniGame
 		display.showDialog(this.dialog);
 		display.showText("RULES");
 		display.showText("Tu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché");
-		display.showText("MORE: plus grand");
-		display.showText("LESS: plus petit");
+		display.showText("MORE: plus grand ");
+		display.showText("LESS: plus petit \n");
 		int result;
 		
 		this.base = (int)(Math.random() * (10-1)) + 1;

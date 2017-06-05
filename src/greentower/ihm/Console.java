@@ -15,6 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.text.DefaultCaret;
 
 public class Console extends JFrame implements ActionListener{
 
@@ -75,6 +76,10 @@ public class Console extends JFrame implements ActionListener{
 		this.outputTextArea = new JTextArea();
 		//this.outputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.outputTextArea.setEditable(false);
+		
+		//auto-scroll
+		DefaultCaret caret = (DefaultCaret)outputTextArea.getCaret();
+		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 		
 		this.inputTextArea = new JTextField();
 		//this.inputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
