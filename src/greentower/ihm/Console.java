@@ -72,7 +72,7 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 		this.current_input = "";
 		
 		try {
-			this.image = ImageIO.read(new File("images/bc.jpg"));
+			this.image = ImageIO.read(new File("images/bc.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
