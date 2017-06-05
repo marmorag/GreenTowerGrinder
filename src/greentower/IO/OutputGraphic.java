@@ -40,7 +40,7 @@ public class OutputGraphic implements Output{
 	// PENDU
 	@Override
 	public void notifyWin(int nbCoups, String motATrouver) {
-		String str = "Felicitations vous avez réussi en : "+ nbCoups +"coups\n"+"Le mot était :"+motATrouver+"\n";		
+		String str = "Felicitations vous avez rÃ©ussi en : "+ nbCoups +"coups\n"+"Le mot Ã©tait :"+motATrouver+"\n";		
 		this.mainWindow.console.setOutput(str);
 	}
 
@@ -52,7 +52,7 @@ public class OutputGraphic implements Output{
 
 	@Override
 	public void notifyLoose(String motATrouver) {
-		this.mainWindow.console.setOutput("Dommage vous avez perdu"+"Le mot était :"+motATrouver+"\n");
+		this.mainWindow.console.setOutput("Dommage vous avez perdu"+"Le mot Ã©tait :"+motATrouver+"\n");
 	}
 
 	@Override
@@ -121,7 +121,7 @@ public class OutputGraphic implements Output{
 	@Override
 	public void showStageIntroduction(int stageIndex) {
 		String str = "\n***************************************************\n"
-					+"------------- ENTREE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------\n"
+					+"------------- ENTREE DANS L'ETAGE NÂ°" + (stageIndex + 1) + " -------------\n"
 					+"***************************************************\n" ;
 		this.mainWindow.console.setOutput(str);
 		
@@ -130,7 +130,7 @@ public class OutputGraphic implements Output{
 	@Override
 	public void showStageEnd(int stageIndex) {
 		String str = "\n***************************************************\n"
-				+"------------- SORTIE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------\n"
+				+"------------- SORTIE DANS L'ETAGE N+" + (stageIndex + 1) + " -------------\n"
 				+"***************************************************\n" ;
 		this.mainWindow.console.setOutput(str);
 //		try
@@ -171,14 +171,14 @@ public class OutputGraphic implements Output{
 
 	@Override
 	public void HeadsOrTails(int face) {
-		// TODO Demander Rémi
+		// TODO Demander Rï¿½mi
 		
 	}
 
 	@Override
 	public void LessOrMore(int number) {
 		String str = "\nRULES" +
-		"\nTu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché" +
+		"\nTu vas devoir devoir devinÃ© si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affichÃ©" +
 		"\nMORE: plus grand "+
 		"LESS: plus petit" +
 		"\nLe nombre est : "+number;
@@ -194,14 +194,14 @@ public class OutputGraphic implements Output{
 
 	@Override
 	public void Suite(int nb1, int nb2, int nb3, int nb4) {
-		String str = "Arriverez-vous à  trouver la suite ?\n";
+		String str = "Arriverez-vous Ã  trouver la suite ?\n";
 		str = str +String.valueOf(nb1)+" "+String.valueOf(nb2)+" "+String.valueOf(nb3)+" "+String.valueOf(nb4)+" ?";
 		
 	}
 
 	@Override
 	public void TicTacToe(int[][] grid) {
-		String str = grid[0][0]+"|"+grid[0][1]+"|"+grid[0][2]+"\n"
+		String str = "\n"+grid[0][0]+"|"+grid[0][1]+"|"+grid[0][2]+"\n"
 					+grid[1][0]+"|"+grid[1][1]+"|"+grid[1][2]+"\n"
 					+grid[2][0]+"|"+grid[2][1]+"|"+grid[2][2]+"\n";
 		this.mainWindow.console.setOutput(str);
@@ -213,13 +213,13 @@ public class OutputGraphic implements Output{
 		String str = OutputConsole.gotN(2);
 		if (result == MiniGame.RESULT_VICTORY)
 		{
-			str = str +"\nFéliciations tu as gagné le mini-jeu.";
+			str = str +"\nFÃ©liciations tu as gagnÃ© le mini-jeu.";
 		}
 		else
 		{
 			str = str + "\nDommage, tu as perdu";
 		}
-		str = str + "\nRendez-vous au prochain étage";
+		str = str + "\nRendez-vous au prochain Ã©tage";
 		
 		this.mainWindow.console.setOutput(str);		
 	}
@@ -241,7 +241,7 @@ public class OutputGraphic implements Output{
 	public void showRushHourBoard(GameBoard board) {
 		String grid="";
 		for(int y=0;y<GameBoard.BOARD_WIDTH;y++){
-			grid += "*************************\n*";
+			grid += "\n*************************\n*";
 			for(int x=0;x<GameBoard.BOARD_HEIGHT;x++){
 				int carNumber = board.getCarNumberAt(new Position(x,y));
 				if(carNumber != -1){
