@@ -38,12 +38,6 @@ public class Game
 	 * Tool used to get anything from the player
 	 */
 	private Input input;
-	
-	/**
-	 * True if the game is executed in graphical mode, false else
-	 */
-	@SuppressWarnings("unused")
-	private boolean isGraphical;
 
 	//private Scenario scenario;
 
@@ -53,7 +47,7 @@ public class Game
 	 * @param display
 	 * @param inputGraphic
 	 */
-	public Game(String player, Output display, InputGraphic inputGraphic)
+	public Game(String player, Output display, Input input)
 	{
 		this.input = input;
 		this.numberOfRounds = 0;
