@@ -27,10 +27,9 @@ public class Button extends JButton {
 	 * Set attributes' values 
 	 */
 	public void initialize(){
-		
 		this.setForeground(Color.WHITE);
 		this.setBackground(Color.GRAY);
-		this.setPreferredSize(new Dimension(160, 40)); 
+		this.setSize(new Dimension(160, 40)); 
 	}
 }
 

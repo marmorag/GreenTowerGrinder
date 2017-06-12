@@ -9,7 +9,7 @@ Désolé mais c'était la mauvaise réponse.§Mais je ne peux uniquement juger t
 Serais-tu l'élu ?§Alliant intelligence et chance afin de vaincre les forces du mal ?§Je me dois de vérifier.§Réponds à cette énigme !§Combien y a-t-il de carrés en tout, dans une grille 4x4 ?§§+---+---+---+---+§|   |   |   |   |§+---+---+---+---+§|   |   |   |   |§+---+---+---+---+§|   |   |   |   |§+---+---+---+---+§|   |   |   |   |§+---+---+---+---+§
 Tu manques de chance et je ne peux te blamer.§Tu n'es certes pas l'élu mais cela ne t'empèchera pas de pouvoir monter au sommet.§Le chemin sera juste plus difficile.§En parlant de difficulté, connais-tu le rush hour ? Viens donc faire une partie !
 Bien bien.§Parfois on dit qu'il faut savoir tout recommencer pour mieux repartir.§Retourne donc au début de la tour et cette fois-ci, n'échoue pas ! 
-Phénoménal !§Tu es le meilleur aventurier que je n'ai jamais rencontré !§Prends donc ce passage secret, il emmène directement en haut de la tour ou bien laisse le temps faire les choses et continue normalement ton ascension !
+Phénoménal !§Tu es le meilleur aventurier que je n'ai jamais rencontré !§Prends donc ce passage secret, il emmène directement en haut de la tour!§Ou bien laisse le temps faire les choses et continue normalement ton ascension !
 Oh ! On dirait que je me suis emporté dans des conclusions hâtives !§Tu n'es pas l'élu, mais tu peux tout de même me surprendre et réussir. 
 Bravo !§Tu nous as sortis d'un sacré embouteillage !§D'ailleurs, sais-tu comment éviter les embouteillages ?
 Il faut se méfier des chemins trop simples !§Voici ta punition !
@@ -27,28 +27,28 @@ VICTOIRE TU AS ATTEINT LE HAUT DE LA TOUR!!
 </dialog>
 <answer>
 
-Oui§Non
-La réponse F§Une boule de nerf en avance
+0:Oui§1:Non
+0:La réponse F§1:Une boule de nerf en avance
 
 
-1§16§30§46
+0:1§1:16§2:30§3:46
 
-D'accord.
-J'accepte§Je refuse
-Continuer
-En roulant tous à vitesse constante§En roulant tous à droite
-Continuer
+0:D'accord.
+0:J'accepte§1:Je refuse
+0:Continuer
+0:En roulant tous à vitesse constante§1:En roulant tous à droite
+0:Continuer
 
 
-Réveiller le gardien§Faire une sieste à ses côtés
-Un bébé§Une ombre
-Continuer
-Continuer
-Continuer
-Continuer
-Continuer
-Continuer
-Continuer
+0:Réveiller le gardien§1:Faire une sieste à ses côtés
+0:Un bébé§1:Une ombre
+0:Continuer
+0:Continuer
+0:Continuer
+0:Continuer
+0:Continuer
+0:Continuer
+0:Continuer
 </answer>
 <stage>
 choice

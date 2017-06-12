@@ -134,7 +134,7 @@ public final class ScenarioParser
 					switch (currentLine)
 					{
 						case "choice":
-							result[stageCounter] = new Choice(answer[stageCounter],dialog[stageCounter], stageCounter);
+							result[stageCounter] = new Choice(dialog[stageCounter],answer[stageCounter],stageCounter);
 							break;
 						case "othello":
 							result[stageCounter] = new OthelloGame(dialog[stageCounter], stageCounter);
@@ -231,7 +231,7 @@ public final class ScenarioParser
 					currentLine = inputTool.readLine();
 				else
 				{
-					result[stageCounter] = currentLine.replace('§', '\n');
+					result[stageCounter] = "\n"+currentLine.replace('§', '\n');
 					
 					currentLine = inputTool.readLine();
 					stageCounter++;
