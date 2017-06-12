@@ -33,7 +33,7 @@ public class MainWindow extends JFrame implements ActionListener{
 
 		//def frame
 		
-		frame = new JFrame();
+		JFrame frame = new JFrame();
 		
 		//propri�t� JFrame
 		this.setTitle("The Green Tower Grinder");
@@ -93,6 +93,6 @@ public class MainWindow extends JFrame implements ActionListener{
 	public void stopSong()
 	{
 		this.clip.stop();
-	}
+	}	public Console getConsole(){		return this.console;	}
 
 }

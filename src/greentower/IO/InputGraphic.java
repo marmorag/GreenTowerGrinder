@@ -16,7 +16,7 @@ public class InputGraphic implements Input{
 	public String inputString() 
 	{
 		this.output.showPrompt();
-		while(!this.output.mainWindow.console.isPressed)
+		while(!this.output.mainWindow.getConsole().getIsPressed())
 		{
 			try {
 				Thread.sleep(50);
@@ -25,8 +25,8 @@ public class InputGraphic implements Input{
 				e.printStackTrace();
 			}
 		}
-		this.output.mainWindow.console.resetAction();
-		return this.output.mainWindow.console.getInput();
+		this.output.mainWindow.getConsole().resetAction();
+		return this.output.mainWindow.getConsole().getInput();
 	}
 	
 	@Override
