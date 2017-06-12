@@ -13,12 +13,19 @@ public class Button extends JButton {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Default Constructor of Button
+	 * @param string
+	 */
 	public Button(String string){
 		super();
 		this.setText(string);
 		initialize();
 	}
 	
+	/**
+	 * Set attributes' values 
+	 */
 	public void initialize(){
 		
 		this.setForeground(Color.WHITE);
