@@ -136,7 +136,7 @@ public class GraphicDisplay extends JFrame implements Output
 	}
 
 	@Override
-	public void erreurLettre()
+	public void letterError()
 	{
 		// TODO Auto-generated method stub
 		
@@ -150,7 +150,7 @@ public class GraphicDisplay extends JFrame implements Output
 	}
 
 	@Override
-	public void demanderCaractere()
+	public void getChar()
 	{
 		// TODO Auto-generated method stub
 		

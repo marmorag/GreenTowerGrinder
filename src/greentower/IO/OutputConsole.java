@@ -39,7 +39,7 @@ public class OutputConsole implements Output{
 		this.showText("Felicitations vous avez r�ussi en : "+ nbCoups +"coups\n");		this.showText("Le mot �tait :"+motATrouver+"\n");
 	}
 	@Override
-	public void erreurLettre() {
+	public void letterError() {
 		this.showError("\nLa lettre n'est pas contenu dans le mot!\n");		
 	}
 	@Override
@@ -47,7 +47,7 @@ public class OutputConsole implements Output{
 		this.showText("Dommage vous avez perdu");		this.showText("Le mot �tait :"+motATrouver+"\n");
 	}
 	@Override
-	public void demanderCaractere() {		this.showText("\nVotre lettre :");
+	public void getChar() {		this.showText("\nVotre lettre :");
 	}
 	@Override
 	public void showPendu(int nbErreur, String motAAfficher) {		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");		switch(nbErreur){			case 0 :				System.out.println("\n\n\n\n\n\n\n\n");				break;			case 1 :				System.out.println("\n\n\n\n\n\n\n\n      ============\n");				break;			case 2 :				System.out.println("\n         ||\n         ||\n         ||\n         ||\n         ||\n" +						"        /||\n       //||\n      ============\n");				break;			case 3 :				System.out.println("         ,==============\n"+"         ||\n"+"         ||\n"+"         ||\n"+"         ||\n"+"         ||\n"						+"        /||\n"+"       //||\n"+"      ============\n");				break;			case 4 :				System.out.println("         ,==========Y===\n"+"         ||         |\n"+"         ||         |\n"+"         ||\n"+						"         ||\n"+"         ||\n"+"        /||\n"+"       //||\n"+"      ============\n");				break;			case 5 :				System.out.println("         ,==========Y===\n"+"         || /       |\n"+"         ||/        |\n"+"         ||\n"+						"         ||\n"+"         ||\n"+"        /||\n"+"       //||\n"+"      ============\n");				break;			case 6 :				System.out.println("         ,==========Y===\n"+"         || /       |\n"+"         ||/        |\n"+"         ||         O\n"+						"         ||\n"+"         ||\n"+"        /||\n"+"       //||\n"+"      ============\n");				break;			case 7 :				System.out.println("         ,==========Y===\n"+"         || /       |\n"+"         ||/        |\n"+"         ||         O\n"+						"         ||         |\n"+"         ||\n"+"        /||\n"+"       //||\n"+"      ============\n");				break;			case 8 :				System.out.println("         ,==========Y===\n"+"         || /       |\n"+"         ||/        |\n"+"         ||         O\n"+						"         ||        /|\n"+"         ||\n"+"        /||\n"+"       //||\n"+"      ============\n");				break;			case 9 :				System.out.println("         ,==========Y===\n"+"         || /       |\n"+"         ||/        |\n"+"         ||         O\n"+						"         ||        /|\\\n"+"         ||        / \n"+"        /||\n"+"       //||\n"+"      ============\n");				break;			case 10 :				System.out.println("         ,==========Y===\n"+"         || /       |\n"+"         ||/        |\n"+"         ||         O\n"+						"         ||        /|\\\n"+"         ||        /|\n"+"        /||\n"+"       //||\n"+"      ============\n");				break;			default :				System.out.println("ERREUR_AFFICHAGE_PENDU");				break;		}		System.out.println("Le mot a trouver :"+motAAfficher+"\n");

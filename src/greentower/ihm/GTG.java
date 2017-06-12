@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 public class GTG extends JPanel{
 
 	/**
-	 * 
+	 * Serial Version ID
 	 */
 	private static final long serialVersionUID = 1L;
 

@@ -5,7 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.JButton;
 
-public class Bouton extends JButton {
+public class Button extends JButton {
 
 	
 	/**
@@ -13,7 +13,7 @@ public class Bouton extends JButton {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public Bouton(String string){
+	public Button(String string){
 		super();
 		this.setText(string);
 		initialize();

@@ -8,9 +8,9 @@ package greentower.stage.minigames.mastermind;
  */
 public class Checker {
 
-/**
- * indicate the pawns whose aren't set correctly
- */
+	/**
+	 * indicate the pawns whose aren't set correctly
+	 */
 	private final int wellPlaced;
 
 /**

@@ -1,4 +1,4 @@
-package greentower.stage.minigames.pendu;
+package greentower.stage.minigames.hangman;
 
 
 import java.io.BufferedReader;
@@ -16,28 +16,28 @@ import greentower.stage.minigames.MiniGame;
  * @author Guillaume
  *
  */
-public class Pendu extends MiniGame{
+public class Hangman extends MiniGame{
 
 	/**
 	 * Error number of current game
 	 */
-	private int nbErreur;
+	private int nbError;
 
 	/**
 	 * Move number of current game
 	 */
-	private int nbCoups;
+	private int nbTurn;
 
 	/**
 	 * Random word chosen
 	 */
-	private String motATrouver;
+	private String wordToFind;
 
 	/**
 	 * motATrouver copy but letters are replaced by _
 	 * until player has not found the correct letter
 	 */
-	private String motAAfficher;
+	private String wordToDisplay;
 
 	/**
 	 *	motATrouver takes value of word at line nbAleatoire in listeMot.txt
@@ -47,31 +47,31 @@ public class Pendu extends MiniGame{
 	 * @param dialog The dialog to display at the beginning of the game
 	 * @param stageIndex 
 	 */
-	public Pendu(Output display, Input input, Dialog dialog, int stageIndex)
+	public Hangman(Output display, Input input, Dialog dialog, int stageIndex)
 	{
 		super(display,input,dialog, stageIndex);
 		
 		this.inputTool = input;
 		this.outputTool = display;
 		Random r = new Random();
-		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
+		int randomNumber = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
 
-		this.nbErreur = 0;
-		this.nbCoups = 0;
+		this.nbError = 0;
+		this.nbTurn = 0;
 
 		try
 		{
-			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/stage/minigames/pendu/listeMot.txt")));
-			String ligne;
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/stage/minigames/pendu/wordList.txt")));
+			String row;
 
-			while ((ligne=br.readLine())!=null && i < nbAleatoire)
+			while ((row=br.readLine())!=null && i < randomNumber)
 			{
 				i++;
 			}
 
-			this.motATrouver = ligne;
-			this.motAAfficher = this.motATrouver.replaceAll(".", "_");
+			this.wordToFind = row;
+			this.wordToDisplay = this.wordToFind.replaceAll(".", "_");
 
 			br.close();
 		}
@@ -84,51 +84,48 @@ public class Pendu extends MiniGame{
 
 
 	/**
-	 * @param lettreEntree Letter entered by the player
+	 * @param inputLetter Letter entered by the player
 	 * @return 
 	 *	@return true if letter is in word, false if not
 	 *	Can be replace by String.contains()
 	 *	Update motAAfficher if letter is contained
 	 */
-	public boolean verifierLettre(char lettreEntree)
+	public boolean checkLetter(char inputLetter)
 	{
-		CharSequence lettre = (""+lettreEntree).toUpperCase();
+		CharSequence letter = (""+inputLetter).toUpperCase();
 
-		if(this.motATrouver.contains(lettre))
+		if(this.wordToFind.contains(letter))
 		{
-			this.majMotAAfficher(lettreEntree);
-			this.nbCoups++;
+			this.updateDisplayWord(inputLetter);
+			this.nbTurn++;
 			return true;
 		}
-		else
-		{
-			return false;
-		}
+		return false;
 	}
 
 	/**
 	 * Update display word (motAAfficher) in function of letters found
-	 * @param lettreEntree
+	 * @param inputLetter
 	 */
-	private void majMotAAfficher(char lettreEntree)
+	private void updateDisplayWord(char inputLetter)
 	{
-		char[] tempArray = new char[this.motAAfficher.length()];
+		char[] tempArray = new char[this.wordToDisplay.length()];
 		int i;
 
-		for(i = 0;i < this.motATrouver.length();i++)
+		for(i = 0;i < this.wordToFind.length();i++)
 		{
-			tempArray[i] = this.motAAfficher.charAt(i);
+			tempArray[i] = this.wordToDisplay.charAt(i);
 		}
 
-		this.motAAfficher = "";
+		this.wordToDisplay = "";
 
-		for(i = 0;i < this.motATrouver.length();i++)
+		for(i = 0;i < this.wordToFind.length();i++)
 		{
-			if(this.motATrouver.charAt(i) == lettreEntree)
+			if(this.wordToFind.charAt(i) == inputLetter)
 			{
-				tempArray[i] = this.motATrouver.charAt(i);
+				tempArray[i] = this.wordToFind.charAt(i);
 			}
-			this.motAAfficher = this.motAAfficher + tempArray[i];
+			this.wordToDisplay = this.wordToDisplay + tempArray[i];
 		}
 	}
 
@@ -137,9 +134,9 @@ public class Pendu extends MiniGame{
 	 * @return true if all "_" have been replaced (all letters are found) in motAAfficher
 	 * false if not
 	 */
-	private boolean finDuPendu()
+	private boolean endOfGame()
 	{
-		return(!this.motAAfficher.contains("_"));
+		return(!this.wordToDisplay.contains("_"));
 	}
 
 	/**
@@ -150,19 +147,19 @@ public class Pendu extends MiniGame{
 	public int playStage(Output display)
 	{
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
-		char lettreEntree;
+		char inputLetter;
 
-		while(!this.finDuPendu() && this.nbCoups <= this.motATrouver.length()+5)
+		while(!this.endOfGame() && this.nbTurn <= this.wordToFind.length()+5)
 		{
-			this.outputTool.showPendu(this.nbErreur,this.motAAfficher);
+			this.outputTool.showPendu(this.nbError,this.wordToDisplay);
 			//System.out.println(motATrouver);
 
-			this.outputTool.demanderCaractere();
-			lettreEntree = (""+this.inputTool.inputChar()).toUpperCase().charAt(0);
+			this.outputTool.getChar();
+			inputLetter = (""+this.inputTool.inputChar()).toUpperCase().charAt(0);
 
-			if(!this.verifierLettre(lettreEntree))
+			if(!this.checkLetter(inputLetter))
 			{
-				this.outputTool.erreurLettre();
+				this.outputTool.letterError();
 				try
 				{
 					Thread.sleep(1500);
@@ -171,12 +168,12 @@ public class Pendu extends MiniGame{
 				{
 					//NO PROBLEM
 				}
-				this.nbErreur++;
+				this.nbError++;
 			}
 		}
 		
 		int result;
-		if(this.finDuPendu())
+		if(this.endOfGame())
 			result = MiniGame.RESULT_VICTORY;
 		else
 			result = MiniGame.RESULT_LOOSE;
@@ -191,24 +188,24 @@ public class Pendu extends MiniGame{
 	public void init() 
 	{
 		Random r = new Random();
-		int nbAleatoire = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
+		int randomNumber = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
 
-		this.nbErreur = 0;
-		this.nbCoups = 0;
+		this.nbError = 0;
+		this.nbTurn = 0;
 
 		try
 		{
-			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/pendu/listeMot.txt")));
-			String ligne;
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/hangman/listeMot.txt")));
+			String row;
 
-			while ((ligne=br.readLine())!=null && i < nbAleatoire)
+			while ((row=br.readLine())!=null && i < randomNumber)
 			{
 				i++;
 			}
 
-			this.motATrouver = ligne;
-			this.motAAfficher = this.motATrouver.replaceAll(".", "_");
+			this.wordToFind = row;
+			this.wordToDisplay = this.wordToFind.replaceAll(".", "_");
 
 			br.close();
 		}
@@ -221,15 +218,15 @@ public class Pendu extends MiniGame{
  * Permits to get the word that player need to find
  * @return attribute motATrouver
  */
-	public String getMotATrouver() {
-		return motATrouver;
+	public String getWordToFind() {
+		return wordToFind;
 	}
 /**
  * Permits to set the word that player need to find
- * @param motATrouver attribute motATrouver
+ * @param wordToFind attribute motATrouver
  */
-	public void setMotATrouver(String motATrouver) {
-		this.motATrouver = motATrouver;
+	public void setWordToFind(String wordToFind) {
+		this.wordToFind = wordToFind;
 	}
 
 
