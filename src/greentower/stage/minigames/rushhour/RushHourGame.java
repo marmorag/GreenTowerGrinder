@@ -60,10 +60,10 @@ public class RushHourGame extends MiniGame
 	{
 		this.inputTool = input;
 		this.outputTool = display;
-		Time t = new Time(0);
+		Long t = System.currentTimeMillis();
 		while(this.board.isFinish() == false)
 		{
-			if(new Time(0).getTime()-t.getTime()<2)
+			if(System.currentTimeMillis()-t>120000)
 			{
 				display.showMiniGameResult(1);
 				return 1;

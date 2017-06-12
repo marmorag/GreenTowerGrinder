@@ -24,11 +24,6 @@ public class GameBoard
 	public static final int BOARD_HEIGHT = 6;
 
 	/**
-	 * level of the game
-	 */
-	private int level;
-
-	/**
 	 * cars in the game Red car (important) is at 0 index
 	 */
 	private Car[] cars;
