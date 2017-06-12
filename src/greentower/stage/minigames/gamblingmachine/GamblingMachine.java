@@ -3,7 +3,6 @@ package greentower.stage.minigames.gamblingmachine;
 import greentower.IO.Output;
 import greentower.stage.minigames.MiniGame;
 
-
 /**
  * @author Florent & Rémi
  */
@@ -13,7 +12,6 @@ public class GamblingMachine extends MiniGame{
 	 * GamblingMachine's constructor
 	 * @param dialog
 	 * @param stageIndex 
-	 *
 	 */
 	public GamblingMachine(String dialog, int stageIndex)
 	{

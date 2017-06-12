@@ -13,11 +13,10 @@ public class Checker {
 	 */
 	private final int wellPlaced;
 
-/**
- * indicate the correctly set pawns
- */
+	/**
+	 * indicate the correctly set pawns
+	 */
 	private final int misplaced;
-
 
 	/**
 	 * Creates a checker used to indicate how muck a proposition looks like the result expected
@@ -30,12 +29,11 @@ public class Checker {
 		this.misplaced = theMisplaced;
 	}
 
-
 	/**
 	 * ACCESSOR
 	 * @return The number of well placed pawns
 	 */
-	public int getWellPlaced()
+	protected int getWellPlaced()
 	{
 		return this.wellPlaced;
 	}
@@ -45,7 +43,7 @@ public class Checker {
 	 * ACCESSOR
 	 * @return The number of miss placed pawns
 	 */
-	public int getMisplaced()
+	protected int getMisplaced()
 	{
 		return this.misplaced;
 	}

@@ -5,11 +5,16 @@ import java.awt.Dimension;
 
 import javax.swing.JButton;
 
+/**
+ * This class represent a custom button
+ * @author Guillaume
+ *
+ */
 public class Button extends JButton {
 
 	
 	/**
-	 * 
+	 * Serial Version id
 	 */
 	private static final long serialVersionUID = 1L;
 

@@ -64,9 +64,8 @@ public class Combination {
 	 *         Use to check how much a proposition looks like the result
 	 *         expected
 	 */
-	public Checker check(Combination proposition)
+	protected Checker check(Combination proposition)
 	{
-
 		boolean validInThis[] = { true, true, true, true };
 		boolean validInOther[] = { true, true, true, true };
 

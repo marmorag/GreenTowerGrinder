@@ -34,7 +34,7 @@ public abstract class Stage
 	/**
 	 * Index of Stage in ListOfStages
 	 */
-	public int index;
+	protected int index;
 
 
 	/**
@@ -52,7 +52,7 @@ public abstract class Stage
 	 * @return 	true if the stage is the last one
 	 * 			false if it is not the last one
 	 */
-	public boolean getFinalStage()
+	protected boolean getFinalStage()
 	{
 		return this.stageIsFinal;
 	}
@@ -60,7 +60,7 @@ public abstract class Stage
 	/**
 	 * @return the stageIsFinal
 	 */
-	public boolean isStageIsFinal() 
+	protected boolean isStageIsFinal() 
 	{
 		return this.stageIsFinal;
 	}
@@ -68,7 +68,7 @@ public abstract class Stage
 	/**
 	 * @return the dialog
 	 */
-	public String getDialog() 
+	protected String getDialog() 
 	{
 		return this.dialog;
 	}
@@ -76,12 +76,9 @@ public abstract class Stage
 	/**
 	 * @return the index
 	 */
-	public int getIndex() 
+	protected int getIndex() 
 	{
 		return this.index;
 	}
 
-	// setNextStages (Stage[] nextStages);
-
-	// public Stage[]	 nextStages;
 }

@@ -15,6 +15,7 @@ public class TicTacToe extends MiniGame{
 	 *  Constant for player
 	 */
 	private final static int PLAYER = 1;
+	
 	/**
 	 *	Constant for game player
 	 */
@@ -24,13 +25,14 @@ public class TicTacToe extends MiniGame{
 	 * Grid of TicTacToe, contains cross and round
 	 */
 	private int[][] grid = new int [3][3];
+	
 	/**
 	 * Winner of the game
 	 */
 	private int winner;
 	
 	/**
-	 * 
+	 * Way to display
 	 */
 	private Output display;
 
@@ -54,7 +56,7 @@ public class TicTacToe extends MiniGame{
 	 * @return true if he win and false if not
 	 * @throws NumberFormatException 
 	 */
-	public boolean playerTurn(Output display, Input input) throws NumberFormatException
+	private boolean playerTurn(Output display, Input input) throws NumberFormatException
 	{
 		if(this.isFull())
 		{ 	
@@ -106,7 +108,7 @@ public class TicTacToe extends MiniGame{
 	 * Bot turn, random numbers are generate to place a sign
 	 * @return true if he win and false if not
 	 */
-	public boolean gameTurn()
+	private boolean gameTurn()
 	{
 		if(this.isFull())
 		{ 
@@ -155,16 +157,12 @@ public class TicTacToe extends MiniGame{
 	 * Return game winner
 	 * @return winner of the game;
 	 */
-	public int getWinner()
+	private int getWinner()
 	{
 		return this.winner;
 	}
 
 	@Override
-	/**
-	 * Return Game grid fill in with players signs
-	 * @return Game grid
-	 */
 	public String toString()
 	{
 		return this.grid[0][0]+"|"+this.grid[0][1]+"|"+this.grid[0][2]+"|\n"+
@@ -176,7 +174,7 @@ public class TicTacToe extends MiniGame{
 	 * Return if grid is full or not
 	 * @return true if grid is full
 	 */
-	public boolean isFull()
+	private boolean isFull()
 	{
 		for(int i=0;i<3;i++)
 		{
@@ -194,7 +192,7 @@ public class TicTacToe extends MiniGame{
 	/**
 	 * Reset game grid (if have equality in precedent game)
 	 */
-	public void resetGrid()
+	private void resetGrid()
 	{
 		for(int i=0;i<3;i++)
 		{

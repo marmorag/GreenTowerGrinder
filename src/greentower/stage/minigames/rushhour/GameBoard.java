@@ -30,8 +30,6 @@ public class GameBoard
 
 	/**
 	 * Create the board considering the level
-	 *
-	 * @param level of the game
 	 */
 	public GameBoard()
 	{
@@ -39,8 +37,7 @@ public class GameBoard
 	}
 
 	/**
-	 * Set cars considering the level
-	 * @param level of the game
+	 * Set cars
 	 */
 	private void createCars()
 	{

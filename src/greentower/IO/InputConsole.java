@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import greentower.stage.minigames.rushhour.Direction;
 import greentower.stage.minigames.rushhour.GameBoard;
 
-
 /**
  * 
  * @author Guillaume
@@ -80,6 +79,7 @@ public class InputConsole implements Input
 			return '\0';
 		}
 	}
+	
 	/**
 	 * Return the input String
 	 */
@@ -129,6 +129,7 @@ public class InputConsole implements Input
 			}
 		return direction;
 	}
+	
 	/**
 	 * Input of the player decision
 	 */
