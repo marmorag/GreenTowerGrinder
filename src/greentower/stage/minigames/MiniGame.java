@@ -40,7 +40,7 @@ public abstract class MiniGame extends Stage
 	 * @param stageIndex 
 	 * @param initialStageIsFinal 
 	 */
-	protected MiniGame(String[] dialog, int stageIndex, boolean initialStageIsFinal)
+	protected MiniGame(String dialog, int stageIndex, boolean initialStageIsFinal)
 	{
 		this.index = stageIndex;
 		this.dialog = dialog;
