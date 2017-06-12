@@ -1,47 +1,47 @@
-<scenario>
+ï»¿<scenario>
 23
 <dialog>
-Bonjour jeune graine.§Je suis Sativa, gardien de cette tour et protecteur de son trésor.§Aujourd'hui, je vais te guider à travers ton dangereux périple.§Appuie sur '0' et ensuite 'Entrée' pour continer.§
-Bravo !§Comme tu peux le voir, tu es monté d'un étage !§Le premier d'une longue série.§Je vais maintenant t'expliquer les règles qui régissent cette tour.§C'est une tour magique qui évolue en fonction des choix des aventuriers.§Ses chemins te conduiront à la gloire ou à la désolation.§Chaque niveau comprend une épreuve et tu devras triompher de toutes celles-ci pour avancer !§Compris ?§
-Commençons de suite si tu le veux bien.§Je vais te poser une énigme et de ta réponse dépendra la suite de ta quête.§Je suis en tête de file mais à bout de nerf.§Qui suis-je ?
-Bravo !§Mais maintenant que j'ai testé ton intelligence, je vais mesurer ta chance.§Car il faut bien avouer que dans la vie la chance occupe une grande place.
-Désolé mais c'était la mauvaise réponse.§Mais je ne peux uniquement juger ton intelligence sur une énigme.§C'est pourquoi nous allons passer à la pratique.
-Serais-tu l'élu ?§Alliant intelligence et chance afin de vaincre les forces du mal ?§Je me dois de vérifier.§Réponds à cette énigme !§Combien y a-t-il de carrés en tout, dans une grille 4x4 ?§§+---+---+---+---+§|   |   |   |   |§+---+---+---+---+§|   |   |   |   |§+---+---+---+---+§|   |   |   |   |§+---+---+---+---+§|   |   |   |   |§+---+---+---+---+§
-Tu manques de chance et je ne peux te blamer.§Tu n'es certes pas l'élu mais cela ne t'empèchera pas de pouvoir monter au sommet.§Le chemin sera juste plus difficile.§En parlant de difficulté, connais-tu le rush hour ? Viens donc faire une partie !
-Bien bien.§Parfois on dit qu'il faut savoir tout recommencer pour mieux repartir.§Retourne donc au début de la tour et cette fois-ci, n'échoue pas ! 
-Phénoménal !§Tu es le meilleur aventurier que je n'ai jamais rencontré !§Prends donc ce passage secret, il emmène directement en haut de la tour ou bien laisse le temps faire les choses et continue normalement ton ascension !
-Oh ! On dirait que je me suis emporté dans des conclusions hâtives !§Tu n'es pas l'élu, mais tu peux tout de même me surprendre et réussir. 
-Bravo !§Tu nous as sortis d'un sacré embouteillage !§D'ailleurs, sais-tu comment éviter les embouteillages ?
-Il faut se méfier des chemins trop simples !§Voici ta punition !
-C'est très bien.§Maintenant assied-toi et prend un thé.
-Non il faut rouler à vitesse constante !§Faisons une partie de Shifumi pour décider de ton sort !§Choisis un signe:§ROCK: Pierre§PAPER: Papier§SCISSORS: Ciseaux
-Quel jeu relaxant !§ZzzzzZzzzzZZzzzzzzZZZzzzZzzzZzzzzZZzzzZzzzzZZZZzzzzZzz.§Que faire ?
-Il ne faut pas confondre vitesse et précipitation mon jeune ami !§Je suis un homme , je suis une femme .§Je ne suis ni un homme ni une femme.§Qui suis-je ?
-Oui pardon !§Heureusement que tu m'as réveillé car sinon nous aurions été dans de beaux draps !§Continuons ?
+Bonjour jeune graine.Â§Je suis Sativa, gardien de cette tour et protecteur de son trÃ©sor.Â§Aujourd'hui, je vais te guider Ã  travers ton dangereux pÃ©riple.Â§Appuie sur '0' et ensuite 'EntrÃ©e' pour continer.Â§
+Bravo !Â§Comme tu peux le voir, tu es montÃ© d'un Ã©tage !Â§Le premier d'une longue sÃ©rie.Â§Je vais maintenant t'expliquer les rÃ¨gles qui rÃ©gissent cette tour.Â§C'est une tour magique qui Ã©volue en fonction des choix des aventuriers.Â§Ses chemins te conduiront Ã  la gloire ou Ã  la dÃ©solation.Â§Chaque niveau comprend une Ã©preuve et tu devras triompher de toutes celles-ci pour avancer !Â§Compris ?Â§
+CommenÃ§ons de suite si tu le veux bien.Â§Je vais te poser une Ã©nigme et de ta rÃ©ponse dÃ©pendra la suite de ta quÃªte.Â§Je suis en tÃªte de file mais Ã  bout de nerf.Â§Qui suis-je ?
+Bravo !Â§Mais maintenant que j'ai testÃ© ton intelligence, je vais mesurer ta chance.Â§Car il faut bien avouer que dans la vie la chance occupe une grande place.
+DÃ©solÃ© mais c'Ã©tait la mauvaise rÃ©ponse.Â§Mais je ne peux uniquement juger ton intelligence sur une Ã©nigme.Â§C'est pourquoi nous allons passer Ã  la pratique.
+Serais-tu l'Ã©lu ?Â§Alliant intelligence et chance afin de vaincre les forces du mal ?Â§Je me dois de vÃ©rifier.Â§RÃ©ponds Ã  cette Ã©nigme !Â§Combien y a-t-il de carrÃ©s en tout, dans une grille 4x4 ?Â§Â§+---+---+---+---+Â§|   |   |   |   |Â§+---+---+---+---+Â§|   |   |   |   |Â§+---+---+---+---+Â§|   |   |   |   |Â§+---+---+---+---+Â§|   |   |   |   |Â§+---+---+---+---+Â§
+Tu manques de chance et je ne peux te blamer.Â§Tu n'es certes pas l'Ã©lu mais cela ne t'empÃ¨chera pas de pouvoir monter au sommet.Â§Le chemin sera juste plus difficile.Â§En parlant de difficultÃ©, connais-tu le rush hour ? Viens donc faire une partie !
+Bien bien.Â§Parfois on dit qu'il faut savoir tout recommencer pour mieux repartir.Â§Retourne donc au dÃ©but de la tour et cette fois-ci, n'Ã©choue pas ! 
+PhÃ©nomÃ©nal !Â§Tu es le meilleur aventurier que je n'ai jamais rencontrÃ© !Â§Prends donc ce passage secret, il emmÃ¨ne directement en haut de la tour ou bien laisse le temps faire les choses et continue normalement ton ascension !
+Oh ! On dirait que je me suis emportÃ© dans des conclusions hÃ¢tives !Â§Tu n'es pas l'Ã©lu, mais tu peux tout de mÃªme me surprendre et rÃ©ussir. 
+Bravo !Â§Tu nous as sortis d'un sacrÃ© embouteillage !Â§D'ailleurs, sais-tu comment Ã©viter les embouteillages ?
+Il faut se mÃ©fier des chemins trop simples !Â§Voici ta punition !
+C'est trÃ¨s bien.Â§Maintenant assied-toi et prend un thÃ©.
+Non il faut rouler Ã  vitesse constante !Â§Faisons une partie de Shifumi pour dÃ©cider de ton sort !Â§Choisis un signe:Â§ROCK: PierreÂ§PAPER: PapierÂ§SCISSORS: Ciseaux
+Quel jeu relaxant !Â§ZzzzzZzzzzZZzzzzzzZZZzzzZzzzZzzzzZZzzzZzzzzZZZZzzzzZzz.Â§Que faire ?
+Il ne faut pas confondre vitesse et prÃ©cipitation mon jeune ami !Â§Je suis un homme , je suis une femme .Â§Je ne suis ni un homme ni une femme.Â§Qui suis-je ?
+Oui pardon !Â§Heureusement que tu m'as rÃ©veillÃ© car sinon nous aurions Ã©tÃ© dans de beaux draps !Â§Continuons ?
 Vous vous endormez et sentez du mouvement durant votre sommeil.
-Bien, comme tu as gagné je vais te laisser une chance !§Mais attention car plus nous montons au sommet de la tour et plus la tour me somme d'être intransigeant !
+Bien, comme tu as gagnÃ© je vais te laisser une chance !Â§Mais attention car plus nous montons au sommet de la tour et plus la tour me somme d'Ãªtre intransigeant !
 Voici la chute de l'empereur.
-Ce n'est malheureusement pas la bonne réponse.§Vous êtes le maillon faible.
-Une porte bloque le chemin.§C'est un étage de croisement.§Qu'importe les chemins que tu as empruntés, si tu as fait preuve de suffisamment de volonté, tous mènent à cet étage.§La porte restera verrouillée tant que nous n'aurons pas trouvé le code à 4 couleurs qui change règulièrement.
+Ce n'est malheureusement pas la bonne rÃ©ponse.Â§Vous Ãªtes le maillon faible.
+Une porte bloque le chemin.Â§C'est un Ã©tage de croisement.Â§Qu'importe les chemins que tu as empruntÃ©s, si tu as fait preuve de suffisamment de volontÃ©, tous mÃ¨nent Ã  cet Ã©tage.Â§La porte restera verrouillÃ©e tant que nous n'aurons pas trouvÃ© le code Ã  4 couleurs qui change rÃ¨guliÃ¨rement.
 VICTOIRE TU AS ATTEINT LE HAUT DE LA TOUR!!
 </dialog>
 <answer>
 
-Oui§Non
-La réponse F§Une boule de nerf en avance
+OuiÂ§Non
+La rÃ©ponse FÂ§Une boule de nerf en avance
 
 
-1§16§30§46
+1Â§16Â§30Â§46
 
 D'accord.
-J'accepte§Je refuse
+J'accepteÂ§Je refuse
 Continuer
-En roulant tous à vitesse constante§En roulant tous à droite
+En roulant tous Ã  vitesse constanteÂ§En roulant tous Ã  droite
 Continuer
 
 
-Réveiller le gardien§Faire une sieste à ses côtés
-Un bébé§Une ombre
+RÃ©veiller le gardienÂ§Faire une sieste Ã  ses cÃ´tÃ©s
+Un bÃ©bÃ©Â§Une ombre
 Continuer
 Continuer
 Continuer
@@ -77,28 +77,28 @@ choice
 </stage>
 <link>
 2
-3§2
-4§5
-6§7
-4§8
-10§10§9§10
-11§8
+3Â§2
+4Â§5
+6Â§7
+4Â§8
+10Â§10Â§9Â§10
+11Â§8
 3
-12§13
+12Â§13
 13
-13§14
+13Â§14
 3
-15§16
-19§20
-17§18
-21§22
+15Â§16
+19Â§20
+17Â§18
+21Â§22
 22
 3
 22
 3
 3
-23§22
-24§23
+23Â§22
+24Â§23
 </link>
 </scenario>
 

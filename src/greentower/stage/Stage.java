@@ -19,7 +19,7 @@ public abstract class Stage
 	/**
 	 *  Dialog to say
 	 */
-	protected String[] dialog;
+	protected String dialog;
 
 	/**
 	 * Interface used to input anything needed
@@ -68,7 +68,7 @@ public abstract class Stage
 	/**
 	 * @return the dialog
 	 */
-	public String[] getDialog() 
+	public String getDialog() 
 	{
 		return this.dialog;
 	}

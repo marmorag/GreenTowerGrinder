@@ -54,8 +54,9 @@ public final class ScenarioParser
 	 * 
 	 * @param path The path for the Scenario to parse
 	 * @throws FileNotFoundException Is thrown if the given path is incorrect
+	 * @throws InvalidSyntaxInFileException 
 	 */
-	public ScenarioParser(String path) throws FileNotFoundException
+	public ScenarioParser(String path) throws FileNotFoundException, InvalidSyntaxInFileException
 	{
 		this.inputTool = new BufferedReader(new FileReader(new File(path)));
 		this.parsedScenario = this.parseScenarioAt(path);
@@ -65,47 +66,47 @@ public final class ScenarioParser
 	 * This method parse a Scenario from the given path
 	 * @param path String the path of the scenario to parse
 	 * @return Scenario the scenario parsed from the file
+	 * @throws InvalidSyntaxInFileException 
 	 */
-	private Scenario parseScenarioAt(String path)
+	private Scenario parseScenarioAt(String path) throws InvalidSyntaxInFileException
 	{
 		String currentLine = "";
 		
 		// variable relative to the scenario to return
-		String[] dialog;
-		String[] answer;
-		int[][] link;
-		Stage[] listOfStage;
+		String[] dialog = null;
+		String[] answer = null;
+		int[][] link = null;
+		Stage[] listOfStage = null;
 		Scenario scenarioToReturn;
 		
-		currentLine = inputTool.readLine();
-		while(currentLine != "<scenario>")
+		try
 		{
 			currentLine = inputTool.readLine();
-		}
-		
-		while(currentLine != "</scenario>")
+			
+				// recupere le nombre d'etage
+				currentLine = inputTool.readLine();
+				int numberOfStage = Integer.parseInt(currentLine);
+				
+				// cursor should be at <dialog>
+				// recupere les attributs de construction d'un scenario 
+				dialog = this.getDialog(numberOfStage);
+				//cursor should be at <answer>
+				answer = this.getAnswer(numberOfStage);
+				// cursor should be at <stage>
+				listOfStage = this.getListOfStage(numberOfStage, answer, dialog);
+				// cursor should be at <link>
+				link = this.getLink(numberOfStage);
+				// cursor should be at </scenario>
+				
+				
+			scenarioToReturn = new Scenario(listOfStage, link, dialog, answer);
+			return scenarioToReturn;
+		} catch (IOException e)
 		{
-			// recupere le nombre d'etage
-			currentLine = inputTool.readLine();
-			int numberOfStage = Integer.parseInt(currentLine);
-			
-			// cursor should be at <dialog>
-			// recupere les attributs de construction d'un scenario 
-			dialog = this.getDialog(numberOfStage);
-			//cursor should be at <answer>
-			answer = this.getAnswer(numberOfStage);
-			// cursor should be at <stage>
-			listOfStage = this.getListOfStage(numberOfStage, answer, dialog);
-			// cursor should be at <link>
-			link = this.getLink(numberOfStage);
-			// cursor should be at </scenario>
-			
-			// gerer la fin de fichier
-			currentLine = inputTool.readLine();
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
-		scenarioToReturn = new Scenario(listOfStage, link, dialog, answer);
-		return scenarioToReturn;
+		return null;
 	}
 	
 	/**
@@ -114,8 +115,9 @@ public final class ScenarioParser
 	 * @param answer The answer array used to build each Stage
 	 * @param dialog The dialog array used to build each Stage
 	 * @return Stage[] The Stage array builded from the input file
+	 * @throws InvalidSyntaxInFileException 
 	 */
-	private Stage[] getListOfStage(int numberOfStage, String[] answer, String[] dialog)
+	private Stage[] getListOfStage(int numberOfStage, String[] answer, String[] dialog) throws InvalidSyntaxInFileException
 	{
 		try
 		{
@@ -123,9 +125,9 @@ public final class ScenarioParser
 			String currentLine = this.inputTool.readLine();
 			int stageCounter = 0;
 			
-			while(currentLine != "</stage>")
+			while(!currentLine.equalsIgnoreCase("</stage>"))
 			{
-				if(currentLine == "<stage>")
+				if(currentLine.equalsIgnoreCase("<stage>"))
 					currentLine = inputTool.readLine();
 				else
 				{
@@ -153,9 +155,7 @@ public final class ScenarioParser
 							result[stageCounter] = new LessOrMore(dialog[stageCounter], stageCounter);
 							break;
 						default:
-							throw new InvalidSyntaxInFileException("Exception during listOfStage build");
-							break;
-							
+							throw new InvalidSyntaxInFileException("Exception during listOfStage build");							
 					}
 					currentLine = inputTool.readLine();
 					stageCounter++;
@@ -180,18 +180,23 @@ public final class ScenarioParser
 	{
 		try
 		{
-			int[][] result = new int[numberOfStage][];
+			int[][] result = new int[numberOfStage][4];
 			String currentLine = this.inputTool.readLine();
+			String[] parsedLine;
 			int stageCounter = 0;
 			
-			while(currentLine != "</link>")
+			while(!currentLine.equalsIgnoreCase("</link>"))
 			{
-				if (currentLine == "<link>")
+				if (currentLine.equalsIgnoreCase("<link>"))
 					currentLine = inputTool.readLine();
 				else
 				{
-					result[stageCounter][0] = Integer.parseInt(currentLine.split("§")[0]);
-					result[stageCounter][1] = Integer.parseInt(currentLine.split("§")[1]);
+					parsedLine = currentLine.split("§");
+					
+					for(int i = 0; i < parsedLine.length;i++)
+					{
+						result[stageCounter][i] = Integer.parseInt(parsedLine[i]);
+					}
 					
 					currentLine = inputTool.readLine();
 					stageCounter++;
@@ -220,9 +225,9 @@ public final class ScenarioParser
 			String currentLine = this.inputTool.readLine();
 			int stageCounter = 0;
 			
-			while(currentLine != "</answer>")
+			while(!currentLine.equalsIgnoreCase("</answer>"))
 			{
-				if (currentLine == "<answer>")
+				if (currentLine.equalsIgnoreCase("<answer>"))
 					currentLine = inputTool.readLine();
 				else
 				{
@@ -255,15 +260,17 @@ public final class ScenarioParser
 			String currentLine = this.inputTool.readLine();
 			int stageCounter = 0;
 			
-			while(currentLine != "</dialog>")
+			while(!currentLine.equalsIgnoreCase("</dialog>"))
 			{
-				if (currentLine == "<dialog>")
+				if (currentLine.equalsIgnoreCase("<dialog>") || stageCounter >= numberOfStage)
 					currentLine = inputTool.readLine();
 				else
+				{
 					result[stageCounter] = currentLine.replace('§', '\n');
-				
-				currentLine = inputTool.readLine();
-				stageCounter++;
+					
+					currentLine = inputTool.readLine();
+					stageCounter++;
+				}				
 			}
 			return result;
 		} 
@@ -273,5 +280,14 @@ public final class ScenarioParser
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	/**
+	 * Getter for attribute scenario
+	 * @return Scenario The scenario
+	 */
+	public Scenario getScenario()
+	{
+		return this.parsedScenario;
 	}	
 }

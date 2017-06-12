@@ -38,7 +38,7 @@ public class Hangman extends MiniGame{
 	 * @param dialog The dialog to display at the beginning of the game
 	 * @param stageIndex 
 	 */
-	public Hangman(String[] dialog, int stageIndex)
+	public Hangman(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		

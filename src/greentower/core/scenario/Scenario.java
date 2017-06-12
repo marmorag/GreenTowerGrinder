@@ -22,12 +22,12 @@ public class Scenario
 	/**
 	 * Array containing stages' dialog
 	 */
-	private final String[][] dialogs;
+	private final String[] dialogs;
 
 	/**
 	 * Array containing choices's answers	
 	 */
-	private final String[][] answers;
+	private final String[] answers;
 	
 	/**
 	 * Create a new scenario
@@ -40,7 +40,7 @@ public class Scenario
 	 * @param initialAnswers	
 	 * 			Choices' answers
 	 */
-	public Scenario(Stage[] initialStages, int[][] initialNextStages, String[][] initialDialogs, String[][] initialAnswers)
+	public Scenario(Stage[] initialStages, int[][] initialNextStages, String[] initialDialogs, String[] initialAnswers)
 	{
 		this.stages = initialStages;
 		this.nextStages = initialNextStages;
@@ -111,7 +111,7 @@ public class Scenario
 	/**
 	 * @return the dialogs
 	 */
-	public String[][] getDialogs() 
+	public String[] getDialogs() 
 	{
 		return this.dialogs;
 	}
@@ -119,7 +119,7 @@ public class Scenario
 	/**
 	 * @return the answers
 	 */
-	public String[][] getAnswers() 
+	public String[] getAnswers() 
 	{
 		return this.answers;
 	}

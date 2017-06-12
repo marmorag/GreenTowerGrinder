@@ -17,7 +17,7 @@ public class Shifumi extends MiniGame{
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public Shifumi(String[] dialog, int stageIndex)
+	public Shifumi(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 	}

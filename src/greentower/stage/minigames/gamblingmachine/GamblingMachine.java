@@ -15,7 +15,7 @@ public class GamblingMachine extends MiniGame{
 	 * @param stageIndex 
 	 *
 	 */
-	public GamblingMachine(String[] dialog, int stageIndex)
+	public GamblingMachine(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 	}

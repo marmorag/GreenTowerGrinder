@@ -39,7 +39,7 @@ public class RushHourGame extends MiniGame
 	 * @param dialog
 	 * @param indexOfStage
 	 */
-	public RushHourGame(String[] dialog, int indexOfStage)
+	public RushHourGame(String dialog, int indexOfStage)
 	{
 		super(dialog, indexOfStage);
 		this.board = new GameBoard();

@@ -28,7 +28,7 @@ public class LessOrMore extends MiniGame
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public LessOrMore(String[] dialog, int stageIndex)
+	public LessOrMore(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		this.base = (int)(Math.random() * (10-1)) + 1;
