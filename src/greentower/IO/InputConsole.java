@@ -35,15 +35,20 @@ public class InputConsole implements Input
 			char[] figures = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 			OutputConsole.showPromptS();
 			String str = this.br.readLine();
-			if (str.length() !=  1)
+			if (str.length() <  1)
 				return Input.INVALID_INT_INPUT;
 			
-			boolean isInt = false;
-			for(int i = 0; i < figures.length; i++)
-				if (figures[i] == str.charAt(0))
-					isInt = true;
-			
-			if(!isInt) return Input.INVALID_INT_INPUT;
+			for(int i=0;i<str.length();i++)
+			{
+				boolean a = false;
+				for(int j=0;j<figures.length;j++)
+				{
+					if(str.charAt(i) == figures[j])
+						a = true;
+				}
+				if(!a)
+					return Input.INVALID_INT_INPUT;
+			}
 			
 			return Integer.parseInt(str);
 			} 
