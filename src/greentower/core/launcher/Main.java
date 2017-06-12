@@ -1,7 +1,4 @@
-package greentower.core.launcher;
-
-import greentower.IO.InputGraphic;
-import greentower.IO.OutputGraphic;
+package greentower.core.launcher;import greentower.IO.InputGraphic;import greentower.IO.OutputGraphic;
 import greentower.core.Game;
 
 /**

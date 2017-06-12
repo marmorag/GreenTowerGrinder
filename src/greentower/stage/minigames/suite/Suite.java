@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.util.Random;
 
 import greentower.IO.Input;
+import greentower.IO.InputConsole;
 import greentower.IO.Output;
+import greentower.IO.OutputConsole;
 import greentower.core.scenario.Scenario;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
@@ -36,9 +38,9 @@ public class Suite extends MiniGame{
 	{
 		super(dialog, stageIndex);
 		Random r = new Random();
-		this.op1 = r.nextInt(11);
-		this.op2 = r.nextInt(11);
-		this.nb1 = r.nextInt(11);
+		this.op1 = r.nextInt(6);
+		this.op2 = r.nextInt(6);
+		this.nb1 = r.nextInt(6);
 		this.nb2 = this.nb1 * this.op1 + this.op2;
 		this.nb3 = this.nb2 * this.op1 + this.op2;
 		this.nb4 = this.nb3 * this.op1 + this.op2;
@@ -53,12 +55,13 @@ public class Suite extends MiniGame{
 	 */
 	public int playStage(Output display, Input input) throws NumberFormatException, IOException
 	{
-		display.showStageIntroduction(Scenario.getStageIndex(this));
-		display.showDialog(this.dialog);
+		//display.showStageIntroduction(Scenario.getStageIndex(this));
+		//display.showDialog(this.dialog);
 		display.Suite(this.nb1, this.nb2, this.nb3, this.nb4);
 		
 		int result;
-		if(input.inputInt() == this.nb5)
+		int in = input.inputInt();
+		if(in == this.nb5)
 			result = MiniGame.RESULT_VICTORY;
 		else
 			result = MiniGame.RESULT_LOOSE;
@@ -72,12 +75,14 @@ public class Suite extends MiniGame{
 	public void init() 
 	{
 		Random r = new Random();
-		this.op1 = r.nextInt(11);
-		this.op2 = r.nextInt(11);
-		this.nb1 = r.nextInt(11);
+		this.op1 = r.nextInt(6);
+		this.op2 = r.nextInt(6);
+		this.nb1 = r.nextInt(6);
 		this.nb2 = this.nb1 * this.op1 + this.op2;
 		this.nb3 = this.nb2 * this.op1 + this.op2;
 		this.nb4 = this.nb3 * this.op1 + this.op2;
 		this.nb5 = this.nb4 * this.op1 + this.op2;
 	}
+	
 }
+
