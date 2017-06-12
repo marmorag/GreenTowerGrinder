@@ -25,15 +25,16 @@ public class ButtonEditor extends DefaultCellEditor
 	/**
 	 *
 	 */
-	private ButtonListener bListener = new ButtonListener();
+	private ButtonListener bListener;
 
 	/**
 	 * @param checkbox
 	 */
 	@SuppressWarnings("unqualified-field-access")
-	public ButtonEditor(JCheckBox checkbox){
+	public ButtonEditor(JCheckBox checkbox)
+	{
 		super(checkbox);
-
+		this.bListener = new ButtonListener();
 		this.button = new JButton();
 		this.button.setOpaque(true);
 		this.button.addActionListener(bListener);

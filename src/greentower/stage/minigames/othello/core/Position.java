@@ -72,7 +72,7 @@ public class Position
 	public boolean equals(Object anotherObject)
 	{
 		if(anotherObject == this) return false;
-		if(anotherObject instanceof Position) return false;
+		if(!(anotherObject instanceof Position)) return false;
 		Position anotherPosition = (Position) anotherObject;
 		if(this.line == anotherPosition.line)
 			if(this.column == anotherPosition.column)

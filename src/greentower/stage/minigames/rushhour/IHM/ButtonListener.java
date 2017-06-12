@@ -23,6 +23,7 @@ class ButtonListener implements ActionListener
 	 * Row of the table
 	 */
 	private int row;
+	
 	/**
 	 * table
 	 */

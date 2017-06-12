@@ -95,12 +95,6 @@ public class GraphicDisplay extends JFrame implements Output
 //	}
 
 	@Override
-	public void showDialog(String[] dialog)
-	{
-		
-	}
-
-	@Override
 	public void showText(String str)
 	{
 		
@@ -108,12 +102,6 @@ public class GraphicDisplay extends JFrame implements Output
 
 	@Override
 	public void showError(String str)
-	{
-		
-	}
-
-	@Override
-	public void showAnswers(String[] answers)
 	{
 		
 	}
@@ -218,6 +206,18 @@ public class GraphicDisplay extends JFrame implements Output
 	public void showHangman(int nbErreur, String motAAfficher)
 	{
 
+		
+	}
+
+	@Override
+	public void showDialog(String dialog) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showAnswers(String answers) {
+		// TODO Auto-generated method stub
 		
 	}
 

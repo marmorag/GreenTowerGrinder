@@ -18,9 +18,10 @@ public class MainWindow extends JFrame implements ActionListener{
 	 * Serial Version ID
 	 */
 	private static final long serialVersionUID = 1L;	/**	 * The new game button	 */
-	private JButton bt1;	/**	 * The leave button	 */
-	private JButton bt2 = new Button("Leave");	/**	 * The console	 */
-	private Console console; 	/**	 * To use sound	 */
+	private JButton bt1;		/**	 * The leave button	 */
+	private JButton bt2;	/**	 * The console	 */
+	private Console console; 
+	/**	 * To use sound	 */
 	protected Clip clip;
 	/**	 * Set params of JFrame	 */
 	public MainWindow(){
@@ -30,7 +31,7 @@ public class MainWindow extends JFrame implements ActionListener{
 		this.setUndecorated(true);
 		this.setLocationRelativeTo(null);
 		this.setIconImage(new ImageIcon("images/graine.png").getImage());
-		this.setVisible(true);
+		this.setVisible(true);
 		//Jpanel
 		this.setContentPane(new GTG(new ImageIcon("images/mojo.jpg").getImage()));
 		this.setVisible(true);
