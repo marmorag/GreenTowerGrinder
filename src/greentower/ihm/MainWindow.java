@@ -26,8 +26,8 @@ public class MainWindow extends JFrame implements ActionListener{
 
 	private JButton bt1 = new Button("Nouvelle Partie");
 	private JButton bt2 = new Button("Quitter");
-	public Console console; 
-	public Clip clip;
+	private Console console; 
+	protected Clip clip;
 	
 	public MainWindow(){
 

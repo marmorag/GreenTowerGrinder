@@ -28,15 +28,15 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public JTextArea outputTextArea;
-	public JTextField inputTextArea;
-	private JScrollPane scrollPane;
-	private JPanel JPan;
-	public JLabel prompt;
-	public String current_input;
-	public boolean isPressed;
-	private Image image;
-	private MainWindow mainWindow;
+	private JTextArea outputTextArea;
+	private JTextField inputTextArea;
+	private  JScrollPane scrollPane;
+	private  JPanel JPan;
+	private JLabel prompt;
+	private String current_input;
+	protected boolean isPressed;
+	private  Image image;
+	private  MainWindow mainWindow;
 
 	public Console(MainWindow main){
 		super();
