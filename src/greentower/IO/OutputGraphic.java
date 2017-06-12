@@ -29,35 +29,35 @@ public class OutputGraphic implements Output{
 	
 	@Override
 	public void showDialog(Dialog dialog) {
-		this.mainWindow.console.setOutput(dialog.toString());
+		this.mainWindow.getConsole().setOutput(dialog.toString());
 	}
 
 	@Override
 	public void showText(String str) {
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 	}
 	
 	// PENDU
 	@Override
 	public void notifyWin(int nbCoups, String motATrouver) {
 		String str = "Felicitations vous avez réussi en : "+ nbCoups +"coups\n"+"Le mot était :"+motATrouver+"\n";		
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 	}
 
 	@Override
 	public void letterError() {
-		this.mainWindow.console.setOutput("\nLa lettre n'est pas contenu dans le mot!\n");
+		this.mainWindow.getConsole().setOutput("\nLa lettre n'est pas contenu dans le mot!\n");
 		
 	}
 
 	@Override
 	public void notifyLoose(String motATrouver) {
-		this.mainWindow.console.setOutput("Dommage vous avez perdu"+"Le mot était :"+motATrouver+"\n");
+		this.mainWindow.getConsole().setOutput("Dommage vous avez perdu"+"Le mot était :"+motATrouver+"\n");
 	}
 
 	@Override
 	public void getChar() {
-		this.mainWindow.console.setOutput("\nVotre lettre :");
+		this.mainWindow.getConsole().setOutput("\nVotre lettre :");
 	}
 
 	@Override
@@ -114,7 +114,7 @@ public class OutputGraphic implements Output{
 				break;
 		}
 		str = str +"Le mot a trouver :"+motAAfficher+"\n";
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 		
 	}
 
@@ -123,7 +123,7 @@ public class OutputGraphic implements Output{
 		String str = "\n***************************************************\n"
 					+"------------- ENTREE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------\n"
 					+"***************************************************\n" ;
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 		
 	}
 
@@ -132,7 +132,7 @@ public class OutputGraphic implements Output{
 		String str = "\n***************************************************\n"
 				+"------------- SORTIE DANS L'ETAGE N+" + (stageIndex + 1) + " -------------\n"
 				+"***************************************************\n" ;
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 //		try
 //		{
 //			Thread.sleep(1000);
@@ -141,7 +141,7 @@ public class OutputGraphic implements Output{
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-//		this.mainWindow.console.setText("");
+//		this.mainWindow.getConsole().setText("");
 		
 	}
 
@@ -160,13 +160,13 @@ public class OutputGraphic implements Output{
 	@Override
 	public void showError(String str) {
 		System.err.println(str);
-		this.mainWindow.console.setOutput("\n\n"+str);
+		this.mainWindow.getConsole().setOutput("\n\n"+str);
 		
 	}
 
 	@Override
 	public void gambling(int[] grid) {
-		this.mainWindow.console.setOutput("\n"+grid[0]+"|"+grid[1]+"|"+grid[2]);
+		this.mainWindow.getConsole().setOutput("\n"+grid[0]+"|"+grid[1]+"|"+grid[2]);
 	}
 
 	@Override
@@ -183,12 +183,12 @@ public class OutputGraphic implements Output{
 		"LESS: plus petit" +
 		"\nLe nombre est : "+number;
 		
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 	}
 
 	@Override
 	public void ShiFuMi(Sign player, Sign random) {
-		this.mainWindow.console.setOutput(String.valueOf(player)+" VS "+String.valueOf(random));
+		this.mainWindow.getConsole().setOutput(String.valueOf(player)+" VS "+String.valueOf(random));
 		
 	}
 
@@ -204,7 +204,7 @@ public class OutputGraphic implements Output{
 		String str = "\n"+grid[0][0]+"|"+grid[0][1]+"|"+grid[0][2]+"\n"
 					+grid[1][0]+"|"+grid[1][1]+"|"+grid[1][2]+"\n"
 					+grid[2][0]+"|"+grid[2][1]+"|"+grid[2][2]+"\n";
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 	}
 
 	@Override
@@ -221,19 +221,19 @@ public class OutputGraphic implements Output{
 		}
 		str = str + "\nRendez-vous au prochain étage";
 		
-		this.mainWindow.console.setOutput(str);		
+		this.mainWindow.getConsole().setOutput(str);		
 	}
 
 	@Override
 	public void showPrompt()
 	{
-		this.mainWindow.console.updateFocus();
-		//this.mainWindow.console.setInput("\n> ");
+		this.mainWindow.getConsole().updateFocus();
+		//this.mainWindow.getConsole().setInput("\n> ");
 	}
 
 	@Override
 	public void showAnswers(Answers answers) {
-		this.mainWindow.console.setOutput(answers.toString());
+		this.mainWindow.getConsole().setOutput(answers.toString());
 		
 	}
 
@@ -253,7 +253,7 @@ public class OutputGraphic implements Output{
 			grid += "\n";
 		}
 		grid += "*************************\n";
-		this.mainWindow.console.setOutput(grid);		
+		this.mainWindow.getConsole().setOutput(grid);		
 	}
 
 

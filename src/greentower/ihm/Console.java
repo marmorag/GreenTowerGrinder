@@ -34,7 +34,7 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 	private  JPanel JPan;
 	private JLabel prompt;
 	private String current_input;
-	protected boolean isPressed;
+	private boolean isPressed;
 	private  Image image;
 	private  MainWindow mainWindow;
 
@@ -189,6 +189,6 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-	}
+	}		public boolean getIsPressed(){		return this.isPressed;	}
 
 }
