@@ -13,6 +13,9 @@ public class GTG extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * An readable image
+	 */
 	 private Image img;
      
 	    public GTG(Image img){

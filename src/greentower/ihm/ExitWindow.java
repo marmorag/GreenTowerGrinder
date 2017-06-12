@@ -22,12 +22,12 @@ public class ExitWindow extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 6629973015506180972L;
 
 	/**
-	 * 
+	 * The yes answer button
 	 */
 	private JButton yesButton;
 	
 	/**
-	 *
+	 * The no answer button
 	 */
 	private JButton noButton;
 	
@@ -37,8 +37,9 @@ public class ExitWindow extends JFrame implements ActionListener{
 	private JLabel exitLabel;
 	
 	private JPanel panel;
+	
 	/**
-	 * 
+	 * The MainWindow
 	 */
 	private JFrame mainWindow;
 	
@@ -76,6 +77,9 @@ public class ExitWindow extends JFrame implements ActionListener{
 	}
 	
 	@Override
+	/**
+	 * Action performed on event
+	 */
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource() == yesButton)
 		{

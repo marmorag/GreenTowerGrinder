@@ -27,7 +27,9 @@ public class InputConsole implements Input
 	{
 		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
-	
+	/**
+	 * Return the input int
+	 */
 	public int inputInt()
 	{
 		try
@@ -59,6 +61,9 @@ public class InputConsole implements Input
 	}
 	
 	@Override
+	/**
+	 * Return the input char
+	 */
 	public char inputChar()
 	{
 		try
@@ -75,7 +80,9 @@ public class InputConsole implements Input
 			return '\0';
 		}
 	}
-	
+	/**
+	 * Return the input String
+	 */
 	public String inputString()
 	{
 		try
@@ -88,6 +95,9 @@ public class InputConsole implements Input
 		}
 	}
 	
+	/**
+	 * return the num of the Car
+	 */
 	public int getCar(GameBoard board)
 	{
 		int numCar = -1;
@@ -120,7 +130,9 @@ public class InputConsole implements Input
 			}
 		return direction;
 	}
-
+	/**
+	 * Input of the player decision
+	 */
 	@Override
 	public int getMove() {
 		System.out.println("Entrez le déplacement :");

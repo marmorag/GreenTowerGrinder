@@ -23,9 +23,9 @@ public class MainWindow extends JFrame implements ActionListener{
 	 */
 	private static final long serialVersionUID = 1L;
 
-
-	private JButton bt1 = new Button("Nouvelle Partie");
-	private JButton bt2 = new Button("Quitter");
+	/**	 * The new game button	 */
+	private JButton bt1 = new Button("New Game");	/**	 * The leave button	 */
+	private JButton bt2 = new Button("Leave");	/**	 * The console	 */
 	private Console console; 
 	protected Clip clip;
 	
@@ -89,10 +89,10 @@ public class MainWindow extends JFrame implements ActionListener{
 			 //System.exit(0);		    
 		 }
 	}
-	
+		/**	 * Stop the game sound	 */
 	public void stopSong()
 	{
 		this.clip.stop();
-	}	public Console getConsole(){		return this.console;	}
+	}	/**	 * Getter for the console	 * @return	 */	public Console getConsole(){		return this.console;	}
 
 }

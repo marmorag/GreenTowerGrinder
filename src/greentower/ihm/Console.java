@@ -27,15 +27,15 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	private JTextArea outputTextArea;
-	private JTextField inputTextArea;
-	private  JScrollPane scrollPane;
-	private  JPanel JPan;
-	private JLabel prompt;
-	private String current_input;
-	private boolean isPressed;
-	private  Image image;
+		/**	 * The outpout screen	 */
+	private JTextArea outputTextArea;	/**	 * The input console	 */
+	private JTextField inputTextArea;	/**	 * The scrool bar	 */
+	private  JScrollPane scrollPane;	/**	 * The main panel	 */
+	private  JPanel JPan;	/**	 * 	 */
+	private JLabel prompt;	/**	 * User current input	 */
+	private String current_input;	/**	 * Test if key is pressed	 */
+	private boolean isPressed;	/**	 * Font image	 */
+	private  Image image;	/**	 * The MainWindow	 */
 	private  MainWindow mainWindow;
 
 	public Console(MainWindow main){
@@ -167,7 +167,7 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 		//this.scrollPane.set//setVerticalScrollBar().setValue(outputTextArea.getRows());
 	}
 
-	@Override
+	@Override	/**	 * What happen when the key is pressed	 */
 	public void keyTyped(KeyEvent e) {
 		System.out.println("event key typed");
 		int key = e.getKeyCode();
