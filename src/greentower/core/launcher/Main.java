@@ -3,7 +3,7 @@ package greentower.core.launcher;
 import greentower.IO.InputGraphic;
 import greentower.IO.OutputGraphic;
 import greentower.core.Game;
-import greentower.core.Player;
+import greentower.stage.minigames.rushhour.Player;
 
 /**
  * Main class of the game.
@@ -22,6 +22,6 @@ public class Main
 		// Game v1.0
 		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");
 		OutputGraphic out = new OutputGraphic();
-		new Game(new Player("Coucou"), out, new InputGraphic(out)).play();
+		new Game("Coucou", out, new InputGraphic(out)).play();
 	}
 }
