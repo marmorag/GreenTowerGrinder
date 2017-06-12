@@ -3,10 +3,22 @@ package greentower.IO;
 import greentower.stage.minigames.rushhour.Direction;
 import greentower.stage.minigames.rushhour.GameBoard;
 
+/**
+ * @author 
+ *
+ */
 public class InputGraphic implements Input{
 
+	/**
+	 * Way to display
+	 */
 	protected OutputGraphic output;
 	
+	/**
+	 * Construct InputGraphic
+	 * Save output
+	 * @param output
+	 */
 	public InputGraphic(OutputGraphic output)
 	{
 		this.output = output;

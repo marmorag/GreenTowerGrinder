@@ -8,6 +8,7 @@ import greentower.IO.OutputConsole;
 import greentower.stage.minigames.MiniGame;
 
 /**
+ * Heads Or Tails game
  * @author
  *
  */
