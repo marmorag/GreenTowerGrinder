@@ -1,8 +1,6 @@
 package greentower.stage.minigames.gamblingmachine;
 
 import greentower.IO.Output;
-import greentower.core.scenario.Scenario;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
 
@@ -17,7 +15,7 @@ public class GamblingMachine extends MiniGame{
 	 * @param stageIndex 
 	 *
 	 */
-	public GamblingMachine(Dialog dialog, int stageIndex)
+	public GamblingMachine(String[] dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 	}

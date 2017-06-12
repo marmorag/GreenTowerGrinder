@@ -1,12 +1,11 @@
 
 package greentower.stage.minigames.lessormore;
 
+import java.awt.Dialog;
 import java.io.IOException;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.core.scenario.Scenario;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
 /**
@@ -29,7 +28,7 @@ public class LessOrMore extends MiniGame
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public LessOrMore(Dialog dialog, int stageIndex)
+	public LessOrMore(String[] dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		this.base = (int)(Math.random() * (10-1)) + 1;

@@ -4,8 +4,6 @@ import java.util.Random;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.core.scenario.Scenario;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
 /**
@@ -41,7 +39,7 @@ public class TicTacToe extends MiniGame{
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public TicTacToe(Dialog dialog, int stageIndex)
+	public TicTacToe(String[] dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		for(int i=0;i<3;i++)

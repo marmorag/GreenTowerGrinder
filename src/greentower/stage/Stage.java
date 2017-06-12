@@ -2,7 +2,6 @@ package greentower.stage;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.stage.choice.Dialog;
 
 /**
  * This interface enables to launch a stage (MiniGame or Choice, whatever)
@@ -20,7 +19,7 @@ public abstract class Stage
 	/**
 	 *  Dialog to say
 	 */
-	protected Dialog dialog;
+	protected String[] dialog;
 
 	/**
 	 * Interface used to input anything needed
@@ -69,7 +68,7 @@ public abstract class Stage
 	/**
 	 * @return the dialog
 	 */
-	public Dialog getDialog() 
+	public String[] getDialog() 
 	{
 		return this.dialog;
 	}

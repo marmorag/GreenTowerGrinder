@@ -3,7 +3,6 @@ package greentower.stage.minigames;
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.stage.Stage;
-import greentower.stage.choice.Dialog;
 
 /**
  * This class represents Mini Game' basement
@@ -28,7 +27,7 @@ public abstract class MiniGame extends Stage
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	protected MiniGame(Dialog dialog, int stageIndex)
+	protected MiniGame(String[] dialog, int stageIndex)
 	{
 		this.index = stageIndex;
 		this.dialog = dialog;
