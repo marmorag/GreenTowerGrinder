@@ -1,5 +1,8 @@
 package greentower.stage.minigames.rushhour;
 
+import java.sql.Time;
+import java.util.Timer;
+
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.stage.choice.Dialog;
@@ -57,8 +60,14 @@ public class RushHourGame extends MiniGame
 	{
 		this.inputTool = input;
 		this.outputTool = display;
+		Time t = new Time(0);
 		while(this.board.isFinish() == false)
 		{
+			if(new Time(0).getTime()-t.getTime()<2)
+			{
+				display.showMiniGameResult(1);
+				return 1;
+			}
 			//TODO timer to loose
 			display.showRushHourBoard(this.board);
 			display.showText("Entrez le numéro de la voiture:");
