@@ -101,7 +101,7 @@ public class OthelloGame extends MiniGame
 	 */
 	public int playStage(Output display)
 	{
-		display.showStageIntroduction(Scenario.getStageIndex(this));
+		display.showStageIntroduction(this.index);
 		display.showDialog(this.dialog);
 		display.showText("RULES");
 		display.showText("Tu vas jouer une partie d'Othello. Tu joues les pions noirs (B).");
@@ -167,7 +167,7 @@ public class OthelloGame extends MiniGame
 			result = MiniGame.RESULT_LOOSE;
 		
 		display.showMiniGameResult(result);
-		display.showStageEnd(Scenario.getStageIndex(this));
+		display.showStageEnd(this.index);
 		return result;
 	}
 

@@ -28,7 +28,7 @@ public class HeadsOrTails extends MiniGame {
 	@Override
 	public int playStage(Output display, Input input)
 	{
-		display.showStageIntroduction(Scenario.getStageIndex(this));
+		display.showStageIntroduction(this.index);
 		display.showDialog(this.dialog);
 		
 		int player=-1;
@@ -49,7 +49,7 @@ public class HeadsOrTails extends MiniGame {
 
 		display.HeadsOrTails(random);
 		display.showMiniGameResult(result);
-		display.showStageEnd(Scenario.getStageIndex(this));
+		display.showStageEnd(this.index);
 		return result;
 	}
 

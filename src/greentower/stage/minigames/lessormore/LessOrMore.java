@@ -54,7 +54,7 @@ public class LessOrMore extends MiniGame
 	public int playStage(Output display, Input input) throws Exception
 	{
 		this.init();
-		display.showStageIntroduction(Scenario.getStageIndex(this));
+		display.showStageIntroduction(this.index);
 		display.showDialog(this.dialog);
 		display.showText("RULES");
 		display.showText("Tu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché");
@@ -87,7 +87,7 @@ public class LessOrMore extends MiniGame
 			throw new Exception();
 
 		display.showMiniGameResult(result);
-		display.showStageEnd(Scenario.getStageIndex(this));
+		display.showStageEnd(this.index);
 		return result;
 
 	}

@@ -31,7 +31,7 @@ public class Shifumi extends MiniGame{
 	 */
 	public int playStage(Output display, Input input) throws Exception
 	{
-		display.showStageIntroduction(Scenario.getStageIndex(this));
+		display.showStageIntroduction(this.index);
 		display.showDialog(this.dialog);
 
 		display.showPrompt(); 
@@ -70,7 +70,7 @@ public class Shifumi extends MiniGame{
 				result = MiniGame.RESULT_VICTORY;
 		
 		display.showMiniGameResult(result);
-		display.showStageEnd(Scenario.getStageIndex(this));
+		display.showStageEnd(this.index);
 		return result;
 	}
 
