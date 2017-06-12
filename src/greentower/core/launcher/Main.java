@@ -3,7 +3,6 @@ package greentower.core.launcher;
 import greentower.IO.InputGraphic;
 import greentower.IO.OutputGraphic;
 import greentower.core.Game;
-import greentower.stage.minigames.rushhour.Player;
 
 /**
  * Main class of the game.

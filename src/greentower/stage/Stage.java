@@ -35,7 +35,7 @@ public abstract class Stage
 	/**
 	 * Index of Stage in ListOfStages
 	 */
-	protected int index;
+	public int index;
 
 
 	/**

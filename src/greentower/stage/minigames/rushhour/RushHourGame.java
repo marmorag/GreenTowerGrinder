@@ -35,21 +35,6 @@ public class RushHourGame extends MiniGame
 	 */
 	private Input input;
 
-	/**
-	 * create a game with a default player and a game board level configuration
-	 * @param display 
-	 * @param input 
-	 * @param dialog 
-	 * @param indexOfStage 
-	 */
-	//public RushHourGame(Player player, int level, Display display)
-	public RushHourGame(Output display, Input input, Dialog dialog, int indexOfStage)
-	{
-		super(display, input, dialog, indexOfStage);
-		this.board = new GameBoard();
-		this.display = display;
-		this.input = input;
-	}
 	
 	/**
 	 * @param dialog
@@ -70,6 +55,8 @@ public class RushHourGame extends MiniGame
 	 */
 	public int playStage(Output display, Input input) throws Exception
 	{
+		this.inputTool = input;
+		this.outputTool = display;
 		while(this.board.isFinish() == false)
 		{
 			//TODO timer to loose

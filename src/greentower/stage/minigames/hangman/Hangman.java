@@ -47,12 +47,10 @@ public class Hangman extends MiniGame{
 	 * @param dialog The dialog to display at the beginning of the game
 	 * @param stageIndex 
 	 */
-	public Hangman(Output display, Input input, Dialog dialog, int stageIndex)
+	public Hangman(Dialog dialog, int stageIndex)
 	{
-		super(display,input,dialog, stageIndex);
+		super(dialog, stageIndex);
 		
-		this.inputTool = input;
-		this.outputTool = display;
 		Random r = new Random();
 		int randomNumber = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
@@ -144,8 +142,11 @@ public class Hangman extends MiniGame{
 	 * @param display The current displaying methods
 	 * @return int The index of the nextStage to play (Logical ling between Stage)
 	 */
-	public int playStage(Output display)
+	public int playStage(Output display, Input input)
 	{
+		this.outputTool = display;
+		this.inputTool = input;
+		
 		display.showStageIntroduction(ListOfStages.getStageIndex(this));
 		char inputLetter;
 
