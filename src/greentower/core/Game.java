@@ -1,6 +1,7 @@
 package greentower.core;
 
 import greentower.IO.Input;
+import greentower.IO.InputGraphic;
 import greentower.IO.Output;
 import greentower.stage.Stage;
 
@@ -37,12 +38,6 @@ public class Game
 	 * Tool used to get anything from the player
 	 */
 	private Input input;
-	
-	/**
-	 * True if the game is executed in graphical mode, false else
-	 */
-	@SuppressWarnings("unused")
-	private boolean isGraphical;
 
 	//private Scenario scenario;
 
@@ -50,9 +45,9 @@ public class Game
 	 * Default constructor
 	 * @param player who launched the game
 	 * @param display
-	 * @param isGraphical
+	 * @param inputGraphic
 	 */
-	public Game(String player, Output display, boolean isGraphical)
+	public Game(String player, Output display, Input input)
 	{
 		this.input = input;
 		this.numberOfRounds = 0;

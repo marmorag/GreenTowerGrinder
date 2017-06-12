@@ -22,7 +22,7 @@ public class TestOneStage
 		try
 		{
 			int stageResult = ListOfStages.getStageAt(22).playStage(new OutputConsole(), new InputConsole());
-			ListOfStages.getStageAt(ListOfStages.getNextStages(ListOfStages.getStageAt(22).index, stageResult).playStage(new OutputConsole(), new InputConsole()));
+			ListOfStages.getStageAt(ListOfStages.getNextStages(ListOfStages.getStageAt(22).getIndex(), stageResult).playStage(new OutputConsole(), new InputConsole()));
 		}
 		catch (Exception e)
 		{
