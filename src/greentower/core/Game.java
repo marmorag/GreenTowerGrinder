@@ -24,7 +24,7 @@ public class Game
 	 * Indicates who is playing
 	 */
 	@SuppressWarnings("unused")
-	private Player player;
+	private String player;
 
 	/**
 	 * Indicates the stage loaded
@@ -32,7 +32,7 @@ public class Game
 	private Stage currentStage;
 
 	/**
-	 * Way to display 
+	 * Way to display
 	 */
 	private Output display;
 
@@ -40,20 +40,22 @@ public class Game
 	 * Tool used to get anything from the player
 	 */
 	private Input input;
-	
+
 	/**
 	 * True if the game is executed in graphical mode, false else
 	 */
 	@SuppressWarnings("unused")
 	private boolean isGraphical;
 
+	//private Scenario scenario;
+
 	/**
 	 * Default constructor
 	 * @param player who launched the game
 	 * @param display
-	 * @param isGraphical 
+	 * @param isGraphical
 	 */
-	public Game(Player player, Output display, boolean isGraphical)
+	public Game(String player, Output display, boolean isGraphical) //Scenario initialScenario
 	{
 		if(isGraphical)
 			this.input = new InputGraphic((OutputGraphic)display);
@@ -74,17 +76,17 @@ public class Game
 		try
 		{
 			while(this.currentStage.getFinalStage() == false)
-			{	
+			{
 				 try
-				 { 
+				 {
 					 int result = this.currentStage.playStage(this.display, this.input);
 					 this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
-				 } 
+				 }
 				 catch (Exception e)
 				 {
 					 //EMPTY
 				 }
-			}			
+			}
 		}
 		catch (Exception e)
 		{
@@ -92,7 +94,7 @@ public class Game
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Enables player to leave the current game
 	 */
