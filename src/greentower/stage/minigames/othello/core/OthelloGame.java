@@ -1,7 +1,7 @@
 package greentower.stage.minigames.othello.core;
 
 import greentower.IO.Output;
-import greentower.core.ListOfStages;
+import greentower.core.scenario.Scenario;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 import greentower.stage.minigames.othello.ihm.IHMOthello;
@@ -101,7 +101,7 @@ public class OthelloGame extends MiniGame
 	 */
 	public int playStage(Output display)
 	{
-		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showStageIntroduction(Scenario.getStageIndex(this));
 		display.showDialog(this.dialog);
 		display.showText("RULES");
 		display.showText("Tu vas jouer une partie d'Othello. Tu joues les pions noirs (B).");
@@ -167,7 +167,7 @@ public class OthelloGame extends MiniGame
 			result = MiniGame.RESULT_LOOSE;
 		
 		display.showMiniGameResult(result);
-		display.showStageEnd(ListOfStages.getStageIndex(this));
+		display.showStageEnd(Scenario.getStageIndex(this));
 		return result;
 	}
 

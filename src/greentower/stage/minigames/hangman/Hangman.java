@@ -8,7 +8,7 @@ import java.util.Random;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.core.ListOfStages;
+import greentower.core.scenario.Scenario;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
@@ -146,7 +146,7 @@ public class Hangman extends MiniGame{
 	 */
 	public int playStage(Output display)
 	{
-		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showStageIntroduction(Scenario.getStageIndex(this));
 		char inputLetter;
 
 		while(!this.endOfGame() && this.nbTurn <= this.wordToFind.length()+5)
@@ -179,7 +179,7 @@ public class Hangman extends MiniGame{
 			result = MiniGame.RESULT_LOOSE;
 		
 		display.showMiniGameResult(result);
-		display.showStageEnd(ListOfStages.getStageIndex(this));
+		display.showStageEnd(Scenario.getStageIndex(this));
 		return result;
 	}
 

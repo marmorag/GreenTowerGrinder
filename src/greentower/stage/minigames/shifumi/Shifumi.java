@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.core.ListOfStages;
+import greentower.core.scenario.Scenario;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
@@ -31,7 +31,7 @@ public class Shifumi extends MiniGame{
 	 */
 	public int playStage(Output display, Input input) throws Exception
 	{
-		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showStageIntroduction(Scenario.getStageIndex(this));
 		display.showDialog(this.dialog);
 
 		display.showPrompt(); 
@@ -70,7 +70,7 @@ public class Shifumi extends MiniGame{
 				result = MiniGame.RESULT_VICTORY;
 		
 		display.showMiniGameResult(result);
-		display.showStageEnd(ListOfStages.getStageIndex(this));
+		display.showStageEnd(Scenario.getStageIndex(this));
 		return result;
 	}
 
