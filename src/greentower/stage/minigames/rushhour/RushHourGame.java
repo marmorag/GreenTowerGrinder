@@ -68,7 +68,6 @@ public class RushHourGame extends MiniGame
 				display.showMiniGameResult(1);
 				return 1;
 			}
-			//TODO timer to loose
 			display.showRushHourBoard(this.board);
 			display.showText("Entrez le numéro de la voiture:");
 			int numCar = input.getCar(this.board);

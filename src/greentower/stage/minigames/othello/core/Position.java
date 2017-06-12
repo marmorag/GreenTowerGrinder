@@ -62,12 +62,13 @@ public class Position
 		return this.column;
 	}
 
-	//TODO (done) override equals and hashCode
+	@Override
 	public int hashCode()
 	{
 		return this.line * this.column + this.line;
 	}
 
+	@Override
 	public boolean equals(Object anotherObject)
 	{
 		if(anotherObject == this) return false;

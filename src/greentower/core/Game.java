@@ -82,7 +82,6 @@ public class Game
 		}
 		catch (Exception e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

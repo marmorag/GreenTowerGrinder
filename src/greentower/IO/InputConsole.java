@@ -108,7 +108,6 @@ public class InputConsole implements Input
 			}
 			catch (NumberFormatException e)
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -142,7 +141,6 @@ public class InputConsole implements Input
 		}
 		catch (NumberFormatException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return 0;

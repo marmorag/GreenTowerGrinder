@@ -66,7 +66,6 @@ public class MainWindow extends JFrame implements ActionListener{
 		} 
 		catch (LineUnavailableException | IOException | UnsupportedAudioFileException e) 
 		{
-			// TODO Auto-generated catch block
 			//e.printStackTrace();
 			System.err.print("SoundException");
 		}
