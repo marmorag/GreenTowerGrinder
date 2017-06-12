@@ -13,16 +13,14 @@ public class GTG extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public static void main(String[] args) {
-
-		new MainWindow();
-		}
-	
 	 private Image img;
      
 	    public GTG(Image img){
 	        this.img = img;
 	    }
+
+	public GTG() {
+		}
 
 	public void paintComponent(Graphics g) {
 		g.drawImage(img, 0, 0, null);
