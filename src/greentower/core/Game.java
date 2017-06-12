@@ -1,6 +1,7 @@
 package greentower.core;
 
 import greentower.IO.Input;
+import greentower.IO.InputGraphic;
 import greentower.IO.Output;
 import greentower.stage.Stage;
 
@@ -50,9 +51,9 @@ public class Game
 	 * Default constructor
 	 * @param player who launched the game
 	 * @param display
-	 * @param isGraphical
+	 * @param inputGraphic
 	 */
-	public Game(String player, Output display, boolean isGraphical)
+	public Game(String player, Output display, InputGraphic inputGraphic)
 	{
 		this.input = input;
 		this.numberOfRounds = 0;

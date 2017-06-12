@@ -7,7 +7,8 @@ public class InputGraphic implements Input{
 
 	protected OutputGraphic output;
 	
-	public InputGraphic(OutputGraphic output){
+	public InputGraphic(OutputGraphic output)
+	{
 		this.output = output;
 	}
 

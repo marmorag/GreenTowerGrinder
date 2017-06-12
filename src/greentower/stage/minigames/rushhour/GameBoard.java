@@ -31,7 +31,7 @@ public class GameBoard
 	/**
 	 * cars in the game Red car (important) is at 0 index
 	 */
-	public Car[] cars;
+	private Car[] cars;
 
 	/**
 	 * Create the board considering the level
@@ -134,6 +134,13 @@ public class GameBoard
 	public int numberOfCar()
 	{
 		return this.cars.length;
+	}
+	
+	/**
+	 * @return the cars
+	 */
+	public Car[] getCars() {
+		return this.cars;
 	}
 
 }
