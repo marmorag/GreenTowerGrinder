@@ -58,7 +58,7 @@ public class InputGraphic implements Input{
 	@Override
 	public int getCar(GameBoard board) {
 		int car = this.inputInt();
-		while(car<0 && car>board.cars.length){
+		while(car<0 && car>board.getCars().length){
 			car = this.inputInt();
 		}
 		return car;
