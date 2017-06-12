@@ -55,7 +55,7 @@ public class Suite extends MiniGame{
 	 */
 	public int playStage(Output display, Input input) throws NumberFormatException, IOException
 	{
-		//display.showStageIntroduction(Scenario.getStageIndex(this));
+		display.showStageIntroduction(this.index);
 		//display.showDialog(this.dialog);
 		display.Suite(this.nb1, this.nb2, this.nb3, this.nb4);
 		
@@ -67,7 +67,7 @@ public class Suite extends MiniGame{
 			result = MiniGame.RESULT_LOOSE;
 		
 		display.showMiniGameResult(result);
-		display.showStageEnd(Scenario.getStageIndex(this));
+		display.showStageEnd(this.index);
 		return result;
 	}
 
