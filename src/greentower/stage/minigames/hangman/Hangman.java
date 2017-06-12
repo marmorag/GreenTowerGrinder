@@ -147,7 +147,7 @@ public class Hangman extends MiniGame{
 		this.outputTool = display;
 		this.inputTool = input;
 		
-		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showStageIntroduction(Scenario.getStageIndex(this));
 		char inputLetter;
 
 		while(!this.endOfGame() && this.nbTurn <= this.wordToFind.length()+5)
