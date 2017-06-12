@@ -12,7 +12,7 @@ public interface Output {
 	 * Show question or explanation
 	 * @param dialog
 	 */
-	public void showDialog(String[] dialog);
+	public void showDialog(String dialog);
 	/**
 	 * Display the given String
 	 * @param str
@@ -21,9 +21,13 @@ public interface Output {
 	/**
 	 * Display the given String array
 	 * @param answers
-	 */
-	public void showAnswers(String[] answers);
-
+	 */
+
+	/**
+	 * Display the given answer
+	 * @param answers
+	 */
+	public void showAnswers(String answers);
 	// Used only in Pendu game, implementation in other games should be void
 	/**	 * @param nbCoups	 * @param motATrouver	 */	public void notifyWin(int nbCoups, String motATrouver);
 	/**	 * 	 */	public void letterError();

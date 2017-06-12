@@ -12,23 +12,17 @@ import greentower.stage.minigames.shifumi.Sign;
  */
 public class OutputConsole implements Output{	
 	@Override
-	public void showDialog(String[] dialog) {
-		String result = "";
-		for(int index = 0; index < dialog.length; index++)
-			result += dialog[index] + "\n";
-		System.out.println(result);
+	public void showDialog(String dialog) {
+		System.out.println(dialog);
 	}
 	@Override
 	public void showText(String str) {
 		System.out.println(str);
 	}		@Override	public void showError(String str){		System.err.println(str);	}
 	@Override
-	public void showAnswers(String[] answers) 
+	public void showAnswers(String answers) 
 	{
-		String result = "";
-		for(int index = 0; index < answers.length; index++)
-			result += answers[index] + "\n";
-		System.out.println(result);
+		System.out.println(answers);
 	}	@Override	public void showStageIntroduction(int stageIndex) 	{		System.out.println("***************************************************");		System.out.println("------------- ENTREE DANS L'ETAGE N�" + (stageIndex + 1) + " -------------");		System.out.println("***************************************************");	}	@Override	public void showStageEnd(int stageIndex) 	{		System.out.println("***************************************************");		System.out.println("------------- SORTIE DANS L'ETAGE N�" + (stageIndex + 1) + " -------------");		System.out.println("***************************************************" + OutputConsole.gotN(10));		}		@Override	public void showMiniGameResult(int result) 	{		System.out.println(OutputConsole.gotN(2));		if (result == MiniGame.RESULT_VICTORY)		{			System.out.println("F�liciations tu as gagn� le mini-jeu.");		}		else		{			System.out.println("Dommage, tu as perdu");		}				System.out.println("Rendez-vous au prochain �tage");	}	@Override	public void showPrompt() 	{		System.out.print("\n> ");	}
 	
 	/**

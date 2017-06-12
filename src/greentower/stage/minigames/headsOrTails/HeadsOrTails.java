@@ -18,7 +18,7 @@ public class HeadsOrTails extends MiniGame {
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public HeadsOrTails(String[] dialog, int stageIndex)
+	public HeadsOrTails(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 	}

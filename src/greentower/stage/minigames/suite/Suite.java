@@ -30,7 +30,7 @@ public class Suite extends MiniGame{
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public Suite(String[] dialog, int stageIndex)
+	public Suite(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		Random r = new Random();

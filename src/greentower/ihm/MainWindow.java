@@ -24,7 +24,7 @@ public class MainWindow extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 
 	/**	 * The new game button	 */
-	private JButton bt1 = new Button("New Game");	/**	 * The leave button	 */
+	private JButton bt1;	/**	 * The leave button	 */
 	private JButton bt2 = new Button("Leave");	/**	 * The console	 */
 	private Console console; 
 	protected Clip clip;
@@ -32,8 +32,6 @@ public class MainWindow extends JFrame implements ActionListener{
 	public MainWindow(){
 
 		//def frame
-		
-		JFrame frame = new JFrame();
 		
 		//propri�t� JFrame
 		this.setTitle("The Green Tower Grinder");
@@ -45,10 +43,10 @@ public class MainWindow extends JFrame implements ActionListener{
 		this.setVisible(true);
 		
 		//Jpanel
-		frame.setContentPane(new GTG(new ImageIcon("images/mojo.jpg").getImage()));
-		frame.setVisible(true);
+		this.setContentPane(new GTG(new ImageIcon("images/mojo.jpg").getImage()));
+		this.setVisible(true);
 		
-		//Bouton
+		//Bouton		bt1 = new Button("New Game");		bt2 = new Button("Leave");
 		bt1.addActionListener(this);
 		bt2.addActionListener(this);
 		this.getContentPane().add(bt1);

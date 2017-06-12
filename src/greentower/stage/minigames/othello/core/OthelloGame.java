@@ -37,7 +37,7 @@ public class OthelloGame extends MiniGame
 	 * @param dialog 
 	 * @param stageIndex 
 	 */
-	public OthelloGame(String[] dialog, int stageIndex)
+	public OthelloGame(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		

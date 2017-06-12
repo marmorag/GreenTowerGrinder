@@ -26,13 +26,19 @@ public class OutputGraphic implements Output{
 	}
 	
 	@Override
-	public void showDialog(String[] dialog) {
+	public void showDialog(String dialog) {
 		this.mainWindow.getConsole().setOutput(dialog.toString());
 	}
 
 	@Override
 	public void showText(String str) {
 		this.mainWindow.getConsole().setOutput(str);
+	}
+	
+	@Override
+	public void showAnswers(String answers) {
+		this.mainWindow.getConsole().setOutput(answers.toString());
+		
 	}
 	
 	// PENDU
@@ -230,12 +236,6 @@ public class OutputGraphic implements Output{
 	{
 		this.mainWindow.getConsole().updateFocus();
 		//this.mainWindow.getConsole().setInput("\n> ");
-	}
-
-	@Override
-	public void showAnswers(String[] answers) {
-		this.mainWindow.getConsole().setOutput(answers.toString());
-		
 	}
 
 	@Override

@@ -39,7 +39,7 @@ public class TicTacToe extends MiniGame{
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public TicTacToe(String[] dialog, int stageIndex)
+	public TicTacToe(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		for(int i=0;i<3;i++)
