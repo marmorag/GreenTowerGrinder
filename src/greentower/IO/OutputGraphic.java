@@ -1,8 +1,6 @@
 package greentower.IO;
 
 import greentower.ihm.MainWindow;
-import greentower.stage.choice.Answers;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 import greentower.stage.minigames.rushhour.GameBoard;
 import greentower.stage.minigames.rushhour.Position;
@@ -28,7 +26,7 @@ public class OutputGraphic implements Output{
 	}
 	
 	@Override
-	public void showDialog(Dialog dialog) {
+	public void showDialog(String[] dialog) {
 		this.mainWindow.getConsole().setOutput(dialog.toString());
 	}
 
@@ -232,7 +230,7 @@ public class OutputGraphic implements Output{
 	}
 
 	@Override
-	public void showAnswers(Answers answers) {
+	public void showAnswers(String[] answers) {
 		this.mainWindow.getConsole().setOutput(answers.toString());
 		
 	}
@@ -255,6 +253,4 @@ public class OutputGraphic implements Output{
 		grid += "*************************\n";
 		this.mainWindow.getConsole().setOutput(grid);		
 	}
-
-
 }

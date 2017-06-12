@@ -1,11 +1,7 @@
 package greentower.stage.minigames.rushhour;
 
-import java.sql.Time;
-import java.util.Timer;
-
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
 /**
@@ -43,7 +39,7 @@ public class RushHourGame extends MiniGame
 	 * @param dialog
 	 * @param indexOfStage
 	 */
-	public RushHourGame(Dialog dialog, int indexOfStage)
+	public RushHourGame(String[] dialog, int indexOfStage)
 	{
 		super(dialog, indexOfStage);
 		this.board = new GameBoard();

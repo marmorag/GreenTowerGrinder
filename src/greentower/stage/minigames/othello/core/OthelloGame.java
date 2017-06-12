@@ -1,8 +1,6 @@
 package greentower.stage.minigames.othello.core;
 
 import greentower.IO.Output;
-import greentower.core.scenario.Scenario;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 import greentower.stage.minigames.othello.ihm.IHMOthello;
 import greentower.stage.minigames.othello.ihm.console.IHMOthelloConsole;
@@ -39,7 +37,7 @@ public class OthelloGame extends MiniGame
 	 * @param dialog 
 	 * @param stageIndex 
 	 */
-	public OthelloGame(Dialog dialog, int stageIndex)
+	public OthelloGame(String[] dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		

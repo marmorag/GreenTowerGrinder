@@ -1,16 +1,7 @@
 package greentower.stage.minigames.hangman;
 
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.util.Random;
-
-import greentower.IO.Input;
-import greentower.IO.Output;
-import greentower.core.scenario.Scenario;
-import greentower.stage.choice.Dialog;
-import greentower.stage.minigames.MiniGame;
+import java.awt.Dialog;import java.io.BufferedReader;import java.io.FileInputStream;import java.io.InputStreamReader;import java.util.Random;import greentower.IO.Input;import greentower.IO.Output;import greentower.core.scenario.Scenario;import greentower.stage.minigames.MiniGame;
 
 /**
  * @author Guillaume
@@ -47,7 +38,7 @@ public class Hangman extends MiniGame{
 	 * @param dialog The dialog to display at the beginning of the game
 	 * @param stageIndex 
 	 */
-	public Hangman(Dialog dialog, int stageIndex)
+	public Hangman(String[] dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		
@@ -147,7 +138,7 @@ public class Hangman extends MiniGame{
 		this.outputTool = display;
 		this.inputTool = input;
 		
-		display.showStageIntroduction(Scenario.getStageIndex(this));
+		display.showStageIntroduction(this.index);
 		char inputLetter;
 
 		while(!this.endOfGame() && this.nbTurn <= this.wordToFind.length()+5)
@@ -180,7 +171,7 @@ public class Hangman extends MiniGame{
 			result = MiniGame.RESULT_LOOSE;
 		
 		display.showMiniGameResult(result);
-		display.showStageEnd(Scenario.getStageIndex(this));
+		display.showStageEnd(this.index);
 		return result;
 	}
 

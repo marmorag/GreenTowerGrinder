@@ -4,11 +4,7 @@ import java.io.IOException;
 import java.util.Random;
 
 import greentower.IO.Input;
-import greentower.IO.InputConsole;
 import greentower.IO.Output;
-import greentower.IO.OutputConsole;
-import greentower.core.scenario.Scenario;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 /**
  * Find the fifth number
@@ -34,7 +30,7 @@ public class Suite extends MiniGame{
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public Suite(Dialog dialog, int stageIndex)
+	public Suite(String[] dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		Random r = new Random();

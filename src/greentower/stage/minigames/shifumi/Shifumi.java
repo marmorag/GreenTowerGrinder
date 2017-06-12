@@ -4,8 +4,6 @@ import java.io.IOException;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.core.scenario.Scenario;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
 /**
@@ -19,7 +17,7 @@ public class Shifumi extends MiniGame{
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public Shifumi(Dialog dialog, int stageIndex)
+	public Shifumi(String[] dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 	}

@@ -1,19 +1,13 @@
 package greentower.stage.minigames.rushhour.IHM;
-import java.io.File;
-
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;
+
 import greentower.IO.Output;
-import greentower.stage.choice.Answers;
-import greentower.stage.choice.Dialog;
-import greentower.stage.minigames.othello.player.console.ConsolePlayer;
 import greentower.stage.minigames.rushhour.GameBoard;
 import greentower.stage.minigames.rushhour.Position;
-import greentower.stage.minigames.rushhour.RushHourGame;
 import greentower.stage.minigames.shifumi.Sign;
 
 /**
@@ -101,7 +95,7 @@ public class GraphicDisplay extends JFrame implements Output
 //	}
 
 	@Override
-	public void showDialog(Dialog dialog)
+	public void showDialog(String[] dialog)
 	{
 		// TODO Auto-generated method stub
 		
@@ -122,7 +116,7 @@ public class GraphicDisplay extends JFrame implements Output
 	}
 
 	@Override
-	public void showAnswers(Answers answers)
+	public void showAnswers(String[] answers)
 	{
 		// TODO Auto-generated method stub
 		

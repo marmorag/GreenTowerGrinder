@@ -5,8 +5,6 @@ import java.util.Random;
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.IO.OutputConsole;
-import greentower.core.scenario.Scenario;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
 /**
@@ -20,7 +18,7 @@ public class HeadsOrTails extends MiniGame {
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public HeadsOrTails(Dialog dialog, int stageIndex)
+	public HeadsOrTails(String[] dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 	}

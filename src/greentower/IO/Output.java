@@ -1,6 +1,7 @@
 package greentower.IO;
 
-import greentower.stage.choice.Answers;import greentower.stage.choice.Dialog;import greentower.stage.minigames.rushhour.GameBoard;import greentower.stage.minigames.shifumi.Sign;
+import greentower.stage.minigames.rushhour.GameBoard;
+import greentower.stage.minigames.shifumi.Sign;
 /**
  * Interface for all displaying
  * @author 
@@ -11,7 +12,7 @@ public interface Output {
 	 * Show question or explanation
 	 * @param dialog
 	 */
-	public void showDialog(Dialog dialog);
+	public void showDialog(String[] dialog);
 	/**
 	 * Display the given String
 	 * @param str
@@ -21,7 +22,7 @@ public interface Output {
 	 * Display the given String array
 	 * @param answers
 	 */
-	public void showAnswers(Answers answers);
+	public void showAnswers(String[] answers);
 
 	// Used only in Pendu game, implementation in other games should be void
 	/**	 * @param nbCoups	 * @param motATrouver	 */	public void notifyWin(int nbCoups, String motATrouver);
