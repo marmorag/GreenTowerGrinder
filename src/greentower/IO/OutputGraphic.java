@@ -45,7 +45,7 @@ public class OutputGraphic implements Output{
 	}
 
 	@Override
-	public void erreurLettre() {
+	public void letterError() {
 		this.mainWindow.console.setOutput("\nLa lettre n'est pas contenu dans le mot!\n");
 		
 	}
@@ -56,7 +56,7 @@ public class OutputGraphic implements Output{
 	}
 
 	@Override
-	public void demanderCaractere() {
+	public void getChar() {
 		this.mainWindow.console.setOutput("\nVotre lettre :");
 	}
 
@@ -255,7 +255,6 @@ public class OutputGraphic implements Output{
 		grid += "*************************\n";
 		this.mainWindow.console.setOutput(grid);		
 	}
-	
-	//GamblingMachine
+
 
 }
