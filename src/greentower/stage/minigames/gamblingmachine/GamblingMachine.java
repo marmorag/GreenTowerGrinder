@@ -1,7 +1,7 @@
 package greentower.stage.minigames.gamblingmachine;
 
 import greentower.IO.Output;
-import greentower.core.ListOfStages;
+import greentower.core.scenario.Scenario;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
@@ -30,7 +30,7 @@ public class GamblingMachine extends MiniGame{
 	 */
 	public int playStage(Output display)
 	{
-		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showStageIntroduction(Scenario.getStageIndex(this));
 		display.showDialog(this.dialog);
 		
 		int result;
@@ -46,7 +46,7 @@ public class GamblingMachine extends MiniGame{
 			result = MiniGame.RESULT_LOOSE;
 
 		display.showMiniGameResult(result);
-		display.showStageEnd(ListOfStages.getStageIndex(this));
+		display.showStageEnd(Scenario.getStageIndex(this));
 		return result;
 	}
 

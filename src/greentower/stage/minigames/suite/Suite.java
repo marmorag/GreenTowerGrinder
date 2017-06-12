@@ -5,7 +5,7 @@ import java.util.Random;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.core.ListOfStages;
+import greentower.core.scenario.Scenario;
 import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 /**
@@ -53,7 +53,7 @@ public class Suite extends MiniGame{
 	 */
 	public int playStage(Output display, Input input) throws NumberFormatException, IOException
 	{
-		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showStageIntroduction(Scenario.getStageIndex(this));
 		display.showDialog(this.dialog);
 		display.Suite(this.nb1, this.nb2, this.nb3, this.nb4);
 		
@@ -64,7 +64,7 @@ public class Suite extends MiniGame{
 			result = MiniGame.RESULT_LOOSE;
 		
 		display.showMiniGameResult(result);
-		display.showStageEnd(ListOfStages.getStageIndex(this));
+		display.showStageEnd(Scenario.getStageIndex(this));
 		return result;
 	}
 

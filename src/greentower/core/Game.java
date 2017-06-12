@@ -3,6 +3,7 @@ package greentower.core;
 import greentower.IO.Input;
 import greentower.IO.InputGraphic;
 import greentower.IO.Output;
+import greentower.core.scenario.Scenario;
 import greentower.stage.Stage;
 
 /**
@@ -52,7 +53,7 @@ public class Game
 		this.input = input;
 		this.numberOfRounds = 0;
 		this.player = player;
-		this.currentStage = ListOfStages.getStageAt(0);
+		this.currentStage = Scenario.getStageAt(0);
 		this.display = display;
 	}
 
@@ -68,7 +69,7 @@ public class Game
 				 try
 				 {
 					 int result = this.currentStage.playStage(this.display, this.input);
-					 this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
+					 this.currentStage = Scenario.getNextStages(Scenario.getStageIndex(this.currentStage), result);
 				 }
 				 catch (Exception e)
 				 {

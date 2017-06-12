@@ -1,4 +1,4 @@
-package greentower.core;
+package greentower.core.scenario;
 
 import greentower.stage.Stage;
 import greentower.stage.choice.Answers;
@@ -15,7 +15,7 @@ import greentower.stage.minigames.tictactoe.TicTacToe;
  * @author viognef
  *
  */
-public class ListOfStages
+public class Scenario
 {
 	/**
 	 * Table of all stages
@@ -98,7 +98,7 @@ public class ListOfStages
 	 */
 	public static Stage getNextStages(int currentStage, int stageResult)
 	{
-		return ListOfStages.stages[nextStages[currentStage][stageResult] - 1];
+		return Scenario.stages[nextStages[currentStage][stageResult] - 1];
 	}
 	
 	/**
@@ -110,7 +110,7 @@ public class ListOfStages
 	 */
 	public static Stage getStageAt(int index)
 	{
-		return ListOfStages.stages[index];
+		return Scenario.stages[index];
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class ListOfStages
 		int result = 0;
 		while(true)
 		{
-			if (ListOfStages.stages[result] == currentStage)
+			if (Scenario.stages[result] == currentStage)
 				break;
 			result++;
 		}
