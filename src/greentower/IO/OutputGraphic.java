@@ -13,7 +13,7 @@ import greentower.stage.minigames.shifumi.Sign;
 public class OutputGraphic implements Output{
 
 	/**
-	 * Main Frame of the application
+	 * 
 	 */
 	protected MainWindow mainWindow;
 	
@@ -41,7 +41,7 @@ public class OutputGraphic implements Output{
 		
 	}
 	
-	// Hangman
+	// PENDU
 	@Override
 	public void notifyWin(int nbCoups, String motATrouver) {
 		String str = "Felicitations vous avez réussi en : "+ nbCoups +"coups\n"+"Le mot était :"+motATrouver+"\n";		
@@ -65,7 +65,7 @@ public class OutputGraphic implements Output{
 	}
 
 	@Override
-	public void showHangman(int nbErreur, String motAAfficher) {
+	public void showPendu(int nbErreur, String motAAfficher) {
 		String str = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
 		switch(nbErreur){
@@ -137,6 +137,15 @@ public class OutputGraphic implements Output{
 				+"------------- SORTIE DANS L'ETAGE N+" + (stageIndex + 1) + " -------------\n"
 				+"***************************************************\n" ;
 		this.mainWindow.getConsole().setOutput(str);
+//		try
+//		{
+//			Thread.sleep(1000);
+//		} catch (InterruptedException e)
+//		{
+//			e.printStackTrace();
+//		}
+//		this.mainWindow.getConsole().setText("");
+		
 	}
 
 	@Override
@@ -153,6 +162,7 @@ public class OutputGraphic implements Output{
 	public void showError(String str) {
 		System.err.println(str);
 		this.mainWindow.getConsole().setOutput("\n\n"+str);
+		
 	}
 
 	@Override
@@ -169,6 +179,7 @@ public class OutputGraphic implements Output{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 
 	@Override
@@ -223,6 +234,7 @@ public class OutputGraphic implements Output{
 	@Override
 	public void showPrompt()
 	{
+		this.mainWindow.getConsole().updateFocus();
 		//this.mainWindow.getConsole().setInput("\n> ");
 	}
 

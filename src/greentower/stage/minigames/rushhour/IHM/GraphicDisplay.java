@@ -215,7 +215,7 @@ public class GraphicDisplay extends JFrame implements Output
 	}
 
 	@Override
-	public void showHangman(int nbErreur, String motAAfficher)
+	public void showPendu(int nbErreur, String motAAfficher)
 	{
 
 		

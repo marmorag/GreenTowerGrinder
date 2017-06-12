@@ -45,7 +45,13 @@ public class RushHourGame extends MiniGame
 		this.board = new GameBoard();
 	}
 
-	@Override
+	/**
+	 * Game's launching
+	 * While the player has not win, he can move cars
+	 * At each movement, display updated grid
+	 * @return 
+	 * @throws Exception 
+	 */
 	public int playStage(Output display, Input input) throws Exception
 	{
 		this.inputTool = input;

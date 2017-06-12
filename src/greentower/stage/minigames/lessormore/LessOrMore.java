@@ -1,7 +1,9 @@
+
 package greentower.stage.minigames.lessormore;
 
-
+import java.awt.Dialog;
 import java.io.IOException;
+
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.stage.minigames.MiniGame;
@@ -16,7 +18,6 @@ public class LessOrMore extends MiniGame
 	 * the first card which is randomly picked
 	 */
 	private int base;
-	
 	/**
 	 * the new card which is randomly picked
 	 */

@@ -7,7 +7,7 @@ import greentower.stage.minigames.shifumi.Sign;
  * @author 
  *
  */
-public interface Output {
+public interface Output {
 	/**
 	 * Show question or explanation
 	 * @param dialog
@@ -28,22 +28,9 @@ public interface Output {
 	 * @param answers
 	 */
 	public void showAnswers(String answers);
-	// Used only in Pendu game, implementation in other games should be void
-	/**
-	 * Notify the player if he wins	 * @param nbTurns	 * @param wordToFind	 */
-	public void notifyWin(int nbTurns, String wordToFind);
-	/**	 * Notify the player if he entries a wrong letter	 */	public void letterError();
-	/**	 * @param wordToFind	 */
-	public void notifyLoose(String wordToFind);
-	/**	 * Notify player that he has to enter a character	 */	public void getChar();	/**	 * Show the introduction message of the given stage index	 * @param stageIndex	 * 			Stage's index	 */	public void showStageIntroduction(int stageIndex);
-		/**	 * Show the end message of the given stage index	 * @param stageIndex	 * 			Stage's index	 */	public void showStageEnd(int stageIndex);	/**
-	 * Display a gambling machine game	 * @param grid	 */	public void gambling(int[] grid);	/**
-	 * Display a Heads Or Tails game	 * @param face	 */	public void HeadsOrTails(int face);		/**
-	 * Display a Less Or More game	 * @param number	 */	public void LessOrMore(int number);		/**	 * Display a mastermind game	 */	public void MasterMind();		/**	 * Display a Othello game	 */	public void Othello();		/**
-	 * Display a Shi Fu Mi game	 * @param player	 * @param random	 */	public void ShiFuMi(Sign player, Sign random);		/**
-	 * Display a Suite game	 * @param nb1	 * @param nb2	 * @param nb3	 * @param nb4	 */	public void Suite(int nb1, int nb2, int nb3, int nb4);		/**
-	 * Display a Tic Tac Toe game	 * @param grid	 */	public void TicTacToe(int[][] grid);	/**
-	 * Display the result of the game	 * @param result	 */	void showMiniGameResult(int result);	/**	 * Display a prompt (">")	 */	void showPrompt();		/**
-	 * Display RushHourGame board	 * @param board	 */	public void showRushHourBoard(GameBoard board);	/**
-	 * Display a hangman game	 * @param errorNumber	 * @param wordToDisplay	 */	public void showHangman(int errorNumber, String wordToDisplay);
+	// Used only in Pendu game, implementation in other games should be void
+	/**	 * @param nbCoups	 * @param motATrouver	 */	public void notifyWin(int nbCoups, String motATrouver);
+	/**	 * 	 */	public void letterError();
+	/**	 * @param motATrouver	 */	public void notifyLoose(String motATrouver);
+	/**	 * 	 */	public void getChar();	/**	 * Show the introduction message of the given stage index	 * @param stageIndex	 * 			Stage's index	 */	public void showStageIntroduction(int stageIndex);	/**	 * Show the end message of the given stage index	 * @param stageIndex	 * 			Stage's index	 */	public void showStageEnd(int stageIndex);	/**	 * @param grid	 */	public void gambling(int[] grid);	/**	 * @param face	 */	public void HeadsOrTails(int face);		/**	 * @param number	 */	public void LessOrMore(int number);		/**	 * 	 */	public void MasterMind();		/**	 * 	 */	public void Othello();		/**	 * @param player	 * @param random	 */	public void ShiFuMi(Sign player, Sign random);		/**	 * @param nb1	 * @param nb2	 * @param nb3	 * @param nb4	 */	public void Suite(int nb1, int nb2, int nb3, int nb4);		/**	 * @param grid	 */	public void TicTacToe(int[][] grid);	/**	 * @param result	 */	void showMiniGameResult(int result);	/**	 * 	 */	void showPrompt();		/**	 * @param board	 */	public void showRushHourBoard(GameBoard board);	/**	 * @param errorNumber	 * @param wordToDisplay	 */	public void showPendu(int errorNumber, String wordToDisplay);
 }

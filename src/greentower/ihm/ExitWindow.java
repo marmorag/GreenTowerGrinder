@@ -32,13 +32,10 @@ public class ExitWindow extends JFrame implements ActionListener{
 	private JButton noButton;
 	
 	/**
-	 * Label to exit
+	 * 
 	 */
 	private JLabel exitLabel;
 	
-	/**
-	 * Panel of the pop-up
-	 */
 	private JPanel panel;
 	
 	/**
@@ -46,10 +43,7 @@ public class ExitWindow extends JFrame implements ActionListener{
 	 */
 	private JFrame mainWindow;
 	
-	/**
-	 * Set params of JFrame
-	 * @param main
-	 */
+	
 	public ExitWindow(JFrame main) {
 		this.setTitle("");
 		this.setSize(250, 75);

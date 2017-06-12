@@ -22,7 +22,11 @@ public class Shifumi extends MiniGame{
 		super(dialog, stageIndex);
 	}
 
-	@Override
+	/**
+	 * Return if player win or not
+	 * @return true if player win and false if not
+	 * @throws IOException 
+	 */
 	public int playStage(Output display, Input input) throws Exception
 	{
 		display.showStageIntroduction(this.index);

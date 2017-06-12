@@ -18,7 +18,6 @@ public class Suite extends MiniGame{
 	 */
 	@SuppressWarnings("javadoc")
 	private int nb1,nb2,nb3,nb4,nb5;
-
 	/**
 	 * Operations
 	 */
@@ -44,7 +43,12 @@ public class Suite extends MiniGame{
 		this.nb5 = this.nb4 * this.op1 + this.op2;
 	}
 
-	@Override
+	/**
+	 * Display 4 first number and let player enter his result
+	 * @return {boolean} if the player win or not
+	 * @throws IOException 
+	 * @throws NumberFormatException 
+	 */
 	public int playStage(Output display, Input input) throws NumberFormatException, IOException
 	{
 		display.showStageIntroduction(this.index);

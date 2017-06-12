@@ -17,6 +17,7 @@ public abstract class Player
 	/**
 	 * @param name
 	 */
+	@SuppressWarnings("javadoc")
 	protected Player(String name)
 	{
 		this.name = name;
