@@ -16,8 +16,15 @@ public class Combination {
 	/**
 	 * Attribute defines the combinations' storage
 	 */
-	public Color[] combination;
+	private Color[] combination;
 
+
+	/**
+	 * @return the combination
+	 */
+	public Color[] getCombination() {
+		return this.combination;
+	}
 
 	/**
 	 * Creates a new combination, filled with random colors

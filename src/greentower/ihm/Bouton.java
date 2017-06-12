@@ -13,13 +13,15 @@ public class Bouton extends JButton {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public Bouton(String string){
+	public Bouton(String string)
+	{
 		super();
 		this.setText(string);
 		initialize();
 	}
 	
-	public void initialize(){
+	public void initialize()
+	{
 		
 		this.setForeground(Color.WHITE);
 		this.setBackground(Color.GRAY);
