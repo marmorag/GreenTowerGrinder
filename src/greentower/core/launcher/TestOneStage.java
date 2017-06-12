@@ -26,7 +26,6 @@ public class TestOneStage
 		}
 		catch (Exception e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -55,7 +55,6 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 			this.setIconImage(ImageIO.read(new File("images/graine.png")));
 		} catch (IOException e2)
 		{
-			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
 		
@@ -64,7 +63,6 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 			this.setFont(Font.createFont(Font.TRUETYPE_FONT, new File("images/SweetLeaf.ttf")));
 		} catch (FontFormatException | IOException e1)
 		{
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
@@ -74,7 +72,6 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 		try {
 			this.image = ImageIO.read(new File("images/bc.jpg"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -184,11 +181,9 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
 	}
 	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+	public void keyReleased(KeyEvent e) {
 	}		public boolean getIsPressed(){		return this.isPressed;	}
 
 }
