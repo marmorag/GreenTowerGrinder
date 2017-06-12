@@ -1,7 +1,6 @@
 package greentower.core;
 
 import greentower.IO.Input;
-import greentower.IO.InputGraphic;
 import greentower.IO.Output;
 import greentower.core.scenario.Scenario;
 import greentower.stage.Stage;
@@ -39,22 +38,26 @@ public class Game
 	 * Tool used to get anything from the player
 	 */
 	private Input input;
+	
+	private Scenario scenario; 
 
 	//private Scenario scenario;
 
 	/**
 	 * Default constructor
 	 * @param player who launched the game
+	 * @param initialScenario 
 	 * @param display
-	 * @param inputGraphic
+	 * @param input 
 	 */
-	public Game(String player, Output display, Input input)
+	public Game(String player, Scenario initialScenario, Output display, Input input)
 	{
 		this.input = input;
 		this.numberOfRounds = 0;
 		this.player = player;
-		this.currentStage = Scenario.getStageAt(0);
 		this.display = display;
+		this.scenario = initialScenario;
+		this.currentStage = this.scenario.getStageAt(0);
 	}
 
 	/**
@@ -69,7 +72,7 @@ public class Game
 				 try
 				 {
 					 int result = this.currentStage.playStage(this.display, this.input);
-					 this.currentStage = Scenario.getNextStages(Scenario.getStageIndex(this.currentStage), result);
+					 this.currentStage = this.scenario.getNextStages(this.scenario.getStageIndex(this.currentStage), result);
 				 }
 				 catch (Exception e)
 				 {

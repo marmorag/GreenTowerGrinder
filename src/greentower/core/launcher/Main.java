@@ -21,6 +21,6 @@ public class Main
 		// Game v1.0
 		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");
 		OutputGraphic out = new OutputGraphic();
-		new Game("Coucou", out, new InputGraphic(out)).play();
+		new Game("Coucou", null, out, new InputGraphic(out)).play();
 	}
 }
