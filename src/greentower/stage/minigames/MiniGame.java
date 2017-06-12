@@ -31,7 +31,22 @@ public abstract class MiniGame extends Stage
 	{
 		this.index = stageIndex;
 		this.dialog = dialog;
+		this.stageIsFinal = false;
 	}
+	
+	/**
+	 * Mini Game's contructor
+	 * @param dialog
+	 * @param stageIndex 
+	 * @param initialStageIsFinal 
+	 */
+	protected MiniGame(String[] dialog, int stageIndex, boolean initialStageIsFinal)
+	{
+		this.index = stageIndex;
+		this.dialog = dialog;
+		this.stageIsFinal = initialStageIsFinal;
+	}
+	
 	
 	/**
 	 * Allows to play game

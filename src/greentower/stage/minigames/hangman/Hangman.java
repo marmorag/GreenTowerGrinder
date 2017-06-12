@@ -1,7 +1,7 @@
 package greentower.stage.minigames.hangman;
 
 
-import java.awt.Dialog;import java.io.BufferedReader;import java.io.FileInputStream;import java.io.InputStreamReader;import java.util.Random;import greentower.IO.Input;import greentower.IO.Output;import greentower.core.scenario.Scenario;import greentower.stage.minigames.MiniGame;
+import java.io.BufferedReader;import java.io.FileInputStream;import java.io.InputStreamReader;import java.util.Random;import greentower.IO.Input;import greentower.IO.Output;import greentower.stage.minigames.MiniGame;
 
 /**
  * @author Guillaume

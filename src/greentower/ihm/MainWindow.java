@@ -25,7 +25,11 @@ public class MainWindow extends JFrame implements ActionListener{
 
 	/**	 * The new game button	 */
 	private JButton bt1;	/**	 * The leave button	 */
+<<<<<<< refs/remotes/origin/develop
 	private JButton bt2 = new Button("Leave");	/**	 * The console	 */
+=======
+	private JButton bt2;	/**	 * The console	 */
+>>>>>>> [LOGIC] Moved all attributes's initialization into constructors
 	private Console console; 
 	protected Clip clip;
 	
@@ -46,7 +50,11 @@ public class MainWindow extends JFrame implements ActionListener{
 		this.setContentPane(new GTG(new ImageIcon("images/mojo.jpg").getImage()));
 		this.setVisible(true);
 		
+<<<<<<< refs/remotes/origin/develop
 		//Bouton		bt1 = new Button("New Game");		bt2 = new Button("Leave");
+=======
+		//Bouton		this.bt1 = new Button("New game");		this.bt2 = new Button("Leave");
+>>>>>>> [LOGIC] Moved all attributes's initialization into constructors
 		bt1.addActionListener(this);
 		bt2.addActionListener(this);
 		this.getContentPane().add(bt1);

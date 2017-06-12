@@ -14,7 +14,7 @@ public abstract class Stage
 	/**
 	 * stageIsFinal is true when the the stage is the last one
 	 */
-	protected boolean stageIsFinal = false;
+	protected boolean stageIsFinal;
 
 	/**
 	 *  Dialog to say

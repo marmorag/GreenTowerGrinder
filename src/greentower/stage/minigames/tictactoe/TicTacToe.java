@@ -23,7 +23,7 @@ public class TicTacToe extends MiniGame{
 	/**
 	 * Grid of TicTacToe, contains cross and round
 	 */
-	private int[][] grid = new int [3][3];
+	private int[][] grid;
 	/**
 	 * Winner of the game
 	 */
@@ -42,6 +42,7 @@ public class TicTacToe extends MiniGame{
 	public TicTacToe(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
+		this.grid = new int[3][3];
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
 				this.grid[i][j] = 0;
