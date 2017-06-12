@@ -187,6 +187,9 @@ public class Pendu extends MiniGame{
 	}
 
 
+	/**
+	 * Initialize a pendu game
+	 */
 	@Override
 	public void init() 
 	{

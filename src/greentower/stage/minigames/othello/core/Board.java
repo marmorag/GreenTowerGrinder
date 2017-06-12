@@ -92,7 +92,9 @@ public class Board
 		return result;
 	}
 
-
+	/**
+	 * Méthod that return the Board IHM
+	 */
 	public String toString()
 	{
 		int line, column;

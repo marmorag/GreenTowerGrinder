@@ -100,6 +100,9 @@ public class RushHourGame extends MiniGame
 		return 0;
 	}
 
+	/**
+	 * Initialize a RushHour Game board
+	 */
 	@Override
 	public void init() 
 	{

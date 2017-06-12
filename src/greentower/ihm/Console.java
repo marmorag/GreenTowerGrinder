@@ -28,14 +28,42 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * IHM output screen
+	 */
 	public JTextArea outputTextArea;
+	/**
+	 * IHM input area
+	 */
 	public JTextField inputTextArea;
+	/**
+	 * The scroll bar
+	 */
 	private JScrollPane scrollPane;
+	/**
+	 * IHM panel
+	 */
 	private JPanel JPan;
+	/**
+	 * 
+	 */
 	public JLabel prompt;
+	/**
+	 * 
+	 */
 	public String current_input;
+	/**
+	 * 
+	 */
 	public boolean isPressed;
+	/**
+	 * 
+	 */
 	private Image image;
+	
+	/**
+	 * Default IHM constructor  
+	 */
 	private MainWindow mainWindow;
 
 	public Console(MainWindow main){

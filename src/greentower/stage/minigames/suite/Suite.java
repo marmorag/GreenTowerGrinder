@@ -68,6 +68,9 @@ public class Suite extends MiniGame{
 		return result;
 	}
 
+	/**
+	 * Initialize a Suite game
+	 */
 	@Override
 	public void init() 
 	{

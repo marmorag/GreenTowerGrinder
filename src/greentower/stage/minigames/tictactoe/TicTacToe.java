@@ -207,6 +207,7 @@ public class TicTacToe extends MiniGame{
 		}
 	}
 
+	
 	@Override
 	public int playStage(Output display, Input input) throws NumberFormatException 
 	{
@@ -232,6 +233,9 @@ public class TicTacToe extends MiniGame{
 		return result;
 	}
 
+	/**
+	 * Initialize a TicTacToe game board 
+	 */
 	@Override
 	public void init() 
 	{

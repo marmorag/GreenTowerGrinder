@@ -25,6 +25,9 @@ public class HeadsOrTails extends MiniGame {
 		super(dialog, stageIndex);
 	}
 
+	/**
+	 * Initialiaze a HeadsOrTails game
+	 */
 	@Override
 	public int playStage(Output display, Input input)
 	{

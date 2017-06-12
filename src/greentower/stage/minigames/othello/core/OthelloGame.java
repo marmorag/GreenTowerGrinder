@@ -42,10 +42,10 @@ public class OthelloGame extends MiniGame
 	public OthelloGame(Dialog dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
-		
+
 		Player[] players = {new ConsolePlayer(), new RandomPlayer()};
 		IHMOthelloConsole IHM = new IHMOthelloConsole();
-		
+
 		this.players = players;
 		this.board = new Board();
 		this.IHM = (IHMOthello) IHM;
@@ -61,7 +61,7 @@ public class OthelloGame extends MiniGame
 	 */
 	public void playARound(Color currentPlayerColor, Position pawnPosition)
 	{
-		  this.board.placeAPawn(currentPlayerColor, pawnPosition);
+		this.board.placeAPawn(currentPlayerColor, pawnPosition);
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class OthelloGame extends MiniGame
 		for (int line = 0; line < Board.MAX_COORDINATE; line++)
 			for (int column = 0; column < Board.MAX_COORDINATE; column++)
 				if(this.board.actionIsValid(new Position(line,column), Color.values()[currentPlayerNumber]))
-						return true;
+					return true;
 		return false;
 
 	}
@@ -105,7 +105,7 @@ public class OthelloGame extends MiniGame
 		display.showDialog(this.dialog);
 		display.showText("RULES");
 		display.showText("Tu vas jouer une partie d'Othello. Tu joues les pions noirs (B).");
-		
+
 		this.IHM.displayStartOfGame();
 
 		int numberOfRound = 1;
@@ -160,18 +160,20 @@ public class OthelloGame extends MiniGame
 		this.IHM.displayResult(this.board.numberOfPawns(Color.WHITE), Color.WHITE);
 
 		int result;
-		
+
 		if(this.board.numberOfPawns(Color.WHITE) >= this.board.numberOfPawns(Color.BLACK))
 			result = MiniGame.RESULT_VICTORY;
 		else
 			result = MiniGame.RESULT_LOOSE;
-		
+
 		display.showMiniGameResult(result);
 		display.showStageEnd(ListOfStages.getStageIndex(this));
 		return result;
 	}
 
-
+	/**
+	 * Initialize a new Board
+	 */
 	@Override
 	public void init() 
 	{		

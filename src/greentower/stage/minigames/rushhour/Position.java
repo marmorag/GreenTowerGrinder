@@ -87,6 +87,9 @@ public class Position implements Serializable
 	}
 
 
+	/**
+	 * Override the equals method
+	 */
 
 	@Override
 	public boolean equals(Object obj)
