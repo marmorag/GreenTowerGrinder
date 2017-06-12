@@ -21,11 +21,6 @@ public class RushHourGame extends MiniGame
 	private GameBoard board;
 
 	/**
-	 * The game player
-	 */
-	private Player player;
-
-	/**
 	 * 
 	 */
 	private int level;
@@ -77,7 +72,7 @@ public class RushHourGame extends MiniGame
 	{
 		while(this.board.isFinish() == false)
 		{
-			// implementer un timer pour la defaite
+			//TODO timer to loose
 			display.showRushHourBoard(this.board);
 			display.showText("Entrez le numéro de la voiture:");
 			int numCar = input.getCar(this.board);

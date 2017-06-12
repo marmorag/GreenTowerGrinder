@@ -55,7 +55,7 @@ public class ExitWindow extends JFrame implements ActionListener{
 		this.setContentPane(panel);
 		
 		// exitLabel
-		this.exitLabel = new JLabel("Are youy sure you want to quit ?");
+		this.exitLabel = new JLabel("Are you sure you want to leave ?");
 		this.panel.add(exitLabel);
 		
 		// yesBtn

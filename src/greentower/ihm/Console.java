@@ -82,6 +82,8 @@ public class Console extends JFrame implements ActionListener, KeyListener{
 		this.prompt.setText("\\> ");
 		this.prompt.setForeground(Color.WHITE);
 		
+		//TODO Look at comments and delete them if necessary
+		
 		this.outputTextArea = new JTextArea();
 		//this.outputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.outputTextArea.setEditable(false);

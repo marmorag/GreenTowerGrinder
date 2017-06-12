@@ -52,7 +52,7 @@ public class Game
 	 * @param display
 	 * @param isGraphical
 	 */
-	public Game(Player player, Output display, boolean isGraphical)
+	public Game(String player, Output display, boolean isGraphical)
 	{
 		this.input = input;
 		this.numberOfRounds = 0;
@@ -106,5 +106,4 @@ public class Game
 		return this.numberOfRounds;
 	}
 }
-
-	public Game(Player player, Output display, Input input)
+

@@ -5,15 +5,15 @@ package greentower.stage.minigames.shifumi;
  */
 public enum Sign {
 	/**
-	 *
+	 * Rock sign
 	 */
 	ROCK,
 	/**
-	 *
+	 * Paper sign
 	 */
 	PAPER,
 	/**
-	 *
+	 * Scissors sign
 	 */
 	SCISSORS;
 

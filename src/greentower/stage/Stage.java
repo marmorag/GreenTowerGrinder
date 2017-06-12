@@ -25,17 +25,17 @@ public abstract class Stage
 	/**
 	 * Interface used to input anything needed
 	 */
-	public Input inputTool;
+	protected Input inputTool;
 
 	/**
 	 * Interface used to display anything needed
 	 */
-	public Output outputTool;
+	protected Output outputTool;
 
 	/**
 	 * Index of Stage in ListOfStages
 	 */
-	public int index;
+	protected int index;
 
 
 	/**
@@ -56,6 +56,30 @@ public abstract class Stage
 	public boolean getFinalStage()
 	{
 		return this.stageIsFinal;
+	}
+	
+	/**
+	 * @return the stageIsFinal
+	 */
+	public boolean isStageIsFinal() 
+	{
+		return this.stageIsFinal;
+	}
+
+	/**
+	 * @return the dialog
+	 */
+	public Dialog getDialog() 
+	{
+		return this.dialog;
+	}
+
+	/**
+	 * @return the index
+	 */
+	public int getIndex() 
+	{
+		return this.index;
 	}
 
 	// setNextStages (Stage[] nextStages);

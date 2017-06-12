@@ -19,13 +19,13 @@ public class MainWindow extends JFrame implements ActionListener{
 
 
 	/**
-	 * 
+	 * Serial Version ID
 	 */
 	private static final long serialVersionUID = 1L;
 
 
-	private JButton bt1 = new Bouton("Nouvelle Partie");
-	private JButton bt2 = new Bouton("Quitter");
+	private JButton bt1 = new Button("Nouvelle Partie");
+	private JButton bt2 = new Button("Quitter");
 	public Console console; 
 	public Clip clip;
 	
