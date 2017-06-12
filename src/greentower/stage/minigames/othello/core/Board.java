@@ -69,7 +69,6 @@ public class Board
 	 * @return
 	 * 			Value (color) of the case
 	 */
-	//TODO (done) gather line/column in a single object called position
 	public Color getCaseColor(Position askedPosition)
 	{
 		return this.cellColors[askedPosition.getLine()][askedPosition.getColumn()];

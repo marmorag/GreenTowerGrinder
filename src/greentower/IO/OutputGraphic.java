@@ -136,7 +136,6 @@ public class OutputGraphic implements Output{
 //			Thread.sleep(1000);
 //		} catch (InterruptedException e)
 //		{
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 //		this.mainWindow.getConsole().setText("");
@@ -145,13 +144,11 @@ public class OutputGraphic implements Output{
 
 	@Override
 	public void MasterMind() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void Othello() {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -169,7 +166,13 @@ public class OutputGraphic implements Output{
 
 	@Override
 	public void HeadsOrTails(int face) {
-		// TODO Demander R�mi
+		this.mainWindow.getConsole().setOutput("\nEt le resultat est :");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
