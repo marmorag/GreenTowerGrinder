@@ -3,11 +3,9 @@ import java.util.Arrays;
 
 /**
  * Combination(collection of pawns) which represents a solution or a try.
- *
  * @author delomeza
- *
  */
-public class Combination {
+public class Combination{
 	/**
 	 * Defines combinations' default size
 	 */
@@ -16,8 +14,15 @@ public class Combination {
 	/**
 	 * Attribute defines the combinations' storage
 	 */
-	public Color[] combination;
+	private Color[] combination;
 
+
+	/**
+	 * @return the combination
+	 */
+	public Color[] getCombination() {
+		return this.combination;
+	}
 
 	/**
 	 * Creates a new combination, filled with random colors
@@ -57,9 +62,8 @@ public class Combination {
 	 *         Use to check how much a proposition looks like the result
 	 *         expected
 	 */
-	public Checker check(Combination proposition)
+	protected Checker check(Combination proposition)
 	{
-
 		boolean validInThis[] = { true, true, true, true };
 		boolean validInOther[] = { true, true, true, true };
 

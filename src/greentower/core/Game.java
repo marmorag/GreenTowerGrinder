@@ -1,10 +1,9 @@
 package greentower.core;
 
 import greentower.IO.Input;
-import greentower.IO.InputConsole;
-import greentower.IO.InputGraphic;
 import greentower.IO.Output;
 import greentower.IO.OutputGraphic;
+import greentower.core.scenario.Scenario;
 import greentower.stage.Stage;
 
 /**
@@ -21,49 +20,47 @@ public class Game
 	private int numberOfRounds;
 
 	/**
-	 * Indicates who is playing
-	 */
-	@SuppressWarnings("unused")
-	private Player player;
-
-	/**
 	 * Indicates the stage loaded
 	 */
 	private Stage currentStage;
 
 	/**
-	 * Way to display 
+	 * Way to display
 	 */
 	private Output display;
 
+	/**
+	 * Name of the player
+	 */
+	private String player;
+	
 	/**
 	 * Tool used to get anything from the player
 	 */
 	private Input input;
 	
-	/**
-	 * True if the game is executed in graphical mode, false else
-	 */
-	@SuppressWarnings("unused")
-	private boolean isGraphical;
+	private Scenario scenario; 
+
+	//private Scenario scenario;
 
 	/**
 	 * Default constructor
 	 * @param player who launched the game
+	 * @param initialScenario 
 	 * @param display
-	 * @param isGraphical 
+	 * @param input 
 	 */
-	public Game(Player player, Output display, boolean isGraphical)
+	public Game(Scenario initialScenario, Output display, Input input)
 	{
-		if(isGraphical)
-			this.input = new InputGraphic((OutputGraphic)display);
+		if(display.getClass() == OutputGraphic.class)
+			this.player = ((OutputGraphic)display).mainWindow.getName();
 		else
-			this.input = new InputConsole();
-		this.isGraphical = isGraphical;
+			this.player = input.inputString();
+		this.input = input;
 		this.numberOfRounds = 0;
-		this.player = player;
-		this.currentStage = ListOfStages.getStageAt(0);
 		this.display = display;
+		this.scenario = initialScenario;
+		this.currentStage = this.scenario.getStageAt(0);
 	}
 
 	/**
@@ -74,25 +71,24 @@ public class Game
 		try
 		{
 			while(this.currentStage.getFinalStage() == false)
-			{	
+			{
 				 try
-				 { 
+				 {
 					 int result = this.currentStage.playStage(this.display, this.input);
-					 this.currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(this.currentStage), result);
-				 } 
+					 this.currentStage = this.scenario.getNextStages(this.scenario.getStageIndex(this.currentStage), result);
+				 }
 				 catch (Exception e)
 				 {
 					 //EMPTY
 				 }
-			}			
+			}
 		}
 		catch (Exception e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Enables player to leave the current game
 	 */
@@ -111,3 +107,4 @@ public class Game
 		return this.numberOfRounds;
 	}
 }
+

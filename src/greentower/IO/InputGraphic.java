@@ -3,11 +3,24 @@ package greentower.IO;
 import greentower.stage.minigames.rushhour.Direction;
 import greentower.stage.minigames.rushhour.GameBoard;
 
+/**
+ * @author 
+ *
+ */
 public class InputGraphic implements Input{
 
+	/**
+	 * Way to display
+	 */
 	protected OutputGraphic output;
 	
-	public InputGraphic(OutputGraphic output){
+	/**
+	 * Construct InputGraphic
+	 * Save output
+	 * @param output
+	 */
+	public InputGraphic(OutputGraphic output)
+	{
 		this.output = output;
 	}
 
@@ -15,17 +28,18 @@ public class InputGraphic implements Input{
 	public String inputString() 
 	{
 		this.output.showPrompt();
-		while(!this.output.mainWindow.console.isPressed)
+		while(!this.output.mainWindow.getConsole().getIsPressed())
 		{
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		this.output.mainWindow.console.resetAction();
-		return this.output.mainWindow.console.getInput();
+		this.output.mainWindow.getConsole().resetAction();
+		String result = this.output.mainWindow.getConsole().getInput();
+		this.output.showText("\n> " + result + "\n" );
+		return result;
 	}
 	
 	@Override
@@ -57,7 +71,7 @@ public class InputGraphic implements Input{
 	@Override
 	public int getCar(GameBoard board) {
 		int car = this.inputInt();
-		while(car<0 && car>board.cars.length){
+		while(car<0 && car>board.getCars().length){
 			car = this.inputInt();
 		}
 		return car;

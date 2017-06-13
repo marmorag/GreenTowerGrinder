@@ -4,6 +4,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTable;
 
+import greentower.stage.minigames.rushhour.Position;
+
 
 /**
  * Listen Action button
@@ -16,24 +18,23 @@ class ButtonListener implements ActionListener
 	/**
 	 * Column of the table
 	 */
-	@SuppressWarnings("unused")
 	private int column;
 	/**
 	 * Row of the table
 	 */
-	@SuppressWarnings("unused")
 	private int row;
+	
 	/**
 	 * table
 	 */
-	@SuppressWarnings("unused")
 	private JTable table;
 
 	/**
 	 * Set column number
 	 * @param col
 	 */
-	public void setColumn(int col){
+	public void setColumn(int col)
+	{
 		this.column = col;
 	}
 
@@ -41,14 +42,16 @@ class ButtonListener implements ActionListener
 	 * Set row number
 	 * @param row
 	 */
-	public void setRow(int row){
+	public void setRow(int row)
+	{
 		this.row = row;
 	}
 	/**
 	 *
 	 * @param table
 	 */
-	public void setTable(JTable table){
+	public void setTable(JTable table)
+	{
 		this.table = table;
 	}
 
@@ -56,6 +59,8 @@ class ButtonListener implements ActionListener
 	public void actionPerformed(ActionEvent event)
 	{
 		// TO DO when someone hit the button
+		Position pos = new Position(this.column, this.row);
+		//int NumCar = this.board[0].isAt(pos);
 	}
 
 

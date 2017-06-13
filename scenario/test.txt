@@ -1,0 +1,186 @@
+﻿<scenario>
+34
+<dialog>
+Bonjour jeune graine.§Je suis Sativa, gardien de cette tour et protecteur de son trésor.§Aujourd'hui, je vais te guider à travers ton dangereux périple.§Appuie sur '0' et ensuite 'Entrée' pour continer.§
+Bravo !§Comme tu peux le voir, tu es monté d'un étage !§Le premier d'une longue série.§Je vais maintenant t'expliquer les règles qui régissent cette tour.§C'est une tour magique qui évolue en fonction des choix des aventuriers.§Ses chemins te conduiront à la gloire ou à la désolation.§Chaque niveau comprend une épreuve et tu devras triompher de toutes celles-ci pour avancer !§Compris ?§
+Commençons de suite si tu le veux bien.§Je vais te poser une énigme et de ta réponse dépendra la suite de ta quête.§Je suis en tête de file mais à bout de nerf.§Qui suis-je ?
+Bravo !§Mais maintenant que j'ai testé ton intelligence, je vais mesurer ta chance.§Car il faut bien avouer que dans la vie la chance occupe une grande place.
+Désolé mais c'était la mauvaise réponse.§Mais je ne peux uniquement juger ton intelligence sur une énigme.§C'est pourquoi nous allons passer à la pratique.§En avant pour une partie de Tic Tac Toe.
+Serais-tu l'élu ?§Alliant intelligence et chance afin de vaincre les forces du mal ?§Je me dois de vérifier.§Réponds à cette énigme !§Combien y a-t-il de carrés en tout, dans une grille 4x4 ?§§+---+---+---+---+§ |       |       |       |       |§+---+---+---+---+§ |       |       |       |       |§+---+---+---+---+§ |       |       |       |       |§+---+---+---+---+§ |       |       |       |       |§+---+---+---+---+§
+Tu manques de chance et je ne peux te blamer.§Tu n'es certes pas l'élu mais cela ne t'empèchera pas de pouvoir monter au sommet.§Le chemin sera juste plus difficile.§En parlant de difficulté, connais-tu le rush hour ? Viens donc faire une partie !
+Bien bien.§Parfois on dit qu'il faut savoir tout recommencer pour mieux repartir.§Retourne donc au début de la tour et cette fois-ci, n'échoue pas ! 
+Phénoménal !§Tu es le meilleur aventurier que je n'ai jamais rencontré !§Prends donc ce passage secret, il emmène directement en haut de la tour!§Ou bien laisse le temps faire les choses et continue normalement ton ascension !
+Oh ! On dirait que je me suis emporté dans des conclusions hâtives !§Tu n'es pas l'élu, mais tu peux tout de même me surprendre et réussir. 
+Bravo !§Tu nous as sortis d'un sacré embouteillage !§D'ailleurs, sais-tu comment éviter les embouteillages ?
+Il faut se méfier des chemins trop simples !§Voici ta punition !
+C'est très bien.§Maintenant assied-toi et prend un thé.
+Non il faut rouler à vitesse constante !§Faisons une partie de Shifumi pour décider de ton sort !§Choisis un signe:§ROCK: Pierre§PAPER: Papier§SCISSORS: Ciseaux
+Quel jeu relaxant !§ZzzzzZzzzzZZzzzzzzZZZzzzZzzzZzzzzZZzzzZzzzzZZZZzzzzZzz.§Que faire ?
+Il ne faut pas confondre vitesse et précipitation mon jeune ami !§Je suis un homme , je suis une femme .§Je ne suis ni un homme ni une femme.§Qui suis-je ?
+Oui pardon !§Heureusement que tu m'as réveillé car sinon nous aurions été dans de beaux draps !§Continuons ?
+Vous vous endormez et sentez du mouvement durant votre sommeil.
+Bien, comme tu as gagné je vais te laisser une chance !§Mais attention car plus nous montons au sommet de la tour et plus la tour me somme d'être intransigeant !
+Voici la chute de l'empereur.
+Ce n'est malheureusement pas la bonne réponse.§Vous êtes le maillon faible.
+Une porte bloque le chemin.§C'est un étage de croisement.§Qu'importe les chemins que tu as empruntés, si tu as fait preuve de suffisamment de volonté, tous mènent à cet étage.§La porte restera verrouillée tant que nous n'aurons pas trouvé le code à 4 couleurs qui change règulièrement.
+La porte s’ouvre et l'atmosphère change . Cette salle est différente . Alors que les autres étage était féerique , celui-ci est post apocalyptique . § La mauvaise herbe envahit tout le sol et une forte odeur de brûlé est présente . Deux chemin partent de cette endroit et vous devez choisir lequel prendre seulement un rocher bloque celui de droite et il ne semble pas vouloir bouger.§
+Plus vous avancez et plus la tour se dégrade . De plus le gardien a disparu après l’ouverture de la porte .§ Sa présence vous manque . Devant un chêne pendu gît aux branches d’un homme .En vous approchant vous voyez un mots inachevé gravé au sol .
+La tulipe se décroche et tombe de l’Homme. Vous la ramasser et elle vous donne la force de continuer .
+L’homme lève son pied et vous frappe du bout du pied . Vous retombez au bas de la tour . Jamais 2 sans 3 … 
+Une plante se tient de dos . Elle ressemble au gardien mais vous n’êtes pas sur que c’est lui . Vous avancez donc lentement et l’appeler .§Aucune réaction . Il semble comme solidifier . Devant lui se trouve une feuille , une paire de ciseau et une pierre . Un vieux jeu que vous connaissez bien .
+Le gardien reprend vie . “Merci mon ami ! Nous ne sommes plus très loin de la fin , tu es l’un des seuls aventurier à avoir atteint cette étage.§ L’autre s'appelait Indica et il était à dormir debout . Bien finis d'blaguer on passe à la suite , avec une suite.
+A peine le plateau vous a t’il vaincu que vous sentez votre corps se durcirent. Vous vous endormez et au réveil , vous êtes de retour en bas. 
+Vous poussez la porte après que le gardien vous ai donné la clé et vous vous apercevez que vous êtes en haut de la tour .§Le gardien s’exclame : “Maintenant nous allons vous tester sur un jeu qui mesure votre courage , intelligence , force .
+Tu n'es pas encore prêt pour la suite … Retourne travailler les maths élémentaire en bas de la tour .
+BRAVO!
+SI prêt du but .... Retour à la casa ! 
+</dialog>
+<answer>
+
+0:Oui§1:Non
+0:La réponse F§1:Une boule de nerf en avance
+
+
+0:1§1:16§2:30§3:46
+
+0:D'accord.
+0:J'accepte§1:Je refuse
+0:Continuer
+0:En roulant tous à vitesse constante§1:En roulant tous à droite
+0:Continuer
+
+
+0:Réveiller le gardien§1:Faire une sieste à ses côtés
+0:Un bébé§1:Une ombre
+0:Continuer
+0:Continuer
+0:Continuer
+0:Continuer
+0:Continuer
+0:Continuer
+0:Continuer
+
+0:Continuer
+0:Continuer
+
+
+0:Continuer
+
+0:Continuer
+0:Continuer
+0:Continuer
+</answer>
+<stage>
+choice
+choice
+choice
+lessormore
+tictactoe
+choice
+rushhour
+choice
+choice
+choice
+choice
+choice
+othello
+shifumi
+choice
+choice
+choice
+choice
+choice
+choice
+choice
+mastermind
+choice
+hangman
+choice
+choice
+lessormore
+lessormore
+choice
+gamblingmachine
+choice
+choice
+choice
+choice
+</stage>
+<link>
+2
+3§2
+4§5
+6§7
+4§8
+10§10§9§10
+11§8
+3
+12§13
+13
+13§14
+3
+15§16
+19§20
+17§18
+21§22
+22
+3
+22
+3
+3
+23§22
+24
+25§26
+27
+3
+28§29
+30§31
+3
+32§33
+3
+34
+3
+</link>
+</scenario>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import greentower.stage.minigames.rushhour.Direction;
 import greentower.stage.minigames.rushhour.GameBoard;
 
-
 /**
  * 
  * @author Guillaume
@@ -27,7 +26,9 @@ public class InputConsole implements Input
 	{
 		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
-	
+	/**
+	 * Return the input int
+	 */
 	public int inputInt()
 	{
 		try
@@ -35,15 +36,20 @@ public class InputConsole implements Input
 			char[] figures = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 			OutputConsole.showPromptS();
 			String str = this.br.readLine();
-			if (str.length() !=  1)
+			if (str.length() <  1)
 				return Input.INVALID_INT_INPUT;
 			
-			boolean isInt = false;
-			for(int i = 0; i < figures.length; i++)
-				if (figures[i] == str.charAt(0))
-					isInt = true;
-			
-			if(!isInt) return Input.INVALID_INT_INPUT;
+			for(int i=0;i<str.length();i++)
+			{
+				boolean a = false;
+				for(int j=0;j<figures.length;j++)
+				{
+					if(str.charAt(i) == figures[j])
+						a = true;
+				}
+				if(!a)
+					return Input.INVALID_INT_INPUT;
+			}
 			
 			return Integer.parseInt(str);
 			} 
@@ -54,6 +60,9 @@ public class InputConsole implements Input
 	}
 	
 	@Override
+	/**
+	 * Return the input char
+	 */
 	public char inputChar()
 	{
 		try
@@ -71,6 +80,9 @@ public class InputConsole implements Input
 		}
 	}
 	
+	/**
+	 * Return the input String
+	 */
 	public String inputString()
 	{
 		try
@@ -83,6 +95,9 @@ public class InputConsole implements Input
 		}
 	}
 	
+	/**
+	 * return the num of the Car
+	 */
 	public int getCar(GameBoard board)
 	{
 		int numCar = -1;
@@ -93,7 +108,6 @@ public class InputConsole implements Input
 			}
 			catch (NumberFormatException e)
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -115,7 +129,10 @@ public class InputConsole implements Input
 			}
 		return direction;
 	}
-
+	
+	/**
+	 * Input of the player decision
+	 */
 	@Override
 	public int getMove() {
 		System.out.println("Entrez le déplacement :");
@@ -125,7 +142,6 @@ public class InputConsole implements Input
 		}
 		catch (NumberFormatException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return 0;

@@ -11,24 +11,20 @@ import greentower.stage.minigames.othello.player.Player;
 
 /**
  * This class enables a othello's player to make action
- *
  * @author florent.viogne
- *
  */
-public class ConsolePlayer implements Player
-{
+public class ConsolePlayer implements Player{
+	/**
+	 * Input Stream
+	 */
+	private BufferedReader br;
 	/**
 	 * Default constructor
 	 */
 	public ConsolePlayer()
 	{
-
+		this.br = new BufferedReader(new InputStreamReader(System.in));
 	}
-
-	/**
-	 * Input Stream
-	 */
-	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 	/**
 	 * Enable physic player to ask a position

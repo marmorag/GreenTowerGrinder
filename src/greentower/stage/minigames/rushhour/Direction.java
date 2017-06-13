@@ -2,10 +2,8 @@ package greentower.stage.minigames.rushhour;
 /**
  * Car direction
  * @author gavinr
- *
  */
-public enum Direction
-{
+public enum Direction{
 	/**
 	 * Up direction
 	 */
