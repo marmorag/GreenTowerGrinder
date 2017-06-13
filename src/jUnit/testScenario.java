@@ -19,8 +19,8 @@ public class testScenario {
 	 *
 	 */
 	@Test
-	public static void TestgetNextStages() throws FileNotFoundException, InvalidSyntaxInFileException {
-		//fail("Not yet implemented");
+	public void TestgetNextStages() throws FileNotFoundException, InvalidSyntaxInFileException {
+
 		ScenarioParser scenarioParser = new ScenarioParser("scenario/scenario1.txt"); //$NON-NLS-1$
 		Scenario scenario = scenarioParser.getScenario();
 		int currentStage;
@@ -29,7 +29,6 @@ public class testScenario {
 
 		//test n°1 : test de l'étage 15
 		currentStage = 15;
-
 
 		//cas 1
 		lastResult = 0;
@@ -41,7 +40,7 @@ public class testScenario {
 		lastResult = 1;
 		res = 18;
 
-		assertEquals("L'étage 15 abouti au 18 si la réponse est 1",scenario.getNextStages(currentStage, lastResult),scenario.getStageAt(res)); //$NON-NLS-1$
+		assertEquals("L'étage 15 abouti au 18 si la réponse est 1",scenario.getNextStages(currentStage, lastResult).getIndex(),res); //$NON-NLS-1$
 
 
 
