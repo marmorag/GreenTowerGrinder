@@ -8,11 +8,14 @@ import java.io.IOException;
 import greentower.core.exception.InvalidSyntaxInFileException;
 import greentower.stage.Stage;
 import greentower.stage.choice.Choice;
+import greentower.stage.minigames.gamblingmachine.GamblingMachine;
+import greentower.stage.minigames.hangman.Hangman;
 import greentower.stage.minigames.lessormore.LessOrMore;
 import greentower.stage.minigames.mastermind.MasterMind;
 import greentower.stage.minigames.othello.core.OthelloGame;
 import greentower.stage.minigames.rushhour.RushHourGame;
 import greentower.stage.minigames.shifumi.Shifumi;
+import greentower.stage.minigames.suite.Suite;
 import greentower.stage.minigames.tictactoe.TicTacToe;
 
 /**
@@ -152,6 +155,15 @@ public final class ScenarioParser
 							break;
 						case "lessormore":
 							result[stageCounter] = new LessOrMore(dialog[stageCounter], stageCounter);
+							break;
+						case "gamblingmachine":
+							result[stageCounter] = new GamblingMachine(dialog[stageCounter], stageCounter);
+							break;
+						case "suite":
+							result[stageCounter] = new Suite(dialog[stageCounter], stageCounter);
+							break;
+						case "hangman":
+							result[stageCounter] = new Hangman(dialog[stageCounter], stageCounter);
 							break;
 						default:
 							throw new InvalidSyntaxInFileException("Exception during listOfStage build");							

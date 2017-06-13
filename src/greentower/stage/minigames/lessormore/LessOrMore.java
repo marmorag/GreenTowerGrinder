@@ -67,14 +67,14 @@ public class LessOrMore extends MiniGame
 		String userChoice;
 		userChoice = input.inputString();
 
-		if(userChoice.equals("MORE") || userChoice.equals("PLUS") || userChoice.equals("+"))
+		if(userChoice.toUpperCase().equals("more") || userChoice.toUpperCase().equals("plus") || userChoice.equals("+"))
 		{
 			if(this.randomcard<this.base)
 				result = MiniGame.RESULT_LOOSE;
 			else
 				result = MiniGame.RESULT_VICTORY;
 		}
-		else if(userChoice.equals("LESS") || userChoice.equals("MOINS") || userChoice.equals("-"))
+		else if(userChoice.toUpperCase().equals("less") || userChoice.toUpperCase().equals("moins") || userChoice.equals("-"))
 		{
 			if(this.randomcard<this.base)
 				result =  MiniGame.RESULT_VICTORY;
