@@ -69,21 +69,16 @@ import javax.swing.text.DefaultCaret;
 		this.prompt = new JLabel();
 		this.prompt.setText("\\> ");
 		this.prompt.setForeground(Color.WHITE);
-		//TODO Look at comments and delete them if necessary
+		//TODO (done) Look at comments and delete them if necessary
 		this.outputTextArea = new JTextArea();
-		//this.outputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.outputTextArea.setEditable(false);
 		//auto-scroll
 		DefaultCaret caret = (DefaultCaret)outputTextArea.getCaret();
 		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 		this.inputTextArea = new JTextField();
-		//this.inputTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.inputTextArea.addActionListener(this);
 		this.scrollPane = new JScrollPane(outputTextArea);
 		this.scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		// Scroolbar should be unified with main theme 
-		//this.scrollPane.setVerticalScrollBar(new JScrollBar());
-		//this.scrollPane.setAutoscrolls(true);
 		this.JPan = new GTG(this.image);
 		this.JPan.setLayout(null);
 		this.JPan.add(this.scrollPane);
