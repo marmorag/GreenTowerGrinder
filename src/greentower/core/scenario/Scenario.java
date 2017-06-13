@@ -8,27 +8,27 @@ import greentower.stage.Stage;
  */
 public class Scenario
 {
-	
+
 	/**
 	 * List of stages of the scenario
 	 */
 	private final Stage[] stages;
-	
+
 	/**
 	 * The matrix of next stages
 	 */
 	private final int[][] nextStages;
-	
+
 	/**
 	 * Array containing stages' dialog
 	 */
 	private final String[] dialogs;
 
 	/**
-	 * Array containing choices's answers	
+	 * Array containing choices's answers
 	 */
 	private final String[] answers;
-	
+
 	/**
 	 * Create a new scenario
 	 * @param initialStages
@@ -37,7 +37,7 @@ public class Scenario
 	 * 			Matrix of next stages
 	 * @param initialDialogs
 	 * 			Stages' dialogs
-	 * @param initialAnswers	
+	 * @param initialAnswers
 	 * 			Choices' answers
 	 */
 	public Scenario(Stage[] initialStages, int[][] initialNextStages, String[] initialDialogs, String[] initialAnswers)
@@ -46,7 +46,7 @@ public class Scenario
 		this.nextStages = initialNextStages;
 		this.dialogs = initialDialogs;
 		this.answers = initialAnswers;
-	}	
+	}
 
 	/**
 	 * Get the next stage's index with given current stage and given stage result
@@ -61,10 +61,10 @@ public class Scenario
 	{
 		return this.stages[this.nextStages[currentStage][stageResult]-1];
 	}
-	
+
 	/**
 	 * Get the stage at a given index
-	 * @param index 
+	 * @param index
 	 * 			Stage's index
 	 * @return
 	 * 			The table of stages
@@ -80,7 +80,7 @@ public class Scenario
 	 * @return
 	 * 			Stage's index
 	 */
-	public int getStageIndex(Stage currentStage) 
+	public int getStageIndex(Stage currentStage)
 	{
 		int result = 0;
 		while(true)
@@ -91,11 +91,11 @@ public class Scenario
 		}
 		return result;
 	}
-	
+
 	/**
 	 * @return the stages
 	 */
-	public Stage[] getStages() 
+	public Stage[] getStages()
 	{
 		return this.stages;
 	}
@@ -103,7 +103,7 @@ public class Scenario
 	/**
 	 * @return the nextStages
 	 */
-	public int[][] getNextStages() 
+	public int[][] getNextStages()
 	{
 		return this.nextStages;
 	}
@@ -111,7 +111,7 @@ public class Scenario
 	/**
 	 * @return the dialogs
 	 */
-	public String[] getDialogs() 
+	public String[] getDialogs()
 	{
 		return this.dialogs;
 	}
@@ -119,7 +119,7 @@ public class Scenario
 	/**
 	 * @return the answers
 	 */
-	public String[] getAnswers() 
+	public String[] getAnswers()
 	{
 		return this.answers;
 	}

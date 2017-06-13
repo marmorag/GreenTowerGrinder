@@ -7,10 +7,8 @@ import greentower.stage.minigames.othello.core.Position;
 /**
  * IHM of the othello game
  * @author florent.viogne
- *
  */
-public interface IHMOthello
-{
+public interface IHMOthello{
 	/**
 	 * Display a othello game's board
 	 * @param theBoard
