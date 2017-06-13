@@ -79,4 +79,9 @@ public abstract class Stage
 		return this.index;
 	}
 
+	public void setDialog(String dialog)
+	{
+		this.dialog = dialog;
+	}
+
 }

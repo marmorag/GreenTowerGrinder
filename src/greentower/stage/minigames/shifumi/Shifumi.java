@@ -26,12 +26,14 @@ public class Shifumi extends MiniGame{
 	public int playStage(Output display, Input input) throws Exception
 	{
 		display.showStageIntroduction(this.index);
+		this.setDialog("----------JEU DU SHIFUMI---------\n Choisissez votre signe parmi : ROCK / PAPER / SCISSORS \n");
 		display.showDialog(this.dialog);
 
-		display.showPrompt(); 
+		//display.showPrompt(); 
 		String sign = input.inputString();
+		
 
-		while(sign != "PAPER" || sign != "ROCK" || sign != "SCISSORS")
+		while(!sign.equals("PAPER") && !sign.equals("ROCK") && !sign.equals("SCISSORS"))
 		{
 			display.showText("Invalid entry");
 			sign = input.inputString();
@@ -73,5 +75,6 @@ public class Shifumi extends MiniGame{
 	{
 		//EMPTY
 	}
+	
 
 }
