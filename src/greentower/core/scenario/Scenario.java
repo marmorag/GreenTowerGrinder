@@ -59,7 +59,7 @@ public class Scenario
 	 */
 	public Stage getNextStages(int currentStage, int stageResult)
 	{
-		return this.stages[this.nextStages[currentStage][stageResult] - 4];
+		return this.stages[this.nextStages[currentStage][stageResult] - 1];
 	}
 
 	/**
