@@ -20,7 +20,7 @@ public class Hangman extends MiniGame{
 	 * WordToFind copy but letters are replaced by _
 	 * until player has not found the correct letter
 	 */
-	private String wordToDisplay;
+	private String wordToDisplay;	private HangManIO hio;
 	/**
 	 *	motATrouver takes value of word at line nbAleatoire in listeMot.txt
 	 *	Initialize motAAfficher with "_"	 * @param dialog The dialog to display at the beginning of the game	 * @param stageIndex 
@@ -94,9 +94,8 @@ public class Hangman extends MiniGame{
 	 * @return int The index of the nextStage to play (Logical ling between Stage)
 	 */
 	public int playStage(Output display, Input input)
-	{
-		this.outputTool = display;
-		this.inputTool = input;		char inputLetter;
+	{		if(display.getClass() == HangManIO.class)		{			hio = new HangManIO(new HangmanIHM());			this.outputTool = hio;			this.inputTool = hio;		}		else{			this.outputTool = display;			this.inputTool = input;		}	
+				char inputLetter;
 		display.showStageIntroduction(this.index);
 		while(!this.endOfGame() && this.nbTurn <= this.wordToFind.length()+5 &&  this.nbError < 11)
 		{
@@ -123,7 +122,7 @@ public class Hangman extends MiniGame{
 		else
 		{			result = MiniGame.RESULT_LOOSE;			this.outputTool.notifyLoose(this.wordToFind);		}
 		display.showMiniGameResult(result);
-		display.showStageEnd(this.index);
+		display.showStageEnd(this.index);		if(this.outputTool.getClass() == HangManIO.class)			((HangManIO) this.outputTool).dispose();
 		return result;
 	}
 	@Override

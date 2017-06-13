@@ -30,6 +30,11 @@ public class Game
 	private Output display;
 
 	/**
+	 * Name of the player
+	 */
+	private String player;
+	
+	/**
 	 * Tool used to get anything from the player
 	 */
 	private Input input;
@@ -48,7 +53,9 @@ public class Game
 	public Game(Scenario initialScenario, Output display, Input input)
 	{
 		if(display.getClass() == OutputGraphic.class)
-			this.player = ((OutputGraphic)display).mainWindow.name.getText();
+			this.player = ((OutputGraphic)display).mainWindow.getName();
+		else
+			this.player = input.inputString();
 		this.input = input;
 		this.numberOfRounds = 0;
 		this.display = display;
