@@ -50,7 +50,7 @@ public abstract class Stage
 	 * @return 	true if the stage is the last one
 	 * 			false if it is not the last one
 	 */
-	protected boolean getFinalStage()
+	public boolean getFinalStage()
 	{
 		return this.stageIsFinal;
 	}
@@ -77,6 +77,11 @@ public abstract class Stage
 	public int getIndex()
 	{
 		return this.index;
+	}
+
+	public void setDialog(String dialog)
+	{
+		this.dialog = dialog;
 	}
 
 }
