@@ -37,7 +37,9 @@ public class InputGraphic implements Input{
 			}
 		}
 		this.output.mainWindow.getConsole().resetAction();
-		return this.output.mainWindow.getConsole().getInput();
+		String result = this.output.mainWindow.getConsole().getInput();
+		this.output.showText("\n> " + result + "\n" );
+		return result;
 	}
 	
 	@Override
