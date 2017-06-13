@@ -50,6 +50,8 @@ public class RushHourGame extends MiniGame
 	{
 		this.inputTool = input;
 		this.outputTool = display;
+		display.showStageIntroduction(this.index);
+		display.showDialog(this.dialog);
 		Long t = System.currentTimeMillis();
 		while(this.board.isFinish() == false)
 		{
@@ -59,21 +61,21 @@ public class RushHourGame extends MiniGame
 				return 1;
 			}
 			display.showRushHourBoard(this.board);
-			display.showText("Entrez le numéro de la voiture:");
+			display.showText("Entrez le numéro de la voiture:\n");
 			int numCar = input.getCar(this.board);
 			display.showText("Entrez une direction:");
-			display.showText("LEFT; RIGHT; UP; DOWN"); 
+			display.showText("LEFT; RIGHT; UP; DOWN\n"); 
 			Direction direction = input.getDirection();
-			display.showText("Entrez le nombre de cases:");
+			display.showText("Entrez le nombre de cases:\n");
 			int offset = input.getMove();
 			try
 			{
 				if(this.board.moveCar(numCar, direction, offset) == false)
-					display.showError("Mauvaise Direction");
+					display.showError("Mauvaise Direction\n");
 			}
 			catch(Exception e)
 			{
-				display.showError("mauvaise voiture");
+				display.showError("mauvaise voiture\n");
 			}
 		}
 		display.showMiniGameResult(0);
