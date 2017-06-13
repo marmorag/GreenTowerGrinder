@@ -230,18 +230,17 @@ public class OutputGraphic implements Output{
 	public void showRushHourBoard(GameBoard board) {
 		String grid="";
 		for(int y=0;y<GameBoard.BOARD_WIDTH;y++){
-			grid += "\n*************************\n*";
+			grid += "\n**************************\n";
 			for(int x=0;x<GameBoard.BOARD_HEIGHT;x++){
 				int carNumber = board.getCarNumberAt(new Position(x,y));
 				if(carNumber != -1){
 					grid += " "+carNumber+" *";
 				}else{
-					grid += "   *";
+					grid += "    *";
 				}
 			}
-			grid += "\n";
 		}
-		grid += "*************************\n";
+		grid += "\n**************************\n";
 		this.mainWindow.getConsole().setOutput(grid);		
 	}
 }
