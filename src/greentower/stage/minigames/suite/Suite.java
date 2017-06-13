@@ -9,7 +9,6 @@ import greentower.stage.minigames.MiniGame;
 /**
  * Find the fifth number
  * @author Rémi
- *
  */
 public class Suite extends MiniGame{
 

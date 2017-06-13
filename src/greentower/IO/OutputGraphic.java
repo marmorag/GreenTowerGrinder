@@ -15,7 +15,7 @@ public class OutputGraphic implements Output{
 	/**
 	 * Main Frame of the application
 	 */
-	protected MainWindow mainWindow;
+	public MainWindow mainWindow;
 	
 	/**
 	 * This is the display windows
@@ -165,8 +165,8 @@ public class OutputGraphic implements Output{
 		this.mainWindow.getConsole().setOutput("\nEt le resultat est :");
 		try {
 			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+		} catch (InterruptedException e) 
+		{
 			e.printStackTrace();
 		}
 	}
@@ -238,6 +238,9 @@ public class OutputGraphic implements Output{
 				}else{
 					grid += "    *";
 				}
+			}
+			if(y == 2){
+				grid += "          sortie";
 			}
 		}
 		grid += "\n**************************\n";

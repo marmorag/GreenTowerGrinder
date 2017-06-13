@@ -10,9 +10,8 @@ import greentower.stage.minigames.MiniGame;
 /**
  * Heads Or Tails game
  * @author
- *
  */
-public class HeadsOrTails extends MiniGame {
+public class HeadsOrTails extends MiniGame{
 
 	/**
 	 * HeadsOrTail's constructor

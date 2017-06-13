@@ -4,15 +4,10 @@ import greentower.stage.minigames.rushhour.exceptions.IncompatibleDirectionExcep
 import greentower.stage.minigames.rushhour.exceptions.WrongCarException;
 
 /**
- *
  * Create double dimension game board (6x6) and place all cars
- *
  * @author gavinr
- *
- *
  */
-public class GameBoard
-{
+public class GameBoard{
 	/**
 	 * Width of the gameboard
 	 */
@@ -71,7 +66,8 @@ public class GameBoard
 	 * Return true if the player has won
 	 * @return {boolean} true if the game is finished
 	 */
-	public boolean isFinish(){	
+	public boolean isFinish()
+	{	
 		return this.cars[0].isAt(new Position(5,2));
 	}
 
@@ -83,13 +79,16 @@ public class GameBoard
 	 * @return boolean
 	 */
 	@SuppressWarnings("javadoc")
-	public boolean moveCar(int numCar, Direction movement, int offset) throws WrongCarException{
-		if(offset == 0){
+	public boolean moveCar(int numCar, Direction movement, int offset) throws WrongCarException
+	{
+		if(offset == 0)
+		{
 			return true;
 		}
 		// Deep copy of car //
 		Car current_car = this.cars[numCar].clone();
-		if(current_car == null){
+		if(current_car == null)
+		{
 			throw new WrongCarException();
 		}
 
@@ -97,16 +96,22 @@ public class GameBoard
 		Position head_pos = null;
 		try
 		{
-			for(int i=1;i<=offset;i++){
+			for(int i=1;i<=offset;i++)
+			{
 				head_pos = current_car.getForwardPositionWhileMoving(movement);
 				Position nextPosition = head_pos.getNextPosition(movement);
-				if(this.getCarNumberAt(nextPosition) != -1){
+				if(this.getCarNumberAt(nextPosition) != -1)
+				{	
 					return false;
 				}
-				else{
-					if(nextPosition.getX()<0 || nextPosition.getX()>5 || nextPosition.getY()<0 || nextPosition.getY()>5){
+				else
+				{
+					if(nextPosition.getX()<0 || nextPosition.getX()>5 || nextPosition.getY()<0 || nextPosition.getY()>5)
+					{
 						return false;
-					}else{
+					}
+					else
+					{
 						current_car.setPosition(current_car.getPosition().getNextPosition(movement));
 					}
 				}
@@ -114,7 +119,8 @@ public class GameBoard
 			this.cars[numCar] = current_car;
 			return true;
 		}
-		catch (IncompatibleDirectionException e) {
+		catch (IncompatibleDirectionException e)
+		{
 			return false;
 		}
 	}
@@ -131,8 +137,8 @@ public class GameBoard
 	/**
 	 * @return the cars
 	 */
-	public Car[] getCars() {
+	public Car[] getCars()
+	{
 		return this.cars;
 	}
-
 }

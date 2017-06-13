@@ -8,12 +8,9 @@ import junit.framework.TestCase;
 
 /**
  * Tests the Board class (greentower.stage.minigames.othello.core)
- * 
  * @author Axelle Delomez
- *
  */
-public class TestBoard extends TestCase
-{
+public class TestBoard extends TestCase{
 
 /**
  * Creates a test of Board with the given name

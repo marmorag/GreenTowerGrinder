@@ -1,12 +1,11 @@
 package greentower.stage.minigames.mastermind;
+
 /**
  * Represents Checkers
- *Permit to verify the player's tries to find the good combination
- *
+ * Permit to verify the player's tries to find the good combination
  * @author delomeza
- *
  */
-public class Checker {
+public class Checker{
 
 	/**
 	 * indicate the pawns whose aren't set correctly
