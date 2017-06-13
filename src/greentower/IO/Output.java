@@ -1,5 +1,6 @@
 package greentower.IO;
 
+import greentower.stage.minigames.mastermind.Checker;
 import greentower.stage.minigames.rushhour.GameBoard;
 import greentower.stage.minigames.shifumi.Sign;
 /**

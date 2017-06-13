@@ -29,7 +29,7 @@ public class Hangman extends MiniGame{
 	 */
 	public Hangman(String dialog, int stageIndex)
 	{
-		super(dialog, stageIndex);		
+		super(dialog, stageIndex);
 		Random r = new Random();
 		int randomNumber = r.nextInt(835); // Replace 835 by the line number of listeMot.txt ?
 		int i = 0;
@@ -42,7 +42,7 @@ public class Hangman extends MiniGame{
 			while ((row=br.readLine())!=null && i < randomNumber)
 				i++;
 			this.wordToFind = row;
-			this.wordToDisplay = this.wordToFind.replaceAll(".", "_");			
+			this.wordToDisplay = this.wordToFind.replaceAll(".", "_");
 			br.close();
 		}
 		catch (Exception FileReadException)
@@ -74,7 +74,7 @@ public class Hangman extends MiniGame{
 		char[] tempArray = new char[this.wordToDisplay.length()];
 		int i;
 		for(i = 0;i < this.wordToFind.length();i++)
-			tempArray[i] = this.wordToDisplay.charAt(i);		
+			tempArray[i] = this.wordToDisplay.charAt(i);
 		this.wordToDisplay = "";
 		for(i = 0;i < this.wordToFind.length();i++)
 		{
@@ -99,7 +99,7 @@ public class Hangman extends MiniGame{
 	public int playStage(Output display, Input input)
 	{
 		this.outputTool = display;
-		this.inputTool = input;		char inputLetter;		
+		this.inputTool = input;		char inputLetter;
 		display.showStageIntroduction(this.index);
 		while(!this.endOfGame() && this.nbTurn <= this.wordToFind.length()+5)
 		{
@@ -142,7 +142,7 @@ public class Hangman extends MiniGame{
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/minigames/hangman/listeMot.txt")));
 			String row;
 			while ((row=br.readLine())!=null && i < randomNumber)
-				i++;			
+				i++;
 			this.wordToFind = row;
 			this.wordToDisplay = this.wordToFind.replaceAll(".", "_");
 			br.close();
@@ -165,5 +165,5 @@ public class Hangman extends MiniGame{
 	 */
 	public void setWordToFind(String wordToFind) {
 		this.wordToFind = wordToFind;
-	}	
+	}
 }
