@@ -239,6 +239,9 @@ public class OutputGraphic implements Output{
 					grid += "    *";
 				}
 			}
+			if(y == 2){
+				grid += "          sortie";
+			}
 		}
 		grid += "\n**************************\n";
 		this.mainWindow.getConsole().setOutput(grid);		

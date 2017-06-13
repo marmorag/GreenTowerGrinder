@@ -83,7 +83,7 @@ import javax.swing.text.DefaultCaret;
 		this.JPan.setLayout(null);
 		this.JPan.add(this.scrollPane);
 		this.JPan.add(this.prompt);
-		this.JPan.add(this.inputTextArea);
+		this.JPan.add(this.inputTextArea);		this.JPan.add(this.inputTextArea).requestFocusInWindow();
 		this.scrollPane.setBounds(25,25,850,515);
 		this.inputTextArea.setBounds(25,555,850,20);
 		this.prompt.setBounds(5,555,50,20);
@@ -149,5 +149,5 @@ import javax.swing.text.DefaultCaret;
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
-	}		/**	 * Return if the key has been pressed	 * @return state of the key	 */	public boolean getIsPressed(){		return this.isPressed;	}
+	}		/**	 * Return if the key has been pressed	 * @return state of the key	 */	public boolean getIsPressed(){		return this.isPressed;	}		/**	 * Return the inputTextArea of the window	 * @return	 */	public JTextField getInputText(){		return this.inputTextArea;	}
 }

@@ -35,7 +35,7 @@ public class MainWindow extends JFrame implements ActionListener{
 		{			if(this.name.getText().length() != 0)			{				this.soundBox.playSoundOnce(SoundBox.SOUND_PLAY);
 				this.dispose();
 				this.console = new Console(this);
-				this.console.setVisible(true);			}
+				this.console.setVisible(true);				this.console.getInputText().requestFocus();			}
 		}		
 		if(arg0.getSource() == bt2)
 		{
