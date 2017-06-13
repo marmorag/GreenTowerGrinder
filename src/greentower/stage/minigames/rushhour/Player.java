@@ -1,14 +1,9 @@
 package greentower.stage.minigames.rushhour;
 /**
- *
  * Represent a player of the game
- *
  * @author gavinr
- *
- *
  */
-public abstract class Player
-{
+public abstract class Player{
 	/**
 	 * Name of the player
 	 */
