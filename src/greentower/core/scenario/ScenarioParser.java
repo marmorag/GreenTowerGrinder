@@ -136,7 +136,7 @@ public final class ScenarioParser
 					switch (currentLine)
 					{
 						case "choice":
-							result[stageCounter] = new Choice(dialog[stageCounter],answer[stageCounter],stageCounter);
+							result[stageCounter] = new Choice(dialog[stageCounter],answer[stageCounter],stageCounter,numberOfStage == stageCounter);
 							break;
 						case "othello":
 							result[stageCounter] = new OthelloGame(dialog[stageCounter], stageCounter);
