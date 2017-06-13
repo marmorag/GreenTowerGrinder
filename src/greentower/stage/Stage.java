@@ -5,9 +5,7 @@ import greentower.IO.Output;
 
 /**
  * This interface enables to launch a stage (MiniGame or Choice, whatever)
- *
  * @author Florent
- *
  */
 public abstract class Stage
 {

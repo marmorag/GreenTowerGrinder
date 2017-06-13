@@ -4,12 +4,9 @@ import greentower.stage.minigames.othello.core.exceptions.InvalidStringToPositio
 
 /**
  * This class represents a position in a board with cases designated by line and column.
- *
  * @author viognef
- *
  */
-public class Position
-{
+public class Position{
 	/**
 	 *	All valid coordonates for line and column
 	 */

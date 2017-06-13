@@ -3,11 +3,9 @@ import java.util.Arrays;
 
 /**
  * Combination(collection of pawns) which represents a solution or a try.
- *
  * @author delomeza
- *
  */
-public class Combination {
+public class Combination{
 	/**
 	 * Defines combinations' default size
 	 */

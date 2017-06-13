@@ -1,8 +1,7 @@
 package greentower.stage.minigames.hangman;import java.io.BufferedReader;import java.io.FileInputStream;import java.io.InputStreamReader;import java.util.Random;import greentower.IO.Input;import greentower.IO.Output;import greentower.stage.minigames.MiniGame;
-/** * Hangman Game
- * @author Guillaume
- *
- */
+/** * Represents a Hangman Game
+ * @author Guillaume
+ */
 public class Hangman extends MiniGame{
 	/**
 	 * Error number of current game

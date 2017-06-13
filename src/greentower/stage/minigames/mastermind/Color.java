@@ -2,10 +2,9 @@ package greentower.stage.minigames.mastermind;
 
 /**
  *Represents the color of pawns
- *
  * @author delomeza
  */
-public enum Color {
+public enum Color{
 
 	/**
 	 * Red Pawns

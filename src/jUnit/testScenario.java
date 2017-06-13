@@ -9,6 +9,8 @@ import greentower.core.scenario.ScenarioParser;
 
 /**
  * @author Axelle Delomez
+ * 
+ * Tests the class /GreenTowerGrinder/src/greentower/core/scenario/Scenario.java
  *
  */
 public class testScenario {
