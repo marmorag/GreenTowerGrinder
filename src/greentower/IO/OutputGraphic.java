@@ -15,7 +15,7 @@ public class OutputGraphic implements Output{
 	/**
 	 * Main Frame of the application
 	 */
-	protected MainWindow mainWindow;
+	public MainWindow mainWindow;
 	
 	/**
 	 * This is the display windows

@@ -2,6 +2,7 @@ package greentower.core;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
+import greentower.IO.OutputGraphic;
 import greentower.core.scenario.Scenario;
 import greentower.stage.Stage;
 
@@ -46,6 +47,8 @@ public class Game
 	 */
 	public Game(Scenario initialScenario, Output display, Input input)
 	{
+		if(display.getClass() == OutputGraphic.class)
+			this.player = ((OutputGraphic)display).mainWindow.name.getText();
 		this.input = input;
 		this.numberOfRounds = 0;
 		this.display = display;
