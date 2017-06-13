@@ -136,7 +136,7 @@ import javax.swing.text.DefaultCaret;
 		System.out.println("event key typed");
 		int key = e.getKeyCode();
 		if (key == KeyEvent.VK_END) {
-			this.mainWindow.clip.stop();
+			this.mainWindow.getSoundBox().stopSound(0);
 		}
 		if (key == KeyEvent.VK_ESCAPE)
 		{
