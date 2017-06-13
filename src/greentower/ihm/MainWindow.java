@@ -23,7 +23,7 @@ public class MainWindow extends JFrame implements ActionListener{
 	private Console console; 
 	/**	 * To use sound	 */
 	protected Clip clip;
-	/**	 * Set params of JFrame	 */
+	/**	 * Set parameters of JFrame	 */
 	public MainWindow(){
 		this.setTitle("The Green Tower Grinder");
 		this.setSize(900, 600);
