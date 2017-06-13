@@ -19,12 +19,6 @@ public class Game
 	private int numberOfRounds;
 
 	/**
-	 * Indicates who is playing
-	 */
-	@SuppressWarnings("unused")
-	private String player;
-
-	/**
 	 * Indicates the stage loaded
 	 */
 	private Stage currentStage;
@@ -50,11 +44,10 @@ public class Game
 	 * @param display
 	 * @param input 
 	 */
-	public Game(String player, Scenario initialScenario, Output display, Input input)
+	public Game(Scenario initialScenario, Output display, Input input)
 	{
 		this.input = input;
 		this.numberOfRounds = 0;
-		this.player = player;
 		this.display = display;
 		this.scenario = initialScenario;
 		this.currentStage = this.scenario.getStageAt(0);

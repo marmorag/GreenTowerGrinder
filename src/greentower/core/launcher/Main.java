@@ -15,6 +15,6 @@ public class Main
 	public static void main(String[] args)
 	{
 		// Game v1.0		// TODO CAUTION fix to switch statement in choice DISCUSS
-		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");		ScenarioParser scenarioParser;		try		{			scenarioParser = new ScenarioParser("scenario/scenario1.txt");			Scenario scenario = scenarioParser.getScenario();			OutputGraphic out = new OutputGraphic();						Game game = new Game("Coucou",scenario , out, new InputGraphic(out)) ;			game.play();			} catch (FileNotFoundException e)		{			e.printStackTrace();		} catch (InvalidSyntaxInFileException e)		{			e.printStackTrace();		}					
+		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");		ScenarioParser scenarioParser;		try		{			scenarioParser = new ScenarioParser("scenario/scenario1.txt");			Scenario scenario = scenarioParser.getScenario();			OutputGraphic out = new OutputGraphic();						Game game = new Game(scenario , out, new InputGraphic(out)) ;			game.play();			} catch (FileNotFoundException e)		{			e.printStackTrace();		} catch (InvalidSyntaxInFileException e)		{			e.printStackTrace();		}					
 	}
 }
