@@ -231,7 +231,7 @@ public final class ScenarioParser
 					currentLine = inputTool.readLine();
 				else
 				{
-					result[stageCounter] = "\n"+currentLine.replace('§', '\n');
+					result[stageCounter] = currentLine.replace('§', '\n');
 					
 					currentLine = inputTool.readLine();
 					stageCounter++;
@@ -266,7 +266,7 @@ public final class ScenarioParser
 					currentLine = inputTool.readLine();
 				else
 				{
-					result[stageCounter] = currentLine.replace('§', '\n');
+					result[stageCounter] = currentLine.replace('§', '\n')+"\n\n";
 					
 					currentLine = inputTool.readLine();
 					stageCounter++;
