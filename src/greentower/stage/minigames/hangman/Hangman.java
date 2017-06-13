@@ -37,7 +37,7 @@ public class Hangman extends MiniGame{
 		this.nbTurn = 0;
 		try
 		{
-			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/stage/minigames/pendu/wordList.txt")));
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/greentower/stage/minigames/hangman/wordList.txt")));
 			String row;
 			while ((row=br.readLine())!=null && i < randomNumber)
 				i++;
