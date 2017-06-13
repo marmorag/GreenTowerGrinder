@@ -2,10 +2,12 @@ package greentower.stage.minigames.othello.core;
 
 /**
  * A board of othello. 8x8 grid. Cells are all the same
+ *
  * @author florent.viogne
+ *
  */
-public class Board{
-	
+public class Board
+{
 	/**
 	 * Grid's size. Value is 8.
 	 */
@@ -147,7 +149,8 @@ public class Board{
 
 		return false;
 	}
-	
+
+	//DOC (done) (detail)
 	/**
 	 * Test if a given position is valid. The line must be between 0 and 7, the column too.
 	 * @param askedPosition

@@ -3,9 +3,12 @@ package greentower.stage.minigames.othello.core;
 /**
  * This enumeration lists both colors of othello: black and white.
  * There is also a color for empty cases.
+ *
  * @author florent.viogne
+ *
  */
-public enum Color{
+public enum Color
+{
 	/**
 	 * The black color which is represented with character 'B' in the board
 	 */

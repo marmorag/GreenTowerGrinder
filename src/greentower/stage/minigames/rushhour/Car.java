@@ -9,6 +9,7 @@ import greentower.stage.minigames.rushhour.exceptions.IncompatibleDirectionExcep
 
 /**
  *  Car is an element of the board which can move by the user
+ *
  * @author gavinr
  */
 
@@ -96,8 +97,7 @@ public class Car implements Serializable
 	 * Return direction of the car
 	 * @return Direction of the car
 	 */
-	public Direction getDirection()
-	{
+	public Direction getDirection(){
 		return this.direction;
 	}
 
@@ -105,13 +105,11 @@ public class Car implements Serializable
 	 * Return a table with all car's positions
 	 * @return All possible positions of a car
 	 */
-	private Position[] getAllPositions()
-	{
+	private Position[] getAllPositions(){
 		Position[] positions = new Position[this.length];
 		Position temp = this.getPosition();
 		positions[0] = temp;
-		for(int i=1;i<this.length;i++)
-		{
+		for(int i=1;i<this.length;i++){
 			positions[i] = temp.getPreviousPosition(this.direction);
 			temp = positions[i];
 		}
@@ -124,11 +122,9 @@ public class Car implements Serializable
 	 * @param position in the gameboard
 	 * @return true if a car is at position, false if not
 	 */
-	public boolean isAt(Position position)
-	{
+	public boolean isAt(Position position){
 		Position[] positions = this.getAllPositions();
-		for(int index=0;index<positions.length;index++)
-		{
+		for(int index=0;index<positions.length;index++){
 			if(positions[index].equals(position))
 				return true;
 		}
@@ -141,41 +137,25 @@ public class Car implements Serializable
 	 * @return forward position
 	 * @throws IncompatibleDirectionException
 	 */
-	public Position getForwardPositionWhileMoving(Direction movement) throws IncompatibleDirectionException
-	{
+	public Position getForwardPositionWhileMoving(Direction movement) throws IncompatibleDirectionException{
 		Position pos = this.getPosition();
-		if(this.direction == Direction.UP || this.direction == Direction.DOWN)
-		{
-			if(movement == Direction.LEFT || movement == Direction.RIGHT)
-			{
+		if(this.direction == Direction.UP || this.direction == Direction.DOWN){
+			if(movement == Direction.LEFT || movement == Direction.RIGHT){
 				throw new IncompatibleDirectionException();
-			}
-			else
-			{
-				if(this.direction == movement)
-				{
+			}else{
+				if(this.direction == movement){
 					return this.position;
-				}
-				else
-				{
+				}else{
 					return new Position(pos.getX(),pos.getY()+this.getLength()-1);
 				}
 			}
-		}
-		else
-		{
-			if(movement == Direction.UP || movement == Direction.DOWN)
-			{
+		}else{
+			if(movement == Direction.UP || movement == Direction.DOWN){
 				throw new IncompatibleDirectionException();
-			}
-			else
-			{
-				if(this.direction == movement)
-				{
+			}else{
+				if(this.direction == movement){
 					return this.position;
-				}
-				else
-				{
+				}else{
 					return new Position(pos.getX()-this.getLength()+1, pos.getY());
 				}
 			}
@@ -186,10 +166,8 @@ public class Car implements Serializable
 	 * Clone the car
 	 * @return a clone of the car
 	 */
-	public Car clone()
-	{
-		try
-		{
+	public Car clone(){
+		try{
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			ObjectOutputStream oos = new ObjectOutputStream(baos);
 			oos.writeObject(this);
@@ -197,11 +175,10 @@ public class Car implements Serializable
 			ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
 			ObjectInputStream ois = new ObjectInputStream(bais);
 			return (Car)ois.readObject();
-		}
-		catch(Exception e)
-		{
+		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return null;
 	}
+
 }

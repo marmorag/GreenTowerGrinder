@@ -33,8 +33,7 @@ class ButtonListener implements ActionListener
 	 * Set column number
 	 * @param col
 	 */
-	public void setColumn(int col)
-	{
+	public void setColumn(int col){
 		this.column = col;
 	}
 
@@ -42,16 +41,14 @@ class ButtonListener implements ActionListener
 	 * Set row number
 	 * @param row
 	 */
-	public void setRow(int row)
-	{
+	public void setRow(int row){
 		this.row = row;
 	}
 	/**
 	 *
 	 * @param table
 	 */
-	public void setTable(JTable table)
-	{
+	public void setTable(JTable table){
 		this.table = table;
 	}
 

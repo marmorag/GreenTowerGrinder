@@ -5,7 +5,9 @@ import greentower.IO.Output;
 
 /**
  * This interface enables to launch a stage (MiniGame or Choice, whatever)
+ *
  * @author Florent
+ *
  */
 public abstract class Stage
 {
@@ -54,11 +56,11 @@ public abstract class Stage
 	{
 		return this.stageIsFinal;
 	}
-
+	
 	/**
 	 * @return the stageIsFinal
 	 */
-	protected boolean isStageIsFinal()
+	protected boolean isStageIsFinal() 
 	{
 		return this.stageIsFinal;
 	}
@@ -66,7 +68,7 @@ public abstract class Stage
 	/**
 	 * @return the dialog
 	 */
-	protected String getDialog()
+	protected String getDialog() 
 	{
 		return this.dialog;
 	}
@@ -74,7 +76,7 @@ public abstract class Stage
 	/**
 	 * @return the index
 	 */
-	public int getIndex()
+	protected int getIndex() 
 	{
 		return this.index;
 	}

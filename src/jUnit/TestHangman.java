@@ -1,9 +1,7 @@
 package jUnit;
 
-import java.awt.Dialog;
-
 import org.junit.Test;
-
+import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.hangman.Hangman;
 import junit.framework.TestCase;
 
@@ -32,7 +30,7 @@ public class TestHangman extends TestCase{
 	public void testCheckLetter()
 	{
 		//fail("Not yet implemented");
-		Hangman pendu = new Hangman("", 1);
+		Hangman pendu = new Hangman(Dialog.DIALOG_STAGE1, 1);
 		pendu.setWordToFind("AAB"); // = Word
 		boolean res;
 		char letter;

@@ -5,9 +5,6 @@ import greentower.stage.minigames.MiniGame;
 
 /**
  * @author Florent & Rémi
- * 
- * Represents a Gambling Machine
- * 
  */
 public class GamblingMachine extends MiniGame{
 

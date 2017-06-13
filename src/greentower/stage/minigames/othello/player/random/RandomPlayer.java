@@ -8,20 +8,21 @@ import greentower.stage.minigames.othello.player.Player;
 
 /**
  * This class represents a random othello's player
+ *
  * @author florent.viogne
+ *
  */
-public class RandomPlayer implements Player{
+public class RandomPlayer implements Player
+{
 	/**
 	 * RandomPlayer's constructor
 	 */
 	public RandomPlayer()
 	{
-		//empty
 	}
 
 	@Override
-	public Position askForPosition(Output display) 
-	{
+	public Position askForPosition(Output display) {
 		Random random = new Random();
 		int line, column;
 		line = random.nextInt(8);

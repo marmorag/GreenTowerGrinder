@@ -10,9 +10,12 @@ import greentower.stage.minigames.othello.player.random.RandomPlayer;
 
 /**
  * This class represents a game of othello
+ *
  * @author florent.viogne
+ *
  */
-public class OthelloGame extends MiniGame{
+public class OthelloGame extends MiniGame
+{
 	/**
 	 * Players (black player is at 0)
 	 */

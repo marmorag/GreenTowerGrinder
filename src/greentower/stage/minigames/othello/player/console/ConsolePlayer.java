@@ -11,9 +11,12 @@ import greentower.stage.minigames.othello.player.Player;
 
 /**
  * This class enables a othello's player to make action
+ *
  * @author florent.viogne
+ *
  */
-public class ConsolePlayer implements Player{
+public class ConsolePlayer implements Player
+{
 	/**
 	 * Input Stream
 	 */

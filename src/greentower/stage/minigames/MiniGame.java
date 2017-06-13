@@ -6,7 +6,9 @@ import greentower.stage.Stage;
 
 /**
  * This class represents Mini Game' basement
+ *
  * @author Axelle
+ *
  */
 public abstract class MiniGame extends Stage
 {

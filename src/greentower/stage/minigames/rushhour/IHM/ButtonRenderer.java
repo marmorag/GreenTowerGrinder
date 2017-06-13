@@ -6,8 +6,10 @@ import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 
 /**
- * Permits to develop IHM
+ *
+ *
  * @author gavinr
+ *
  */
 public class ButtonRenderer extends JButton implements TableCellRenderer
 {

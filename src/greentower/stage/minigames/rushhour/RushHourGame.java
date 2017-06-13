@@ -5,12 +5,15 @@ import greentower.IO.Output;
 import greentower.stage.minigames.MiniGame;
 
 /**
+ *
  * Represent a game of RushHour
+ *
  * @author gavinr
+ *
  */
 @SuppressWarnings("unused")
-public class RushHourGame extends MiniGame{
-
+public class RushHourGame extends MiniGame
+{
 	/**
 	 * The game board
 	 */

@@ -7,7 +7,7 @@ import greentower.IO.Output;
 import greentower.stage.minigames.MiniGame;
 
 /**
- * Represents a Shifumi Game
+ *
  * @authors Gavin Rémi & Barama Rayan
  */
 public class Shifumi extends MiniGame{
