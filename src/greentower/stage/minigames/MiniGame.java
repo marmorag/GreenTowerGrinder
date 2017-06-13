@@ -3,13 +3,10 @@ package greentower.stage.minigames;
 import greentower.IO.Input;
 import greentower.IO.Output;
 import greentower.stage.Stage;
-import greentower.stage.choice.Dialog;
 
 /**
  * This class represents Mini Game' basement
- *
  * @author Axelle
- *
  */
 public abstract class MiniGame extends Stage
 {
@@ -28,26 +25,26 @@ public abstract class MiniGame extends Stage
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	protected MiniGame(Dialog dialog, int stageIndex)
+	protected MiniGame(String dialog, int stageIndex)
 	{
 		this.index = stageIndex;
 		this.dialog = dialog;
+		this.stageIsFinal = false;
 	}
-
+	
 	/**
-	 * Mini Game's constructor for Pendu
-	 * @param outTool
-	 * @param inTool
+	 * Mini Game's contructor
 	 * @param dialog
 	 * @param stageIndex 
+	 * @param initialStageIsFinal 
 	 */
-	protected MiniGame(Output outTool, Input inTool, Dialog dialog, int stageIndex)
+	protected MiniGame(String dialog, int stageIndex, boolean initialStageIsFinal)
 	{
 		this.index = stageIndex;
 		this.dialog = dialog;
-		this.inputTool = inTool;
-		this.outputTool = outTool;
+		this.stageIsFinal = initialStageIsFinal;
 	}
+	
 	
 	/**
 	 * Allows to play game

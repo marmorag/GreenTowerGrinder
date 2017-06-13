@@ -4,12 +4,9 @@ import greentower.stage.minigames.othello.core.exceptions.InvalidStringToPositio
 
 /**
  * This class represents a position in a board with cases designated by line and column.
- *
  * @author viognef
- *
  */
-public class Position
-{
+public class Position{
 	/**
 	 *	All valid coordonates for line and column
 	 */
@@ -62,16 +59,17 @@ public class Position
 		return this.column;
 	}
 
-	//TODO (done) override equals and hashCode
+	@Override
 	public int hashCode()
 	{
 		return this.line * this.column + this.line;
 	}
 
+	@Override
 	public boolean equals(Object anotherObject)
 	{
 		if(anotherObject == this) return false;
-		if(anotherObject instanceof Position) return false;
+		if(!(anotherObject instanceof Position)) return false;
 		Position anotherPosition = (Position) anotherObject;
 		if(this.line == anotherPosition.line)
 			if(this.column == anotherPosition.column)

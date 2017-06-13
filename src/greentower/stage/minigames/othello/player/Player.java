@@ -6,7 +6,6 @@ import greentower.stage.minigames.othello.core.Position;
 /**
  * This interface enables user to play to othello
  * @author viognef
- *
  */
 public interface Player
 {

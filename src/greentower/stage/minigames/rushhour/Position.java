@@ -3,15 +3,12 @@ import java.io.Serializable;
 
 /**
  * Position on 2 axis (abscissa and ordinate)
- *
  * @author gavinr
- *
  */
-public class Position implements Serializable
-{
+public class Position implements Serializable{
 
 	/**
-	 * 
+	 * Serial Version id
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
@@ -55,7 +52,6 @@ public class Position implements Serializable
 	/**
 	 * @param x
 	 */
-	@SuppressWarnings("javadoc")
 	public void setX(int x)
 	{
 		this.x = x;
@@ -64,7 +60,6 @@ public class Position implements Serializable
 	/**
 	 * @param y
 	 */
-	@SuppressWarnings("javadoc")
 	public void setY(int y)
 	{
 		this.y = y;
@@ -112,7 +107,7 @@ public class Position implements Serializable
 	 * @param dir direction of the car
 	 * @return the next position according to the direction
 	 */
-	public Position getNextPosition(Direction dir)
+	protected Position getNextPosition(Direction dir)
 	{
 		return new Position(this.getX()+dir.getX(), this.getY()+dir.getY());
 	}
@@ -121,7 +116,7 @@ public class Position implements Serializable
 	 * @param dir direction of the car
 	 * @return the previous position according to the direction
 	 */
-	public Position getPreviousPosition(Direction dir)
+	protected Position getPreviousPosition(Direction dir)
 	{
 		return new Position(this.getX()-dir.getX(), this.getY()-dir.getY());
 	}

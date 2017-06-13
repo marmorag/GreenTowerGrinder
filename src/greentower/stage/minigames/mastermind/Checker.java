@@ -1,23 +1,21 @@
 package greentower.stage.minigames.mastermind;
+
 /**
  * Represents Checkers
- *Permit to verify the player's tries to find the good combination
- *
+ * Permit to verify the player's tries to find the good combination
  * @author delomeza
- *
  */
-public class Checker {
+public class Checker{
 
-/**
- * indicate the pawns whose aren't set correctly
- */
+	/**
+	 * indicate the pawns whose aren't set correctly
+	 */
 	private final int wellPlaced;
 
-/**
- * indicate the correctly set pawns
- */
+	/**
+	 * indicate the correctly set pawns
+	 */
 	private final int misplaced;
-
 
 	/**
 	 * Creates a checker used to indicate how muck a proposition looks like the result expected
@@ -30,12 +28,11 @@ public class Checker {
 		this.misplaced = theMisplaced;
 	}
 
-
 	/**
 	 * ACCESSOR
 	 * @return The number of well placed pawns
 	 */
-	public int getWellPlaced()
+	protected int getWellPlaced()
 	{
 		return this.wellPlaced;
 	}
@@ -45,7 +42,7 @@ public class Checker {
 	 * ACCESSOR
 	 * @return The number of miss placed pawns
 	 */
-	public int getMisplaced()
+	protected int getMisplaced()
 	{
 		return this.misplaced;
 	}

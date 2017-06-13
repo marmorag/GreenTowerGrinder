@@ -2,7 +2,7 @@ package greentower.core.launcher;
 
 import greentower.IO.InputConsole;
 import greentower.IO.OutputConsole;
-import greentower.core.ListOfStages;
+import greentower.core.scenario.Scenario;
 import greentower.stage.Stage;
 
 /**
@@ -22,17 +22,16 @@ public class TestLinkingStages
 		System.out.println("****** BIENVENUE DANS THE GREEN TOWER GRINDER ******");
 		try
 		{
-			Stage currentStage = ListOfStages.getStageAt(1);
+			Stage currentStage = Scenario.getStageAt(1);
 			while(true)
 			{
 				int result = currentStage.playStage(new OutputConsole(), new InputConsole());
-				currentStage = ListOfStages.getNextStages(ListOfStages.getStageIndex(currentStage), result);
+				currentStage = Scenario.getNextStages(Scenario.getStageIndex(currentStage), result);
 			}
 			
 		}
 		catch (Exception e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

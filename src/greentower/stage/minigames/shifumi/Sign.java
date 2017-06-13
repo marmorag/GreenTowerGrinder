@@ -2,18 +2,19 @@ package greentower.stage.minigames.shifumi;
 
 /**
  * All shifumi sign
+ * @author Axelle
  */
-public enum Sign {
+public enum Sign{
 	/**
-	 *
+	 * Rock sign
 	 */
 	ROCK,
 	/**
-	 *
+	 * Paper sign
 	 */
 	PAPER,
 	/**
-	 *
+	 * Scissors sign
 	 */
 	SCISSORS;
 

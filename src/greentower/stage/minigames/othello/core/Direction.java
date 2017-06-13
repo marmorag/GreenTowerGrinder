@@ -3,10 +3,8 @@ package greentower.stage.minigames.othello.core;
 /**
  * This enumerations lists possible directions in othello
  * @author florent.viogne
- *
  */
-public enum Direction
-{
+public enum Direction{
 	/**
 	 * The north direction
 	 */

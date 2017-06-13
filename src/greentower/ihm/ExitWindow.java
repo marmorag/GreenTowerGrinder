@@ -22,27 +22,34 @@ public class ExitWindow extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 6629973015506180972L;
 
 	/**
-	 * 
+	 * The yes answer button
 	 */
 	private JButton yesButton;
 	
 	/**
-	 *
+	 * The no answer button
 	 */
 	private JButton noButton;
 	
 	/**
-	 * 
+	 * Label to exit
 	 */
 	private JLabel exitLabel;
 	
-	private JPanel panel;
 	/**
-	 * 
+	 * Panel of the pop-up
+	 */
+	private JPanel panel;
+	
+	/**
+	 * The MainWindow
 	 */
 	private JFrame mainWindow;
 	
-	
+	/**
+	 * Set params of JFrame
+	 * @param main
+	 */
 	public ExitWindow(JFrame main) {
 		this.setTitle("");
 		this.setSize(250, 75);
@@ -55,7 +62,7 @@ public class ExitWindow extends JFrame implements ActionListener{
 		this.setContentPane(panel);
 		
 		// exitLabel
-		this.exitLabel = new JLabel("Are youy sure you want to quit ?");
+		this.exitLabel = new JLabel("Are you sure you want to leave ?");
 		this.panel.add(exitLabel);
 		
 		// yesBtn
@@ -76,6 +83,9 @@ public class ExitWindow extends JFrame implements ActionListener{
 	}
 	
 	@Override
+	/**
+	 * Action performed on event
+	 */
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource() == yesButton)
 		{

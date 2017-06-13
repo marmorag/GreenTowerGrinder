@@ -1,24 +1,19 @@
 package greentower.stage.minigames.rushhour;
 /**
- *
  * Represent a player of the game
- *
  * @author gavinr
- *
- *
  */
-public abstract class Player
-{
+public abstract class Player{
 	/**
 	 * Name of the player
 	 */
-	public String name;
+	private String name;
 	
 	/**
 	 * @param name
 	 */
-	@SuppressWarnings("javadoc")
-	protected Player(String name){
+	protected Player(String name)
+	{
 		this.name = name;
 	}
 	
@@ -37,4 +32,13 @@ public abstract class Player
 	 * @return the movement entered by the player
 	 */
 	public abstract int getMove();
+
+	/**
+	 * @return
+	 * 			The name
+	 */
+	public String getName() 
+	{
+		return this.name;
+	}
 }

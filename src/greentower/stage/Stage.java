@@ -2,49 +2,46 @@ package greentower.stage;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.stage.choice.Dialog;
 
 /**
  * This interface enables to launch a stage (MiniGame or Choice, whatever)
- *
  * @author Florent
- *
  */
 public abstract class Stage
 {
 	/**
 	 * stageIsFinal is true when the the stage is the last one
 	 */
-	protected boolean stageIsFinal = false;
+	protected boolean stageIsFinal;
 
 	/**
 	 *  Dialog to say
 	 */
-	protected Dialog dialog;
+	protected String dialog;
 
 	/**
 	 * Interface used to input anything needed
 	 */
-	public Input inputTool;
+	protected Input inputTool;
 
 	/**
 	 * Interface used to display anything needed
 	 */
-	public Output outputTool;
-	
+	protected Output outputTool;
+
 	/**
 	 * Index of Stage in ListOfStages
 	 */
-	public int index;
-	
+	protected int index;
+
 
 	/**
 	 * Play the current stage (MiniGame or Choice, whatever)
 	 * @param display
-	 * @param input 
+	 * @param input
 	 * @return
 	 * 			Stage result
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	public abstract int playStage(Output display, Input input) throws Exception;
 
@@ -57,4 +54,34 @@ public abstract class Stage
 	{
 		return this.stageIsFinal;
 	}
+
+	/**
+	 * @return the stageIsFinal
+	 */
+	protected boolean isStageIsFinal()
+	{
+		return this.stageIsFinal;
+	}
+
+	/**
+	 * @return the dialog
+	 */
+	protected String getDialog()
+	{
+		return this.dialog;
+	}
+
+	/**
+	 * @return the index
+	 */
+	public int getIndex()
+	{
+		return this.index;
+	}
+
+	public void setDialog(String dialog)
+	{
+		this.dialog = dialog;
+	}
+
 }

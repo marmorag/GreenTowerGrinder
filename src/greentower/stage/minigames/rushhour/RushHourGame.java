@@ -2,28 +2,19 @@ package greentower.stage.minigames.rushhour;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
 /**
- *
  * Represent a game of RushHour
- *
  * @author gavinr
- *
  */
 @SuppressWarnings("unused")
-public class RushHourGame extends MiniGame
-{
+public class RushHourGame extends MiniGame{
+
 	/**
 	 * The game board
 	 */
 	private GameBoard board;
-
-	/**
-	 * The game player
-	 */
-	private Player player;
 
 	/**
 	 * 
@@ -40,60 +31,48 @@ public class RushHourGame extends MiniGame
 	 */
 	private Input input;
 
-	/**
-	 * create a game with a default player and a game board level configuration
-	 * @param display 
-	 * @param input 
-	 * @param dialog 
-	 * @param indexOfStage 
-	 */
-	//public RushHourGame(Player player, int level, Display display)
-	public RushHourGame(Output display, Input input, Dialog dialog, int indexOfStage)
-	{
-		super(display, input, dialog, indexOfStage);
-		this.board = new GameBoard();
-		this.display = display;
-		this.input = input;
-	}
 	
 	/**
 	 * @param dialog
 	 * @param indexOfStage
 	 */
-	public RushHourGame(Dialog dialog, int indexOfStage)
+	public RushHourGame(String dialog, int indexOfStage)
 	{
 		super(dialog, indexOfStage);
 		this.board = new GameBoard();
 	}
 
-	/**
-	 * Game's launching
-	 * While the player has not win, he can move cars
-	 * At each movement, display updated grid
-	 * @return 
-	 * @throws Exception 
-	 */
+	@Override
 	public int playStage(Output display, Input input) throws Exception
 	{
+		this.inputTool = input;
+		this.outputTool = display;
+		display.showStageIntroduction(this.index);
+		display.showDialog(this.dialog);
+		Long t = System.currentTimeMillis();
 		while(this.board.isFinish() == false)
 		{
-			// implementer un timer pour la defaite
+			if(System.currentTimeMillis()-t>120000)
+			{
+				display.showMiniGameResult(1);
+				return 1;
+			}
 			display.showRushHourBoard(this.board);
-			display.showText("Entrez le numéro de la voiture:");
+			display.showText("Entrez le numéro de la voiture:\n");
 			int numCar = input.getCar(this.board);
 			display.showText("Entrez une direction:");
-			display.showText("LEFT; RIGHT; UP; DOWN"); 
+			display.showText("LEFT; RIGHT; UP; DOWN\n"); 
 			Direction direction = input.getDirection();
-			display.showText("Entrez le nombre de cases:");
+			display.showText("Entrez le nombre de cases:\n");
 			int offset = input.getMove();
 			try
 			{
 				if(this.board.moveCar(numCar, direction, offset) == false)
-					display.showError("Mauvaise Direction");
+					display.showError("Mauvaise Direction\n");
 			}
 			catch(Exception e)
 			{
-				display.showError("mauvaise voiture");
+				display.showError("mauvaise voiture\n");
 			}
 		}
 		display.showMiniGameResult(0);

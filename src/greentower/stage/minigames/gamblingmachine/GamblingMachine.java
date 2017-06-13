@@ -1,13 +1,13 @@
 package greentower.stage.minigames.gamblingmachine;
 
 import greentower.IO.Output;
-import greentower.core.ListOfStages;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
-
 
 /**
  * @author Florent & Rémi
+ * 
+ * Represents a Gambling Machine
+ * 
  */
 public class GamblingMachine extends MiniGame{
 
@@ -15,9 +15,8 @@ public class GamblingMachine extends MiniGame{
 	 * GamblingMachine's constructor
 	 * @param dialog
 	 * @param stageIndex 
-	 *
 	 */
-	public GamblingMachine(Dialog dialog, int stageIndex)
+	public GamblingMachine(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 	}
@@ -30,7 +29,7 @@ public class GamblingMachine extends MiniGame{
 	 */
 	public int playStage(Output display)
 	{
-		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showStageIntroduction(this.index);
 		display.showDialog(this.dialog);
 		
 		int result;
@@ -46,7 +45,7 @@ public class GamblingMachine extends MiniGame{
 			result = MiniGame.RESULT_LOOSE;
 
 		display.showMiniGameResult(result);
-		display.showStageEnd(ListOfStages.getStageIndex(this));
+		display.showStageEnd(this.index);
 		return result;
 	}
 

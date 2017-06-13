@@ -4,12 +4,9 @@ import junit.framework.TestCase;
 
 /**
  * Tests the MasterMind class
- * 
  * @author Axelle Delomez
- *
  */
-public class TestMasterMind extends TestCase
-{
+public class TestMasterMind extends TestCase{
 /**
  * Creates a test of Master Mind game with the given name
  * 
@@ -29,61 +26,61 @@ public class TestMasterMind extends TestCase
 		String code;
 		
 		
-		//test n°1		
+		//test nï¿½1		
 		code = "RRRR";
 		res = true; //on sait que R,R,R,R est une combinaison valide
 		
-		assertEquals("ERREUR : R,R,R,R devrait être une combination valide ",res,MasterMind.stringChecker(code));
+		assertEquals("ERREUR : R,R,R,R devrait ï¿½tre une combination valide ",res,MasterMind.stringChecker(code));
 		
-		//test n°2
+		//test nï¿½2
 		code = "RBBB";
 		res = true; //on sait que R,B,B,B est une combinaison valide
 		
-		assertEquals("ERREUR : R,B,B,B devrait être une combination valide ",res,MasterMind.stringChecker(code));
+		assertEquals("ERREUR : R,B,B,B devrait ï¿½tre une combination valide ",res,MasterMind.stringChecker(code));
 			
-		//test n°3 - le code n'est pas une combinaison valide
+		//test nï¿½3 - le code n'est pas une combinaison valide
 		code ="AAAA";
 		res = false;
 		
-		assertEquals("ERREUR : A,A,A,A ne devrait pas être une combination valide ",res,MasterMind.stringChecker(code));
+		assertEquals("ERREUR : A,A,A,A ne devrait pas ï¿½tre une combination valide ",res,MasterMind.stringChecker(code));
 		
-		//test n°4 - la longueur de la combinaison est invalide
+		//test nï¿½4 - la longueur de la combinaison est invalide
 		code = "RRRRR";
 		res = false;
 		
-		assertEquals("ERREUR : CHAINE TROP LONGUE R,R,R,R,R ne devrait pas être une combination valide ",res,MasterMind.stringChecker(code));
+		assertEquals("ERREUR : CHAINE TROP LONGUE R,R,R,R,R ne devrait pas ï¿½tre une combination valide ",res,MasterMind.stringChecker(code));
 		
-		//test n°5 - la longueur de la combinaison est invalide
+		//test nï¿½5 - la longueur de la combinaison est invalide
 		code = "RRR";
 		res = false;
 		
-		assertEquals("ERREUR : CHAINE TROP COURTE R,R,R ne devrait pas être une combination valide ",res,MasterMind.stringChecker(code));
+		assertEquals("ERREUR : CHAINE TROP COURTE R,R,R ne devrait pas ï¿½tre une combination valide ",res,MasterMind.stringChecker(code));
 		
-		//test n°6 - la combinaison contient des espaces
+		//test nï¿½6 - la combinaison contient des espaces
 		code = "R RR";
 		res = false;
 		
-		assertEquals("ERREUR : R, ,R,R ne devrait pas être une combination valide ",res,MasterMind.stringChecker(code));
+		assertEquals("ERREUR : R, ,R,R ne devrait pas ï¿½tre une combination valide ",res,MasterMind.stringChecker(code));
 		
 		// !--CAS LIMITES--!
 		
-		//test n°7 - la combinaison est vide
+		//test nï¿½7 - la combinaison est vide
 		code = (" ");
 		res = false;
 		
-		assertEquals("ERREUR : la combinaison vide ne devrait pas être une combination valide ",res,MasterMind.stringChecker(code));
+		assertEquals("ERREUR : la combinaison vide ne devrait pas ï¿½tre une combination valide ",res,MasterMind.stringChecker(code));
 		
-		//test n°8 - la combinaison ne contient pas de lettre
+		//test nï¿½8 - la combinaison ne contient pas de lettre
 		code = ("1234");
 		res = false;
 		
-		assertEquals("ERREUR : 1,2,3,4 ne devrait pas être une combination valide ",res,MasterMind.stringChecker(code));
+		assertEquals("ERREUR : 1,2,3,4 ne devrait pas ï¿½tre une combination valide ",res,MasterMind.stringChecker(code));
 		
-		//test n°9 - la combinaison contient des caractères spéciaux
+		//test nï¿½9 - la combinaison contient des caractï¿½res spï¿½ciaux
 		code = ("&RRR");
 		res = false;
 		
-		assertEquals("ERREUR : &,R,R,R ne devrait pas être une combination valide ",res,MasterMind.stringChecker(code));
+		assertEquals("ERREUR : &,R,R,R ne devrait pas ï¿½tre une combination valide ",res,MasterMind.stringChecker(code));
 		
 	}
 

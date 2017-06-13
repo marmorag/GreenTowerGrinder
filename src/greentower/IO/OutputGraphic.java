@@ -1,8 +1,6 @@
 package greentower.IO;
 
 import greentower.ihm.MainWindow;
-import greentower.stage.choice.Answers;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 import greentower.stage.minigames.rushhour.GameBoard;
 import greentower.stage.minigames.rushhour.Position;
@@ -15,9 +13,9 @@ import greentower.stage.minigames.shifumi.Sign;
 public class OutputGraphic implements Output{
 
 	/**
-	 * 
+	 * Main Frame of the application
 	 */
-	protected MainWindow mainWindow;
+	public MainWindow mainWindow;
 	
 	/**
 	 * This is the display windows
@@ -28,40 +26,46 @@ public class OutputGraphic implements Output{
 	}
 	
 	@Override
-	public void showDialog(Dialog dialog) {
-		this.mainWindow.console.setOutput(dialog.toString());
+	public void showDialog(String dialog) {
+		this.mainWindow.getConsole().setOutput(dialog.toString());
 	}
 
 	@Override
 	public void showText(String str) {
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 	}
 	
-	// PENDU
+	@Override
+	public void showAnswers(String answers) {
+		this.mainWindow.getConsole().setOutput(answers.toString());
+		
+	}
+	
+	// Hangman
 	@Override
 	public void notifyWin(int nbCoups, String motATrouver) {
 		String str = "Felicitations vous avez réussi en : "+ nbCoups +"coups\n"+"Le mot était :"+motATrouver+"\n";		
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 	}
 
 	@Override
-	public void erreurLettre() {
-		this.mainWindow.console.setOutput("\nLa lettre n'est pas contenu dans le mot!\n");
+	public void letterError() {
+		this.mainWindow.getConsole().setOutput("\nLa lettre n'est pas contenu dans le mot!\n");
 		
 	}
 
 	@Override
 	public void notifyLoose(String motATrouver) {
-		this.mainWindow.console.setOutput("Dommage vous avez perdu"+"Le mot était :"+motATrouver+"\n");
+		this.mainWindow.getConsole().setOutput("Dommage vous avez perdu"+"Le mot était :"+motATrouver+"\n");
 	}
 
 	@Override
-	public void demanderCaractere() {
-		this.mainWindow.console.setOutput("\nVotre lettre :");
+	public void getChar() {
+		this.mainWindow.getConsole().setOutput("\nVotre lettre :");
 	}
 
 	@Override
-	public void showPendu(int nbErreur, String motAAfficher) {
+	public void showHangman(int nbErreur, String motAAfficher) {
 		String str = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
 		switch(nbErreur){
@@ -114,7 +118,7 @@ public class OutputGraphic implements Output{
 				break;
 		}
 		str = str +"Le mot a trouver :"+motAAfficher+"\n";
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 		
 	}
 
@@ -123,7 +127,7 @@ public class OutputGraphic implements Output{
 		String str = "\n***************************************************\n"
 					+"------------- ENTREE DANS L'ETAGE N°" + (stageIndex + 1) + " -------------\n"
 					+"***************************************************\n" ;
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 		
 	}
 
@@ -132,47 +136,39 @@ public class OutputGraphic implements Output{
 		String str = "\n***************************************************\n"
 				+"------------- SORTIE DANS L'ETAGE N+" + (stageIndex + 1) + " -------------\n"
 				+"***************************************************\n" ;
-		this.mainWindow.console.setOutput(str);
-//		try
-//		{
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e)
-//		{
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		this.mainWindow.console.setText("");
-		
+		this.mainWindow.getConsole().setOutput(str);
 	}
 
 	@Override
 	public void MasterMind() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void Othello() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void showError(String str) {
 		System.err.println(str);
-		this.mainWindow.console.setOutput("\n\n"+str);
-		
+		this.mainWindow.getConsole().setOutput("\n\n"+str);
 	}
 
 	@Override
 	public void gambling(int[] grid) {
-		this.mainWindow.console.setOutput("\n"+grid[0]+"|"+grid[1]+"|"+grid[2]);
+		this.mainWindow.getConsole().setOutput("\n"+grid[0]+"|"+grid[1]+"|"+grid[2]);
 	}
 
 	@Override
 	public void HeadsOrTails(int face) {
-		// TODO Demander R�mi
-		
+		this.mainWindow.getConsole().setOutput("\nEt le resultat est :");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) 
+		{
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -183,12 +179,12 @@ public class OutputGraphic implements Output{
 		"LESS: plus petit" +
 		"\nLe nombre est : "+number;
 		
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 	}
 
 	@Override
 	public void ShiFuMi(Sign player, Sign random) {
-		this.mainWindow.console.setOutput(String.valueOf(player)+" VS "+String.valueOf(random));
+		this.mainWindow.getConsole().setOutput(String.valueOf(player)+" VS "+String.valueOf(random));
 		
 	}
 
@@ -204,7 +200,7 @@ public class OutputGraphic implements Output{
 		String str = "\n"+grid[0][0]+"|"+grid[0][1]+"|"+grid[0][2]+"\n"
 					+grid[1][0]+"|"+grid[1][1]+"|"+grid[1][2]+"\n"
 					+grid[2][0]+"|"+grid[2][1]+"|"+grid[2][2]+"\n";
-		this.mainWindow.console.setOutput(str);
+		this.mainWindow.getConsole().setOutput(str);
 	}
 
 	@Override
@@ -221,41 +217,33 @@ public class OutputGraphic implements Output{
 		}
 		str = str + "\nRendez-vous au prochain étage";
 		
-		this.mainWindow.console.setOutput(str);		
+		this.mainWindow.getConsole().setOutput(str);		
 	}
 
 	@Override
 	public void showPrompt()
 	{
-		this.mainWindow.console.updateFocus();
-		//this.mainWindow.console.setInput("\n> ");
-	}
-
-	@Override
-	public void showAnswers(Answers answers) {
-		this.mainWindow.console.setOutput(answers.toString());
-		
+		//this.mainWindow.getConsole().setInput("\n> ");
 	}
 
 	@Override
 	public void showRushHourBoard(GameBoard board) {
 		String grid="";
 		for(int y=0;y<GameBoard.BOARD_WIDTH;y++){
-			grid += "\n*************************\n*";
+			grid += "\n**************************\n";
 			for(int x=0;x<GameBoard.BOARD_HEIGHT;x++){
 				int carNumber = board.getCarNumberAt(new Position(x,y));
 				if(carNumber != -1){
 					grid += " "+carNumber+" *";
 				}else{
-					grid += "   *";
+					grid += "    *";
 				}
 			}
-			grid += "\n";
+			if(y == 2){
+				grid += "          sortie";
+			}
 		}
-		grid += "*************************\n";
-		this.mainWindow.console.setOutput(grid);		
+		grid += "\n**************************\n";
+		this.mainWindow.getConsole().setOutput(grid);		
 	}
-	
-	//GamblingMachine
-
 }

@@ -4,12 +4,10 @@ import java.io.IOException;
 
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.core.ListOfStages;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
 /**
- *
+ * Represents a Shifumi Game
  * @authors Gavin Rémi & Barama Rayan
  */
 public class Shifumi extends MiniGame{
@@ -19,25 +17,23 @@ public class Shifumi extends MiniGame{
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public Shifumi(Dialog dialog, int stageIndex)
+	public Shifumi(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 	}
 
-	/**
-	 * Return if player win or not
-	 * @return true if player win and false if not
-	 * @throws IOException 
-	 */
+	@Override
 	public int playStage(Output display, Input input) throws Exception
 	{
-		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showStageIntroduction(this.index);
+		this.setDialog("----------JEU DU SHIFUMI---------\n Choisissez votre signe parmi : ROCK / PAPER / SCISSORS \n");
 		display.showDialog(this.dialog);
 
-		display.showPrompt(); 
+		//display.showPrompt(); 
 		String sign = input.inputString();
+		
 
-		while(sign != "PAPER" || sign != "ROCK" || sign != "SCISSORS")
+		while(!sign.equals("PAPER") && !sign.equals("ROCK") && !sign.equals("SCISSORS"))
 		{
 			display.showText("Invalid entry");
 			sign = input.inputString();
@@ -70,7 +66,7 @@ public class Shifumi extends MiniGame{
 				result = MiniGame.RESULT_VICTORY;
 		
 		display.showMiniGameResult(result);
-		display.showStageEnd(ListOfStages.getStageIndex(this));
+		display.showStageEnd(this.index);
 		return result;
 	}
 
@@ -79,5 +75,6 @@ public class Shifumi extends MiniGame{
 	{
 		//EMPTY
 	}
+	
 
 }

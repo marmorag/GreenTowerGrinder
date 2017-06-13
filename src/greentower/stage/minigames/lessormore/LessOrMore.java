@@ -1,12 +1,9 @@
-
 package greentower.stage.minigames.lessormore;
 
-import java.io.IOException;
 
+import java.io.IOException;
 import greentower.IO.Input;
 import greentower.IO.Output;
-import greentower.core.ListOfStages;
-import greentower.stage.choice.Dialog;
 import greentower.stage.minigames.MiniGame;
 
 /**
@@ -19,6 +16,7 @@ public class LessOrMore extends MiniGame
 	 * the first card which is randomly picked
 	 */
 	private int base;
+	
 	/**
 	 * the new card which is randomly picked
 	 */
@@ -29,7 +27,7 @@ public class LessOrMore extends MiniGame
 	 * @param dialog
 	 * @param stageIndex 
 	 */
-	public LessOrMore(Dialog dialog, int stageIndex)
+	public LessOrMore(String dialog, int stageIndex)
 	{
 		super(dialog, stageIndex);
 		this.base = (int)(Math.random() * (10-1)) + 1;
@@ -54,11 +52,11 @@ public class LessOrMore extends MiniGame
 	public int playStage(Output display, Input input) throws Exception
 	{
 		this.init();
-		display.showStageIntroduction(ListOfStages.getStageIndex(this));
+		display.showStageIntroduction(this.index);
 		display.showDialog(this.dialog);
-		display.showText("RULES");
-		display.showText("Tu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché");
-		display.showText("MORE: plus grand ");
+		display.showText("\nRULES\n");
+		display.showText("Tu vas devoir devoir deviné si le prochain nombre entre 1 et 10 sera plus grand ou plus petit que celui affiché\n");
+		display.showText("MORE: plus grand \n");
 		display.showText("LESS: plus petit \n");
 		int result;
 		
@@ -69,14 +67,14 @@ public class LessOrMore extends MiniGame
 		String userChoice;
 		userChoice = input.inputString();
 
-		if(userChoice.equals("MORE") || userChoice.equals("PLUS") || userChoice.equals("+"))
+		if(userChoice.toUpperCase().equals("more") || userChoice.toUpperCase().equals("plus") || userChoice.equals("+"))
 		{
 			if(this.randomcard<this.base)
 				result = MiniGame.RESULT_LOOSE;
 			else
 				result = MiniGame.RESULT_VICTORY;
 		}
-		else if(userChoice.equals("LESS") || userChoice.equals("MOINS") || userChoice.equals("-"))
+		else if(userChoice.toUpperCase().equals("less") || userChoice.toUpperCase().equals("moins") || userChoice.equals("-"))
 		{
 			if(this.randomcard<this.base)
 				result =  MiniGame.RESULT_VICTORY;
@@ -87,7 +85,7 @@ public class LessOrMore extends MiniGame
 			throw new Exception();
 
 		display.showMiniGameResult(result);
-		display.showStageEnd(ListOfStages.getStageIndex(this));
+		display.showStageEnd(this.index);
 		return result;
 
 	}
