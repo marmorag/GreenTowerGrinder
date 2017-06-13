@@ -1,24 +1,29 @@
 package jUnit;
-
-import static org.junit.Assert.*;
 import java.io.FileNotFoundException;
+
 import org.junit.Test;
+
 import greentower.core.exception.InvalidSyntaxInFileException;
 import greentower.core.scenario.Scenario;
 import greentower.core.scenario.ScenarioParser;
+import junit.framework.TestCase;
 
 /**
- * @author Axelle Delomez
- * 
  * Tests the class /GreenTowerGrinder/src/greentower/core/scenario/Scenario.java
- *
+ * @author Axelle Delomez
  */
-public class testScenario {
+public class testScenario extends TestCase{
 
+	public testScenario(String name)
+	{
+		super(name);
+	}
+	
 	/**
+	 * Test the method getNextStage
+	 * 			Show the link between stages
 	 * @throws InvalidSyntaxInFileException
 	 * @throws FileNotFoundException
-	 *
 	 */
 	@Test
 	public void TestgetNextStages() throws FileNotFoundException, InvalidSyntaxInFileException {
