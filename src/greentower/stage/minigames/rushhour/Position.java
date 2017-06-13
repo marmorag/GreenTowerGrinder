@@ -3,12 +3,9 @@ import java.io.Serializable;
 
 /**
  * Position on 2 axis (abscissa and ordinate)
- *
  * @author gavinr
- *
  */
-public class Position implements Serializable
-{
+public class Position implements Serializable{
 
 	/**
 	 * Serial Version id
