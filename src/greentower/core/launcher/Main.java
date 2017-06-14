@@ -13,6 +13,6 @@ public class Main
 	 * @param args
 	 */
 	public static void main(String[] args)
-	{		ScenarioParser scenarioParser;		try		{			scenarioParser = new ScenarioParser("scenario/scenario1.txt");			Scenario scenario = scenarioParser.getScenario();			OutputGraphic out = new OutputGraphic();						Game game = new Game(scenario , out, new InputGraphic(out)) ;			game.play();			} 		catch (FileNotFoundException e)		{			e.printStackTrace();		} 		catch (InvalidSyntaxInFileException e)		{			e.printStackTrace();		}
+	{		ScenarioParser scenarioParser;		try		{			scenarioParser = new ScenarioParser("/scenario/scenario1.txt");			Scenario scenario = scenarioParser.getScenario();			OutputGraphic out = new OutputGraphic();						Game game = new Game(scenario , out, new InputGraphic(out)) ;			game.play();			} 		catch (FileNotFoundException e)		{			e.printStackTrace();		} 		catch (InvalidSyntaxInFileException e)		{			e.printStackTrace();		}
 	}
 }

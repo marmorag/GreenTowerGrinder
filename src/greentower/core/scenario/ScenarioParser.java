@@ -1,10 +1,10 @@
 package greentower.core.scenario;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+
 import greentower.core.exception.InvalidSyntaxInFileException;
 import greentower.stage.Stage;
 import greentower.stage.choice.Choice;
@@ -61,7 +61,7 @@ public final class ScenarioParser
 	 */
 	public ScenarioParser(String path) throws FileNotFoundException, InvalidSyntaxInFileException
 	{
-		this.inputTool = new BufferedReader(new FileReader(new File(path)));
+		this.inputTool = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream(path)));
 		this.parsedScenario = this.parseScenarioAt(path);
 	}
 	

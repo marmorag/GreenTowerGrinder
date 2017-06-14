@@ -1,7 +1,8 @@
 package greentower.core.sound;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -18,7 +19,7 @@ public class SoundBox
 	/**
 	 * 
 	 */
-	private File[] soundArray;
+	private InputStream[] soundArray;
 	
 	/**
 	 * 
@@ -45,7 +46,7 @@ public class SoundBox
 		{
 			this.clipForLoop = AudioSystem.getClip();
 			this.clipForOnce = AudioSystem.getClip();
-			this.soundArray = new File[]{ new File("sound/Skyrim_OST.wav"), new File("sound/button/switch_clic.wav")};
+			this.soundArray = new InputStream[]{ this.getClass().getResourceAsStream("/sound/Skyrim_OST.wav"), this.getClass().getResourceAsStream("/sound/button/switch_clic.wav")};
 		} 
 		catch (LineUnavailableException e)
 		{
