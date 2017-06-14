@@ -49,7 +49,7 @@ import javax.swing.text.DefaultCaret;
 		this.addKeyListener(this);		
 		try
 		{
-			this.setIconImage(ImageIO.read(this.getClass().getResourceAsStream("/images/graine.png")));
+			this.setIconImage(ImageIO.read(new File("images/graine.png")));
 		} catch (IOException e2)
 		{
 			e2.printStackTrace();
@@ -62,7 +62,7 @@ import javax.swing.text.DefaultCaret;
 			e1.printStackTrace();
 		}
 		try {
-			this.image = ImageIO.read(this.getClass().getResourceAsStream("/images/bc.jpg"));
+			this.image = ImageIO.read(new File("images/bc.jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}				this.current_input = "";		this.isPressed = false;

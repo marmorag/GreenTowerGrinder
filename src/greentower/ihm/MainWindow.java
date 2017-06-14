@@ -1,5 +1,5 @@
 package greentower.ihm;
-import java.awt.Dimension;import java.awt.event.ActionEvent;import java.awt.event.ActionListener;import java.io.File;import java.io.IOException;import javax.imageio.ImageIO;import javax.swing.ImageIcon;import javax.swing.JButton;import javax.swing.JFrame;import javax.swing.JTextField;import greentower.core.sound.SoundBox;
+import java.awt.Dimension;import java.awt.event.ActionEvent;import java.awt.event.ActionListener;import javax.swing.ImageIcon;import javax.swing.JButton;import javax.swing.JFrame;import javax.swing.JTextField;import greentower.core.sound.SoundBox;
 /** *  * @author Rayan * */
 public class MainWindow extends JFrame implements ActionListener{
 	/**
@@ -16,10 +16,10 @@ public class MainWindow extends JFrame implements ActionListener{
 		this.setResizable(false);
 		this.setUndecorated(true);
 		this.setLocationRelativeTo(null);
-		try {			this.setIconImage(ImageIO.read(this.getClass().getResourceAsStream("/images/graine.png")));		} catch (IOException e1) {			// TODO Auto-generated catch block			e1.printStackTrace();		}
+		this.setIconImage(new ImageIcon("images/graine.png").getImage());
 		this.setVisible(true);
 		//Jpanel
-		try {			this.setContentPane(new GTG(ImageIO.read(this.getClass().getResourceAsStream("/images/mojo.jpg"))));		} catch (IOException e) {			// TODO Auto-generated catch block			e.printStackTrace();		}
+		this.setContentPane(new GTG(new ImageIcon("images/mojo.jpg").getImage()));
 		this.setVisible(true);
 		//Bouton		this.bt1 = new Button("New Game");		this.bt2 = new Button("Leave");		this.name = new JTextField("Nom :");		this.name.setPreferredSize(new Dimension(150, 20));
 		this.bt1.addActionListener(this);
